@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\global">
+      <UniqueIdentifier>{0b188a02-9fee-4627-90f9-b0f9c4f7368f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\injector">
+      <UniqueIdentifier>{7bb3f345-06f4-4df2-b418-85a589ab71a2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="injector.cpp">
+      <Filter>source\injector</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="injector.h">
+      <Filter>source\injector</Filter>
+    </ClInclude>
+    <ClInclude Include="gconst.h">
+      <Filter>source\global</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

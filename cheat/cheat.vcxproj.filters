@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\cheat">
+      <UniqueIdentifier>{374dafc8-23e0-4948-a2d1-d659ac6e2d25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party">
+      <UniqueIdentifier>{67db3402-de5a-452f-9400-e8d25aa3801c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\sdk">
+      <UniqueIdentifier>{a43ed511-511c-4abb-969c-314239eee5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\global">
+      <UniqueIdentifier>{0dd8e6bb-c6d1-4e7b-b082-581148b2620a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\menu">
+      <UniqueIdentifier>{755be23d-a12b-469a-9950-f5930745869b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\visual">
+      <UniqueIdentifier>{a41d6fc2-b08f-4907-820d-2a7494a68681}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\library">
+      <UniqueIdentifier>{940499ff-77a3-47ff-90d9-697e680de931}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cheat.h">
+      <Filter>source\cheat</Filter>
+    </ClInclude>
+    <ClInclude Include="_sdk.h">
+      <Filter>third_party</Filter>
+    </ClInclude>
+    <ClInclude Include="gvalue.h">
+      <Filter>source\global</Filter>
+    </ClInclude>
+    <ClInclude Include="gconst.h">
+      <Filter>source\global</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>source\cheat\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="visual.h">
+      <Filter>source\cheat\visual</Filter>
+    </ClInclude>
+    <ClInclude Include="render.h">
+      <Filter>source\library</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cheat.cpp">
+      <Filter>source\cheat</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\SDK\Basic.cpp">
+      <Filter>third_party\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\SDK\Engine_functions.cpp">
+      <Filter>third_party\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\SDK\CoreUObject_functions.cpp">
+      <Filter>third_party\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="dll_main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>source\cheat\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="visual.cpp">
+      <Filter>source\cheat\visual</Filter>
+    </ClCompile>
+    <ClCompile Include="render.cpp">
+      <Filter>source\library</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
