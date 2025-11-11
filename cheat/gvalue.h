@@ -9,15 +9,16 @@ struct s_mouse
 	int x = 0;
 	int y = 0;
 	bool left = false;
-	bool right = false;
 };
 
 struct s_visual
 {
+	bool enable = true;
 	bool box = true;
 	bool name = true;
 	bool distance = true;
-	bool line = true;
+	bool line = false;
+	bool extent = false;
 };
 
 namespace SDK
@@ -37,11 +38,19 @@ namespace gvalue
 	inline bool menu_open = true;
 	inline s_mouse mouse_input = {};
 	inline bool is_exit = false;
+	inline bool is_clean = false;
 	
 	inline s_visual visual_player;
 	inline s_visual visual_entity;
 	inline s_visual visual_item;
 	inline s_visual visual_interact;
+	inline int visual_distance = 10;
+	inline bool draw_mesh = false;
+	inline int draw_mesh_distance = 10;
+	inline int fov = 120;
+	inline bool disable_post = false;
+	inline bool third_person = false;
+	inline int third_distance = 100;
 
 	inline SDK::UWorld* world;
 	inline SDK::APlayerController* controller;

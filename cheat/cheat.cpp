@@ -8,6 +8,7 @@
 #include "gconst.h"
 #include "menu.h"
 #include "visual.h"
+#include "gui.h"
 
 #pragma warning(disable:4996)
 
@@ -53,17 +54,10 @@ void cheat::hook()
 
 void cheat::exit()
 {
-    while (!gvalue::is_exit)
+    while (!gvalue::is_clean)
     {
-        Sleep(100);
+        Sleep(1);
     }
-
-    SDK::UWorld* world = SDK::UWorld::GetWorld();
-
-    SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)gvalue::def_wnd_proc);
-
-    gvalue::vtb[gconst::post_render_index] = gvalue::def_post_render;
-
     FreeLibraryAndExitThread(gvalue::dll_inst, 0);
 }
 
@@ -74,10 +68,18 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
     gvalue::canvas = canvas;
     gvalue::engine = SDK::UEngine::GetEngine();
 
+    gui::main();
     visual::main();
     menu::main();
 
     gvalue::def_post_render(thisptr, canvas);
+
+    if (gvalue::is_exit)
+    {
+        SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)gvalue::def_wnd_proc);
+        gvalue::vtb[gconst::post_render_index] = gvalue::def_post_render;
+        gvalue::is_clean = true;
+    }
 }
 
 LRESULT cheat::hk_wnd_proc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param)
@@ -88,12 +90,13 @@ LRESULT cheat::hk_wnd_proc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param
         if (w_param == VK_INSERT)
         {
             gvalue::menu_open = !gvalue::menu_open;
+            break;
         }
         if (w_param == VK_DELETE)
         {
             gvalue::is_exit = true;
+            break;
         }
-        break;
     case WM_MOUSEMOVE:
         POINT pt;
         GetCursorPos(&pt);
@@ -107,13 +110,6 @@ LRESULT cheat::hk_wnd_proc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param
         break;
     case WM_LBUTTONUP:
         gvalue::mouse_input.left = false;
-        break;
-    case WM_RBUTTONDBLCLK:
-    case WM_RBUTTONDOWN:
-        gvalue::mouse_input.right = true;
-        break;
-    case WM_RBUTTONUP:
-        gvalue::mouse_input.right = false;
         break;
     }
 

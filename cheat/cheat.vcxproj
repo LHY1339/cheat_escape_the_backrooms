@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="cheat.h" />
     <ClInclude Include="gconst.h" />
+    <ClInclude Include="gui.h" />
     <ClInclude Include="gvalue.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="render.h" />
@@ -154,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="cheat.cpp" />
     <ClCompile Include="dll_main.cpp" />
+    <ClCompile Include="gui.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="render.cpp" />
     <ClCompile Include="sdk\SDK\Basic.cpp" />

@@ -26,6 +26,12 @@
     <Filter Include="source\library">
       <UniqueIdentifier>{940499ff-77a3-47ff-90d9-697e680de931}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\library\render">
+      <UniqueIdentifier>{1e5279f3-94b8-4d58-8b34-782499289df1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\library\gui">
+      <UniqueIdentifier>{6d1ccc2c-3155-4b99-ad72-a19a625c027f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cheat.h">
@@ -47,7 +53,10 @@
       <Filter>source\cheat\visual</Filter>
     </ClInclude>
     <ClInclude Include="render.h">
-      <Filter>source\library</Filter>
+      <Filter>source\library\render</Filter>
+    </ClInclude>
+    <ClInclude Include="gui.h">
+      <Filter>source\library\gui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -73,7 +82,10 @@
       <Filter>source\cheat\visual</Filter>
     </ClCompile>
     <ClCompile Include="render.cpp">
-      <Filter>source\library</Filter>
+      <Filter>source\library\render</Filter>
+    </ClCompile>
+    <ClCompile Include="gui.cpp">
+      <Filter>source\library\gui</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
