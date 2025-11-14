@@ -36,7 +36,7 @@ void menu::lable()
 {
 	render::draw_text(
 		gvalue::engine->MediumFont,
-		L"按下 Ins（Insert）显示/隐藏菜单\n按下 Del（Delete）退出",
+		glanguage::lable,
 		SDK::FVector2D(10.0f, 10.0f),
 		SDK::FVector2D(1.0f, 1.0f),
 		SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
