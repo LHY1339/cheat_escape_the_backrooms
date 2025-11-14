@@ -37,20 +37,6 @@ void ABP_DroppedItem_LiquidPain_C::ExecuteUbergraph_BP_DroppedItem_LiquidPain(in
 }
 
 
-// Function BP_DroppedItem_LiquidPain.BP_DroppedItem_LiquidPain_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_DroppedItem_LiquidPain_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroppedItem_LiquidPain_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_DroppedItem_LiquidPain.BP_DroppedItem_LiquidPain_C.Flicker__UpdateFunc
 // (BlueprintEvent)
 
@@ -74,6 +60,20 @@ void ABP_DroppedItem_LiquidPain_C::Flicker__FinishedFunc()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_DroppedItem_LiquidPain_C", "Flicker__FinishedFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_DroppedItem_LiquidPain.BP_DroppedItem_LiquidPain_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_DroppedItem_LiquidPain_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroppedItem_LiquidPain_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

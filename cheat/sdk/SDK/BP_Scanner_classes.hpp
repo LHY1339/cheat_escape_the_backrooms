@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Backrooms_structs.hpp"
 #include "BP_Item_classes.hpp"
+#include "Backrooms_structs.hpp"
 
 
 namespace SDK
@@ -74,10 +74,12 @@ public:
 	void ReceiveDestroyed();
 	void SRV_Lidar(const struct FHitResult& HitResult, const struct FColor& Color);
 	void OC_Fire();
+	void ReceiveBeginPlay();
 	void Initialize();
 	void MC_Fire();
 	void BndEvt__BP_Scanner_LIDARComponent_K2Node_ComponentBoundEvent_2_ScannerUpdateSignature__DelegateSignature();
 	void BndEvt__BP_Scanner_LIDARComponent_K2Node_ComponentBoundEvent_0_ScannerTraceSignature__DelegateSignature();
+	void UseItem();
 	void ResetSKCollisionUVBool();
 	void SpawnScannerBeam(const struct FVector& BeamStart, const struct FVector& BeamEnd);
 	void SetScanDistance(float NewDistance);
@@ -104,8 +106,6 @@ public:
 	void InitializeColors();
 	void LiDAR(float& Delta);
 	void GetMaterial(class UMaterialInterface* Material_0, class UMaterialInterface** Adjusted);
-	void ReceiveBeginPlay();
-	void UseItem();
 	void SetMaterial(bool EnabledFOV);
 
 public:

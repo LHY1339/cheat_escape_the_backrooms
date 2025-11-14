@@ -37,6 +37,20 @@ void ABP_Juice_C::ExecuteUbergraph_BP_Juice(int32 EntryPoint)
 }
 
 
+// Function BP_Juice.BP_Juice_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Juice_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Juice_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Juice.BP_Juice_C.SRV_FinishDrink
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 
@@ -60,6 +74,20 @@ void ABP_Juice_C::PlayAnimation()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Juice_C", "PlayAnimation");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Juice.BP_Juice_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Juice_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Juice_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -188,34 +216,6 @@ void ABP_Juice_C::Timeline_0__FinishedFunc()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Juice_C", "Timeline_0__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Juice.BP_Juice_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Juice_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Juice_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Juice.BP_Juice_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Juice_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Juice_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

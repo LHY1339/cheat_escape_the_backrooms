@@ -37,6 +37,20 @@ void ABP_Item_Toy_C::ExecuteUbergraph_BP_Item_Toy(int32 EntryPoint)
 }
 
 
+// Function BP_Item_Toy.BP_Item_Toy_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Item_Toy_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Toy_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Item_Toy.BP_Item_Toy_C.MC_Drop
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 
@@ -46,6 +60,20 @@ void ABP_Item_Toy_C::MC_Drop()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Item_Toy_C", "MC_Drop");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Item_Toy.BP_Item_Toy_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_Toy_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Toy_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -148,34 +176,6 @@ void ABP_Item_Toy_C::OnNotifyEnd_E7C10CF145CF5799DFA524820188E4F6(class FName No
 	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Item_Toy.BP_Item_Toy_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Item_Toy_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Toy_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Item_Toy.BP_Item_Toy_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_Toy_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Toy_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

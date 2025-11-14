@@ -87,6 +87,20 @@ void ABP_Item_Crowbar_C::Damage_SERVER(class UObject* Target, class AFancyCharac
 }
 
 
+// Function BP_Item_Crowbar.BP_Item_Crowbar_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_Crowbar_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Crowbar_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Item_Crowbar.BP_Item_Crowbar_C.OnCompleted_BE8B199649F76BBA28D0A884255F0BFA
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -284,20 +298,6 @@ void ABP_Item_Crowbar_C::OnNotifyEnd_751D76F146E38F09943798A236AB1CAA(class FNam
 	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Item_Crowbar.BP_Item_Crowbar_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_Crowbar_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Crowbar_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

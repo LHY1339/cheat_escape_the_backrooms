@@ -87,6 +87,20 @@ void ABP_Scanner_C::OC_Fire()
 }
 
 
+// Function BP_Scanner.BP_Scanner_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Scanner_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Scanner_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Scanner.BP_Scanner_C.Initialize
 // (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
 
@@ -138,6 +152,20 @@ void ABP_Scanner_C::BndEvt__BP_Scanner_LIDARComponent_K2Node_ComponentBoundEvent
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Scanner_C", "BndEvt__BP_Scanner_LIDARComponent_K2Node_ComponentBoundEvent_0_ScannerTraceSignature__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Scanner.BP_Scanner_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Scanner_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Scanner_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -657,34 +685,6 @@ void ABP_Scanner_C::GetMaterial(class UMaterialInterface* Material_0, class UMat
 
 	if (Adjusted != nullptr)
 		*Adjusted = Parms.Adjusted;
-}
-
-
-// Function BP_Scanner.BP_Scanner_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Scanner_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Scanner_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Scanner.BP_Scanner_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Scanner_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Scanner_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

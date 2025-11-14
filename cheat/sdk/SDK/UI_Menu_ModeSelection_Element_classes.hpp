@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "E_GameMode_structs.hpp"
 #include "Engine_structs.hpp"
+#include "E_GameMode_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
 

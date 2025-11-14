@@ -51,6 +51,20 @@ void ABP_Rope_C::AnimateRopeThrow()
 }
 
 
+// Function BP_Rope.BP_Rope_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Rope_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Rope_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Rope.BP_Rope_C.RemoveRope
 // (BlueprintCallable, BlueprintEvent)
 
@@ -278,20 +292,6 @@ void ABP_Rope_C::OnRep_RopeZone()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Rope_C", "OnRep_RopeZone");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Rope.BP_Rope_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Rope_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Rope_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

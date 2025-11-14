@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
-#include "S_Gamemode_structs.hpp"
 #include "E_CameraSetting_structs.hpp"
 #include "AdvancedSessions_structs.hpp"
+#include "S_Gamemode_structs.hpp"
+#include "UMG_structs.hpp"
+#include "S_ConnectedPlayer_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "S_ConnectedPlayer_structs.hpp"
 
 
 namespace SDK::Params

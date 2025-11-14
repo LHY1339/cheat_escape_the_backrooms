@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "E_Mailbox_structs.hpp"
 #include "E_Difficulty_structs.hpp"
+#include "E_Mailbox_structs.hpp"
 
 
 namespace SDK

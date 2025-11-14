@@ -43,6 +43,7 @@ public:
 	void OC_Trace();
 	void PlayAnimation();
 	void Damage_SERVER(class UObject* Target, class AFancyCharacter* Character);
+	void UseItem();
 	void OnCompleted_FBCA7ED7436A8ED7C154A2B37E6C3659(class FName NotifyName);
 	void OnBlendOut_FBCA7ED7436A8ED7C154A2B37E6C3659(class FName NotifyName);
 	void OnInterrupted_FBCA7ED7436A8ED7C154A2B37E6C3659(class FName NotifyName);
@@ -55,7 +56,6 @@ public:
 	void OnNotifyEnd_702F9C624045D5D1016E778DEB923CD4(class FName NotifyName);
 	void Recoil__UpdateFunc();
 	void Recoil__FinishedFunc();
-	void UseItem();
 	void SetMaterial(bool EnabledFOV);
 
 public:

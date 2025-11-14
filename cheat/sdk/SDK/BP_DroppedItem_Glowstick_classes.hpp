@@ -35,8 +35,8 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_DroppedItem_Glowstick(int32 EntryPoint);
-	void ReceiveBeginPlay();
 	void ReceiveDestroyed();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

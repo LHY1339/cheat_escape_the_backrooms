@@ -153,6 +153,20 @@ void ABP_Item_Camera_C::Update()
 }
 
 
+// Function BP_Item_Camera.BP_Item_Camera_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Item_Camera_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Camera_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Item_Camera.BP_Item_Camera_C.SnapPicture
 // (BlueprintCallable, BlueprintEvent)
 
@@ -162,6 +176,20 @@ void ABP_Item_Camera_C::SnapPicture()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Item_Camera_C", "SnapPicture");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Item_Camera.BP_Item_Camera_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_Camera_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Camera_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -537,48 +565,6 @@ void ABP_Item_Camera_C::OnRep_CurrentPicture()
 }
 
 
-// Function BP_Item_Camera.BP_Item_Camera_C.OnRep_IsFlashlightOn
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_Camera_C::OnRep_IsFlashlightOn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Camera_C", "OnRep_IsFlashlightOn");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Item_Camera.BP_Item_Camera_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Item_Camera_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Camera_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Item_Camera.BP_Item_Camera_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_Camera_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Camera_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Item_Camera.BP_Item_Camera_C.SetMaterial
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -596,6 +582,20 @@ void ABP_Item_Camera_C::SetMaterial(bool EnabledFOV)
 	Parms.EnabledFOV = EnabledFOV;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Item_Camera.BP_Item_Camera_C.OnRep_IsFlashlightOn
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_Camera_C::OnRep_IsFlashlightOn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Camera_C", "OnRep_IsFlashlightOn");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

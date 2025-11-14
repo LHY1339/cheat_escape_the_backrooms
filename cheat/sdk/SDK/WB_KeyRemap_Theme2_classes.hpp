@@ -27,14 +27,18 @@ public:
 	class UInputKeySelector*                      InputKeySelector;                                  // 0x0270(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	int32                                         KeyInput_Index;                                    // 0x0278(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   InputAction_Name;                                  // 0x027C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsKeyboardKey;                                     // 0x0284(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsGamepadKey;                                      // 0x0285(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          LockOnKeySelectedEvent;                            // 0x0286(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_WB_KeyRemap_Theme2(int32 EntryPoint);
+	void OnInitialized();
 	void ToggleFocus(bool IsFocused);
 	void ToggleHover(bool IsHovered_0);
 	void ToggleEnabled(bool IsEnabled);
 	void BndEvt__WB_KeyRemap_InputKeySelector_K2Node_ComponentBoundEvent_0_OnKeySelected__DelegateSignature(const struct FInputChord& SelectedKey);
-	void PreConstruct(bool IsDesignTime);
+	void Update_Key_Value();
 
 public:
 	static class UClass* StaticClass()

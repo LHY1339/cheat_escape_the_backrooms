@@ -146,9 +146,11 @@
   <ItemGroup>
     <ClInclude Include="cheat.h" />
     <ClInclude Include="gconst.h" />
+    <ClInclude Include="glanguage.h" />
     <ClInclude Include="gui.h" />
     <ClInclude Include="gvalue.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="render.h" />
     <ClInclude Include="visual.h" />
     <ClInclude Include="_sdk.h" />
@@ -158,8 +160,10 @@
     <ClCompile Include="dll_main.cpp" />
     <ClCompile Include="gui.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="render.cpp" />
     <ClCompile Include="sdk\SDK\Basic.cpp" />
+    <ClCompile Include="sdk\SDK\BPCharacter_Demo_functions.cpp" />
     <ClCompile Include="sdk\SDK\CoreUObject_functions.cpp" />
     <ClCompile Include="sdk\SDK\Engine_functions.cpp" />
     <ClCompile Include="visual.cpp" />

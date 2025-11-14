@@ -181,26 +181,6 @@ void visual::main()
 	}
 	get_all();
     camera();
-
-    //static bool y_down = false;
-    //if (GetAsyncKeyState(VK_F1) & 0x8000) 
-    //{
-    //    if (!y_down)
-    //    {
-    //        y_down = true;
-
-    //        SDK::FVector vec = SDK::UKismetMathLibrary::GetForwardVector(gvalue::controller->GetControlRotation());
-    //        const float forwrad_value = 500.0f;
-    //        SDK::FVector new_loc = gvalue::controller->Pawn->K2_GetActorLocation() + SDK::FVector(vec.X * forwrad_value, vec.Y * forwrad_value, vec.Z * forwrad_value);
-
-    //        SDK::FHitResult res;
-    //        gvalue::controller->Pawn->K2_SetActorLocation(new_loc, false, &res, true);
-    //    }
-    //}
-    //else
-    //{
-    //    y_down = false;
-    //}
 }
 
 void visual::get_all()

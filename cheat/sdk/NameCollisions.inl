@@ -9,19 +9,19 @@
 // FORWARD DECLARATIONS
 
 
-namespace GrabKeySequence_TPP { class USequenceDirector_C; }
-
-namespace ClimbSequence { class USequenceDirector_C; }
-
-namespace BTDecorator_ShouldMove { class UBTDecorator_ShouldMove_C; }
-
-namespace ClimbLadderSequence { class USequenceDirector_C; }
-
 namespace PlayerEQSQuery { class UPlayerEQSQuery_C; }
 
 namespace WaterExit { class USequenceDirector_C; }
 
 namespace PlayerEQSQuery_0 { class UPlayerEQSQuery_C; }
+
+namespace BTDecorator_ShouldMove { class UBTDecorator_ShouldMove_C; }
+
+namespace ClimbLadderSequence { class USequenceDirector_C; }
+
+namespace GrabKeySequence_TPP { class USequenceDirector_C; }
+
+namespace ClimbSequence { class USequenceDirector_C; }
 
 namespace NoClip { class USequenceDirector_C; }
 

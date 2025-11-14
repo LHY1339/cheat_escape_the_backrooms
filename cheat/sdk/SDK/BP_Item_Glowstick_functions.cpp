@@ -85,6 +85,20 @@ void ABP_Item_Glowstick_C::PlaySubtitle()
 }
 
 
+// Function BP_Item_Glowstick.BP_Item_Glowstick_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Item_Glowstick_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Glowstick_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Item_Glowstick.BP_Item_Glowstick_C.MC_Fire
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 
@@ -94,6 +108,20 @@ void ABP_Item_Glowstick_C::MC_Fire()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Item_Glowstick_C", "MC_Fire");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Item_Glowstick.BP_Item_Glowstick_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_Glowstick_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Glowstick_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -244,34 +272,6 @@ void ABP_Item_Glowstick_C::GetAdjustedRadius(float Radius, float* Adjusted)
 
 	if (Adjusted != nullptr)
 		*Adjusted = Parms.Adjusted;
-}
-
-
-// Function BP_Item_Glowstick.BP_Item_Glowstick_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Item_Glowstick_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Glowstick_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Item_Glowstick.BP_Item_Glowstick_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_Glowstick_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Glowstick_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "S_DroppedItem_structs.hpp"
 #include "S_Glowstick_Data_structs.hpp"
 #include "S_LevelStats_structs.hpp"
-#include "S_DroppedItem_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "S_WorldCommon_structs.hpp"
 #include "S_TV_Data_structs.hpp"
 #include "S_UploadStatus_structs.hpp"
 #include "E_Difficulty_structs.hpp"
-#include "S_WorldCommon_structs.hpp"
 #include "S_PlayerData_structs.hpp"
 #include "E_Mailbox_structs.hpp"
 

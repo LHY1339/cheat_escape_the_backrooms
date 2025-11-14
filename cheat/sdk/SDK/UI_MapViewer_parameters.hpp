@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "S_LevelStats_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "S_LevelIntel_structs.hpp"
-#include "S_LevelStats_structs.hpp"
 
 
 namespace SDK::Params

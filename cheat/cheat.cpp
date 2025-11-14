@@ -9,6 +9,7 @@
 #include "menu.h"
 #include "visual.h"
 #include "gui.h"
+#include "player.h"
 
 #pragma warning(disable:4996)
 
@@ -29,6 +30,7 @@ void cheat::console()
 void cheat::init()
 {
     visual::init();
+    player::init();
 }
 
 void cheat::hook()
@@ -71,6 +73,7 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
     gui::main();
     visual::main();
     menu::main();
+    player::main();
 
     gvalue::def_post_render(thisptr, canvas);
 

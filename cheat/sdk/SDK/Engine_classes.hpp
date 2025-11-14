@@ -20622,7 +20622,7 @@ DUMPER7_ASSERTS_ALevelBounds;
 
 // Class Engine.LevelScriptActor
 // 0x0008 (0x0228 - 0x0220)
-class ALevelScriptActor final : public AActor
+class ALevelScriptActor : public AActor
 {
 public:
 	uint8                                         bInputEnabled : 1;                                 // 0x0220(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate))

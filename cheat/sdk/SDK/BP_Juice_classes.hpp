@@ -34,8 +34,10 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_Juice(int32 EntryPoint);
+	void ReceiveBeginPlay();
 	void SRV_FinishDrink();
 	void PlayAnimation();
+	void UseItem();
 	void OnCompleted_8D6BB16145C244F54B6DA5B60D5650E0(class FName NotifyName);
 	void OnBlendOut_8D6BB16145C244F54B6DA5B60D5650E0(class FName NotifyName);
 	void OnInterrupted_8D6BB16145C244F54B6DA5B60D5650E0(class FName NotifyName);
@@ -43,8 +45,6 @@ public:
 	void OnNotifyEnd_8D6BB16145C244F54B6DA5B60D5650E0(class FName NotifyName);
 	void Timeline_0__UpdateFunc();
 	void Timeline_0__FinishedFunc();
-	void ReceiveBeginPlay();
-	void UseItem();
 	void SetMaterial(bool EnabledFOV);
 
 public:

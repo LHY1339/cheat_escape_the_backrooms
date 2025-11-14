@@ -2650,5 +2650,33 @@ void UWB_SettingsPanel_Theme2_C::interpret_ShowChat(int32 Option)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.Update Keyboard Key Widgets
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWB_SettingsPanel_Theme2_C::Update_Keyboard_Key_Widgets()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "Update Keyboard Key Widgets");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.Update Gamepad Key Widgets
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWB_SettingsPanel_Theme2_C::Update_Gamepad_Key_Widgets()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "Update Gamepad Key Widgets");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

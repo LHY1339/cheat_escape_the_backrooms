@@ -44,13 +44,21 @@ namespace gvalue
 	inline s_visual visual_entity;
 	inline s_visual visual_item;
 	inline s_visual visual_interact;
-	inline int visual_distance = 10;
+	inline int visual_distance = 100;
 	inline bool draw_mesh = false;
 	inline int draw_mesh_distance = 10;
 	inline int fov = 120;
 	inline bool disable_post = false;
 	inline bool third_person = false;
-	inline int third_distance = 100;
+	inline int third_distance = 200;
+
+	inline bool inf_stamina = true;
+	inline bool inf_sanity = true;
+	inline bool no_balance = true;
+	inline bool inf_jump = false;
+	inline int walk_speed = 250;
+	inline int run_speed = 450;
+	inline int crouch_speed = 100;
 
 	inline SDK::UWorld* world;
 	inline SDK::APlayerController* controller;

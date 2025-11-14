@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C
-// 0x0070 (0x02D0 - 0x0260)
+// 0x0080 (0x02E0 - 0x0260)
 class UUI_Menu_Evaluation_XpBar_C final : public UUserWidget
 {
 public:
@@ -40,14 +40,22 @@ public:
 	int32                                         Next_Level_XP;                                     // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Target_XP_Total;                                   // 0x02C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAudioComponent*                        GainXPSound;                                       // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CurrentXPTotal;                                    // 0x02D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         TargetXPTotal;                                     // 0x02D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CurrentLevelNeededXP;                              // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_UI_Menu_Evaluation_XpBar(int32 EntryPoint);
-	void CheckLevel();
-	void Update();
-	void SetupXPBar(float CurrentXPTotal, float TargetXPTotal, bool AdjustTargetLevel);
-	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
+	void AnimateXP(float CurrentXPTotal_0, float TargetXPTotal_0);
+	void SetupXPBar_DEPRECATED(float CurrentXPTotal_0, float TargetXPTotal_0, bool AdjustTargetLevel);
 	void Construct();
+	void Update();
+	void CheckLevel();
+	void UpdateXPBarRange();
+	float GetXPBarPercentFromXP(float Value);
+	void InterpolateCurrentXP();
+	void ShowGainLevelFeedback();
+	void PlayGainXPSound();
 
 public:
 	static class UClass* StaticClass()

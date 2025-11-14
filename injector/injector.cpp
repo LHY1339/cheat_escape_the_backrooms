@@ -7,15 +7,34 @@
 
 int injector::main()
 {
-    printf("请先运行游戏\n");
+    printf("请运行游戏后按下 F5 加载\n");
 
-    const DWORD pid = find_process(gconst::proc_name);
-    std::wstring dll_path = get_abs_path(gconst::dll_name);
-    if (inject(dll_path.c_str(), pid))
+    while (true)
     {
-        printf("[%d] 注入成功\n", static_cast<int>(pid));
+        static bool f5_down = false;
+        if (GetAsyncKeyState(VK_F5) & 0x8000) 
+        {
+            if (!f5_down)
+            {
+                f5_down = true;
+
+                const DWORD pid = find_process(gconst::proc_name);
+                std::wstring dll_path = get_abs_path(gconst::dll_name);
+                if (inject(dll_path.c_str(), pid))
+                {
+                    printf("[%d] 加载成功\n", static_cast<int>(pid));
+                }
+                else
+                {
+                    printf("[%d] 加载失败\n", static_cast<int>(pid));
+                }
+            }
+        }
+        else
+        {
+            f5_down = false;
+        }
     }
-    Sleep(1000);
     return 0;
 }
 

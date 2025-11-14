@@ -37,6 +37,20 @@ void UWB_KeyRemap_Theme2_C::ExecuteUbergraph_WB_KeyRemap_Theme2(int32 EntryPoint
 }
 
 
+// Function WB_KeyRemap_Theme2.WB_KeyRemap_Theme2_C.OnInitialized
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWB_KeyRemap_Theme2_C::OnInitialized()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_KeyRemap_Theme2_C", "OnInitialized");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function WB_KeyRemap_Theme2.WB_KeyRemap_Theme2_C.ToggleFocus
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -117,23 +131,17 @@ void UWB_KeyRemap_Theme2_C::BndEvt__WB_KeyRemap_InputKeySelector_K2Node_Componen
 }
 
 
-// Function WB_KeyRemap_Theme2.WB_KeyRemap_Theme2_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function WB_KeyRemap_Theme2.WB_KeyRemap_Theme2_C.Update Key Value
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void UWB_KeyRemap_Theme2_C::PreConstruct(bool IsDesignTime)
+void UWB_KeyRemap_Theme2_C::Update_Key_Value()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WB_KeyRemap_Theme2_C", "PreConstruct");
+		Func = Class->GetFunction("WB_KeyRemap_Theme2_C", "Update Key Value");
 
-	Params::WB_KeyRemap_Theme2_C_PreConstruct Parms{};
-
-	Parms.IsDesignTime = IsDesignTime;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

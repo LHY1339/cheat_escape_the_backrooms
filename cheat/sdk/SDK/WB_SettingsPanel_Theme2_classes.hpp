@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
+#include "E_CameraSetting_structs.hpp"
 #include "Backrooms_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "E_CameraSetting_structs.hpp"
-#include "Engine_structs.hpp"
 #include "E_GameMode_structs.hpp"
 
 
@@ -22,7 +22,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C
-// 0x0468 (0x06C8 - 0x0260)
+// 0x0488 (0x06E8 - 0x0260)
 class UWB_SettingsPanel_Theme2_C final : public UUserWidget
 {
 public:
@@ -190,6 +190,9 @@ public:
 	uint8                                         Pad_6AC[0x4];                                      // 0x06AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UWidget*>                        FocusArrayGraphics;                                // 0x06B0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	int32                                         FocusArrayGraphicsIndex;                           // 0x06C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6C4[0x4];                                      // 0x06C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UWB_KeyRemap_Theme2_C*>          WB_KeyboardKeyRemap;                               // 0x06C8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TArray<class UWB_KeyRemap_Theme2_C*>          WB_GamepadKeyRemap;                                // 0x06D8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
 	void ExecuteUbergraph_WB_SettingsPanel_Theme2(int32 EntryPoint);
@@ -332,6 +335,8 @@ public:
 	void UpdateDeviceSettings(EFancyInputDevice InputDevice);
 	ESlateVisibility Collapse_Visibility_on_Gamepad();
 	void interpret_ShowChat(int32 Option);
+	void Update_Keyboard_Key_Widgets();
+	void Update_Gamepad_Key_Widgets();
 
 public:
 	static class UClass* StaticClass()

@@ -11,13 +11,13 @@
 #include "Basic.hpp"
 
 #include "Backrooms_structs.hpp"
-#include "E_CameraSetting_structs.hpp"
 #include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "S_AudioSettings_structs.hpp"
+#include "InputCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "E_CameraSetting_structs.hpp"
 #include "E_GameMode_structs.hpp"
 
 
@@ -25,7 +25,7 @@ namespace SDK::Params
 {
 
 // Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.ExecuteUbergraph_WB_SettingsPanel_Theme2
-// 0x05A8 (0x05A8 - 0x0000)
+// 0x05C8 (0x05C8 - 0x0000)
 struct WB_SettingsPanel_Theme2_C_ExecuteUbergraph_WB_SettingsPanel_Theme2 final
 {
 public:
@@ -272,38 +272,40 @@ public:
 	class ALobby_PlayerController_Nebula_C*       K2Node_DynamicCast_AsLobby_Player_Controller_Nebula; // 0x0490(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_11;                    // 0x0498(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_499[0x7];                                      // 0x0499(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UUserWidget*>                    K2Node_MakeArray_Array;                            // 0x04A0(0x0010)(ReferenceParm, ContainsInstancedReference)
-	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_1;                          // 0x04B0(0x0010)(ReferenceParm, ContainsInstancedReference)
-	ESlateVisibility                              Temp_byte_Variable_9;                              // 0x04C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ESlateVisibility                              Temp_byte_Variable_10;                             // 0x04C1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable_8;                              // 0x04C2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	ESlateVisibility                              K2Node_Select_Default_5;                           // 0x04C3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x04C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_Array_Get_Item_1;                         // 0x04C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_EventItem_C>      K2Node_DynamicCast_AsBPI_Event_Item;               // 0x04D0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_DynamicCast_bSuccess_12;                    // 0x04E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4E1[0x7];                                      // 0x04E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UWidget*>                        K2Node_MakeArray_Array_2;                          // 0x04E8(0x0010)(ReferenceParm, ContainsInstancedReference)
-	bool                                          CallFunc_IsConsoleBuild_ReturnValue_7;             // 0x04F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4F9[0x7];                                      // 0x04F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_3;                          // 0x0500(0x0010)(ReferenceParm, ContainsInstancedReference)
-	bool                                          CallFunc_IsConsoleBuild_ReturnValue_8;             // 0x0510(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsConsoleBuild_ReturnValue_9;             // 0x0511(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsConsoleBuild_ReturnValue_10;            // 0x0512(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_513[0x5];                                      // 0x0513(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_4;                          // 0x0518(0x0010)(ReferenceParm, ContainsInstancedReference)
-	TArray<class UUserWidget*>                    K2Node_Select_Default_6;                           // 0x0528(0x0010)(ReferenceParm, ContainsInstancedReference)
-	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_5;                          // 0x0538(0x0010)(ReferenceParm, ContainsInstancedReference)
-	TArray<class UUserWidget*>                    K2Node_Select_Default_7;                           // 0x0548(0x0010)(ReferenceParm, ContainsInstancedReference)
-	TArray<class UWidget*>                        K2Node_MakeArray_Array_6;                          // 0x0558(0x0010)(ReferenceParm, ContainsInstancedReference)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0568(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_56C[0x4];                                      // 0x056C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UWidget*>                        K2Node_Select_Default_8;                           // 0x0570(0x0010)(ReferenceParm, ContainsInstancedReference)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0580(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_581[0x3];                                      // 0x0581(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0584(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_7;                          // 0x0588(0x0010)(ReferenceParm, ContainsInstancedReference)
-	TArray<class UUserWidget*>                    K2Node_Select_Default_9;                           // 0x0598(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TArray<class UWB_KeyRemap_Theme2_C*>          K2Node_MakeArray_Array;                            // 0x04A0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TArray<class UWB_KeyRemap_Theme2_C*>          K2Node_MakeArray_Array_1;                          // 0x04B0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_2;                          // 0x04C0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_3;                          // 0x04D0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	ESlateVisibility                              Temp_byte_Variable_9;                              // 0x04E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              Temp_byte_Variable_10;                             // 0x04E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_8;                              // 0x04E2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESlateVisibility                              K2Node_Select_Default_5;                           // 0x04E3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x04E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_Array_Get_Item_1;                         // 0x04E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IBPI_EventItem_C>      K2Node_DynamicCast_AsBPI_Event_Item;               // 0x04F0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_12;                    // 0x0500(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_501[0x7];                                      // 0x0501(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UWidget*>                        K2Node_MakeArray_Array_4;                          // 0x0508(0x0010)(ReferenceParm, ContainsInstancedReference)
+	bool                                          CallFunc_IsConsoleBuild_ReturnValue_7;             // 0x0518(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_519[0x7];                                      // 0x0519(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_5;                          // 0x0520(0x0010)(ReferenceParm, ContainsInstancedReference)
+	bool                                          CallFunc_IsConsoleBuild_ReturnValue_8;             // 0x0530(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsConsoleBuild_ReturnValue_9;             // 0x0531(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsConsoleBuild_ReturnValue_10;            // 0x0532(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_533[0x5];                                      // 0x0533(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_6;                          // 0x0538(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TArray<class UUserWidget*>                    K2Node_Select_Default_6;                           // 0x0548(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_7;                          // 0x0558(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TArray<class UUserWidget*>                    K2Node_Select_Default_7;                           // 0x0568(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TArray<class UWidget*>                        K2Node_MakeArray_Array_8;                          // 0x0578(0x0010)(ReferenceParm, ContainsInstancedReference)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0588(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_58C[0x4];                                      // 0x058C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UWidget*>                        K2Node_Select_Default_8;                           // 0x0590(0x0010)(ReferenceParm, ContainsInstancedReference)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x05A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5A1[0x3];                                      // 0x05A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x05A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UUserWidget*>                    K2Node_MakeArray_Array_9;                          // 0x05A8(0x0010)(ReferenceParm, ContainsInstancedReference)
+	TArray<class UUserWidget*>                    K2Node_Select_Default_9;                           // 0x05B8(0x0010)(ReferenceParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_WB_SettingsPanel_Theme2_C_ExecuteUbergraph_WB_SettingsPanel_Theme2;
 
@@ -1737,6 +1739,34 @@ public:
 	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WB_SettingsPanel_Theme2_C_interpret_ShowChat;
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.Update Keyboard Key Widgets
+// 0x0020 (0x0020 - 0x0000)
+struct WB_SettingsPanel_Theme2_C_Update_Keyboard_Key_Widgets final
+{
+public:
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWB_KeyRemap_Theme2_C*                  CallFunc_Array_Get_Item;                           // 0x0010(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WB_SettingsPanel_Theme2_C_Update_Keyboard_Key_Widgets;
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.Update Gamepad Key Widgets
+// 0x0020 (0x0020 - 0x0000)
+struct WB_SettingsPanel_Theme2_C_Update_Gamepad_Key_Widgets final
+{
+public:
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWB_KeyRemap_Theme2_C*                  CallFunc_Array_Get_Item;                           // 0x0010(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WB_SettingsPanel_Theme2_C_Update_Gamepad_Key_Widgets;
 
 }
 

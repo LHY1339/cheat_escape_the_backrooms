@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "E_GameMode_structs.hpp"
 #include "Engine_structs.hpp"
-#include "AdvancedSessions_structs.hpp"
 #include "E_HeadsetType_structs.hpp"
 #include "E_Difficulty_structs.hpp"
 #include "Backrooms_structs.hpp"
 #include "Backrooms_classes.hpp"
+#include "E_GameMode_structs.hpp"
+#include "AdvancedSessions_structs.hpp"
 
 
 namespace SDK

@@ -153,6 +153,20 @@ void ABP_Item_Knife_C::Damage_SERVER(class UObject* Target, class AFancyCharacte
 }
 
 
+// Function BP_Item_Knife.BP_Item_Knife_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_Knife_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Knife_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Item_Knife.BP_Item_Knife_C.OnCompleted_EAE1020347AF8423F02534B24A6EB7A0
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -350,20 +364,6 @@ void ABP_Item_Knife_C::OnNotifyEnd_DCFF09A94F2F9174E32D89AADA2A2E4E(class FName 
 	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Item_Knife.BP_Item_Knife_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_Knife_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Knife_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

@@ -30,11 +30,11 @@ public:
 	void ExecuteUbergraph_MP_PoolRooms(int32 EntryPoint);
 	void CheckPlayer();
 	void CheckWater();
-	void DarkRoomsSubtitle();
-	void LoadCheckpoints();
 	void OnPlayerSpawn(class ABPCharacter_Demo_C* Player);
+	void DarkRoomsSubtitle();
 	void ReceiveBeginPlay();
 	class AActor* ChoosePlayerStart(class AController* Player);
+	void LoadCheckpoints();
 
 public:
 	static class UClass* StaticClass()

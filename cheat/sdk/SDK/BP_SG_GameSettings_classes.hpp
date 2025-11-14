@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "E_CameraSetting_structs.hpp"
 #include "S_AudioSettings_structs.hpp"
+#include "E_CameraSetting_structs.hpp"
 #include "Engine_classes.hpp"
 
 

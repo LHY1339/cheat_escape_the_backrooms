@@ -125,6 +125,34 @@ void ABP_Item_Flashlight_C::ToggleFadePower(bool FadeOut)
 }
 
 
+// Function BP_Item_Flashlight.BP_Item_Flashlight_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Item_Flashlight_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Flashlight_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Item_Flashlight.BP_Item_Flashlight_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_Flashlight_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Flashlight_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Item_Flashlight.BP_Item_Flashlight_C.OnCompleted_858C6BED431A8EBEEAB2D09BA256DAA6
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -396,34 +424,6 @@ void ABP_Item_Flashlight_C::GetAdjustedRadius(float Radius, float* Adjusted)
 
 	if (Adjusted != nullptr)
 		*Adjusted = Parms.Adjusted;
-}
-
-
-// Function BP_Item_Flashlight.BP_Item_Flashlight_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Item_Flashlight_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Flashlight_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Item_Flashlight.BP_Item_Flashlight_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_Flashlight_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Flashlight_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

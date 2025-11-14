@@ -51,20 +51,6 @@ void ABP_DroppedItem_Toy_C::GlowEyes()
 }
 
 
-// Function BP_DroppedItem_Toy.BP_DroppedItem_Toy_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_DroppedItem_Toy_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroppedItem_Toy_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_DroppedItem_Toy.BP_DroppedItem_Toy_C.BndEvt__BP_DroppedItem_Toy_ItemMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
 // Parameters:
@@ -130,6 +116,20 @@ void ABP_DroppedItem_Toy_C::UserConstructionScript()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_DroppedItem_Toy_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_DroppedItem_Toy.BP_DroppedItem_Toy_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_DroppedItem_Toy_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroppedItem_Toy_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

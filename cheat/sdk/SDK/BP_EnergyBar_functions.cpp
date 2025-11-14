@@ -65,6 +65,20 @@ void ABP_EnergyBar_C::PlayAnimation()
 }
 
 
+// Function BP_EnergyBar.BP_EnergyBar_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_EnergyBar_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_EnergyBar_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_EnergyBar.BP_EnergyBar_C.OnCompleted_AE2A3D66458122E1C7ABE08F22ADD52E
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -288,20 +302,6 @@ void ABP_EnergyBar_C::Timeline_0__FinishedFunc()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_EnergyBar_C", "Timeline_0__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_EnergyBar.BP_EnergyBar_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_EnergyBar_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_EnergyBar_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

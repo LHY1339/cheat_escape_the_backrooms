@@ -31,10 +31,10 @@ public:
 public:
 	void ExecuteUbergraph_BP_Thermometer(int32 EntryPoint);
 	void ReceiveDestroyed();
-	void OnRep_Temperature();
-	void Has_Spawned_Display(bool* HasSpawned);
 	void ReceiveBeginPlay();
+	void OnRep_Temperature();
 	void SetMaterial(bool EnabledFOV);
+	void Has_Spawned_Display(bool* HasSpawned);
 
 public:
 	static class UClass* StaticClass()

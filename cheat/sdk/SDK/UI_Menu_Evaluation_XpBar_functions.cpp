@@ -37,15 +37,61 @@ void UUI_Menu_Evaluation_XpBar_C::ExecuteUbergraph_UI_Menu_Evaluation_XpBar(int3
 }
 
 
-// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.CheckLevel
+// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.AnimateXP
 // (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   CurrentXPTotal_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TargetXPTotal_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_Menu_Evaluation_XpBar_C::CheckLevel()
+void UUI_Menu_Evaluation_XpBar_C::AnimateXP(float CurrentXPTotal_0, float TargetXPTotal_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "CheckLevel");
+		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "AnimateXP");
+
+	Params::UI_Menu_Evaluation_XpBar_C_AnimateXP Parms{};
+
+	Parms.CurrentXPTotal_0 = CurrentXPTotal_0;
+	Parms.TargetXPTotal_0 = TargetXPTotal_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.SetupXPBar_DEPRECATED
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   CurrentXPTotal_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TargetXPTotal_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    AdjustTargetLevel                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UUI_Menu_Evaluation_XpBar_C::SetupXPBar_DEPRECATED(float CurrentXPTotal_0, float TargetXPTotal_0, bool AdjustTargetLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "SetupXPBar_DEPRECATED");
+
+	Params::UI_Menu_Evaluation_XpBar_C_SetupXPBar_DEPRECATED Parms{};
+
+	Parms.CurrentXPTotal_0 = CurrentXPTotal_0;
+	Parms.TargetXPTotal_0 = TargetXPTotal_0;
+	Parms.AdjustTargetLevel = AdjustTargetLevel;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UUI_Menu_Evaluation_XpBar_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "Construct");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -65,61 +111,94 @@ void UUI_Menu_Evaluation_XpBar_C::Update()
 }
 
 
-// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.SetupXPBar
+// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.CheckLevel
 // (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   CurrentXPTotal                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TargetXPTotal                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    AdjustTargetLevel                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UUI_Menu_Evaluation_XpBar_C::SetupXPBar(float CurrentXPTotal, float TargetXPTotal, bool AdjustTargetLevel)
+void UUI_Menu_Evaluation_XpBar_C::CheckLevel()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "SetupXPBar");
+		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "CheckLevel");
 
-	Params::UI_Menu_Evaluation_XpBar_C_SetupXPBar Parms{};
-
-	Parms.CurrentXPTotal = CurrentXPTotal;
-	Parms.TargetXPTotal = TargetXPTotal;
-	Parms.AdjustTargetLevel = AdjustTargetLevel;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.Tick
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.UpdateXPBarRange
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UUI_Menu_Evaluation_XpBar_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
+void UUI_Menu_Evaluation_XpBar_C::UpdateXPBarRange()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "Tick");
+		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "UpdateXPBarRange");
 
-	Params::UI_Menu_Evaluation_XpBar_C_Tick Parms{};
-
-	Parms.MyGeometry = std::move(MyGeometry);
-	Parms.InDeltaTime = InDeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.GetXPBarPercentFromXP
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// float                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUI_Menu_Evaluation_XpBar_C::Construct()
+float UUI_Menu_Evaluation_XpBar_C::GetXPBarPercentFromXP(float Value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "Construct");
+		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "GetXPBarPercentFromXP");
+
+	Params::UI_Menu_Evaluation_XpBar_C_GetXPBarPercentFromXP Parms{};
+
+	Parms.Value = Value;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.InterpolateCurrentXP
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UUI_Menu_Evaluation_XpBar_C::InterpolateCurrentXP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "InterpolateCurrentXP");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.ShowGainLevelFeedback
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UUI_Menu_Evaluation_XpBar_C::ShowGainLevelFeedback()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "ShowGainLevelFeedback");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function UI_Menu_Evaluation_XpBar.UI_Menu_Evaluation_XpBar_C.PlayGainXPSound
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UUI_Menu_Evaluation_XpBar_C::PlayGainXPSound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Menu_Evaluation_XpBar_C", "PlayGainXPSound");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

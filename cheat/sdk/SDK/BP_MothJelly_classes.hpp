@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "BP_Item_classes.hpp"
 #include "Backrooms_structs.hpp"
+#include "BP_Item_classes.hpp"
 
 
 namespace SDK
@@ -31,8 +31,11 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_MothJelly(int32 EntryPoint);
+	void OnEventLoaded(EEventType EventType);
+	void ToggleEvent(bool Enable);
 	void SRV_FinishEat();
 	void PlayAnimation();
+	void UseItem();
 	void OnCompleted_1CCDCF174099237E391B5AA1C23BF140(class FName NotifyName);
 	void OnBlendOut_1CCDCF174099237E391B5AA1C23BF140(class FName NotifyName);
 	void OnInterrupted_1CCDCF174099237E391B5AA1C23BF140(class FName NotifyName);
@@ -40,9 +43,6 @@ public:
 	void OnNotifyEnd_1CCDCF174099237E391B5AA1C23BF140(class FName NotifyName);
 	void HoverDown__UpdateFunc();
 	void HoverDown__FinishedFunc();
-	void OnEventLoaded(EEventType EventType);
-	void ToggleEvent(bool Enable);
-	void UseItem();
 
 public:
 	static class UClass* StaticClass()

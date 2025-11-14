@@ -67,19 +67,6 @@ public:
 };
 DUMPER7_ASSERTS_MP_PoolRooms_C_ExecuteUbergraph_MP_PoolRooms;
 
-// Function MP_PoolRooms.MP_PoolRooms_C.LoadCheckpoints
-// 0x0038 (0x0038 - 0x0000)
-struct MP_PoolRooms_C_LoadCheckpoints final
-{
-public:
-	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors;     // 0x0000(0x0010)(ReferenceParm)
-	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors_1;   // 0x0010(0x0010)(ReferenceParm)
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UBP_MyGameInstance_C*                   K2Node_DynamicCast_AsBP_My_Game_Instance;          // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_MP_PoolRooms_C_LoadCheckpoints;
-
 // Function MP_PoolRooms.MP_PoolRooms_C.OnPlayerSpawn
 // 0x0008 (0x0008 - 0x0000)
 struct MP_PoolRooms_C_OnPlayerSpawn final
@@ -137,6 +124,19 @@ public:
 	class APlayerStart*                           CallFunc_Array_Get_Item_1;                         // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_MP_PoolRooms_C_ChoosePlayerStart;
+
+// Function MP_PoolRooms.MP_PoolRooms_C.LoadCheckpoints
+// 0x0038 (0x0038 - 0x0000)
+struct MP_PoolRooms_C_LoadCheckpoints final
+{
+public:
+	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors;     // 0x0000(0x0010)(ReferenceParm)
+	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors_1;   // 0x0010(0x0010)(ReferenceParm)
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBP_MyGameInstance_C*                   K2Node_DynamicCast_AsBP_My_Game_Instance;          // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_MP_PoolRooms_C_LoadCheckpoints;
 
 }
 

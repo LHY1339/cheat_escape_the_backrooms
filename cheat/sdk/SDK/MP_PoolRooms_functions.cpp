@@ -65,34 +65,6 @@ void AMP_PoolRooms_C::CheckWater()
 }
 
 
-// Function MP_PoolRooms.MP_PoolRooms_C.DarkRoomsSubtitle
-// (BlueprintCallable, BlueprintEvent)
-
-void AMP_PoolRooms_C::DarkRoomsSubtitle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MP_PoolRooms_C", "DarkRoomsSubtitle");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function MP_PoolRooms.MP_PoolRooms_C.LoadCheckpoints
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void AMP_PoolRooms_C::LoadCheckpoints()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MP_PoolRooms_C", "LoadCheckpoints");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function MP_PoolRooms.MP_PoolRooms_C.OnPlayerSpawn
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -110,6 +82,20 @@ void AMP_PoolRooms_C::OnPlayerSpawn(class ABPCharacter_Demo_C* Player)
 	Parms.Player = Player;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function MP_PoolRooms.MP_PoolRooms_C.DarkRoomsSubtitle
+// (BlueprintCallable, BlueprintEvent)
+
+void AMP_PoolRooms_C::DarkRoomsSubtitle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MP_PoolRooms_C", "DarkRoomsSubtitle");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -147,6 +133,20 @@ class AActor* AMP_PoolRooms_C::ChoosePlayerStart(class AController* Player)
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function MP_PoolRooms.MP_PoolRooms_C.LoadCheckpoints
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void AMP_PoolRooms_C::LoadCheckpoints()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MP_PoolRooms_C", "LoadCheckpoints");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

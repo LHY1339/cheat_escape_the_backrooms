@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Computer.BP_Computer_C
-// 0x0040 (0x0340 - 0x0300)
+// 0x0048 (0x0348 - 0x0300)
 class ABP_Computer_C final : public AInteractablePawn
 {
 public:
@@ -33,6 +33,7 @@ public:
 	uint8                                         Pad_32A[0x6];                                      // 0x032A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UNiagaraComponent*                      LeftBeam;                                          // 0x0330(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UNiagaraComponent*                      RightBeam;                                         // 0x0338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABPCharacter_Demo_C*                    As_BPCharacter_Demo;                               // 0x0340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Computer(int32 EntryPoint);

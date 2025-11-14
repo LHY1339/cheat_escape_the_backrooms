@@ -37,11 +37,11 @@ public:
 public:
 	void ExecuteUbergraph_BP_DroppedItem_Toy(int32 EntryPoint);
 	void GlowEyes();
-	void ReceiveBeginPlay();
 	void BndEvt__BP_DroppedItem_Toy_ItemMesh_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit);
 	void Glow__UpdateFunc();
 	void Glow__FinishedFunc();
 	void UserConstructionScript();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

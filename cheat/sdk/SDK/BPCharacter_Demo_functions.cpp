@@ -37,6 +37,34 @@ void ABPCharacter_Demo_C::ExecuteUbergraph_BPCharacter_Demo(int32 EntryPoint)
 }
 
 
+// Function BPCharacter_Demo.BPCharacter_Demo_C.Restore PP Barrel Distortion
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void ABPCharacter_Demo_C::Restore_PP_Barrel_Distortion()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPCharacter_Demo_C", "Restore PP Barrel Distortion");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BPCharacter_Demo.BPCharacter_Demo_C.Reduce PP Barrel Distortion
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void ABPCharacter_Demo_C::Reduce_PP_Barrel_Distortion()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPCharacter_Demo_C", "Reduce PP Barrel Distortion");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BPCharacter_Demo.BPCharacter_Demo_C.OnLandedCrouchCheck
 // (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
 
@@ -4098,6 +4126,34 @@ void ABPCharacter_Demo_C::OnNotifyEnd_5F0718B741225A4F928EAFA37DEBB424(class FNa
 	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BPCharacter_Demo.BPCharacter_Demo_C.Timeline Barrel Distortion__UpdateFunc
+// (BlueprintEvent)
+
+void ABPCharacter_Demo_C::Timeline_Barrel_Distortion__UpdateFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPCharacter_Demo_C", "Timeline Barrel Distortion__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BPCharacter_Demo.BPCharacter_Demo_C.Timeline Barrel Distortion__FinishedFunc
+// (BlueprintEvent)
+
+void ABPCharacter_Demo_C::Timeline_Barrel_Distortion__FinishedFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPCharacter_Demo_C", "Timeline Barrel Distortion__FinishedFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -36,8 +36,10 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_WalkieTalkie(int32 EntryPoint);
+	void UseItem();
 	void PlaySubtitle();
 	void MC_Connect();
+	void ReceiveBeginPlay();
 	void MC_Alarm();
 	void ReceiveDestroyed();
 	void OnCompleted_F5534A844701AD21AB1B749705B92259(class FName NotifyName);
@@ -50,12 +52,10 @@ public:
 	void OnInterrupted_0A19368B42B332B8561A4A9702E5897B(class FName NotifyName);
 	void OnNotifyBegin_0A19368B42B332B8561A4A9702E5897B(class FName NotifyName);
 	void OnNotifyEnd_0A19368B42B332B8561A4A9702E5897B(class FName NotifyName);
+	void SetMaterial(bool EnabledFOV);
 	void ResetAlarm();
 	void OnRep_NumConnected();
 	void ActivateRadio();
-	void UseItem();
-	void ReceiveBeginPlay();
-	void SetMaterial(bool EnabledFOV);
 
 public:
 	static class UClass* StaticClass()

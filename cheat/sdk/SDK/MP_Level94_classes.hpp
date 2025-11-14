@@ -32,14 +32,14 @@ public:
 
 public:
 	void ExecuteUbergraph_MP_Level94(int32 EntryPoint);
+	void ReceiveBeginPlay();
 	void RemoveAnimations();
 	void OnQueryFinish(class UEnvQueryInstanceBlueprintWrapper* QueryInstance, EEnvQueryStatus QueryStatus);
 	void SpawnAnimations();
-	void UserConstructionScript();
-	void LoadCheckpoints();
-	void ReceiveBeginPlay();
 	void OnPlayerSpawn(class ABPCharacter_Demo_C* Player);
+	void UserConstructionScript();
 	class AActor* ChoosePlayerStart(class AController* Player);
+	void LoadCheckpoints();
 
 public:
 	static class UClass* StaticClass()

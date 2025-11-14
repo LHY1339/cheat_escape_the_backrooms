@@ -105,33 +105,6 @@ public:
 };
 DUMPER7_ASSERTS_MP_Level94_C_OnQueryFinish;
 
-// Function MP_Level94.MP_Level94_C.UserConstructionScript
-// 0x0001 (0x0001 - 0x0000)
-struct MP_Level94_C_UserConstructionScript final
-{
-public:
-	bool                                          CallFunc_IsStandalone_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_MP_Level94_C_UserConstructionScript;
-
-// Function MP_Level94.MP_Level94_C.LoadCheckpoints
-// 0x0068 (0x0068 - 0x0000)
-struct MP_Level94_C_LoadCheckpoints final
-{
-public:
-	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors;     // 0x0000(0x0010)(ReferenceParm)
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UBP_MyGameInstance_C*                   K2Node_DynamicCast_AsBP_My_Game_Instance;          // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors_1;   // 0x0028(0x0010)(ReferenceParm)
-	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors_2;   // 0x0038(0x0010)(ReferenceParm)
-	class UBP_New_SaveGame_C*                     CallFunc_Load_Game_SaveGame;                       // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors_3;   // 0x0050(0x0010)(ReferenceParm)
-	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_MP_Level94_C_LoadCheckpoints;
-
 // Function MP_Level94.MP_Level94_C.OnPlayerSpawn
 // 0x0008 (0x0008 - 0x0000)
 struct MP_Level94_C_OnPlayerSpawn final
@@ -140,6 +113,15 @@ public:
 	class ABPCharacter_Demo_C*                    Player;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_MP_Level94_C_OnPlayerSpawn;
+
+// Function MP_Level94.MP_Level94_C.UserConstructionScript
+// 0x0001 (0x0001 - 0x0000)
+struct MP_Level94_C_UserConstructionScript final
+{
+public:
+	bool                                          CallFunc_IsStandalone_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_MP_Level94_C_UserConstructionScript;
 
 // Function MP_Level94.MP_Level94_C.ChoosePlayerStart
 // 0x0090 (0x0090 - 0x0000)
@@ -172,6 +154,24 @@ public:
 	bool                                          CallFunc_SphereOverlapActors_ReturnValue;          // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_MP_Level94_C_ChoosePlayerStart;
+
+// Function MP_Level94.MP_Level94_C.LoadCheckpoints
+// 0x0068 (0x0068 - 0x0000)
+struct MP_Level94_C_LoadCheckpoints final
+{
+public:
+	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors;     // 0x0000(0x0010)(ReferenceParm)
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBP_MyGameInstance_C*                   K2Node_DynamicCast_AsBP_My_Game_Instance;          // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors_1;   // 0x0028(0x0010)(ReferenceParm)
+	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors_2;   // 0x0038(0x0010)(ReferenceParm)
+	class UBP_New_SaveGame_C*                     CallFunc_Load_Game_SaveGame;                       // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class APlayerStart*>                   CallFunc_GetAllActorsOfClassWithTag_OutActors_3;   // 0x0050(0x0010)(ReferenceParm)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_MP_Level94_C_LoadCheckpoints;
 
 }
 

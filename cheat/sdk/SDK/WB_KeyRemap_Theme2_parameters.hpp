@@ -18,29 +18,23 @@ namespace SDK::Params
 {
 
 // Function WB_KeyRemap_Theme2.WB_KeyRemap_Theme2_C.ExecuteUbergraph_WB_KeyRemap_Theme2
-// 0x00C8 (0x00C8 - 0x0000)
+// 0x0080 (0x0080 - 0x0000)
 struct WB_KeyRemap_Theme2_C_ExecuteUbergraph_WB_KeyRemap_Theme2 final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UInputSettings*                         CallFunc_GetInputSettings_ReturnValue;             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FInputChord                            K2Node_ComponentBoundEvent_SelectedKey;            // 0x0018(0x0020)(HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsDesignTime;                         // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_IsEnabled;                            // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInputSettings*                         CallFunc_GetInputSettings_ReturnValue_1;           // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FInputActionKeyMapping>         CallFunc_GetActionMappingByName_OutMappings;       // 0x0048(0x0010)(ReferenceParm)
+	class UInputSettings*                         CallFunc_GetInputSettings_ReturnValue;             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsEnabled;                            // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_IsHovered;                            // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FInputActionKeyMapping>         CallFunc_GetActionMappingByName_OutMappings;       // 0x0018(0x0010)(ReferenceParm)
+	bool                                          K2Node_Event_IsFocused;                            // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FInputChord                            K2Node_ComponentBoundEvent_SelectedKey;            // 0x0038(0x0020)(HasGetValueTypeHash)
 	struct FInputActionKeyMapping                 K2Node_MakeStruct_InputActionKeyMapping;           // 0x0058(0x0028)()
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_81[0x7];                                       // 0x0081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FInputActionKeyMapping>         CallFunc_GetActionMappingByName_OutMappings_1;     // 0x0088(0x0010)(ReferenceParm)
-	bool                                          K2Node_Event_IsHovered;                            // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue_1;         // 0x0099(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FInputChord                            K2Node_MakeStruct_InputChord;                      // 0x00A0(0x0020)(HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsFocused;                            // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WB_KeyRemap_Theme2_C_ExecuteUbergraph_WB_KeyRemap_Theme2;
 
@@ -80,14 +74,84 @@ public:
 };
 DUMPER7_ASSERTS_WB_KeyRemap_Theme2_C_BndEvt__WB_KeyRemap_InputKeySelector_K2Node_ComponentBoundEvent_0_OnKeySelected__DelegateSignature;
 
-// Function WB_KeyRemap_Theme2.WB_KeyRemap_Theme2_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct WB_KeyRemap_Theme2_C_PreConstruct final
+// Function WB_KeyRemap_Theme2.WB_KeyRemap_Theme2_C.Update Key Value
+// 0x02A0 (0x02A0 - 0x0000)
+struct WB_KeyRemap_Theme2_C_Update_Key_Value final
 {
 public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_True_if_break_was_hit_Variable;          // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_True_if_break_was_hit_Variable_1;        // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue_1;                // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInputSettings*                         CallFunc_GetInputSettings_ReturnValue;             // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FInputActionKeyMapping>         CallFunc_GetActionMappingByName_OutMappings;       // 0x0030(0x0010)(ReferenceParm)
+	struct FInputActionKeyMapping                 CallFunc_Array_Get_Item;                           // 0x0040(0x0028)()
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x006C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_6D[0x3];                                       // 0x006D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInputChord                            K2Node_MakeStruct_InputChord;                      // 0x0070(0x0020)(HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Key_IsGamepadKey_ReturnValue;             // 0x0091(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0092(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_93[0x5];                                       // 0x0093(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInputChord                            K2Node_MakeStruct_InputChord_1;                    // 0x0098(0x0020)(HasGetValueTypeHash)
+	bool                                          CallFunc_Key_IsGamepadKey_ReturnValue_1;           // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x00B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BA[0x6];                                       // 0x00BA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x00C0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_1;           // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UInputSettings*                         CallFunc_GetInputSettings_ReturnValue_1;           // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TArray<struct FInputActionKeyMapping>         CallFunc_GetActionMappingByName_OutMappings_1;     // 0x00F8(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FInputActionKeyMapping                 CallFunc_Array_Get_Item_1;                         // 0x0118(0x0028)()
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0140(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0144(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_145[0x3];                                      // 0x0145(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInputChord                            K2Node_MakeStruct_InputChord_2;                    // 0x0148(0x0020)(HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue_2;                 // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Key_GetDisplayName_ReturnValue;           // 0x0170(0x0018)()
+	bool                                          CallFunc_Key_IsMouseButton_ReturnValue;            // 0x0188(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_189[0x7];                                      // 0x0189(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0190(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Key_IsKeyboardKey_ReturnValue;            // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A1[0x7];                                      // 0x01A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x01A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1B9[0x7];                                      // 0x01B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x01C0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x01D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue_1;         // 0x01E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1E1[0x7];                                      // 0x01E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInputChord                            K2Node_MakeStruct_InputChord_3;                    // 0x01E8(0x0020)(HasGetValueTypeHash)
+	class FText                                   CallFunc_Key_GetDisplayName_ReturnValue_1;         // 0x0208(0x0018)()
+	bool                                          CallFunc_Key_IsMouseButton_ReturnValue_1;          // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_221[0x7];                                      // 0x0221(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue_1;          // 0x0228(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Key_IsKeyboardKey_ReturnValue_1;          // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_239[0x7];                                      // 0x0239(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_NameToString_ReturnValue_1;          // 0x0240(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x0250(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_251[0x7];                                      // 0x0251(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_4;              // 0x0258(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue_3;                 // 0x0268(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_269[0x7];                                      // 0x0269(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_5;              // 0x0270(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_6;              // 0x0280(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_7;              // 0x0290(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WB_KeyRemap_Theme2_C_PreConstruct;
+DUMPER7_ASSERTS_WB_KeyRemap_Theme2_C_Update_Key_Value;
 
 }
 

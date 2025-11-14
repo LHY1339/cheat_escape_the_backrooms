@@ -51,6 +51,20 @@ void ABP_Item_Firework_C::StartTimer()
 }
 
 
+// Function BP_Item_Firework.BP_Item_Firework_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_Firework_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Firework_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Item_Firework.BP_Item_Firework_C.MC_Throw
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 
@@ -402,20 +416,6 @@ void ABP_Item_Firework_C::ExplodeTimer__FinishedFunc()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Item_Firework_C", "ExplodeTimer__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Item_Firework.BP_Item_Firework_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_Firework_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Firework_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

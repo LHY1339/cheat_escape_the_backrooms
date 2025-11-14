@@ -32,6 +32,9 @@
     <Filter Include="source\library\gui">
       <UniqueIdentifier>{6d1ccc2c-3155-4b99-ad72-a19a625c027f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\cheat\player">
+      <UniqueIdentifier>{4c36d6e9-ecfb-4f77-b43d-5d3ea5689945}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cheat.h">
@@ -57,6 +60,12 @@
     </ClInclude>
     <ClInclude Include="gui.h">
       <Filter>source\library\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>source\cheat\player</Filter>
+    </ClInclude>
+    <ClInclude Include="glanguage.h">
+      <Filter>source\global</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +95,12 @@
     </ClCompile>
     <ClCompile Include="gui.cpp">
       <Filter>source\library\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>source\cheat\player</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\SDK\BPCharacter_Demo_functions.cpp">
+      <Filter>third_party\sdk</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

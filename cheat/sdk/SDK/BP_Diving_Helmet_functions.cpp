@@ -51,6 +51,20 @@ void ABP_Diving_Helmet_C::MC_BlockPickup()
 }
 
 
+// Function BP_Diving_Helmet.BP_Diving_Helmet_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Diving_Helmet_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Diving_Helmet_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Diving_Helmet.BP_Diving_Helmet_C.SRV_EquipHelmet
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 
@@ -74,6 +88,20 @@ void ABP_Diving_Helmet_C::PlayAnimation()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Diving_Helmet_C", "PlayAnimation");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Diving_Helmet.BP_Diving_Helmet_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Diving_Helmet_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Diving_Helmet_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -202,34 +230,6 @@ void ABP_Diving_Helmet_C::Shift__FinishedFunc()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Diving_Helmet_C", "Shift__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Diving_Helmet.BP_Diving_Helmet_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Diving_Helmet_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Diving_Helmet_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Diving_Helmet.BP_Diving_Helmet_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Diving_Helmet_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Diving_Helmet_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

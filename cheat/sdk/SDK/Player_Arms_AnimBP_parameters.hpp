@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ST_Item_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ST_Item_structs.hpp"
 
 
 namespace SDK::Params
