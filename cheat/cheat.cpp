@@ -80,7 +80,9 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
     if (gvalue::is_exit)
     {
         SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)gvalue::def_wnd_proc);
+
         gvalue::vtb[gconst::post_render_index] = gvalue::def_post_render;
+
         gvalue::is_clean = true;
     }
 }
