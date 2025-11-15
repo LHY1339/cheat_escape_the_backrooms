@@ -271,65 +271,66 @@ void visual::camera()
         cur_pawn = gvalue::controller->Pawn;
     }
 
-    if (!tpp_camera)
-    {
-        SDK::FTransform trans;
-        SDK::AActor* new_camera = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(
-            gvalue::world,
-            SDK::ACameraActor::StaticClass(),
-            trans,
-            SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn,
-            character
-        );
-        SDK::UGameplayStatics::FinishSpawningActor(new_camera, trans);
-        tpp_camera = static_cast<SDK::ACameraActor*>(new_camera);
-    }
-    else
-    {
-        SDK::FVector trace_start = character->K2_GetActorLocation();
-        trace_start.Z += 60.0f;
-        SDK::FVector trace_end = trace_start + SDK::UKismetMathLibrary::GetForwardVector(character->GetControlRotation()) * -1 * gvalue::third_distance;
-        SDK::TArray<SDK::AActor*> ignore_actors;
-        ignore_actors.Add(character);
-        SDK::FHitResult result;
-        SDK::UKismetSystemLibrary::LineTraceSingle(
-            gvalue::world,
-            trace_start,
-            trace_end,
-            SDK::ETraceTypeQuery::TraceTypeQuery1,
-            false,
-            ignore_actors,
-            SDK::EDrawDebugTrace::None,
-            &result,
-            true,
-            SDK::FLinearColor(1.0f, 0.0f, 0.0f, 1.0f),
-            SDK::FLinearColor(0.0f, 1.0f, 0.0f, 1.0f),
-            0.0f
-        );
-        
-        tpp_camera->K2_SetActorLocation(result.bBlockingHit ? result.Location : result.TraceEnd, false, nullptr, true);
-        tpp_camera->K2_SetActorRotation(character->GetControlRotation(), false);
+    SDK::AActor* target_view = nullptr;
 
-        tpp_camera->CameraComponent->FieldOfView = static_cast<float>(gvalue::fov);
-        tpp_camera->CameraComponent->PostProcessBlendWeight = gvalue::disable_post ? 0.0f : 1.0f;
-
-        SDK::AActor* target_view = nullptr;
-        if (gvalue::third_person)
+    if (gvalue::third_person)
+    {
+        if (!tpp_camera)
         {
-            target_view = tpp_camera;
+            SDK::FTransform trans;
+            SDK::AActor* new_camera = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(
+                gvalue::world,
+                SDK::ACameraActor::StaticClass(),
+                trans,
+                SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn,
+                character
+            );
+            SDK::UGameplayStatics::FinishSpawningActor(new_camera, trans);
+            tpp_camera = static_cast<SDK::ACameraActor*>(new_camera);
         }
         else
         {
-            target_view = character;
+            SDK::FVector trace_start = character->K2_GetActorLocation();
+            trace_start.Z += 60.0f;
+            SDK::FVector trace_end = trace_start + SDK::UKismetMathLibrary::GetForwardVector(character->GetControlRotation()) * -1 * gvalue::third_distance;
+            SDK::TArray<SDK::AActor*> ignore_actors;
+            ignore_actors.Add(character);
+            SDK::FHitResult result;
+            SDK::UKismetSystemLibrary::LineTraceSingle(
+                gvalue::world,
+                trace_start,
+                trace_end,
+                SDK::ETraceTypeQuery::TraceTypeQuery1,
+                false,
+                ignore_actors,
+                SDK::EDrawDebugTrace::None,
+                &result,
+                true,
+                SDK::FLinearColor(1.0f, 0.0f, 0.0f, 1.0f),
+                SDK::FLinearColor(0.0f, 1.0f, 0.0f, 1.0f),
+                0.0f
+            );
+
+            tpp_camera->K2_SetActorLocation(result.bBlockingHit ? result.Location : result.TraceEnd, false, nullptr, true);
+            tpp_camera->K2_SetActorRotation(character->GetControlRotation(), false);
+
+            tpp_camera->CameraComponent->FieldOfView = static_cast<float>(gvalue::fov);
+            tpp_camera->CameraComponent->PostProcessBlendWeight = gvalue::disable_post ? 0.0f : 1.0f;
         }
-        gvalue::controller->SetViewTargetWithBlend(
-            target_view,
-            0.2f,
-            SDK::EViewTargetBlendFunction::VTBlend_EaseInOut,
-            2.0f,
-            false
-        );
+        target_view = tpp_camera;
     }
+    else
+    {
+        target_view = character;
+    }
+
+    gvalue::controller->SetViewTargetWithBlend(
+        target_view,
+        0.2f,
+        SDK::EViewTargetBlendFunction::VTBlend_EaseInOut,
+        2.0f,
+        false
+    );
 }
 
 bool visual::get_box(SDK::USceneComponent* comp, SDK::FVector2D& min, SDK::FVector2D& max)
