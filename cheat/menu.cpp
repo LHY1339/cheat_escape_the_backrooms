@@ -5,13 +5,19 @@
 #include "gvalue.h"
 #include "gui.h"
 #include "glanguage.h"
+#include "item.h"
+#include "entity.h"
+
+#include <sstream>
+#include <iomanip>
 
 enum class e_page
 {
 	visual,
 	player,
 	item,
-	misc
+	entity,
+	misc,
 };
 
 float menu_x = 100.0f;
@@ -118,6 +124,9 @@ void menu::base_draw()
 	case e_page::item:
 		item();
 		break;
+	case e_page::entity:
+		entity();
+		break;
 	case e_page::misc:
 		misc();
 		break;
@@ -195,7 +204,12 @@ void menu::left_bar()
 		page = e_page::item;
 	}
 
-	if (button_01(glanguage::misc, SDK::FVector2D(menu_x + 10, menu_y + 100)))
+	if (button_01(glanguage::entity, SDK::FVector2D(menu_x + 10, menu_y + 100)))
+	{
+		page = e_page::entity;
+	}
+
+	if (button_01(glanguage::misc, SDK::FVector2D(menu_x + 10, menu_y + 130)))
 	{
 		page = e_page::misc;
 	}
@@ -451,7 +465,13 @@ void menu::player()
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
-		SDK::FVector2D(140, menu_h - 20), 
+		SDK::FVector2D(170, menu_h - 20), 
+		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+	);
+
+	render::fill_box(
+		SDK::FVector2D(menu_x + 270, menu_y + 10),
+		SDK::FVector2D(120, menu_h - 20),
 		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
 	);
 
@@ -464,10 +484,10 @@ void menu::player()
 	text_01(glanguage::auto_balance, SDK::FVector2D(menu_x + 100, menu_y + 82), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 160, menu_y + 82), &gvalue::no_balance);
 
-	text_01(glanguage::inf_jump, SDK::FVector2D(menu_x + 100, menu_y + 112), false, false);
-	check_box_01(SDK::FVector2D(menu_x + 160, menu_y + 112), &gvalue::inf_jump);
+	text_01(glanguage::ghost_mode, SDK::FVector2D(menu_x + 100, menu_y + 112), false, false);
+	check_box_01(SDK::FVector2D(menu_x + 200, menu_y + 112), &gvalue::ghost_mode);
 
-	if (button_01(std::wstring(glanguage::walk_speed + std::to_wstring(gvalue::walk_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(120, 20)))
+	if (button_01(std::wstring(glanguage::walk_speed + std::to_wstring(gvalue::walk_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(150, 20)))
 	{
 		const int list[10] = {
 			250,300,350,400,500,
@@ -484,7 +504,7 @@ void menu::player()
 		}
 	}
 
-	if (button_01(std::wstring(glanguage::run_speed + std::to_wstring(gvalue::run_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(120, 20)))
+	if (button_01(std::wstring(glanguage::run_speed + std::to_wstring(gvalue::run_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(150, 20)))
 	{
 		const int list[10] = {
 			450,500,550,600,800,
@@ -501,7 +521,7 @@ void menu::player()
 		}
 	}
 
-	if (button_01(std::wstring(glanguage::crouch_speed + std::to_wstring(gvalue::crouch_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(120, 20)))
+	if (button_01(std::wstring(glanguage::crouch_speed + std::to_wstring(gvalue::crouch_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(150, 20)))
 	{
 		const int list[10] = {
 			100,150,200,300,400,
@@ -517,24 +537,282 @@ void menu::player()
 			}
 		}
 	}
+
+	if (button_01(std::wstring(glanguage::all_speedup + f_to_ws(gvalue::speedup_multi)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(150, 20)))
+	{
+		const float list[10] = {
+			1.0f,1.1f,1.2f,1.5f,2.0f,
+			5.0f,10.0f,20.0f,50.0f,100.0f
+		};
+
+		for (int i = 0; i < 10; i++)
+		{
+			if (gvalue::speedup_multi == list[i])
+			{
+				gvalue::speedup_multi = i < 9 ? list[i + 1] : list[0];
+				break;
+			}
+		}
+	}
+
+	text_01(glanguage::inf_jump, SDK::FVector2D(menu_x + 280, menu_y + 22), false, false);
+	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 22), &gvalue::inf_jump);
+
+	text_01(glanguage::fly_mode, SDK::FVector2D(menu_x + 280, menu_y + 52), false, false);
+	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 52), &gvalue::fly_mode);
+
+	if (button_01(std::wstring(glanguage::speed + f_to_ws(gvalue::fly_speed)).c_str(), SDK::FVector2D(menu_x + 280, menu_y + 80), SDK::FVector2D(100, 20)))
+	{
+		const float list[11] = {
+			5.0f,10.0f,20.0f,30.0f,40.0f,
+			50.0f,60.0f,70.0f,80.0f,90.0f,
+			100.0f
+		};
+
+		for (int i = 0; i < 11; i++)
+		{
+			if (gvalue::fly_speed == list[i])
+			{
+				gvalue::fly_speed = i < 10 ? list[i + 1] : list[0];
+				break;
+			}
+		}
+	}
+
+	text_01(glanguage::x_delete, SDK::FVector2D(menu_x + 280, menu_y + 112), false, false);
+	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 112), &gvalue::x_delete);
 }
 
 void menu::item()
 {
-	render::draw_text(
-		gvalue::engine->MediumFont,
-		glanguage::item,
-		SDK::FVector2D(menu_x + 100.0f, menu_y + 10.0f),
-		SDK::FVector2D(1.0f, 1.0f),
-		SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
-		1.0f,
-		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
-		SDK::FVector2D(0.0f, 0.0f),
-		false,
-		false,
-		false,
-		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f)
+	auto button_01 = [](const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size)
+		{
+			const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.04f, 1.0f);
+			const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.06f, 1.0f);
+			const SDK::FLinearColor press_col(0.1f, 0.1f, 0.1f, 1.0f);
+			const SDK::FLinearColor text_col(1.0f, 1.0f, 1.0f, 1.0f);
+
+			return gui::button_color_text(
+				pos,
+				size,
+				text,
+				gvalue::engine->MediumFont,
+				text_col,
+				normal_col,
+				hover_col,
+				press_col
+			);
+		};
+
+	render::fill_box(
+		SDK::FVector2D(menu_x + 90, menu_y + 10),
+		SDK::FVector2D(300, menu_h - 20),
+		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
 	);
+
+	// line 1
+
+	if (button_01(L"¹ûÖ­", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Juice_C::StaticClass());
+	}
+
+	if (button_01(L"ÐÓÈÊË®", SDK::FVector2D(menu_x + 100, menu_y + 50), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_AlmondWater_C::StaticClass());
+	}
+
+	if (button_01(L"ÊÖµçÍ²", SDK::FVector2D(menu_x + 100, menu_y + 80), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Flashlight_C::StaticClass());
+	}
+
+	if (button_01(L"ÒºÌ¬Í´¿à", SDK::FVector2D(menu_x + 100, menu_y + 110), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_LiquidPain_C::StaticClass());
+	}
+
+	if (button_01(L"ÄÜÁ¿°ô", SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_EnergyBar_C::StaticClass());
+	}
+
+	if (button_01(L"Ç±Ë®Í·¿ø", SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_DivingHelmet_C::StaticClass());
+	}
+
+	if (button_01(L"ÐÅºÅÇ¹", SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_FlareGun_C::StaticClass());
+	}
+
+	if (button_01(L"Éþ×Ó", SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Rope_C::StaticClass());
+	}
+
+	if (button_01(L"¶Ô½²»ú", SDK::FVector2D(menu_x + 100, menu_y + 260), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_WalkieTalkie_C::StaticClass());
+	}
+
+	// line 2
+
+	if (button_01(L"µç¾â", SDK::FVector2D(menu_x + 190, menu_y + 20), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Chainsaw_C::StaticClass());
+	}
+
+	if (button_01(L"ÑÌ»¨", SDK::FVector2D(menu_x + 190, menu_y + 50), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Firework_C::StaticClass());
+	}
+
+	if (button_01(L"»ÆÉ«Ó«¹â°ô", SDK::FVector2D(menu_x + 190, menu_y + 80), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Glowstick_Yellow_C::StaticClass());
+	}
+
+	if (button_01(L"À¶É«Ó«¹â°ô", SDK::FVector2D(menu_x + 190, menu_y + 110), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Glowstick_Blue_C::StaticClass());
+	}
+
+	if (button_01(L"ºìÉ«Ó«¹â°ô", SDK::FVector2D(menu_x + 190, menu_y + 140), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_Item_Glowstick_Red_C::StaticClass());
+	}
+
+	if (button_01(L"Ó«¹â°ô", SDK::FVector2D(menu_x + 190, menu_y + 170), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Glowstick_C::StaticClass());
+	}
+
+	if (button_01(L"É±³æÅçÎí", SDK::FVector2D(menu_x + 190, menu_y + 200), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_BugSpray_C::StaticClass());
+	}
+
+	if (button_01(L"Ïà»ú", SDK::FVector2D(menu_x + 190, menu_y + 230), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Camera_C::StaticClass());
+	}
+
+	if (button_01(L"ÇË¹÷", SDK::FVector2D(menu_x + 190, menu_y + 260), SDK::FVector2D(80, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Crowbar_C::StaticClass());
+	}
+
+	// line 3
+
+	if (button_01(L"ÎÂ¶È¼Æ", SDK::FVector2D(menu_x + 280, menu_y + 20), SDK::FVector2D(100, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Thermometer_C::StaticClass());
+	}
+
+	if (button_01(L"É¨ÃèÒÇ", SDK::FVector2D(menu_x + 280, menu_y + 50), SDK::FVector2D(100, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_LiDAR_C::StaticClass());
+	}
+
+	if (button_01(L"Íæ¾ß", SDK::FVector2D(menu_x + 280, menu_y + 80), SDK::FVector2D(100, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Toy_C::StaticClass());
+	}
+
+	if (button_01(L"µ¶", SDK::FVector2D(menu_x + 280, menu_y + 110), SDK::FVector2D(100, 20)))
+	{
+		item::spawn(SDK::ABP_DroppedItem_Knife_C::StaticClass());
+	}
+}
+
+void menu::entity()
+{
+	auto button_01 = [](const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size)
+		{
+			const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.04f, 1.0f);
+			const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.06f, 1.0f);
+			const SDK::FLinearColor press_col(0.1f, 0.1f, 0.1f, 1.0f);
+			const SDK::FLinearColor text_col(1.0f, 1.0f, 1.0f, 1.0f);
+
+			return gui::button_color_text(
+				pos,
+				size,
+				text,
+				gvalue::engine->MediumFont,
+				text_col,
+				normal_col,
+				hover_col,
+				press_col
+			);
+		};
+
+	render::fill_box(
+		SDK::FVector2D(menu_x + 90, menu_y + 10),
+		SDK::FVector2D(120, menu_h - 20),
+		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+	);
+
+	render::fill_box(
+		SDK::FVector2D(menu_x + 220, menu_y + 10),
+		SDK::FVector2D(170, menu_h - 20),
+		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+	);
+
+	if (button_01(L"²ÝËÇËùÓÐÊµÌå", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(100, 20)))
+	{
+		entity::kill_all();
+	}
+
+	if (button_01(L"É¾³ýÏ¸¾ú", SDK::FVector2D(menu_x + 100, menu_y + 50), SDK::FVector2D(100, 20)))
+	{
+		entity::kill("Bacteria_Roaming_BP_C");
+		entity::kill("Bacteria_BP_C");
+	}
+
+	if (button_01(L"É¾³ýÐ¦÷Ê", SDK::FVector2D(menu_x + 100, menu_y + 80), SDK::FVector2D(100, 20)))
+	{
+		entity::kill("Smiler_BP2_C");
+		entity::kill("BP_Roaming_Smiler_C");
+		entity::kill("BP_Smiler_Dash_C");
+	}
+
+	if (button_01(L"É¾³ýÅÉ¶Ô¿Í", SDK::FVector2D(menu_x + 100, menu_y + 110), SDK::FVector2D(100, 20)))
+	{
+		entity::kill("BP_RoamingPartygoer_Idle_C");
+		entity::kill("BP_RoamingPartygoer_C");
+		entity::kill("BP_RoamingPartygoer_Slow_C");
+		entity::kill("Smiler_BP2_C");
+		entity::kill("BP_DarkPartyGoer_C");
+		entity::kill("BP_HidingPartyGoer_C");
+	}
+
+	if (button_01(L"É¾³ýËÀÍö·É¶ê", SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(100, 20)))
+	{
+		entity::kill("BP_Moth_C");
+		entity::kill("BP_Cave_Moth_C");
+	}
+
+	if (button_01(L"É¾³ýÇÔÆ¤Õß", SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(100, 20)))
+	{
+		entity::kill("BP_SkinStealer_C");
+		entity::kill("BP_SkinStealer_Cave_C");
+		entity::kill("BP_SkinStealer_Level07_C");
+		entity::kill("BP_SkinStealer_Hotel_C");
+	}
+
+	if (button_01(L"É¾³ýÁÔÈ®", SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(100, 20)))
+	{
+		entity::kill("BP_Hound_C");
+		entity::kill("BP_Hound_Hotel_C");
+	}
+
+	if (button_01(L"É¾³ý±¯Ê¬", SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(100, 20)))
+	{
+		entity::kill("BP_Wretch_C");
+		entity::kill("BP_Wretch_House_C");
+	}
 }
 
 void menu::misc()
@@ -553,4 +831,11 @@ void menu::misc()
 		false,
 		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f)
 	);
+}
+
+std::wstring menu::f_to_ws(const float& f)
+{
+	std::wostringstream woss;
+	woss << std::fixed << std::setprecision(1) << f;
+	return woss.str();
 }

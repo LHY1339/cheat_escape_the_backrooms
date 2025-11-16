@@ -57,8 +57,13 @@ namespace gvalue
 	inline bool no_balance = true;
 	inline bool inf_jump = false;
 	inline int walk_speed = 250;
-	inline int run_speed = 450;
+	inline int run_speed = 500;
 	inline int crouch_speed = 100;
+	inline float speedup_multi = 1;
+	inline bool ghost_mode = false;
+	inline bool fly_mode = false;
+	inline float fly_speed = 5.0f;
+	inline bool x_delete = false;
 
 	inline SDK::UWorld* world;
 	inline SDK::APlayerController* controller;

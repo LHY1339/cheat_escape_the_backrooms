@@ -9,8 +9,8 @@ namespace glanguage
 	inline constexpr wchar_t visual[] = L"视觉";
 	inline constexpr wchar_t player[] = L"玩家";
 	inline constexpr wchar_t item[] = L"物品";
-	inline constexpr wchar_t misc[] = L"杂项";
 	inline constexpr wchar_t entity[] = L"实体";
+	inline constexpr wchar_t misc[] = L"杂项";
 	inline constexpr wchar_t interact[] = L"互动";
 	inline constexpr wchar_t enable[] = L"启用";
 	inline constexpr wchar_t box[] = L"方框";
@@ -32,7 +32,12 @@ namespace glanguage
 	inline constexpr wchar_t inf_sanity[] = L"无限San值";
 	inline constexpr wchar_t auto_balance[] = L"自动平衡";
 	inline constexpr wchar_t inf_jump[] = L"无限跳跃";
+	inline constexpr wchar_t fly_mode[] = L"飞天遁地";
+	inline constexpr wchar_t x_delete[] = L"X键删除";
+	inline constexpr wchar_t ghost_mode[] = L"灵魂出窍(多人)";
 	inline constexpr wchar_t walk_speed[] = L"行走速度：";
 	inline constexpr wchar_t run_speed[] = L"跑步速度：";
 	inline constexpr wchar_t crouch_speed[] = L"蹲下速度：";
+	inline constexpr wchar_t all_speedup[] = L"通用加速：";
+	inline constexpr wchar_t speed[] = L"速度：";
 }

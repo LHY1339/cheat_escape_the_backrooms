@@ -35,6 +35,12 @@
     <Filter Include="source\cheat\player">
       <UniqueIdentifier>{4c36d6e9-ecfb-4f77-b43d-5d3ea5689945}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\cheat\item">
+      <UniqueIdentifier>{9c6d5773-dd07-4da9-a052-965dd73dc20f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\entity">
+      <UniqueIdentifier>{bdbb1be1-af55-47a3-a36e-cb5f7aaffdbd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cheat.h">
@@ -66,6 +72,15 @@
     </ClInclude>
     <ClInclude Include="glanguage.h">
       <Filter>source\global</Filter>
+    </ClInclude>
+    <ClInclude Include="gdefine.h">
+      <Filter>source\global</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>source\cheat\item</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>source\cheat\entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +116,18 @@
     </ClCompile>
     <ClCompile Include="sdk\SDK\BPCharacter_Demo_functions.cpp">
       <Filter>third_party\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>source\cheat\item</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\SDK\Backrooms_functions.cpp">
+      <Filter>third_party\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\SDK\BP_DroppedItem_functions.cpp">
+      <Filter>third_party\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>source\cheat\entity</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

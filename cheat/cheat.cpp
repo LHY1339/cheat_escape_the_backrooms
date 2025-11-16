@@ -10,6 +10,7 @@
 #include "visual.h"
 #include "gui.h"
 #include "player.h"
+#include "gdefine.h"
 
 #pragma warning(disable:4996)
 
@@ -23,8 +24,10 @@ void cheat::main()
 
 void cheat::console()
 {
-	AllocConsole();
-	FILE* value = freopen("CONOUT$", "w+", stdout);
+#ifdef MY_DEBUG
+    AllocConsole();
+    FILE* value = freopen("CONOUT$", "w+", stdout);
+#endif
 }
 
 void cheat::init()
@@ -72,8 +75,8 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
 
     gui::main();
     visual::main();
-    menu::main();
     player::main();
+    menu::main();
 
     gvalue::def_post_render(thisptr, canvas);
 

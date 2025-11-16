@@ -16,8 +16,6 @@ void visual::init()
     name_map[L"Flashlight"] = L"手电筒";
     name_map[L"LiquidPain"] = L"液态痛苦";
     name_map[L"EnergyBar"] = L"能量棒";
-    name_map[L"LiquidPain"] = L"液态痛苦";
-    name_map[L"DivingHelmet"] = L"潜水头盔";
     name_map[L"DivingHelmet"] = L"潜水头盔";
     name_map[L"Flaregun"] = L"信号枪";
     name_map[L"Rope"] = L"绳子";
@@ -141,6 +139,7 @@ void visual::init()
     name_map[L"BP_Grassrooms_Floor_Lever_C"] = L"拉杆";
     name_map[L"BP_Grassrooms_Lever_C"] = L"拉杆";
     name_map[L"BP_RopeZone_C"] = L"绳子";
+    name_map[L"BP_Balloon_Key_Fake_C"] = L"假气球";
 
     name_map[L"BP_RoamingPartygoer_Idle_C"] = L"派对客";
     name_map[L"BP_RoamingPartygoer_C"] = L"派对客";
@@ -166,6 +165,7 @@ void visual::init()
     name_map[L"BP_Hound_Hotel_C"] = L"猎犬";
     name_map[L"BP_Moth_C"] = L"死亡飞蛾";
     name_map[L"BP_DarkPartyGoer_C"] = L"派对客";
+    name_map[L"BP_HidingPartyGoer_C"] = L"派对客";
     name_map[L"Scratcher_BP_C"] = L"这他吗又是啥实体";
     name_map[L"BP_KillerClown_C"] = L"小丑";
     name_map[L"BP_Wretch_C"] = L"悲尸";
@@ -418,7 +418,7 @@ void visual::draw_extent(SDK::USceneComponent* comp, const SDK::FLinearColor& co
         bool in_view = gvalue::controller->ProjectWorldLocationToScreen(point[i], &ori_2d, true);
         if (!in_view)
         {
-            return;
+            ori_2d = SDK::FVector2D(-114514, -114514);
         }
         point_2d[i] = ori_2d;
     }
@@ -445,6 +445,11 @@ void visual::draw_extent(SDK::USceneComponent* comp, const SDK::FLinearColor& co
 
     for (int i = 0; i < 12; i++)
     {
+        if (line[i].p1 == SDK::FVector2D(-114514, -114514) ||
+            line[i].p2 == SDK::FVector2D(-114514, -114514))
+        {
+            continue;
+        }
         render::draw_line(
             line[i].p1,
             line[i].p2,

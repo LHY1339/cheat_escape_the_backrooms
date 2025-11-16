@@ -1,4 +1,7 @@
 #pragma once
+
+#include <string>
+
 class menu
 {
 public:
@@ -15,6 +18,9 @@ private:
 	static void visual();
 	static void player();
 	static void item();
+	static void entity();
 	static void misc();
+
+	static std::wstring f_to_ws(const float& f);
 };
 
