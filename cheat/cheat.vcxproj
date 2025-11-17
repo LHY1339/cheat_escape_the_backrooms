@@ -152,6 +152,7 @@
     <ClInclude Include="gui.h" />
     <ClInclude Include="gvalue.h" />
     <ClInclude Include="item.h" />
+    <ClInclude Include="level.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="render.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="gui.cpp" />
     <ClCompile Include="item.cpp" />
+    <ClCompile Include="level.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="render.cpp" />

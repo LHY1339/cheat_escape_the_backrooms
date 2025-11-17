@@ -1,6 +1,6 @@
 ## Escape The Backrooms Cheat - 逃离后室外挂修改器
 ### 效果图
-![效果图](img.png)
+![效果图](img1.png)
 ### 如何使用修改器？
 - 点击Release下载最新版本
 - 解压到文件夹

@@ -11,6 +11,7 @@ namespace glanguage
 	inline constexpr wchar_t item[] = L"物品";
 	inline constexpr wchar_t entity[] = L"实体";
 	inline constexpr wchar_t misc[] = L"杂项";
+	inline constexpr wchar_t level[] = L"关卡";
 	inline constexpr wchar_t interact[] = L"互动";
 	inline constexpr wchar_t enable[] = L"启用";
 	inline constexpr wchar_t box[] = L"方框";

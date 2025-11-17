@@ -7,9 +7,11 @@
 #include "glanguage.h"
 #include "item.h"
 #include "entity.h"
+#include "level.h"
 
 #include <sstream>
 #include <iomanip>
+#include <string>
 
 enum class e_page
 {
@@ -18,6 +20,7 @@ enum class e_page
 	item,
 	entity,
 	misc,
+	level,
 };
 
 float menu_x = 100.0f;
@@ -31,6 +34,64 @@ float drag_x = 0.0f;
 float drag_y = 0.0f;
 
 e_page page = e_page::visual;
+
+const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.04f, 1.0f);
+const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.06f, 1.0f);
+const SDK::FLinearColor press_col(0.1f, 0.1f, 0.1f, 1.0f);
+const SDK::FLinearColor text_col(1.0f, 1.0f, 1.0f, 1.0f);
+
+bool button_01(const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size)
+{
+	return gui::button_color_text(
+		pos,
+		size,
+		text,
+		gvalue::engine->MediumFont,
+		text_col,
+		normal_col,
+		hover_col,
+		press_col
+	);
+}
+
+void text_01(const UC::FString& text, const SDK::FVector2D& pos, const bool& mid_x, const bool& mid_y)
+{
+	render::draw_text(
+		gvalue::engine->MediumFont,
+		text,
+		pos,
+		SDK::FVector2D(1.0f, 1.0f),
+		SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
+		1.0f,
+		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
+		SDK::FVector2D(0.0f, 0.0f),
+		mid_x,
+		mid_y,
+		false,
+		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f)
+	);
+}
+
+void check_box_01(const SDK::FVector2D& pos, bool* ptr)
+{
+	gui::check_box(
+		pos,
+		SDK::FVector2D(15, 15),
+		SDK::FVector2D(9, 9),
+		SDK::FLinearColor(0.4f, 0.4f, 0.4f, 1.0f),
+		SDK::FLinearColor(0.06f, 0.06f, 0.06f, 1.0f),
+		SDK::FLinearColor(0.08f, 0.08f, 0.08f, 1.0f),
+		SDK::FLinearColor(0.12f, 0.12f, 0.12f, 1.0f),
+		ptr
+	);
+}
+
+std::wstring f_to_ws(const float& f)
+{
+	std::wostringstream woss;
+	woss << std::fixed << std::setprecision(1) << f;
+	return woss.str();
+}
 
 void menu::main()
 {
@@ -130,6 +191,9 @@ void menu::base_draw()
 	case e_page::misc:
 		misc();
 		break;
+	case e_page::level:
+		level();
+		break;
 	}
 }
 
@@ -144,25 +208,6 @@ void menu::base_cursor()
 
 void menu::left_bar()
 {
-	auto button_01 = [](const UC::FString& text, const SDK::FVector2D& pos)
-	{
-		const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.04f, 1.0f);
-		const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.06f, 1.0f);
-		const SDK::FLinearColor press_col(0.1f, 0.1f, 0.1f, 1.0f);
-		const SDK::FLinearColor text_col(1.0f, 1.0f, 1.0f, 1.0f);
-
-		return gui::button_color_text(
-			pos,
-			SDK::FVector2D(60, 20),
-			text,
-			gvalue::engine->MediumFont,
-			text_col,
-			normal_col,
-			hover_col,
-			press_col
-		);
-	};
-
 	render::fill_box(
 		SDK::FVector2D(menu_x, menu_y),
 		SDK::FVector2D(80, menu_h),
@@ -189,85 +234,39 @@ void menu::left_bar()
 		system("start https://space.bilibili.com/669462200");
 	}
 
-	if (button_01(glanguage::visual, SDK::FVector2D(menu_x + 10, menu_y + 10)))
+	if (button_01(glanguage::visual, SDK::FVector2D(menu_x + 10, menu_y + 10), SDK::FVector2D(60, 20)))
 	{
 		page = e_page::visual;
 	}
 
-	if (button_01(glanguage::player, SDK::FVector2D(menu_x + 10, menu_y + 40)))
+	if (button_01(glanguage::player, SDK::FVector2D(menu_x + 10, menu_y + 40), SDK::FVector2D(60, 20)))
 	{
 		page = e_page::player;
 	}
 
-	if (button_01(glanguage::item, SDK::FVector2D(menu_x + 10, menu_y + 70)))
+	if (button_01(glanguage::item, SDK::FVector2D(menu_x + 10, menu_y + 70), SDK::FVector2D(60, 20)))
 	{
 		page = e_page::item;
 	}
 
-	if (button_01(glanguage::entity, SDK::FVector2D(menu_x + 10, menu_y + 100)))
+	if (button_01(glanguage::entity, SDK::FVector2D(menu_x + 10, menu_y + 100), SDK::FVector2D(60, 20)))
 	{
 		page = e_page::entity;
 	}
 
-	if (button_01(glanguage::misc, SDK::FVector2D(menu_x + 10, menu_y + 130)))
+	if (button_01(glanguage::misc, SDK::FVector2D(menu_x + 10, menu_y + 130), SDK::FVector2D(60, 20)))
 	{
 		page = e_page::misc;
+	}
+
+	if (button_01(glanguage::level, SDK::FVector2D(menu_x + 10, menu_y + 160), SDK::FVector2D(60, 20)))
+	{
+		page = e_page::level;
 	}
 }
 
 void menu::visual()
 {
-	auto text_01 = [](const UC::FString& text, const SDK::FVector2D& pos, const bool& mid_x, const bool& mid_y)
-	{
-		render::draw_text(
-			gvalue::engine->MediumFont,
-			text,
-			pos,
-			SDK::FVector2D(1.0f, 1.0f),
-			SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
-			1.0f,
-			SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
-			SDK::FVector2D(0.0f, 0.0f),
-			mid_x,
-			mid_y,
-			false,
-			SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f)
-		);
-	};
-
-	auto check_box_01 = [](const SDK::FVector2D& pos, bool* ptr)
-	{
-		gui::check_box(
-			pos,
-			SDK::FVector2D(15, 15),
-			SDK::FVector2D(9, 9),
-			SDK::FLinearColor(0.4f, 0.4f, 0.4f, 1.0f),
-			SDK::FLinearColor(0.06f, 0.06f, 0.06f, 1.0f),
-			SDK::FLinearColor(0.08f, 0.08f, 0.08f, 1.0f),
-			SDK::FLinearColor(0.12f, 0.12f, 0.12f, 1.0f),
-			ptr
-		);
-	};
-
-	auto button_01 = [](const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size)
-		{
-			const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.04f, 1.0f);
-			const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.06f, 1.0f);
-			const SDK::FLinearColor press_col(0.1f, 0.1f, 0.1f, 1.0f);
-			const SDK::FLinearColor text_col(1.0f, 1.0f, 1.0f, 1.0f);
-
-			return gui::button_color_text(
-				pos,
-				size,
-				text,
-				gvalue::engine->MediumFont,
-				text_col,
-				normal_col,
-				hover_col,
-				press_col
-			);
-		};
-
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(menu_w - 100, 150), 
@@ -412,57 +411,6 @@ void menu::visual()
 
 void menu::player()
 {
-	auto text_01 = [](const UC::FString& text, const SDK::FVector2D& pos, const bool& mid_x, const bool& mid_y)
-		{
-			render::draw_text(
-				gvalue::engine->MediumFont,
-				text,
-				pos,
-				SDK::FVector2D(1.0f, 1.0f),
-				SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
-				1.0f,
-				SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
-				SDK::FVector2D(0.0f, 0.0f),
-				mid_x,
-				mid_y,
-				false,
-				SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f)
-			);
-		};
-
-	auto check_box_01 = [](const SDK::FVector2D& pos, bool* ptr)
-		{
-			gui::check_box(
-				pos,
-				SDK::FVector2D(15, 15),
-				SDK::FVector2D(9, 9),
-				SDK::FLinearColor(0.4f, 0.4f, 0.4f, 1.0f),
-				SDK::FLinearColor(0.06f, 0.06f, 0.06f, 1.0f),
-				SDK::FLinearColor(0.08f, 0.08f, 0.08f, 1.0f),
-				SDK::FLinearColor(0.12f, 0.12f, 0.12f, 1.0f),
-				ptr
-			);
-		};
-
-	auto button_01 = [](const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size)
-		{
-			const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.04f, 1.0f);
-			const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.06f, 1.0f);
-			const SDK::FLinearColor press_col(0.1f, 0.1f, 0.1f, 1.0f);
-			const SDK::FLinearColor text_col(1.0f, 1.0f, 1.0f, 1.0f);
-
-			return gui::button_color_text(
-				pos,
-				size,
-				text,
-				gvalue::engine->MediumFont,
-				text_col,
-				normal_col,
-				hover_col,
-				press_col
-			);
-		};
-
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(170, menu_h - 20), 
@@ -585,25 +533,6 @@ void menu::player()
 
 void menu::item()
 {
-	auto button_01 = [](const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size)
-		{
-			const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.04f, 1.0f);
-			const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.06f, 1.0f);
-			const SDK::FLinearColor press_col(0.1f, 0.1f, 0.1f, 1.0f);
-			const SDK::FLinearColor text_col(1.0f, 1.0f, 1.0f, 1.0f);
-
-			return gui::button_color_text(
-				pos,
-				size,
-				text,
-				gvalue::engine->MediumFont,
-				text_col,
-				normal_col,
-				hover_col,
-				press_col
-			);
-		};
-
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(300, menu_h - 20),
@@ -729,25 +658,6 @@ void menu::item()
 
 void menu::entity()
 {
-	auto button_01 = [](const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size)
-		{
-			const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.04f, 1.0f);
-			const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.06f, 1.0f);
-			const SDK::FLinearColor press_col(0.1f, 0.1f, 0.1f, 1.0f);
-			const SDK::FLinearColor text_col(1.0f, 1.0f, 1.0f, 1.0f);
-
-			return gui::button_color_text(
-				pos,
-				size,
-				text,
-				gvalue::engine->MediumFont,
-				text_col,
-				normal_col,
-				hover_col,
-				press_col
-			);
-		};
-
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(120, menu_h - 20),
@@ -833,9 +743,6 @@ void menu::misc()
 	);
 }
 
-std::wstring menu::f_to_ws(const float& f)
+void menu::level()
 {
-	std::wostringstream woss;
-	woss << std::fixed << std::setprecision(1) << f;
-	return woss.str();
 }
