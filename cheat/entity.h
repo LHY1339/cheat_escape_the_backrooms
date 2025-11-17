@@ -7,4 +7,5 @@ class entity
 public:
 	static void kill_all();
 	static void kill(const std::string& name);
+	static void spawn(SDK::TSubclassOf<SDK::AActor> cls);
 };

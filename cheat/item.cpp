@@ -18,6 +18,8 @@ void item::spawn(SDK::TSubclassOf<SDK::AActor> actor_class)
 
     SDK::FTransform trans;
     trans.Translation = gvalue::controller->PlayerCameraManager->GetCameraLocation();
+    trans.Scale3D = SDK::FVector(1.0f, 1.0f, 1.0f);
+
     SDK::AActor* new_actor = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(
         gvalue::world,
         actor_class,

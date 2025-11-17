@@ -11,31 +11,33 @@ std::unordered_map<std::wstring, std::wstring> name_map;
 
 void visual::init()
 {
-    name_map[L"Juice"] = L"果汁";
-    name_map[L"AlmondWater"] = L"杏仁水";
-    name_map[L"Flashlight"] = L"手电筒";
-    name_map[L"LiquidPain"] = L"液态痛苦";
-    name_map[L"EnergyBar"] = L"能量棒";
-    name_map[L"DivingHelmet"] = L"潜水头盔";
-    name_map[L"Flaregun"] = L"信号枪";
-    name_map[L"Rope"] = L"绳子";
-    name_map[L"WalkieTalkie"] = L"对讲机";
-    name_map[L"Chainsaw"] = L"电锯";
-    name_map[L"Ticket"] = L"小票";
     name_map[L"玩家"] = L"玩家";
-    name_map[L"ChainsawFast"] = L"快速电锯";
-    name_map[L"Firework"] = L"烟花";
-    name_map[L"GlowstickYellow"] = L"黄色荧光棒";
-    name_map[L"GlowstickRed"] = L"红色荧光棒";
-    name_map[L"GlowstickBlue"] = L"蓝色荧光棒";
-    name_map[L"GlowStick"] = L"荧光棒";
-    name_map[L"BugSpray"] = L"杀虫喷雾";
-    name_map[L"Camera"] = L"相机";
-    name_map[L"Crowbar"] = L"撬棍";
-    name_map[L"Thermometer"] = L"温度计";
-    name_map[L"LiDAR"] = L"扫描仪";
-    name_map[L"Toy"] = L"玩具";
-    name_map[L"Knife"] = L"刀";
+
+    name_map[L"BP_DroppedItem_Juice_C"] = L"果汁";
+    name_map[L"BP_DroppedItem_AlmondWater_C"] = L"杏仁水";
+    name_map[L"BP_DroppedItem_Flashlight_C"] = L"手电筒";
+    name_map[L"BP_DroppedItem_LiquidPain_C"] = L"液态痛苦";
+    name_map[L"BP_DroppedItem_EnergyBar_C"] = L"能量棒";
+    name_map[L"BP_DroppedItem_DivingHelmet_C"] = L"潜水头盔";
+    name_map[L"BP_DroppedItem_FlareGun_C"] = L"信号枪";
+    name_map[L"BP_DroppedItem_Rope_C"] = L"绳子";
+    name_map[L"BP_DroppedItem_WalkieTalkie_C"] = L"对讲机";
+    name_map[L"BP_DroppedItem_Chainsaw_C"] = L"电锯";
+    name_map[L"BP_DroppedItem_Ticket_C"] = L"小票";
+    name_map[L"BP_DroppedItem_Chainsaw_Fast_C"] = L"快速电锯";
+    name_map[L"BP_DroppedItem_Firework_C"] = L"烟花";
+    name_map[L"BP_DroppedItem_Glowstick_Yellow_C"] = L"黄色荧光棒";
+    name_map[L"BP_DroppedItem_Glowstick_Red_C"] = L"红色荧光棒";
+    name_map[L"BP_DroppedItem_Glowstick_Blue_C"] = L"蓝色荧光棒";
+    name_map[L"BP_DroppedItem_Glowstick_C"] = L"荧光棒";
+    name_map[L"BP_DroppedItem_BugSpray_C"] = L"杀虫喷雾";
+    name_map[L"BP_DroppedItem_Camera_C"] = L"相机";
+    name_map[L"BP_DroppedItem_Crowbar_C"] = L"撬棍";
+    name_map[L"BP_DroppedItem_Thermometer_C"] = L"温度计";
+    name_map[L"BP_DroppedItem_LiDAR_C"] = L"扫描仪";
+    name_map[L"BP_DroppedItem_Toy_C"] = L"玩具";
+    name_map[L"BP_DroppedItem_Knife_C"] = L"刀";
+    name_map[L"BP_DroppedItem_Jelly_C"] = L"果冻";
 
     name_map[L"BP_Note_C"] = L"笔记";
     name_map[L"BP_MEGDoor_C"] = L"门";
@@ -171,6 +173,7 @@ void visual::init()
     name_map[L"BP_Wretch_C"] = L"悲尸";
     name_map[L"BP_Entity974_C"] = L"Kitty";
     name_map[L"BP_Explorer_C"] = L"探险者尸体";
+    name_map[L"BP_Animation_C"] = L"动画";
 }
 
 void visual::main()
@@ -243,7 +246,7 @@ void visual::get_all()
             draw(
                 target->ItemMesh,
                 SDK::FLinearColor(0.0f, 1.0f, 1.0f, 1.0f),
-                SDK::UKismetStringLibrary::Conv_NameToString(target->ID),
+                SDK::UKismetStringLibrary::Conv_NameToString(target->Class->Name),
                 gvalue::visual_item
             );
             continue;
