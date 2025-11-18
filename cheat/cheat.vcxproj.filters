@@ -44,6 +44,9 @@
     <Filter Include="source\cheat\level">
       <UniqueIdentifier>{7639c742-f251-4182-8ff9-ddf2d9594839}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\cheat\config">
+      <UniqueIdentifier>{40161178-a117-4dbf-835c-f44c0db311d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cheat.h">
@@ -87,6 +90,9 @@
     </ClInclude>
     <ClInclude Include="level.h">
       <Filter>source\cheat\level</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>source\cheat\config</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="level.cpp">
       <Filter>source\cheat\level</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>source\cheat\config</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

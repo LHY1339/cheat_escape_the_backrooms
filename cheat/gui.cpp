@@ -5,26 +5,25 @@
 #include "render.h"
 
 bool left_click = false;
-bool left_was_down = false;
+bool left_was_up = false;
 
 void gui::main()
 {
 	if (gvalue::mouse_input.left)
 	{
-		if (!left_was_down)
+		left_was_up = false;
+	}
+	else
+	{
+		if (!left_was_up)
 		{
+			left_was_up = true;
 			left_click = true;
-			left_was_down = true;
 		}
 		else
 		{
 			left_click = false;
 		}
-	}
-	else
-	{
-		left_click = false;
-		left_was_down = false;
 	}
 }
 

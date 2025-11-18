@@ -7,7 +7,19 @@
 
 int injector::main()
 {
+    SetConsoleTitle(L"[LHY1339] 逃离后室修改器");
+
+    HWND hwnd = GetConsoleWindow();
+    LONG style = GetWindowLong(hwnd, GWL_STYLE);
+    style &= ~WS_MAXIMIZEBOX;
+    style &= ~WS_SIZEBOX;
+    SetWindowLong(hwnd, GWL_STYLE, style);
+    SetWindowPos(hwnd, NULL, 0, 0, 600, 400, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
+
+    printf("请在启动本程序之前关闭所有杀毒软件（包括Windows自带的Defender）\n");
+    printf("--------------------------------------------------------\n");
     printf("请运行游戏后按下 F5 加载\n");
+    printf("--------------------------------------------------------\n");
 
     while (true)
     {

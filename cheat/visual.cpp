@@ -274,8 +274,8 @@ void visual::camera()
         cur_pawn = gvalue::controller->Pawn;
     }
 
-    SDK::AActor* target_view = nullptr;
-
+    static bool do_once_tpp = false;
+    static bool do_once_fpp = false;
     if (gvalue::third_person)
     {
         if (!tpp_camera)
@@ -320,20 +320,37 @@ void visual::camera()
             tpp_camera->CameraComponent->FieldOfView = static_cast<float>(gvalue::fov);
             tpp_camera->CameraComponent->PostProcessBlendWeight = gvalue::disable_post ? 0.0f : 1.0f;
         }
-        target_view = tpp_camera;
+
+        if (!do_once_tpp)
+        {
+            printf("tpp\n");
+            gvalue::controller->SetViewTargetWithBlend(
+                tpp_camera,
+                0.2f,
+                SDK::EViewTargetBlendFunction::VTBlend_EaseInOut,
+                2.0f,
+                false
+            );
+            do_once_tpp = true;
+        }
+        do_once_fpp = false;
     }
     else
     {
-        target_view = character;
+        if (!do_once_fpp)
+        {
+            printf("fpp\n");
+            gvalue::controller->SetViewTargetWithBlend(
+                character,
+                0.2f,
+                SDK::EViewTargetBlendFunction::VTBlend_EaseInOut,
+                2.0f,
+                false
+            );
+            do_once_fpp = true;
+        }
+        do_once_tpp = false;
     }
-
-    gvalue::controller->SetViewTargetWithBlend(
-        target_view,
-        0.2f,
-        SDK::EViewTargetBlendFunction::VTBlend_EaseInOut,
-        2.0f,
-        false
-    );
 }
 
 bool visual::get_box(SDK::USceneComponent* comp, SDK::FVector2D& min, SDK::FVector2D& max)

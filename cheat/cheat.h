@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Windows.h>
+#include <string>
 
 namespace SDK
 {
@@ -19,5 +20,7 @@ private:
 
 	static void hk_post_render(void* thisptr, SDK::UCanvas* canvas);
 	static LRESULT CALLBACK hk_wnd_proc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param);
+
+	static int get_key(const std::string& key);
 };
 

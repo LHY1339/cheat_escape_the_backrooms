@@ -145,6 +145,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cheat.h" />
+    <ClInclude Include="config.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="gconst.h" />
     <ClInclude Include="gdefine.h" />
@@ -161,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cheat.cpp" />
+    <ClCompile Include="config.cpp" />
     <ClCompile Include="dll_main.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="gui.cpp" />

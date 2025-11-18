@@ -17,7 +17,7 @@ private:
 	static void player();
 	static void item();
 	static void entity();
-	static void misc();
 	static void level();
+	static void misc();
 };
 

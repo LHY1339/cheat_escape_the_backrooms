@@ -1,5 +1,6 @@
 #pragma once
 #include <Windows.h>
+#include <string>
 
 using fn_post_render = void(__thiscall*)(void*, void*);
 using fn_wnd_proc = WNDPROC;
@@ -27,6 +28,7 @@ namespace SDK
 	class APlayerController;
 	class UCanvas;
 	class UEngine;
+	class APawn;
 }
 
 namespace gvalue
@@ -34,11 +36,14 @@ namespace gvalue
 	inline void** vtb;
 	inline fn_post_render def_post_render;
 	inline fn_wnd_proc def_wnd_proc;
+	inline HINSTANCE dll_inst;
 
 	inline bool menu_open = true;
 	inline s_mouse mouse_input = {};
 	inline bool is_exit = false;
 	inline bool is_clean = false;
+	inline int x_offset = 0.0f;
+	inline int y_offset = 0.0f;
 	
 	inline s_visual visual_player;
 	inline s_visual visual_entity;
@@ -65,10 +70,20 @@ namespace gvalue
 	inline float fly_speed = 5.0f;
 	inline bool x_delete = false;
 
+	inline SDK::APawn* player_pawn = nullptr;
+
 	inline SDK::UWorld* world;
 	inline SDK::APlayerController* controller;
 	inline SDK::UCanvas* canvas;
 	inline SDK::UEngine* engine;
 
-	inline HINSTANCE dll_inst;
+	inline std::string key_open_menu = "ins";
+	inline std::string key_close_menu = "del";
+	inline std::string key_draw_mesh = "none";
+	inline std::string key_third_person = "none";
+	inline std::string key_ghost_mode = "none";
+	inline std::string key_inf_jump = "none";
+	inline std::string key_fly_mode = "none";
+	inline std::string key_x_delete = "none";
+	inline std::string key_kill_all = "none";
 }

@@ -8,6 +8,8 @@
 #include "item.h"
 #include "entity.h"
 #include "level.h"
+#include "config.h"
+#include "visual.h"
 
 #include <sstream>
 #include <iomanip>
@@ -19,8 +21,8 @@ enum class e_page
 	player,
 	item,
 	entity,
-	misc,
 	level,
+	misc,
 };
 
 float menu_x = 100.0f;
@@ -206,11 +208,11 @@ void menu::base_draw()
 	case e_page::entity:
 		entity();
 		break;
-	case e_page::misc:
-		misc();
-		break;
 	case e_page::level:
 		level();
+		break;
+	case e_page::misc:
+		misc();
 		break;
 	}
 }
@@ -249,7 +251,7 @@ void menu::left_bar()
 
 	if (gui::button(SDK::FVector2D(menu_x, menu_y + menu_h - 30), SDK::FVector2D(80, 20)))
 	{
-		system("start https://space.bilibili.com/669462200");
+		system("start https://github.com/LHY1339/cheat_escape_the_backrooms");
 	}
 
 	if (button_01(glanguage::visual, SDK::FVector2D(menu_x + 10, menu_y + 10), SDK::FVector2D(60, 20)))
@@ -272,14 +274,14 @@ void menu::left_bar()
 		page = e_page::entity;
 	}
 
-	if (button_01(glanguage::misc, SDK::FVector2D(menu_x + 10, menu_y + 130), SDK::FVector2D(60, 20)))
-	{
-		page = e_page::misc;
-	}
-
-	if (button_01(glanguage::level, SDK::FVector2D(menu_x + 10, menu_y + 160), SDK::FVector2D(60, 20)))
+	if (button_01(glanguage::level, SDK::FVector2D(menu_x + 10, menu_y + 130), SDK::FVector2D(60, 20)))
 	{
 		page = e_page::level;
+	}
+
+	if (button_01(glanguage::misc, SDK::FVector2D(menu_x + 10, menu_y + 160), SDK::FVector2D(60, 20)))
+	{
+		page = e_page::misc;
 	}
 }
 
@@ -508,7 +510,7 @@ void menu::player()
 	{
 		const float list[10] = {
 			1.0f,1.1f,1.2f,1.5f,2.0f,
-			5.0f,10.0f,20.0f,50.0f,100.0f
+			3.0f,5.0f,10.0f,15.0f,20.0f
 		};
 
 		for (int i = 0; i < 10; i++)
@@ -688,6 +690,67 @@ void menu::item()
 
 void menu::entity()
 {
+	static std::vector<SDK::ACharacter*> pawn_list;
+	static SDK::APawn* last_pawn = nullptr;
+
+	auto flush_list = []()
+		{
+			pawn_list.clear();
+			SDK::TArray<SDK::AActor*> actor_list;
+			SDK::UGameplayStatics::GetAllActorsOfClass(gvalue::world, SDK::ACharacter::StaticClass(), &actor_list);
+			for (SDK::AActor* actor : actor_list)
+			{
+				if (actor->IsA(SDK::ABP_Explorer_C::StaticClass()) ||
+					actor->IsA(SDK::ABPCharacter_Demo_C::StaticClass()) ||
+					actor->IsA(SDK::ABP_Menu_Computer_C::StaticClass()) ||
+					actor == gvalue::controller->Pawn)
+				{
+					continue;
+				}
+				SDK::ACharacter* cur_pawn = static_cast<SDK::ACharacter*>(actor);
+				pawn_list.emplace_back(cur_pawn);
+			}
+		};
+
+	auto entity_box = [&](SDK::ACharacter* pawn, SDK::FVector2D pos)
+		{
+			if (!pawn || !SDK::UKismetSystemLibrary::IsValid(pawn))
+			{
+				return;
+			}
+			render::fill_box(pos, SDK::FVector2D(240, 30.0f), SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f));
+			const std::wstring name = visual::find_name(SDK::UKismetStringLibrary::Conv_NameToString(pawn->Class->Name).ToWString());
+			text_01(
+				name.c_str(),
+				pos + SDK::FVector2D(10.0f, 8.0f),
+				false,
+				false
+			);
+
+			if (button_01(L"控制", pos + SDK::FVector2D(90, 5), SDK::FVector2D(40, 20)))
+			{
+				entity::poss(pawn);
+			}
+
+			if (button_01(L"取消", pos + SDK::FVector2D(140, 5), SDK::FVector2D(40, 20)))
+			{
+				entity::unposs();
+			}
+
+			if (button_01(L"删除", pos + SDK::FVector2D(190, 5), SDK::FVector2D(40, 20)))
+			{
+				pawn->K2_DestroyActor();
+				flush_list();
+			}
+		};
+
+	if (last_pawn != gvalue::controller->Pawn)
+	{
+		pawn_list.clear();
+		last_pawn = gvalue::controller->Pawn;
+		flush_list();
+	}
+
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(120, menu_h - 20),
@@ -700,9 +763,21 @@ void menu::entity()
 		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
 	);
 
+	render::fill_box(
+		SDK::FVector2D(menu_x + 420 - 2, menu_y - 2),
+		SDK::FVector2D(260 + 4, 40 + pawn_list.size() * 40 + 4),
+		SDK::FLinearColor(0.2f, 0.2f, 0.2f, 1.0f)
+	);
+
+	render::fill_box(
+		SDK::FVector2D(menu_x + 420, menu_y),
+		SDK::FVector2D(260, 40 + pawn_list.size() * 40),
+		SDK::FLinearColor(0.01f, 0.01f, 0.01f, 1.0f)
+	);
+
 	//left
 
-	if (button_01(L"草饲所有实体", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(100, 20)))
+	if (button_01(L"干死所有实体", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(100, 20)))
 	{
 		entity::kill_all();
 	}
@@ -797,24 +872,18 @@ void menu::entity()
 	{
 		entity::spawn(SDK::ABP_Hound_C::StaticClass());
 	}
-}
 
-void menu::misc()
-{
-	render::draw_text(
-		gvalue::engine->MediumFont,
-		glanguage::misc,
-		SDK::FVector2D(menu_x + 100.0f, menu_y + 10.0f),
-		SDK::FVector2D(1.0f, 1.0f),
-		SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
-		1.0f,
-		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
-		SDK::FVector2D(0.0f, 0.0f),
-		false,
-		false,
-		false,
-		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f)
-	);
+	//control
+
+	if (button_01(L"刷新实体列表", SDK::FVector2D(menu_x + 430, menu_y + 10), SDK::FVector2D(240, 20)))
+	{
+		flush_list();
+	}
+
+	for (int i = 0; i < pawn_list.size(); i++)
+	{
+		entity_box(pawn_list[i], SDK::FVector2D(menu_x + 430, menu_y + 40 * (i + 1)));
+	}
 }
 
 void menu::level()
@@ -987,5 +1056,24 @@ void menu::level()
 	if (button_01(L"草屋", SDK::FVector2D(menu_x + 370, menu_y + 110), SDK::FVector2D(80, 20)))
 	{
 		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Grassrooms_Expanded", gvalue::controller);
+	}
+}
+
+void menu::misc()
+{
+	render::fill_box(
+		SDK::FVector2D(menu_x + 90, menu_y + 10),
+		SDK::FVector2D(menu_w - 100, menu_h - 20),
+		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+	);
+
+	if (button_01(L"加载按键配置", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(120, 20)))
+	{
+		config::load("C:/LHY1339/escape_the_backrooms/key.txt");
+	}
+
+	if (button_01(L"打开配置文件", SDK::FVector2D(menu_x + 100, menu_y + 50), SDK::FVector2D(120, 20)))
+	{
+		system("start C:/LHY1339/escape_the_backrooms/key.txt");
 	}
 }
