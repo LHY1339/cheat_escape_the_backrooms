@@ -700,10 +700,8 @@ void menu::entity()
 			SDK::UGameplayStatics::GetAllActorsOfClass(gvalue::world, SDK::ACharacter::StaticClass(), &actor_list);
 			for (SDK::AActor* actor : actor_list)
 			{
-				if (actor->IsA(SDK::ABP_Explorer_C::StaticClass()) ||
-					actor->IsA(SDK::ABPCharacter_Demo_C::StaticClass()) ||
-					actor->IsA(SDK::ABP_Menu_Computer_C::StaticClass()) ||
-					actor == gvalue::controller->Pawn)
+				if (actor->IsA(SDK::ABP_Explorer_C::StaticClass())||
+					actor->IsA(SDK::ABPCharacter_Demo_C::StaticClass()))
 				{
 					continue;
 				}
@@ -714,7 +712,7 @@ void menu::entity()
 
 	auto entity_box = [&](SDK::ACharacter* pawn, SDK::FVector2D pos)
 		{
-			if (!pawn || !SDK::UKismetSystemLibrary::IsValid(pawn))
+			if (!pawn)
 			{
 				return;
 			}

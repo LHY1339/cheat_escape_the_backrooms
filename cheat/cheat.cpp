@@ -118,26 +118,42 @@ void cheat::exit()
 
 void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
 {
-    gvalue::world = SDK::UWorld::GetWorld();
-    gvalue::controller = SDK::UGameplayStatics::GetPlayerController(gvalue::world, 0);
-    gvalue::canvas = canvas;
-    gvalue::engine = SDK::UEngine::GetEngine();
-
-    gui::main();
-    visual::main();
-    player::main();
-    entity::main();
-    menu::main();
-
-    gvalue::def_post_render(thisptr, canvas);
-
-    if (gvalue::is_exit)
+    __try
     {
-        SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)gvalue::def_wnd_proc);
+        gvalue::world = SDK::UWorld::GetWorld();
+        gvalue::controller = SDK::UGameplayStatics::GetPlayerController(gvalue::world, 0);
+        gvalue::canvas = canvas;
+        gvalue::engine = SDK::UEngine::GetEngine();
 
-        gvalue::vtb[gconst::post_render_index] = gvalue::def_post_render;
+        gui::main();
+        visual::main();
+        player::main();
+        entity::main();
+        menu::main();
 
-        gvalue::is_clean = true;
+        gvalue::def_post_render(thisptr, canvas);
+
+        if (gvalue::is_exit)
+        {
+            SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)gvalue::def_wnd_proc);
+
+            gvalue::vtb[gconst::post_render_index] = gvalue::def_post_render;
+
+            gvalue::is_clean = true;
+        }
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        // 获取异常代码
+        DWORD code = GetExceptionCode();
+        std::cout << "异常代码: 0x" << std::hex << code << std::endl;
+
+        //// 获取异常信息结构
+        //EXCEPTION_POINTERS* ep = GetExceptionInformation();
+        //if (ep && ep->ExceptionRecord)
+        //{
+        //    std::cout << "异常地址: " << ep->ExceptionRecord->ExceptionAddress << std::endl;
+        //}
     }
 }
 

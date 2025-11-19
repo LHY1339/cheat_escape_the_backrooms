@@ -19,8 +19,9 @@ void entity::main()
 			return;
 		}
 
-		SDK::FVector fwd = SDK::UKismetMathLibrary::GetForwardVector(control_entity->GetControlRotation());
-		SDK::FVector right = SDK::UKismetMathLibrary::GetRightVector(control_entity->GetControlRotation());
+		const SDK::FRotator rot = SDK::FRotator(0.0f, control_entity->GetControlRotation().Yaw, 0.0f);
+		SDK::FVector fwd = SDK::UKismetMathLibrary::GetForwardVector(rot);
+		SDK::FVector right = SDK::UKismetMathLibrary::GetRightVector(rot);
 
 		if (GetAsyncKeyState('W') & 0x8000)
 		{
@@ -39,8 +40,10 @@ void entity::main()
 			control_entity->AddMovementInput(right, 1.0f, true);
 		}
 
-		control_entity->AddControllerPitchInput(gvalue::y_offset * 0.5);
-		control_entity->AddControllerYawInput(gvalue::x_offset * 0.5);
+		const float sen = 0.2f;
+
+		control_entity->AddControllerPitchInput(gvalue::y_offset * sen);
+		control_entity->AddControllerYawInput(gvalue::x_offset * sen);
 		gvalue::y_offset = 0.0f;
 		gvalue::x_offset = 0.0f;
 	}

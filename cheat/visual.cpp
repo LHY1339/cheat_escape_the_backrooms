@@ -12,6 +12,7 @@ std::unordered_map<std::wstring, std::wstring> name_map;
 void visual::init()
 {
     name_map[L"玩家"] = L"玩家";
+    name_map[L"BPCharacter_Demo_C"] = L"玩家";
 
     name_map[L"BP_DroppedItem_Juice_C"] = L"果汁";
     name_map[L"BP_DroppedItem_AlmondWater_C"] = L"杏仁水";
@@ -142,6 +143,8 @@ void visual::init()
     name_map[L"BP_Grassrooms_Lever_C"] = L"拉杆";
     name_map[L"BP_RopeZone_C"] = L"绳子";
     name_map[L"BP_Balloon_Key_Fake_C"] = L"假气球";
+    name_map[L"BP_MailBox_C"] = L"邮箱";
+    name_map[L"BP_Hotel_Note_C"] = L"小条";
 
     name_map[L"BP_RoamingPartygoer_Idle_C"] = L"派对客";
     name_map[L"BP_RoamingPartygoer_C"] = L"派对客";
