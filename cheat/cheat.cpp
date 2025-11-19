@@ -144,16 +144,7 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
     }
     __except (EXCEPTION_EXECUTE_HANDLER)
     {
-        // 获取异常代码
-        DWORD code = GetExceptionCode();
-        std::cout << "异常代码: 0x" << std::hex << code << std::endl;
-
-        //// 获取异常信息结构
-        //EXCEPTION_POINTERS* ep = GetExceptionInformation();
-        //if (ep && ep->ExceptionRecord)
-        //{
-        //    std::cout << "异常地址: " << ep->ExceptionRecord->ExceptionAddress << std::endl;
-        //}
+        printf("error code : %d", GetExceptionCode());
     }
 }
 
