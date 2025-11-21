@@ -17,7 +17,7 @@ void config::create(const std::string& path)
         std::filesystem::create_directories(dir, ec);
         if (ec) 
         {
-            std::cerr << "目录创建失败: " << ec.message() << '\n';
+            printf("create file error : %s\n", ec.message().c_str());
             return;
         }
     }
@@ -64,7 +64,7 @@ void config::load(const std::string& path)
     std::ifstream file(path);
     if (!file.is_open())
     {
-        printf("打开文件失败\n");
+        printf("open file error\n");
         return;
     }
 
