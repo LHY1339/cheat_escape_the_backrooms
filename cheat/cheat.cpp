@@ -16,7 +16,7 @@
 
 #pragma warning(disable:4996)
 
-std::unordered_map<std::string, int> key_map = 
+std::unordered_map<std::string, int> key_map =
 {
     {"ins", VK_INSERT},
     {"del", VK_DELETE},
@@ -148,6 +148,13 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
     }
 }
 
+#define KEY_SWITCH(str,ref) \
+if (w_param == get_key(str)) \
+{ \
+    ref = !ref; \
+    break; \
+};
+
 LRESULT cheat::hk_wnd_proc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param)
 {
     switch (u_msg)
@@ -171,51 +178,20 @@ LRESULT cheat::hk_wnd_proc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param
         }
     }
     case WM_KEYDOWN:
-        if (w_param == get_key(gvalue::key_open_menu))
-        {
-            gvalue::menu_open = !gvalue::menu_open;
-            break;
-        }
-        if (w_param == get_key(gvalue::key_close_menu))
-        {
-            gvalue::is_exit = true;
-            break;
-        }
-        if (w_param == get_key(gvalue::key_draw_mesh))
-        {
-            gvalue::draw_mesh = !gvalue::draw_mesh;
-            break;
-        }
-        if (w_param == get_key(gvalue::key_third_person))
-        {
-            gvalue::third_person = !gvalue::third_person;
-            break;
-        }
-        if (w_param == get_key(gvalue::key_ghost_mode))
-        {
-            gvalue::ghost_mode = !gvalue::ghost_mode;
-            break;
-        }
-        if (w_param == get_key(gvalue::key_inf_jump))
-        {
-            gvalue::inf_jump = !gvalue::inf_jump;
-            break;
-        }
-        if (w_param == get_key(gvalue::key_fly_mode))
-        {
-            gvalue::fly_mode = !gvalue::fly_mode;
-            break;
-        }
-        if (w_param == get_key(gvalue::key_x_delete))
-        {
-            gvalue::x_delete = !gvalue::x_delete;
-            break;
-        }
+        KEY_SWITCH(gvalue::key_open_menu, gvalue::menu_open);
+        KEY_SWITCH(gvalue::key_close_menu, gvalue::is_exit);
+        KEY_SWITCH(gvalue::key_draw_mesh, gvalue::draw_mesh);
+        KEY_SWITCH(gvalue::key_third_person, gvalue::third_person);
+        KEY_SWITCH(gvalue::key_ghost_mode, gvalue::ghost_mode);
+        KEY_SWITCH(gvalue::key_inf_jump, gvalue::inf_jump);
+        KEY_SWITCH(gvalue::key_fly_mode, gvalue::fly_mode);
+        KEY_SWITCH(gvalue::key_x_delete, gvalue::x_delete);
         if (w_param == get_key(gvalue::key_kill_all))
         {
             entity::kill_all();
             break;
         }
+        break;
     case WM_MOUSEMOVE:
         POINT pt;
         GetCursorPos(&pt);

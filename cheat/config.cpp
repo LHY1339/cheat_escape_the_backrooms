@@ -128,50 +128,23 @@ void config::execute(const std::vector<std::string>& param)
 
     if (param[0] == "bind")
     {
-        if (param[2] == "打开菜单")
-        {
-            gvalue::key_open_menu = param[1];
-            return;
-        }
-        if (param[2] == "退出菜单")
-        {
-            gvalue::key_close_menu = param[1];
-            return;
-        }
-        if (param[2] == "绘制周围网格体")
-        {
-            gvalue::key_draw_mesh = param[1];
-            return;
-        }
-        if (param[2] == "第三人称")
-        {
-            gvalue::key_third_person = param[1];
-            return;
-        }
-        if (param[2] == "灵魂出窍")
-        {
-            gvalue::key_fly_mode = param[1];
-            return;
-        }
-        if (param[2] == "无限跳跃")
-        {
-            gvalue::key_inf_jump = param[1];
-            return;
-        }
-        if (param[2] == "飞天遁地")
-        {
-            gvalue::key_fly_mode = param[1];
-            return;
-        }
-        if (param[2] == "X键删除")
-        {
-            gvalue::key_x_delete = param[1];
-            return;
-        }
-        if (param[2] == "干死所有实体")
-        {
-            gvalue::key_kill_all = param[1];
-            return;
-        }
+
+#define SET_KEY(name,key_name) \
+if (param[2] == #name) \
+{ \
+    gvalue::key_name = param[1]; \
+    return; \
+} \
+
+        SET_KEY(打开菜单, key_open_menu);
+        SET_KEY(退出菜单, key_close_menu);
+
+        SET_KEY(绘制周围网格体, key_draw_mesh);
+        SET_KEY(第三人称, key_third_person);
+        SET_KEY(灵魂出窍, key_ghost_mode);
+        SET_KEY(X键删除, key_x_delete);
+        SET_KEY(无限跳跃, key_inf_jump);
+        SET_KEY(飞天遁地, key_fly_mode);
+        SET_KEY(干死所有实体, key_kill_all);
     }
 }

@@ -254,35 +254,18 @@ void menu::left_bar()
 		system("start https://github.com/LHY1339/cheat_escape_the_backrooms");
 	}
 
-	if (button_01(glanguage::visual, SDK::FVector2D(menu_x + 10, menu_y + 10), SDK::FVector2D(60, 20)))
-	{
-		page = e_page::visual;
-	}
+#define SELECT_PAGE(name,y_pos) \
+if (button_01(glanguage::##name, SDK::FVector2D(menu_x + 10, menu_y + y_pos), SDK::FVector2D(60, 20))) \
+{ \
+	page = e_page::##name; \
+} \
 
-	if (button_01(glanguage::player, SDK::FVector2D(menu_x + 10, menu_y + 40), SDK::FVector2D(60, 20)))
-	{
-		page = e_page::player;
-	}
-
-	if (button_01(glanguage::item, SDK::FVector2D(menu_x + 10, menu_y + 70), SDK::FVector2D(60, 20)))
-	{
-		page = e_page::item;
-	}
-
-	if (button_01(glanguage::entity, SDK::FVector2D(menu_x + 10, menu_y + 100), SDK::FVector2D(60, 20)))
-	{
-		page = e_page::entity;
-	}
-
-	if (button_01(glanguage::level, SDK::FVector2D(menu_x + 10, menu_y + 130), SDK::FVector2D(60, 20)))
-	{
-		page = e_page::level;
-	}
-
-	if (button_01(glanguage::misc, SDK::FVector2D(menu_x + 10, menu_y + 160), SDK::FVector2D(60, 20)))
-	{
-		page = e_page::misc;
-	}
+	SELECT_PAGE(visual, 10);
+	SELECT_PAGE(player, 40);
+	SELECT_PAGE(item, 70);
+	SELECT_PAGE(entity, 100);
+	SELECT_PAGE(level, 130);
+	SELECT_PAGE(misc, 160);
 }
 
 void menu::visual()
@@ -561,131 +544,41 @@ void menu::item()
 		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
 	);
 
+#define ITEM_SPAWN(name,cls,x_pos,y_pos) \
+if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVector2D(80, 20))) \
+{ \
+	item::spawn(SDK::cls::StaticClass()); \
+} \
+
 	// line 1
-
-	if (button_01(L"果汁", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Juice_C::StaticClass());
-	}
-
-	if (button_01(L"杏仁水", SDK::FVector2D(menu_x + 100, menu_y + 50), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_AlmondWater_C::StaticClass());
-	}
-
-	if (button_01(L"手电筒", SDK::FVector2D(menu_x + 100, menu_y + 80), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Flashlight_C::StaticClass());
-	}
-
-	if (button_01(L"液态痛苦", SDK::FVector2D(menu_x + 100, menu_y + 110), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_LiquidPain_C::StaticClass());
-	}
-
-	if (button_01(L"能量棒", SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_EnergyBar_C::StaticClass());
-	}
-
-	if (button_01(L"潜水头盔", SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_DivingHelmet_C::StaticClass());
-	}
-
-	if (button_01(L"信号枪", SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_FlareGun_C::StaticClass());
-	}
-
-	if (button_01(L"绳子", SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Rope_C::StaticClass());
-	}
-
-	if (button_01(L"对讲机", SDK::FVector2D(menu_x + 100, menu_y + 260), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_WalkieTalkie_C::StaticClass());
-	}
+	ITEM_SPAWN(果汁, ABP_DroppedItem_Juice_C, 100, 20);
+	ITEM_SPAWN(杏仁水, ABP_DroppedItem_AlmondWater_C, 100, 50);
+	ITEM_SPAWN(手电筒, ABP_DroppedItem_Flashlight_C, 100, 80);
+	ITEM_SPAWN(液态痛苦, ABP_DroppedItem_LiquidPain_C, 100, 110);
+	ITEM_SPAWN(能量棒, ABP_DroppedItem_EnergyBar_C, 100, 140);
+	ITEM_SPAWN(潜水头盔, ABP_DroppedItem_DivingHelmet_C, 100, 170);
+	ITEM_SPAWN(信号枪, ABP_DroppedItem_FlareGun_C, 100, 200);
+	ITEM_SPAWN(绳子, ABP_DroppedItem_Rope_C, 100, 230);
+	ITEM_SPAWN(对讲机, ABP_DroppedItem_WalkieTalkie_C, 100, 260);
 
 	// line 2
-
-	if (button_01(L"电锯", SDK::FVector2D(menu_x + 190, menu_y + 20), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Chainsaw_C::StaticClass());
-	}
-
-	if (button_01(L"烟花", SDK::FVector2D(menu_x + 190, menu_y + 50), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Firework_C::StaticClass());
-	}
-
-	if (button_01(L"黄色荧光棒", SDK::FVector2D(menu_x + 190, menu_y + 80), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Glowstick_Yellow_C::StaticClass());
-	}
-
-	if (button_01(L"蓝色荧光棒", SDK::FVector2D(menu_x + 190, menu_y + 110), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Glowstick_Blue_C::StaticClass());
-	}
-
-	if (button_01(L"红色荧光棒", SDK::FVector2D(menu_x + 190, menu_y + 140), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_Item_Glowstick_Red_C::StaticClass());
-	}
-
-	if (button_01(L"荧光棒", SDK::FVector2D(menu_x + 190, menu_y + 170), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Glowstick_C::StaticClass());
-	}
-
-	if (button_01(L"杀虫喷雾", SDK::FVector2D(menu_x + 190, menu_y + 200), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_BugSpray_C::StaticClass());
-	}
-
-	if (button_01(L"相机", SDK::FVector2D(menu_x + 190, menu_y + 230), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Camera_C::StaticClass());
-	}
-
-	if (button_01(L"撬棍", SDK::FVector2D(menu_x + 190, menu_y + 260), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Crowbar_C::StaticClass());
-	}
+	ITEM_SPAWN(电锯, ABP_DroppedItem_Chainsaw_C, 190, 20);
+	ITEM_SPAWN(烟花, ABP_DroppedItem_Firework_C, 190, 50);
+	ITEM_SPAWN(黄色荧光棒, ABP_DroppedItem_Glowstick_Yellow_C, 190, 80);
+	ITEM_SPAWN(蓝色荧光棒, ABP_DroppedItem_Glowstick_Blue_C, 190, 110);
+	ITEM_SPAWN(红色荧光棒, ABP_Item_Glowstick_Red_C, 190, 140);
+	ITEM_SPAWN(荧光棒, ABP_DroppedItem_Glowstick_C, 190, 170);
+	ITEM_SPAWN(杀虫喷雾, ABP_DroppedItem_BugSpray_C, 190, 200);
+	ITEM_SPAWN(相机, ABP_DroppedItem_Camera_C, 190, 230);
+	ITEM_SPAWN(撬棍, ABP_DroppedItem_Crowbar_C, 190, 260);
 
 	// line 3
-
-	if (button_01(L"温度计", SDK::FVector2D(menu_x + 280, menu_y + 20), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Thermometer_C::StaticClass());
-	}
-
-	if (button_01(L"扫描仪", SDK::FVector2D(menu_x + 280, menu_y + 50), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_LiDAR_C::StaticClass());
-	}
-
-	if (button_01(L"玩具", SDK::FVector2D(menu_x + 280, menu_y + 80), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Toy_C::StaticClass());
-	}
-
-	if (button_01(L"刀", SDK::FVector2D(menu_x + 280, menu_y + 110), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Knife_C::StaticClass());
-	}
-
-	if (button_01(L"果冻", SDK::FVector2D(menu_x + 280, menu_y + 140), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Jelly_C::StaticClass());
-	}
-
-	if (button_01(L"快速电锯", SDK::FVector2D(menu_x + 280, menu_y + 170), SDK::FVector2D(80, 20)))
-	{
-		item::spawn(SDK::ABP_DroppedItem_Chainsaw_Fast_C::StaticClass());
-	}
+	ITEM_SPAWN(温度计, ABP_DroppedItem_Thermometer_C, 280, 20);
+	ITEM_SPAWN(扫描仪, ABP_DroppedItem_LiDAR_C, 280, 50);
+	ITEM_SPAWN(玩具, ABP_DroppedItem_Toy_C, 280, 80);
+	ITEM_SPAWN(刀, ABP_DroppedItem_Knife_C, 280, 110);
+	ITEM_SPAWN(果冻, ABP_DroppedItem_Jelly_C, 280, 140);
+	ITEM_SPAWN(快速电锯, ABP_DroppedItem_Chainsaw_Fast_C, 280, 170);
 }
 
 void menu::entity()
@@ -725,14 +618,9 @@ void menu::entity()
 				false
 			);
 
-			if (button_01(L"控制", pos + SDK::FVector2D(90, 5), SDK::FVector2D(40, 20)))
+			if (button_01(L"控制", pos + SDK::FVector2D(140, 5), SDK::FVector2D(40, 20)))
 			{
 				entity::poss(pawn);
-			}
-
-			if (button_01(L"取消", pos + SDK::FVector2D(140, 5), SDK::FVector2D(40, 20)))
-			{
-				entity::unposs();
 			}
 
 			if (button_01(L"删除", pos + SDK::FVector2D(190, 5), SDK::FVector2D(40, 20)))
@@ -763,13 +651,13 @@ void menu::entity()
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 420 - 2, menu_y - 2),
-		SDK::FVector2D(260 + 4, 40 + pawn_list.size() * 40 + 4),
+		SDK::FVector2D(260 + 4, 70 + pawn_list.size() * 40 + 4),
 		SDK::FLinearColor(0.2f, 0.2f, 0.2f, 1.0f)
 	);
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 420, menu_y),
-		SDK::FVector2D(260, 40 + pawn_list.size() * 40),
+		SDK::FVector2D(260, 70 + pawn_list.size() * 40),
 		SDK::FLinearColor(0.01f, 0.01f, 0.01f, 1.0f)
 	);
 
@@ -829,58 +717,35 @@ void menu::entity()
 		entity::kill("BP_Wretch_House_C");
 	}
 
-	//right
+#define ENTITY_SPAWN(name,cls,x_pos,y_pos) \
+if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVector2D(70, 20))) \
+{ \
+	entity::spawn(SDK::cls::StaticClass()); \
+} \
 
-	if (button_01(L"细菌1", SDK::FVector2D(menu_x + 230, menu_y + 20), SDK::FVector2D(70, 20)))
-	{
-		entity::spawn(SDK::ABacteria_BP_C::StaticClass());
-	}
-
-	if (button_01(L"细菌2", SDK::FVector2D(menu_x + 230, menu_y + 50), SDK::FVector2D(70, 20)))
-	{
-		entity::spawn(SDK::ABacteria_Roaming_BP_C::StaticClass());
-	}
-
-	if (button_01(L"窃皮者1", SDK::FVector2D(menu_x + 230, menu_y + 80), SDK::FVector2D(70, 20)))
-	{
-		entity::spawn(SDK::ABP_SkinStealer_C::StaticClass());
-	}
-
-	if (button_01(L"窃皮者2", SDK::FVector2D(menu_x + 230, menu_y + 110), SDK::FVector2D(70, 20)))
-	{
-		entity::spawn(SDK::ABP_SkinStealer_Level07_C::StaticClass());
-	}
-
-	if (button_01(L"笑魇", SDK::FVector2D(menu_x + 310, menu_y + 20), SDK::FVector2D(70, 20)))
-	{
-		entity::spawn(SDK::ABP_Roaming_Smiler_C::StaticClass());
-	}
-
-	if (button_01(L"动画", SDK::FVector2D(menu_x + 310, menu_y + 50), SDK::FVector2D(70, 20)))
-	{
-		entity::spawn(SDK::ABP_Animation_C::StaticClass());
-	}
-
-	if (button_01(L"死亡飞蛾", SDK::FVector2D(menu_x + 310, menu_y + 80), SDK::FVector2D(70, 20)))
-	{
-		entity::spawn(SDK::ABP_Moth_C::StaticClass());
-	}
-
-	if (button_01(L"猎犬", SDK::FVector2D(menu_x + 310, menu_y + 110), SDK::FVector2D(70, 20)))
-	{
-		entity::spawn(SDK::ABP_Hound_C::StaticClass());
-	}
+	ENTITY_SPAWN(细菌1, ABacteria_BP_C, 230, 20);
+	ENTITY_SPAWN(细菌2, ABacteria_Roaming_BP_C, 230, 50);
+	ENTITY_SPAWN(窃皮者1, ABP_SkinStealer_C, 230, 80);
+	ENTITY_SPAWN(窃皮者2, ABP_SkinStealer_Level07_C, 230, 110);
+	ENTITY_SPAWN(笑魇, ABP_Roaming_Smiler_C, 310, 20);
+	ENTITY_SPAWN(动画, ABP_Animation_C, 310, 50);
+	ENTITY_SPAWN(死亡飞蛾, ABP_Moth_C, 310, 80);
+	ENTITY_SPAWN(猎犬, ABP_Hound_C, 310, 110);
 
 	//control
-
 	if (button_01(L"刷新实体列表", SDK::FVector2D(menu_x + 430, menu_y + 10), SDK::FVector2D(240, 20)))
 	{
 		flush_list();
 	}
 
+	if (button_01(L"取消控制实体", SDK::FVector2D(menu_x + 430, menu_y + 40), SDK::FVector2D(240, 20)))
+	{
+		entity::unposs();
+	}
+
 	for (int i = 0; i < pawn_list.size(); i++)
 	{
-		entity_box(pawn_list[i], SDK::FVector2D(menu_x + 430, menu_y + 40 * (i + 1)));
+		entity_box(pawn_list[i], SDK::FVector2D(menu_x + 430, 70 + menu_y + 40 * i));
 	}
 }
 
@@ -894,167 +759,50 @@ void menu::level()
 		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
 	);
 
-	//printf("%s\n", gvalue::world->Name.ToString().c_str());
+#define LEVEL_CHANGE(name,lv_name,x_pos,y_pos) \
+if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVector2D(80, 20))) \
+{ \
+	const std::wstring cmd = std::wstring(L"ServerTravel ") + std::wstring(L#lv_name); \
+	SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, cmd.c_str(), gvalue::controller); \
+} \
 
-	if (button_01(L"Level0", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level0", gvalue::controller);
-	}
-
-	if (button_01(L"Level1", SDK::FVector2D(menu_x + 100, menu_y + 50), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel TopFloor", gvalue::controller);
-	}
-
-	if (button_01(L"Level2", SDK::FVector2D(menu_x + 100, menu_y + 80), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Pipes", gvalue::controller);
-	}
-
-	if (button_01(L"Level3", SDK::FVector2D(menu_x + 100, menu_y + 110), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel ElectricalStation", gvalue::controller);
-	}
-
-	if (button_01(L"Level4", SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Office", gvalue::controller);
-	}
-
-	if (button_01(L"Level5", SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Hotel", gvalue::controller);
-	}
-
-	if (button_01(L"LevelFun", SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel LevelFun", gvalue::controller);
-	}
-
-	if (button_01(L"Level37", SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Poolrooms", gvalue::controller);
-	}
-
-	if (button_01(L"Level!", SDK::FVector2D(menu_x + 100, menu_y + 260), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel LevelRun", gvalue::controller);
-	}
+	//line 1
+	LEVEL_CHANGE(Level0, Level0, 100, 20);
+	LEVEL_CHANGE(Level1, TopFloor, 100, 50);
+	LEVEL_CHANGE(Level2, Pipes, 100, 80);
+	LEVEL_CHANGE(Level3, ElectricalStation, 100, 110);
+	LEVEL_CHANGE(Level4, Office, 100, 140);
+	LEVEL_CHANGE(Level5, Hotel, 100, 170);
+	LEVEL_CHANGE(LevelFun, LevelFun, 100, 200);
+	LEVEL_CHANGE(Level37, Poolrooms, 100, 230);
+	LEVEL_CHANGE(Level!, LevelRun, 100, 260);
 
 	//line 2
-
-	if (button_01(L"LevelEnd", SDK::FVector2D(menu_x + 190, menu_y + 20), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel TheEnd", gvalue::controller);
-	}
-
-	if (button_01(L"Level94", SDK::FVector2D(menu_x + 190, menu_y + 50), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level94", gvalue::controller);
-	}
-
-	if (button_01(L"Level6", SDK::FVector2D(menu_x + 190, menu_y + 80), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel LightsOut", gvalue::controller);
-	}
-
-	if (button_01(L"Level7", SDK::FVector2D(menu_x + 190, menu_y + 110), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel OceanMap", gvalue::controller);
-	}
-
-	if (button_01(L"Level8", SDK::FVector2D(menu_x + 190, menu_y + 140), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel CaveLevel", gvalue::controller);
-	}
-
-	if (button_01(L"Level6", SDK::FVector2D(menu_x + 190, menu_y + 170), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel LightsOut", gvalue::controller);
-	}
-
-	if (button_01(L"Level0.11", SDK::FVector2D(menu_x + 190, menu_y + 200), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level05", gvalue::controller);
-	}
-
-	if (button_01(L"Level9", SDK::FVector2D(menu_x + 190, menu_y + 230), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level9", gvalue::controller);
-	}
-
-	if (button_01(L"Level10", SDK::FVector2D(menu_x + 190, menu_y + 260), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level10", gvalue::controller);
-	}
+	LEVEL_CHANGE(LevelEnd, TheEnd, 190, 20);
+	LEVEL_CHANGE(Level94, Level94, 190, 50);
+	LEVEL_CHANGE(Level6, LightsOut, 190, 80);
+	LEVEL_CHANGE(Level7, OceanMap, 190, 110);
+	LEVEL_CHANGE(Level8, CaveLevel, 190, 140);
+	LEVEL_CHANGE(Level0.11, Level05, 190, 170);
+	LEVEL_CHANGE(Level9, Level9, 190, 200);
+	LEVEL_CHANGE(Level10, Level10, 190, 230);
+	LEVEL_CHANGE(Level3999, Level3999, 190, 260);
 
 	//line 3
-
-	if (button_01(L"Level3999", SDK::FVector2D(menu_x + 280, menu_y + 20), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level3999", gvalue::controller);
-	}
-
-	if (button_01(L"Level0.2", SDK::FVector2D(menu_x + 280, menu_y + 50), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level07", gvalue::controller);
-	}
-
-	if (button_01(L"零食屋", SDK::FVector2D(menu_x + 280, menu_y + 80), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Snackrooms", gvalue::controller);
-	}
-
-	if (button_01(L"Level!-!", SDK::FVector2D(menu_x + 280, menu_y + 110), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel LevelDash", gvalue::controller);
-	}
-
-	if (button_01(L"Level188", SDK::FVector2D(menu_x + 280, menu_y + 140), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level188_Expanded", gvalue::controller);
-	}
-
-	if (button_01(L"Level37.2", SDK::FVector2D(menu_x + 280, menu_y + 170), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Poolrooms_Expanded", gvalue::controller);
-	}
-
-	if (button_01(L"LevelFun+", SDK::FVector2D(menu_x + 280, menu_y + 200), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel LevelFun_Expanded", gvalue::controller);
-	}
-
-	if (button_01(L"Level52", SDK::FVector2D(menu_x + 280, menu_y + 230), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level52", gvalue::controller);
-	}
-
-	if (button_01(L"Level55.1", SDK::FVector2D(menu_x + 280, menu_y + 260), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel TunnelLevel", gvalue::controller);
-	}
+	LEVEL_CHANGE(Level0.2, Level07, 280, 20);
+	LEVEL_CHANGE(零食屋, Snackrooms, 280, 50);
+	LEVEL_CHANGE(Level!-!, LevelDash, 280, 80);
+	LEVEL_CHANGE(Level188, Level188_Expanded, 280, 110);
+	LEVEL_CHANGE(Level37.2, Poolrooms_Expanded, 280, 140);
+	LEVEL_CHANGE(LevelFun+, LevelFun_Expanded, 280, 170);
+	LEVEL_CHANGE(Level52, Level52, 280, 200);
+	LEVEL_CHANGE(Level55.1, TunnelLevel, 280, 230);
+	LEVEL_CHANGE(Level922, Level922, 280, 260);
 
 	//line 4
-	if (button_01(L"Level922", SDK::FVector2D(menu_x + 370, menu_y + 20), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level922", gvalue::controller);
-	}
-
-	if (button_01(L"Level974", SDK::FVector2D(menu_x + 370, menu_y + 50), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Level974", gvalue::controller);
-	}
-
-	if (button_01(L"过度生长", SDK::FVector2D(menu_x + 370, menu_y + 80), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel GraffitiLevel", gvalue::controller);
-	}
-
-	if (button_01(L"草屋", SDK::FVector2D(menu_x + 370, menu_y + 110), SDK::FVector2D(80, 20)))
-	{
-		SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, L"ServerTravel Grassrooms_Expanded", gvalue::controller);
-	}
+	LEVEL_CHANGE(Level974, Level974, 370, 20);
+	LEVEL_CHANGE(过度生长, GraffitiLevel, 370, 50);
+	LEVEL_CHANGE(草屋, Grassrooms_Expanded, 370, 80);
 }
 
 void menu::misc()
