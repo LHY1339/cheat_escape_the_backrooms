@@ -1,6 +1,6 @@
 #pragma once
 
-#if 0
+#if 1
 #define MY_DEBUG
 #else
 #define MY_RELEASE

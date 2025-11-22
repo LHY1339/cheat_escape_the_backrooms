@@ -12,7 +12,7 @@ struct s_mouse
 	bool left = false;
 };
 
-struct s_visual
+struct s_esp
 {
 	bool enable = true;
 	bool box = true;
@@ -45,11 +45,11 @@ namespace gvalue
 	inline int x_offset = 0.0f;
 	inline int y_offset = 0.0f;
 	
-	inline s_visual visual_player;
-	inline s_visual visual_entity;
-	inline s_visual visual_item;
-	inline s_visual visual_interact;
-	inline int visual_distance = 100;
+	inline s_esp esp_player;
+	inline s_esp esp_entity;
+	inline s_esp esp_item;
+	inline s_esp esp_interact;
+	inline int esp_distance = 100;
 	inline bool draw_mesh = false;
 	inline int draw_mesh_distance = 10;
 	inline int fov = 120;
@@ -70,13 +70,6 @@ namespace gvalue
 	inline float fly_speed = 5.0f;
 	inline bool x_delete = false;
 
-	inline SDK::APawn* player_pawn = nullptr;
-
-	inline SDK::UWorld* world;
-	inline SDK::APlayerController* controller;
-	inline SDK::UCanvas* canvas;
-	inline SDK::UEngine* engine;
-
 	inline std::string key_open_menu = "ins";
 	inline std::string key_close_menu = "del";
 	inline std::string key_draw_mesh = "none";
@@ -86,4 +79,10 @@ namespace gvalue
 	inline std::string key_fly_mode = "none";
 	inline std::string key_x_delete = "none";
 	inline std::string key_kill_all = "none";
+
+	inline SDK::UWorld* world;
+	inline SDK::APlayerController* controller;
+	inline SDK::UCanvas* canvas;
+	inline SDK::UEngine* engine;
+	inline SDK::APawn* player_pawn = nullptr;
 }

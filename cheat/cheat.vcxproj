@@ -169,6 +169,7 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="render.cpp" />
+    <ClCompile Include="sdk\SDK\AdvancedSessions_functions.cpp" />
     <ClCompile Include="sdk\SDK\Backrooms_functions.cpp" />
     <ClCompile Include="sdk\SDK\Basic.cpp" />
     <ClCompile Include="sdk\SDK\BPCharacter_Demo_functions.cpp" />

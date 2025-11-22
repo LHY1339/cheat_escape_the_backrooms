@@ -138,5 +138,8 @@
     <ClCompile Include="config.cpp">
       <Filter>source\cheat\config</Filter>
     </ClCompile>
+    <ClCompile Include="sdk\SDK\AdvancedSessions_functions.cpp">
+      <Filter>third_party\sdk</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

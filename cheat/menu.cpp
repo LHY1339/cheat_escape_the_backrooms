@@ -7,7 +7,6 @@
 #include "glanguage.h"
 #include "item.h"
 #include "entity.h"
-#include "level.h"
 #include "config.h"
 #include "visual.h"
 
@@ -105,7 +104,7 @@ void menu::lable()
 {
 	render::draw_text(
 		gvalue::engine->MediumFont,
-		glanguage::lable,
+		L"[默认配置下]\n按下 Ins（Insert）显示/隐藏菜单\n按下 Del（Delete）退出",
 		SDK::FVector2D(10.0f, 10.0f),
 		SDK::FVector2D(1.0f, 1.0f),
 		SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
@@ -254,18 +253,18 @@ void menu::left_bar()
 		system("start https://github.com/LHY1339/cheat_escape_the_backrooms");
 	}
 
-#define SELECT_PAGE(name,y_pos) \
-if (button_01(glanguage::##name, SDK::FVector2D(menu_x + 10, menu_y + y_pos), SDK::FVector2D(60, 20))) \
+#define SELECT_PAGE(_name,_page,_y_pos) \
+if (button_01(L#_name, SDK::FVector2D(menu_x + 10, menu_y + _y_pos), SDK::FVector2D(60, 20))) \
 { \
-	page = e_page::##name; \
+	page = e_page::##_page; \
 } \
 
-	SELECT_PAGE(visual, 10);
-	SELECT_PAGE(player, 40);
-	SELECT_PAGE(item, 70);
-	SELECT_PAGE(entity, 100);
-	SELECT_PAGE(level, 130);
-	SELECT_PAGE(misc, 160);
+	SELECT_PAGE(视觉, visual, 10);
+	SELECT_PAGE(玩家, player, 40);
+	SELECT_PAGE(物品, item, 70);
+	SELECT_PAGE(实体, entity, 100);
+	SELECT_PAGE(关卡, level, 130);
+	SELECT_PAGE(杂项, misc, 160);
 }
 
 void menu::visual()
@@ -290,49 +289,49 @@ void menu::visual()
 
 	//up
 
-	text_01(glanguage::player, SDK::FVector2D(menu_x + 100, menu_y + 40), false, false);
-	text_01(glanguage::entity, SDK::FVector2D(menu_x + 100, menu_y + 70), false, false);
-	text_01(glanguage::item, SDK::FVector2D(menu_x + 100, menu_y + 100), false, false);
-	text_01(glanguage::interact, SDK::FVector2D(menu_x + 100, menu_y + 130), false, false);
+	text_01(L"玩家", SDK::FVector2D(menu_x + 100, menu_y + 40), false, false);
+	text_01(L"实体", SDK::FVector2D(menu_x + 100, menu_y + 70), false, false);
+	text_01(L"物品", SDK::FVector2D(menu_x + 100, menu_y + 100), false, false);
+	text_01(L"互动", SDK::FVector2D(menu_x + 100, menu_y + 130), false, false);
 
-	text_01(glanguage::enable, SDK::FVector2D(menu_x + 140, menu_y + 20), false, false);
-	text_01(glanguage::box, SDK::FVector2D(menu_x + 180, menu_y + 20), false, false);
-	text_01(glanguage::name, SDK::FVector2D(menu_x + 220, menu_y + 20), false, false);
-	text_01(glanguage::distance, SDK::FVector2D(menu_x + 260, menu_y + 20), false, false);
-	text_01(glanguage::line, SDK::FVector2D(menu_x + 300, menu_y + 20), false, false);
-	text_01(glanguage::extent, SDK::FVector2D(menu_x + 340, menu_y + 20), false, false);
+	text_01(L"启用", SDK::FVector2D(menu_x + 140, menu_y + 20), false, false);
+	text_01(L"方框", SDK::FVector2D(menu_x + 180, menu_y + 20), false, false);
+	text_01(L"名称", SDK::FVector2D(menu_x + 220, menu_y + 20), false, false);
+	text_01(L"距离", SDK::FVector2D(menu_x + 260, menu_y + 20), false, false);
+	text_01(L"连线", SDK::FVector2D(menu_x + 300, menu_y + 20), false, false);
+	text_01(L"范围", SDK::FVector2D(menu_x + 340, menu_y + 20), false, false);
 
-	check_box_01(SDK::FVector2D(menu_x + 145, menu_y + 40), &gvalue::visual_player.enable);
-	check_box_01(SDK::FVector2D(menu_x + 185, menu_y + 40), &gvalue::visual_player.box);
-	check_box_01(SDK::FVector2D(menu_x + 225, menu_y + 40), &gvalue::visual_player.name);
-	check_box_01(SDK::FVector2D(menu_x + 265, menu_y + 40), &gvalue::visual_player.distance);
-	check_box_01(SDK::FVector2D(menu_x + 305, menu_y + 40), &gvalue::visual_player.line);
-	check_box_01(SDK::FVector2D(menu_x + 345, menu_y + 40), &gvalue::visual_player.extent);
+	check_box_01(SDK::FVector2D(menu_x + 145, menu_y + 40), &gvalue::esp_player.enable);
+	check_box_01(SDK::FVector2D(menu_x + 185, menu_y + 40), &gvalue::esp_player.box);
+	check_box_01(SDK::FVector2D(menu_x + 225, menu_y + 40), &gvalue::esp_player.name);
+	check_box_01(SDK::FVector2D(menu_x + 265, menu_y + 40), &gvalue::esp_player.distance);
+	check_box_01(SDK::FVector2D(menu_x + 305, menu_y + 40), &gvalue::esp_player.line);
+	check_box_01(SDK::FVector2D(menu_x + 345, menu_y + 40), &gvalue::esp_player.extent);
 
-	check_box_01(SDK::FVector2D(menu_x + 145, menu_y + 70), &gvalue::visual_entity.enable);
-	check_box_01(SDK::FVector2D(menu_x + 185, menu_y + 70), &gvalue::visual_entity.box);
-	check_box_01(SDK::FVector2D(menu_x + 225, menu_y + 70), &gvalue::visual_entity.name);
-	check_box_01(SDK::FVector2D(menu_x + 265, menu_y + 70), &gvalue::visual_entity.distance);
-	check_box_01(SDK::FVector2D(menu_x + 305, menu_y + 70), &gvalue::visual_entity.line);
-	check_box_01(SDK::FVector2D(menu_x + 345, menu_y + 70), &gvalue::visual_entity.extent);
+	check_box_01(SDK::FVector2D(menu_x + 145, menu_y + 70), &gvalue::esp_entity.enable);
+	check_box_01(SDK::FVector2D(menu_x + 185, menu_y + 70), &gvalue::esp_entity.box);
+	check_box_01(SDK::FVector2D(menu_x + 225, menu_y + 70), &gvalue::esp_entity.name);
+	check_box_01(SDK::FVector2D(menu_x + 265, menu_y + 70), &gvalue::esp_entity.distance);
+	check_box_01(SDK::FVector2D(menu_x + 305, menu_y + 70), &gvalue::esp_entity.line);
+	check_box_01(SDK::FVector2D(menu_x + 345, menu_y + 70), &gvalue::esp_entity.extent);
 
-	check_box_01(SDK::FVector2D(menu_x + 145, menu_y + 100), &gvalue::visual_item.enable);
-	check_box_01(SDK::FVector2D(menu_x + 185, menu_y + 100), &gvalue::visual_item.box);
-	check_box_01(SDK::FVector2D(menu_x + 225, menu_y + 100), &gvalue::visual_item.name);
-	check_box_01(SDK::FVector2D(menu_x + 265, menu_y + 100), &gvalue::visual_item.distance);
-	check_box_01(SDK::FVector2D(menu_x + 305, menu_y + 100), &gvalue::visual_item.line);
-	check_box_01(SDK::FVector2D(menu_x + 345, menu_y + 100), &gvalue::visual_item.extent);
+	check_box_01(SDK::FVector2D(menu_x + 145, menu_y + 100), &gvalue::esp_item.enable);
+	check_box_01(SDK::FVector2D(menu_x + 185, menu_y + 100), &gvalue::esp_item.box);
+	check_box_01(SDK::FVector2D(menu_x + 225, menu_y + 100), &gvalue::esp_item.name);
+	check_box_01(SDK::FVector2D(menu_x + 265, menu_y + 100), &gvalue::esp_item.distance);
+	check_box_01(SDK::FVector2D(menu_x + 305, menu_y + 100), &gvalue::esp_item.line);
+	check_box_01(SDK::FVector2D(menu_x + 345, menu_y + 100), &gvalue::esp_item.extent);
 
-	check_box_01(SDK::FVector2D(menu_x + 145, menu_y + 130), &gvalue::visual_interact.enable);
-	check_box_01(SDK::FVector2D(menu_x + 185, menu_y + 130), &gvalue::visual_interact.box);
-	check_box_01(SDK::FVector2D(menu_x + 225, menu_y + 130), &gvalue::visual_interact.name);
-	check_box_01(SDK::FVector2D(menu_x + 265, menu_y + 130), &gvalue::visual_interact.distance);
-	check_box_01(SDK::FVector2D(menu_x + 305, menu_y + 130), &gvalue::visual_interact.line);
-	check_box_01(SDK::FVector2D(menu_x + 345, menu_y + 130), &gvalue::visual_interact.extent);
+	check_box_01(SDK::FVector2D(menu_x + 145, menu_y + 130), &gvalue::esp_interact.enable);
+	check_box_01(SDK::FVector2D(menu_x + 185, menu_y + 130), &gvalue::esp_interact.box);
+	check_box_01(SDK::FVector2D(menu_x + 225, menu_y + 130), &gvalue::esp_interact.name);
+	check_box_01(SDK::FVector2D(menu_x + 265, menu_y + 130), &gvalue::esp_interact.distance);
+	check_box_01(SDK::FVector2D(menu_x + 305, menu_y + 130), &gvalue::esp_interact.line);
+	check_box_01(SDK::FVector2D(menu_x + 345, menu_y + 130), &gvalue::esp_interact.extent);
 
 	//left
 
-	if (button_01(std::wstring(glanguage::esp_distance + std::to_wstring(gvalue::visual_distance) + glanguage::meter).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 180), SDK::FVector2D(140, 20)))
+	if (button_01(std::wstring(L"透视距离：" + std::to_wstring(gvalue::esp_distance) + L"米").c_str(), SDK::FVector2D(menu_x + 100, menu_y + 180), SDK::FVector2D(140, 20)))
 	{
 		const int dist_list[10] = {
 			10,30,50,80,100,
@@ -341,18 +340,18 @@ void menu::visual()
 
 		for (int i = 0; i < 10; i++)
 		{
-			if (gvalue::visual_distance == dist_list[i])
+			if (gvalue::esp_distance == dist_list[i])
 			{
-				gvalue::visual_distance = i < 9 ? dist_list[i + 1] : dist_list[0];
+				gvalue::esp_distance = i < 9 ? dist_list[i + 1] : dist_list[0];
 				break;
 			}
 		}
 	}
 
-	text_01(glanguage::draw_mesh, SDK::FVector2D(menu_x + 100, menu_y + 207), false, false);
+	text_01(L"绘制网格体", SDK::FVector2D(menu_x + 100, menu_y + 207), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 210, menu_y + 207), &gvalue::draw_mesh);
 
-	if (button_01(std::wstring(glanguage::draw_mesh_distance + std::to_wstring(gvalue::draw_mesh_distance) + glanguage::meter).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(140, 20)))
+	if (button_01(std::wstring(L"绘制距离：" + std::to_wstring(gvalue::draw_mesh_distance) + L"米").c_str(), SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(140, 20)))
 	{
 		const int dist_list[10] = {
 			10,30,50,80,100,
@@ -371,7 +370,7 @@ void menu::visual()
 
 	//right
 
-	if (button_01(std::wstring(glanguage::fov + std::to_wstring(gvalue::fov)).c_str(), SDK::FVector2D(menu_x + 270, menu_y + 180), SDK::FVector2D(110, 20)))
+	if (button_01(std::wstring(L"视野：" + std::to_wstring(gvalue::fov)).c_str(), SDK::FVector2D(menu_x + 270, menu_y + 180), SDK::FVector2D(110, 20)))
 	{
 		const int fov_list[10] = {
 			80,90,100,110,120,
@@ -388,13 +387,13 @@ void menu::visual()
 		}
 	}
 
-	text_01(glanguage::disable_post, SDK::FVector2D(menu_x + 270, menu_y + 207), false, false);
+	text_01(L"禁用后处理", SDK::FVector2D(menu_x + 270, menu_y + 207), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 207), &gvalue::disable_post);
 
-	text_01(glanguage::third_person, SDK::FVector2D(menu_x + 270, menu_y + 232), false, false);
+	text_01(L"第三人称", SDK::FVector2D(menu_x + 270, menu_y + 232), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 340, menu_y + 232), &gvalue::third_person);
 
-	if (button_01(std::wstring(glanguage::camera_len + std::to_wstring(gvalue::third_distance)).c_str(), SDK::FVector2D(menu_x + 270, menu_y + 255), SDK::FVector2D(110, 20)))
+	if (button_01(std::wstring(L"长度：" + std::to_wstring(gvalue::third_distance)).c_str(), SDK::FVector2D(menu_x + 270, menu_y + 255), SDK::FVector2D(110, 20)))
 	{
 		const int len_list[10] = {
 			100,150,200,250,300,
@@ -426,19 +425,19 @@ void menu::player()
 		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
 	);
 
-	text_01(glanguage::inf_stamina, SDK::FVector2D(menu_x + 100, menu_y + 22), false, false);
+	text_01(L"无限耐力", SDK::FVector2D(menu_x + 100, menu_y + 22), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 160, menu_y + 22), &gvalue::inf_stamina);
 
-	text_01(glanguage::inf_sanity, SDK::FVector2D(menu_x + 100, menu_y + 52), false, false);
+	text_01(L"无限San值", SDK::FVector2D(menu_x + 100, menu_y + 52), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 170, menu_y + 52), &gvalue::inf_sanity);
 
-	text_01(glanguage::auto_balance, SDK::FVector2D(menu_x + 100, menu_y + 82), false, false);
+	text_01(L"自动平衡", SDK::FVector2D(menu_x + 100, menu_y + 82), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 160, menu_y + 82), &gvalue::no_balance);
 
-	text_01(glanguage::ghost_mode, SDK::FVector2D(menu_x + 100, menu_y + 112), false, false);
-	check_box_01(SDK::FVector2D(menu_x + 200, menu_y + 112), &gvalue::ghost_mode);
+	text_01(L"灵魂出窍(非房主)", SDK::FVector2D(menu_x + 100, menu_y + 112), false, false);
+	check_box_01(SDK::FVector2D(menu_x + 210, menu_y + 112), &gvalue::ghost_mode);
 
-	if (button_01(std::wstring(glanguage::walk_speed + std::to_wstring(gvalue::walk_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(150, 20)))
+	if (button_01(std::wstring(L"行走速度：" + std::to_wstring(gvalue::walk_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(150, 20)))
 	{
 		const int list[10] = {
 			250,300,350,400,500,
@@ -455,7 +454,7 @@ void menu::player()
 		}
 	}
 
-	if (button_01(std::wstring(glanguage::run_speed + std::to_wstring(gvalue::run_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(150, 20)))
+	if (button_01(std::wstring(L"跑步速度：" + std::to_wstring(gvalue::run_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(150, 20)))
 	{
 		const int list[10] = {
 			450,500,550,600,800,
@@ -472,7 +471,7 @@ void menu::player()
 		}
 	}
 
-	if (button_01(std::wstring(glanguage::crouch_speed + std::to_wstring(gvalue::crouch_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(150, 20)))
+	if (button_01(std::wstring(L"蹲伏速度：" + std::to_wstring(gvalue::crouch_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(150, 20)))
 	{
 		const int list[10] = {
 			100,150,200,300,400,
@@ -489,7 +488,7 @@ void menu::player()
 		}
 	}
 
-	if (button_01(std::wstring(glanguage::all_speedup + f_to_ws(gvalue::speedup_multi)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(150, 20)))
+	if (button_01(std::wstring(L"通用加速：" + f_to_ws(gvalue::speedup_multi)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(150, 20)))
 	{
 		const float list[10] = {
 			1.0f,1.1f,1.2f,1.5f,2.0f,
@@ -506,13 +505,13 @@ void menu::player()
 		}
 	}
 
-	text_01(glanguage::inf_jump, SDK::FVector2D(menu_x + 280, menu_y + 22), false, false);
+	text_01(L"无限跳跃", SDK::FVector2D(menu_x + 280, menu_y + 22), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 22), &gvalue::inf_jump);
 
-	text_01(glanguage::fly_mode, SDK::FVector2D(menu_x + 280, menu_y + 52), false, false);
+	text_01(L"飞行模式", SDK::FVector2D(menu_x + 280, menu_y + 52), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 52), &gvalue::fly_mode);
 
-	if (button_01(std::wstring(glanguage::speed + f_to_ws(gvalue::fly_speed)).c_str(), SDK::FVector2D(menu_x + 280, menu_y + 80), SDK::FVector2D(100, 20)))
+	if (button_01(std::wstring(L"速度：" + f_to_ws(gvalue::fly_speed)).c_str(), SDK::FVector2D(menu_x + 280, menu_y + 80), SDK::FVector2D(100, 20)))
 	{
 		const float list[11] = {
 			5.0f,10.0f,20.0f,30.0f,40.0f,
@@ -530,7 +529,7 @@ void menu::player()
 		}
 	}
 
-	text_01(glanguage::x_delete, SDK::FVector2D(menu_x + 280, menu_y + 112), false, false);
+	text_01(L"X键删除", SDK::FVector2D(menu_x + 280, menu_y + 112), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 112), &gvalue::x_delete);
 }
 

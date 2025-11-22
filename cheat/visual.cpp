@@ -218,7 +218,7 @@ void visual::get_all()
                 actor->RootComponent,
                 SDK::FLinearColor(0.0f, 1.0f, 0.0f, 1.0f),
                 L"Íæ¼Ò",
-                gvalue::visual_player
+                gvalue::esp_player
             );
             continue;
         }
@@ -229,7 +229,7 @@ void visual::get_all()
                 target->StaticMesh,
                 SDK::FLinearColor(1.0f, 1.0f, 0.0f, 1.0f),
                 SDK::UKismetStringLibrary::Conv_NameToString(target->Class->Name),
-                gvalue::visual_interact
+                gvalue::esp_interact
             );
             continue;
         }
@@ -239,7 +239,7 @@ void visual::get_all()
                 actor->RootComponent,
                 SDK::FLinearColor(1.0f, 0.0f, 0.0f, 1.0f),
                 SDK::UKismetStringLibrary::Conv_NameToString(actor->Class->Name),
-                gvalue::visual_entity
+                gvalue::esp_entity
             );
             continue;
         }
@@ -250,7 +250,7 @@ void visual::get_all()
                 target->ItemMesh,
                 SDK::FLinearColor(0.0f, 1.0f, 1.0f, 1.0f),
                 SDK::UKismetStringLibrary::Conv_NameToString(target->Class->Name),
-                gvalue::visual_item
+                gvalue::esp_item
             );
             continue;
         }
@@ -482,20 +482,20 @@ void visual::draw_extent(SDK::USceneComponent* comp, const SDK::FLinearColor& co
     }
 }
 
-void visual::draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, const UC::FString& name, const s_visual& visual)
+void visual::draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, const UC::FString& name, const s_esp& esp)
 {
-    if (!visual.enable)
+    if (!esp.enable)
     {
         return;
     }
 
     const int dist = static_cast<int>(SDK::UKismetMathLibrary::Vector_Distance(gvalue::controller->PlayerCameraManager->GetCameraLocation(), comp->K2_GetComponentLocation()) / 100.0f);
-    if (dist > gvalue::visual_distance)
+    if (dist > gvalue::esp_distance)
     {
         return;
     }
 
-    if (visual.extent)
+    if (esp.extent)
     {
         draw_extent(comp, color);
     }
@@ -504,7 +504,7 @@ void visual::draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, co
     bool in_view = get_box(comp, min, max);
     if (in_view)
     {
-        if (visual.box)
+        if (esp.box)
         {
             render::draw_box(
                 min,
@@ -513,7 +513,7 @@ void visual::draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, co
                 color
             );
         }
-        if (visual.line)
+        if (esp.line)
         {
             render::draw_line(
                 SDK::FVector2D(gvalue::canvas->SizeX / 2, 0.0f),
@@ -523,11 +523,11 @@ void visual::draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, co
             );
         }
         std::wstring draw_str;
-        if (visual.name)
+        if (esp.name)
         {
             draw_str += find_name(name.CStr()) + L"\n";
         }
-        if (visual.distance)
+        if (esp.distance)
         {
             draw_str += std::to_wstring(dist) + L"Ã×\n";
         }

@@ -1,5 +1,6 @@
 #pragma once
 
+#if 0
 namespace glanguage
 {
 	//lable
@@ -42,3 +43,4 @@ namespace glanguage
 	inline constexpr wchar_t all_speedup[] = L"通用加速：";
 	inline constexpr wchar_t speed[] = L"速度：";
 }
+#endif // 0

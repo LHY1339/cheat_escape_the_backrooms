@@ -2,6 +2,7 @@
 
 #include <TlHelp32.h>
 #include <atlstr.h>
+#include <iostream>
 
 #include "gconst.h"
 
@@ -14,33 +15,55 @@ int injector::main()
     style &= ~WS_MAXIMIZEBOX;
     style &= ~WS_SIZEBOX;
     SetWindowLong(hwnd, GWL_STYLE, style);
-    SetWindowPos(hwnd, NULL, 0, 0, 600, 400, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
+    SetWindowPos(hwnd, NULL, 0, 0, 700, 500, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
 
-    printf("请在启动本程序之前关闭所有杀毒软件（包括Windows自带的Defender）\n");
-    printf("--------------------------------------------------------\n");
-    printf("请运行游戏后按下 F5 加载\n");
-    printf("--------------------------------------------------------\n");
+    printf(R"(
+ /##       /##   /## /##     /##  /##    /######   /######   /###### 
+| ##      | ##  | ##|  ##   /##//####   /##__  ## /##__  ## /##__  ##
+| ##      | ##  | ## \  ## /##/|_  ##  |__/  \ ##|__/  \ ##| ##  \ ##
+| ##      | ########  \  ####/   | ##     /#####/   /#####/|  #######
+| ##      | ##__  ##   \  ##/    | ##    |___  ##  |___  ## \____  ##
+| ##      | ##  | ##    | ##     | ##   /##  \ ## /##  \ ## /##  \ ##
+| ########| ##  | ##    | ##    /######|  ######/|  ######/|  ######/
+|________/|__/  |__/    |__/   |______/ \______/  \______/  \______/ 
+
+)");
+
+    printf("--------------------------------------------------------\n\n");
+    printf("- 请在启动本程序之前关闭所有杀毒软件（包括Windows自带的Defender）\n\n");
+    printf("- 运行游戏后按下 F5 加载\n\n");
+    printf("--------------------------------------------------------\n\n");
 
     while (true)
     {
         static bool f5_down = false;
-        if (GetAsyncKeyState(VK_F5) & 0x8000) 
+        if (GetAsyncKeyState(VK_F5) & 0x8000)
         {
-            if (!f5_down)
+            if (f5_down)
             {
-                f5_down = true;
-
-                const DWORD pid = find_process(gconst::proc_name);
-                std::wstring dll_path = get_abs_path(gconst::dll_name);
-                if (inject(dll_path.c_str(), pid))
-                {
-                    printf("[%d] 加载成功\n", static_cast<int>(pid));
-                }
-                else
-                {
-                    printf("[%d] 加载失败\n", static_cast<int>(pid));
-                }
+                continue;
             }
+
+            f5_down = true;
+
+            const DWORD pid = find_process(gconst::proc_name);
+            if (!pid)
+            {
+                printf("[error] 找不到游戏进程\n");
+                continue;
+            }
+            std::wstring dll_path = get_abs_path(gconst::dll_name);
+            if (is_load(pid, gconst::dll_name))
+            {
+                printf("[pid : %d] 请勿重复加载\n", static_cast<int>(pid)); 
+                continue;
+            }
+            if (inject(dll_path.c_str(), pid))
+            {
+                printf("[pid : %d] 加载成功\n", static_cast<int>(pid));
+                continue;
+            }
+            printf("[pid : %d] 加载失败\n", static_cast<int>(pid));
         }
         else
         {
@@ -116,4 +139,28 @@ BOOL injector::inject(const wchar_t* dll_path, DWORD proc_id)
 std::wstring injector::get_abs_path(const std::filesystem::path& rel_path)
 {
     return std::filesystem::absolute(rel_path).wstring();
+}
+
+bool injector::is_load(DWORD pid, const wchar_t* dll_name)
+{
+    HANDLE h_snap = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, pid);
+    if (h_snap == INVALID_HANDLE_VALUE) return false;
+
+    MODULEENTRY32W me32;
+    me32.dwSize = sizeof(me32);
+
+    if (Module32FirstW(h_snap, &me32))
+    {
+        do
+        {
+            if (_wcsicmp(me32.szModule, dll_name) == 0)
+            {
+                CloseHandle(h_snap);
+                return true;
+            }
+        } 
+        while (Module32NextW(h_snap, &me32));
+    }
+    CloseHandle(h_snap);
+    return false;
 }
