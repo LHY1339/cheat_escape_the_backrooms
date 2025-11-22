@@ -69,6 +69,7 @@ namespace gvalue
 	inline bool fly_mode = false;
 	inline float fly_speed = 5.0f;
 	inline bool x_delete = false;
+	inline bool inf_health = false;
 
 	inline std::string key_open_menu = "ins";
 	inline std::string key_close_menu = "del";

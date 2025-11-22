@@ -129,6 +129,14 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
         visual::main();
         player::main();
         entity::main();
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        printf("base error : %d\n", GetExceptionCode());
+    }
+
+    __try
+    {
         menu::main();
 
         gvalue::def_post_render(thisptr, canvas);
@@ -144,7 +152,7 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
     }
     __except (EXCEPTION_EXECUTE_HANDLER)
     {
-        printf("error code : %d", GetExceptionCode());
+        printf("menu error : %d\n", GetExceptionCode());
     }
 }
 

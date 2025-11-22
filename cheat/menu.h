@@ -19,5 +19,6 @@ private:
 	static void entity();
 	static void level();
 	static void misc();
+	static void other();
 };
 

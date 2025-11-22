@@ -25,6 +25,7 @@ void player::main()
 
 void player::get_player()
 {
+
 	if (!gvalue::controller->Pawn || !gvalue::controller->Pawn->IsA(SDK::ABPCharacter_Demo_C::StaticClass()))
 	{
 		my_player = nullptr;

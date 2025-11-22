@@ -28,6 +28,6 @@ private:
 
 	static bool get_box(SDK::USceneComponent* comp, SDK::FVector2D& min, SDK::FVector2D& max);
 	static void draw_extent(SDK::USceneComponent* comp, const SDK::FLinearColor& color);
-	static void draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, const UC::FString& name, const s_esp& esp);
+	static void draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, const UC::FString& name, const s_esp& esp, const bool& use_map = true);
 };
 

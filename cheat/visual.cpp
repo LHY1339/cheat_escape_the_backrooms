@@ -214,11 +214,14 @@ void visual::get_all()
         }
         if (actor->IsA(SDK::ABPCharacter_Demo_C::StaticClass()))
         {
+            SDK::ABPCharacter_Demo_C* player = static_cast<SDK::ABPCharacter_Demo_C*>(actor);
+            SDK::FString name = player->PlayerState ? player->PlayerState->GetPlayerName() : L"Íæ¼Ò";
             draw(
                 actor->RootComponent,
                 SDK::FLinearColor(0.0f, 1.0f, 0.0f, 1.0f),
-                L"Íæ¼Ò",
-                gvalue::esp_player
+                name,
+                gvalue::esp_player,
+                false
             );
             continue;
         }
@@ -482,7 +485,7 @@ void visual::draw_extent(SDK::USceneComponent* comp, const SDK::FLinearColor& co
     }
 }
 
-void visual::draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, const UC::FString& name, const s_esp& esp)
+void visual::draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, const UC::FString& name, const s_esp& esp, const bool& use_map)
 {
     if (!esp.enable)
     {
@@ -525,7 +528,14 @@ void visual::draw(SDK::USceneComponent* comp, const SDK::FLinearColor& color, co
         std::wstring draw_str;
         if (esp.name)
         {
-            draw_str += find_name(name.CStr()) + L"\n";
+            if (use_map)
+            {
+                draw_str += find_name(name.CStr()) + L"\n";
+            }
+            else
+            {
+                draw_str += L"Íæ¼Ò£º" + name.ToWString() + L"\n";
+            }
         }
         if (esp.distance)
         {

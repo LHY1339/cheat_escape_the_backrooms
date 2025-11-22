@@ -22,6 +22,7 @@ enum class e_page
 	entity,
 	level,
 	misc,
+	other,
 };
 
 float menu_x = 100.0f;
@@ -36,10 +37,15 @@ float drag_y = 0.0f;
 
 e_page page = e_page::visual;
 
-const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.04f, 1.0f);
-const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.06f, 1.0f);
-const SDK::FLinearColor press_col(0.1f, 0.1f, 0.1f, 1.0f);
-const SDK::FLinearColor text_col(1.0f, 1.0f, 1.0f, 1.0f);
+const SDK::FLinearColor normal_col(0.04f, 0.04f, 0.12f, 1.0f);
+const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.15f, 1.0f);
+const SDK::FLinearColor press_col(0.1f, 0.1f, 0.2f, 1.0f);
+
+const SDK::FLinearColor text_col(0.9f, 0.9f, 1.0f, 1.0f);
+
+const SDK::FLinearColor back_col(0.01f, 0.01f, 0.03f, 1.0f);
+const SDK::FLinearColor outline_col(0.2f, 0.2f, 0.3f, 1.0f);
+const SDK::FLinearColor pice_col(0.02f, 0.02f, 0.06f, 1.0f);
 
 bool button_01(const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size)
 {
@@ -62,7 +68,7 @@ void text_01(const UC::FString& text, const SDK::FVector2D& pos, const bool& mid
 		text,
 		pos,
 		SDK::FVector2D(1.0f, 1.0f),
-		SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
+		text_col,
 		1.0f,
 		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
 		SDK::FVector2D(0.0f, 0.0f),
@@ -79,10 +85,10 @@ void check_box_01(const SDK::FVector2D& pos, bool* ptr)
 		pos,
 		SDK::FVector2D(15, 15),
 		SDK::FVector2D(9, 9),
-		SDK::FLinearColor(0.4f, 0.4f, 0.4f, 1.0f),
-		SDK::FLinearColor(0.06f, 0.06f, 0.06f, 1.0f),
-		SDK::FLinearColor(0.08f, 0.08f, 0.08f, 1.0f),
-		SDK::FLinearColor(0.12f, 0.12f, 0.12f, 1.0f),
+		SDK::FLinearColor(0.15f, 0.15f, 0.4f, 1.0f),
+		normal_col,
+		hover_col,
+		press_col,
 		ptr
 	);
 }
@@ -104,10 +110,10 @@ void menu::lable()
 {
 	render::draw_text(
 		gvalue::engine->MediumFont,
-		L"[默认配置下]\n按下 Ins（Insert）显示/隐藏菜单\n按下 Del（Delete）退出",
+		L"按下 Ins（Insert）显示/隐藏菜单\n按下 Del（Delete）退出",
 		SDK::FVector2D(10.0f, 10.0f),
 		SDK::FVector2D(1.0f, 1.0f),
-		SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
+		text_col,
 		1.0f,
 		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
 		SDK::FVector2D(0.0f, 0.0f),
@@ -166,12 +172,12 @@ void menu::base_draw()
 	render::fill_box(
 		SDK::FVector2D(menu_x - 2, menu_y - 2),
 		SDK::FVector2D(menu_w + 4, menu_h + 4), 
-		SDK::FLinearColor(0.2f, 0.2f, 0.2f, 1.0f)
+		outline_col
 	);
 	render::fill_box(
 		SDK::FVector2D(menu_x, menu_y),
 		SDK::FVector2D(menu_w, menu_h),
-		SDK::FLinearColor(0.01f, 0.01f, 0.01f, 1.0f)
+		back_col
 	);
 
 	render::fill_box(
@@ -213,6 +219,9 @@ void menu::base_draw()
 	case e_page::misc:
 		misc();
 		break;
+	case e_page::other:
+		other();
+		break;
 	}
 }
 
@@ -221,7 +230,7 @@ void menu::base_cursor()
 	render::fill_box(
 		SDK::FVector2D(gvalue::mouse_input.x - 2, gvalue::mouse_input.y - 2),
 		SDK::FVector2D(4, 4),
-		SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f)
+		text_col
 	);
 }
 
@@ -230,28 +239,8 @@ void menu::left_bar()
 	render::fill_box(
 		SDK::FVector2D(menu_x, menu_y),
 		SDK::FVector2D(80, menu_h),
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
-
-	render::draw_text(
-		gvalue::engine->MediumFont,
-		L"LHY1339",
-		SDK::FVector2D(menu_x + 38, menu_y + menu_h - 20), 
-		SDK::FVector2D(1.0f, 1.0f),
-		SDK::FLinearColor(0.5f, 0.5f, 0.5f, 1.0f),
-		1.0f,
-		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
-		SDK::FVector2D(0.0f, 0.0f),
-		true,
-		true,
-		false,
-		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f)
-	);
-
-	if (gui::button(SDK::FVector2D(menu_x, menu_y + menu_h - 30), SDK::FVector2D(80, 20)))
-	{
-		system("start https://github.com/LHY1339/cheat_escape_the_backrooms");
-	}
 
 #define SELECT_PAGE(_name,_page,_y_pos) \
 if (button_01(L#_name, SDK::FVector2D(menu_x + 10, menu_y + _y_pos), SDK::FVector2D(60, 20))) \
@@ -265,6 +254,7 @@ if (button_01(L#_name, SDK::FVector2D(menu_x + 10, menu_y + _y_pos), SDK::FVecto
 	SELECT_PAGE(实体, entity, 100);
 	SELECT_PAGE(关卡, level, 130);
 	SELECT_PAGE(杂项, misc, 160);
+	SELECT_PAGE(其他, other, menu_h - 30);
 }
 
 void menu::visual()
@@ -272,19 +262,19 @@ void menu::visual()
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(menu_w - 100, 150), 
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 170),
 		SDK::FVector2D(160, 120),
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 260, menu_y + 170),
 		SDK::FVector2D(130, 120),
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
 
 	//up
@@ -413,16 +403,74 @@ void menu::visual()
 
 void menu::player()
 {
+	static std::vector<SDK::ABPCharacter_Demo_C*> pawn_list;
+
+	auto flush_list = []()
+		{
+			pawn_list.clear();
+			SDK::TArray<SDK::AActor*> actor_list;
+			SDK::UGameplayStatics::GetAllActorsOfClass(gvalue::world, SDK::ABPCharacter_Demo_C::StaticClass(), &actor_list);
+			for (SDK::AActor* actor : actor_list)
+			{
+				SDK::ABPCharacter_Demo_C* cur_pawn = static_cast<SDK::ABPCharacter_Demo_C*>(actor);
+				pawn_list.emplace_back(cur_pawn);
+			}
+		};
+
+	auto player_box = [&](SDK::ABPCharacter_Demo_C* pawn, SDK::FVector2D pos)
+		{
+			if (!pawn)
+			{
+				return;
+			}
+			render::fill_box(pos, SDK::FVector2D(300, 30.0f), pice_col);
+			text_01(
+				pawn->PlayerState->GetPlayerName(),
+				pos + SDK::FVector2D(10.0f, 8.0f),
+				false,
+				false
+			);
+
+			if (button_01(L"传送", pos + SDK::FVector2D(110, 5), SDK::FVector2D(40, 20)))
+			{
+				gvalue::controller->Pawn->K2_SetActorLocation(pawn->K2_GetActorLocation(), false, nullptr, false);
+			}
+
+			if (button_01(L"传送到我", pos + SDK::FVector2D(160, 5), SDK::FVector2D(80, 20)))
+			{
+				pawn->K2_SetActorLocation(gvalue::controller->Pawn->K2_GetActorLocation(), false, nullptr, false);
+			}
+
+			if (button_01(L"杀死", pos + SDK::FVector2D(250, 5), SDK::FVector2D(40, 20)))
+			{
+				pawn->KillClient();
+				pawn->KillServer(false);
+				flush_list();
+			}
+		};
+
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(170, menu_h - 20), 
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 270, menu_y + 10),
 		SDK::FVector2D(120, menu_h - 20),
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
+	);
+
+	render::fill_box(
+		SDK::FVector2D(menu_x + 420 - 2, menu_y - 2),
+		SDK::FVector2D(320 + 4, 70 + pawn_list.size() * 40 + 4),
+		outline_col
+	);
+
+	render::fill_box(
+		SDK::FVector2D(menu_x + 420, menu_y),
+		SDK::FVector2D(320, 70 + pawn_list.size() * 40),
+		back_col
 	);
 
 	text_01(L"无限耐力", SDK::FVector2D(menu_x + 100, menu_y + 22), false, false);
@@ -531,6 +579,27 @@ void menu::player()
 
 	text_01(L"X键删除", SDK::FVector2D(menu_x + 280, menu_y + 112), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 112), &gvalue::x_delete);
+
+	text_01(L"人物无敌", SDK::FVector2D(menu_x + 280, menu_y + 142), false, false);
+	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 142), &gvalue::inf_health);
+
+	if (button_01(L"刷新玩家列表", SDK::FVector2D(menu_x + 430, menu_y + 10), SDK::FVector2D(300, 20)))
+	{
+		flush_list();
+	}
+
+	if (button_01(L"将所有人传送到我", SDK::FVector2D(menu_x + 430, menu_y + 40), SDK::FVector2D(300, 20)))
+	{
+		for (int i = 0; i < pawn_list.size(); i++)
+		{
+			pawn_list[i]->K2_SetActorLocation(gvalue::controller->Pawn->K2_GetActorLocation(), false, nullptr, false);
+		}
+	}
+
+	for (int i = 0; i < pawn_list.size(); i++)
+	{
+		player_box(pawn_list[i], SDK::FVector2D(menu_x + 430, 70 + menu_y + 40 * i));
+	}
 }
 
 void menu::item()
@@ -540,7 +609,7 @@ void menu::item()
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(menu_w - 100, menu_h - 20), 
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
 
 #define ITEM_SPAWN(name,cls,x_pos,y_pos) \
@@ -583,7 +652,6 @@ if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVect
 void menu::entity()
 {
 	static std::vector<SDK::ACharacter*> pawn_list;
-	static SDK::APawn* last_pawn = nullptr;
 
 	auto flush_list = []()
 		{
@@ -608,7 +676,7 @@ void menu::entity()
 			{
 				return;
 			}
-			render::fill_box(pos, SDK::FVector2D(240, 30.0f), SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f));
+			render::fill_box(pos, SDK::FVector2D(240, 30.0f), pice_col);
 			const std::wstring name = visual::find_name(SDK::UKismetStringLibrary::Conv_NameToString(pawn->Class->Name).ToWString());
 			text_01(
 				name.c_str(),
@@ -629,35 +697,28 @@ void menu::entity()
 			}
 		};
 
-	if (last_pawn != gvalue::controller->Pawn)
-	{
-		pawn_list.clear();
-		last_pawn = gvalue::controller->Pawn;
-		flush_list();
-	}
-
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(120, menu_h - 20),
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 220, menu_y + 10),
 		SDK::FVector2D(170, 130),
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 420 - 2, menu_y - 2),
 		SDK::FVector2D(260 + 4, 70 + pawn_list.size() * 40 + 4),
-		SDK::FLinearColor(0.2f, 0.2f, 0.2f, 1.0f)
+		outline_col
 	);
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 420, menu_y),
 		SDK::FVector2D(260, 70 + pawn_list.size() * 40),
-		SDK::FLinearColor(0.01f, 0.01f, 0.01f, 1.0f)
+		back_col
 	);
 
 	//left
@@ -755,7 +816,7 @@ void menu::level()
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(menu_w - 100, menu_h - 20),
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
 
 #define LEVEL_CHANGE(name,lv_name,x_pos,y_pos) \
@@ -809,7 +870,7 @@ void menu::misc()
 	render::fill_box(
 		SDK::FVector2D(menu_x + 90, menu_y + 10),
 		SDK::FVector2D(menu_w - 100, menu_h - 20),
-		SDK::FLinearColor(0.02f, 0.02f, 0.02f, 1.0f)
+		pice_col
 	);
 
 	if (button_01(L"加载按键配置", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(120, 20)))
@@ -820,5 +881,53 @@ void menu::misc()
 	if (button_01(L"打开配置文件", SDK::FVector2D(menu_x + 100, menu_y + 50), SDK::FVector2D(120, 20)))
 	{
 		system("start C:/LHY1339/escape_the_backrooms/key.txt");
+	}
+}
+
+void menu::other()
+{
+	render::fill_box(
+		SDK::FVector2D(menu_x + 90, menu_y + 10),
+		SDK::FVector2D(menu_w - 100, menu_h - 20),
+		pice_col
+	);
+
+	text_01(
+		L"当前版本：beta.25.11.22\n\n作者：LHY1339\n\n更新日志：\n- 添加显示玩家名字\n- 添加房主操作成员\n- 添加无敌\n- 错误处理\n- 修复注入器重复注入\n\n感谢名单：\n- 感谢 Alans1gn 的爱发电投喂喵 (≧▽≦)",
+		SDK::FVector2D(menu_x + 100.0f, menu_y + 20.0f), 
+		false,
+		false
+	);
+
+	render::fill_box(
+		SDK::FVector2D(menu_x + 420 - 2, menu_y - 2),
+		SDK::FVector2D(120 + 4, 130 + 4), 
+		outline_col
+	);
+
+	render::fill_box(
+		SDK::FVector2D(menu_x + 420, menu_y),
+		SDK::FVector2D(120, 130),
+		back_col
+	);
+
+	if (button_01(L"作者主页", SDK::FVector2D(menu_x + 430, menu_y + 10), SDK::FVector2D(100, 20)))
+	{
+		system("start https://www.xiaoheihe.cn/app/user/profile/65994455");
+	}
+
+	if (button_01(L"为爱发电", SDK::FVector2D(menu_x + 430, menu_y + 40), SDK::FVector2D(100, 20)))
+	{
+		system("start https://afdian.com/a/lhy1339");
+	}
+
+	if (button_01(L"下载源码", SDK::FVector2D(menu_x + 430, menu_y + 70), SDK::FVector2D(100, 20)))
+	{
+		system("start https://github.com/LHY1339/cheat_escape_the_backrooms");
+	}
+
+	if (button_01(L"下载修改器", SDK::FVector2D(menu_x + 430, menu_y + 100), SDK::FVector2D(100, 20)))
+	{
+		system("start https://github.com/LHY1339/cheat_escape_the_backrooms/releases/");
 	}
 }
