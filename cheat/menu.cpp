@@ -42,33 +42,39 @@ const SDK::FLinearColor hover_col(0.06f, 0.06f, 0.15f, 1.0f);
 const SDK::FLinearColor press_col(0.1f, 0.1f, 0.2f, 1.0f);
 
 const SDK::FLinearColor text_col(0.9f, 0.9f, 1.0f, 1.0f);
+const SDK::FLinearColor text_authority_col(0.4f, 0.4f, 1.0f, 1.0f);
 
 const SDK::FLinearColor back_col(0.01f, 0.01f, 0.03f, 1.0f);
 const SDK::FLinearColor outline_col(0.2f, 0.2f, 0.3f, 1.0f);
 const SDK::FLinearColor pice_col(0.02f, 0.02f, 0.06f, 1.0f);
 
-bool button_01(const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size)
+std::vector<SDK::ABPCharacter_Demo_C*> player_list;
+std::vector<SDK::ACharacter*> entity_list;
+
+//custom func
+
+bool button_01(const UC::FString& text, const SDK::FVector2D& pos, const SDK::FVector2D& size, const bool& has_authority = false)
 {
 	return gui::button_color_text(
 		pos,
 		size,
 		text,
 		gvalue::engine->MediumFont,
-		text_col,
+		has_authority ? text_authority_col : text_col, 
 		normal_col,
 		hover_col,
 		press_col
 	);
 }
 
-void text_01(const UC::FString& text, const SDK::FVector2D& pos, const bool& mid_x, const bool& mid_y)
+void text_01(const UC::FString& text, const SDK::FVector2D& pos, const bool& mid_x, const bool& mid_y, const bool& has_authority = false)
 {
 	render::draw_text(
 		gvalue::engine->MediumFont,
 		text,
 		pos,
 		SDK::FVector2D(1.0f, 1.0f),
-		text_col,
+		has_authority ? text_authority_col : text_col,
 		1.0f,
 		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
 		SDK::FVector2D(0.0f, 0.0f),
@@ -99,6 +105,37 @@ std::wstring f_to_ws(const float& f)
 	woss << std::fixed << std::setprecision(1) << f;
 	return woss.str();
 }
+
+void flush_player()
+{
+	player_list.clear();
+	SDK::TArray<SDK::AActor*> actor_list;
+	SDK::UGameplayStatics::GetAllActorsOfClass(gvalue::world, SDK::ABPCharacter_Demo_C::StaticClass(), &actor_list);
+	for (SDK::AActor* actor : actor_list)
+	{
+		SDK::ABPCharacter_Demo_C* cur_pawn = static_cast<SDK::ABPCharacter_Demo_C*>(actor);
+		player_list.emplace_back(cur_pawn);
+	}
+};
+
+void flush_entity()
+{
+	entity_list.clear();
+	SDK::TArray<SDK::AActor*> actor_list;
+	SDK::UGameplayStatics::GetAllActorsOfClass(gvalue::world, SDK::ACharacter::StaticClass(), &actor_list);
+	for (SDK::AActor* actor : actor_list)
+	{
+		if (actor->IsA(SDK::ABP_Explorer_C::StaticClass()) ||
+			actor->IsA(SDK::ABPCharacter_Demo_C::StaticClass()))
+		{
+			continue;
+		}
+		SDK::ACharacter* cur_pawn = static_cast<SDK::ACharacter*>(actor);
+		entity_list.emplace_back(cur_pawn);
+	}
+};
+
+//class func
 
 void menu::main()
 {
@@ -205,13 +242,29 @@ void menu::base_draw()
 		visual();
 		break;
 	case e_page::player:
-		player();
+		__try
+		{
+			player();
+		}
+		__except (EXCEPTION_EXECUTE_HANDLER)
+		{
+			flush_player();
+			printf("menu->player error : %d\n", GetExceptionCode());
+		}
 		break;
 	case e_page::item:
 		item();
 		break;
 	case e_page::entity:
-		entity();
+		__try
+		{
+			entity();
+		}
+		__except (EXCEPTION_EXECUTE_HANDLER)
+		{
+			flush_entity();
+			printf("menu->entity error : %d\n", GetExceptionCode());
+		}
 		break;
 	case e_page::level:
 		level();
@@ -403,24 +456,11 @@ void menu::visual()
 
 void menu::player()
 {
-	static std::vector<SDK::ABPCharacter_Demo_C*> pawn_list;
-
-	auto flush_list = []()
-		{
-			pawn_list.clear();
-			SDK::TArray<SDK::AActor*> actor_list;
-			SDK::UGameplayStatics::GetAllActorsOfClass(gvalue::world, SDK::ABPCharacter_Demo_C::StaticClass(), &actor_list);
-			for (SDK::AActor* actor : actor_list)
-			{
-				SDK::ABPCharacter_Demo_C* cur_pawn = static_cast<SDK::ABPCharacter_Demo_C*>(actor);
-				pawn_list.emplace_back(cur_pawn);
-			}
-		};
-
 	auto player_box = [&](SDK::ABPCharacter_Demo_C* pawn, SDK::FVector2D pos)
 		{
-			if (!pawn)
+			if (!SDK::UKismetSystemLibrary::IsValid(pawn))
 			{
+				flush_player();
 				return;
 			}
 			render::fill_box(pos, SDK::FVector2D(300, 30.0f), pice_col);
@@ -428,24 +468,25 @@ void menu::player()
 				pawn->PlayerState->GetPlayerName(),
 				pos + SDK::FVector2D(10.0f, 8.0f),
 				false,
-				false
+				false,
+				true
 			);
 
-			if (button_01(L"传送", pos + SDK::FVector2D(110, 5), SDK::FVector2D(40, 20)))
+			if (button_01(L"传送", pos + SDK::FVector2D(110, 5), SDK::FVector2D(40, 20), true))
 			{
 				gvalue::controller->Pawn->K2_SetActorLocation(pawn->K2_GetActorLocation(), false, nullptr, false);
 			}
 
-			if (button_01(L"传送到我", pos + SDK::FVector2D(160, 5), SDK::FVector2D(80, 20)))
+			if (button_01(L"传送到我", pos + SDK::FVector2D(160, 5), SDK::FVector2D(80, 20), true))
 			{
 				pawn->K2_SetActorLocation(gvalue::controller->Pawn->K2_GetActorLocation(), false, nullptr, false);
 			}
 
-			if (button_01(L"杀死", pos + SDK::FVector2D(250, 5), SDK::FVector2D(40, 20)))
+			if (button_01(L"杀死", pos + SDK::FVector2D(250, 5), SDK::FVector2D(40, 20), true))
 			{
 				pawn->KillClient();
 				pawn->KillServer(false);
-				flush_list();
+				flush_player();
 			}
 		};
 
@@ -463,20 +504,20 @@ void menu::player()
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 420 - 2, menu_y - 2),
-		SDK::FVector2D(320 + 4, 70 + pawn_list.size() * 40 + 4),
+		SDK::FVector2D(320 + 4, 70 + player_list.size() * 40 + 4),
 		outline_col
 	);
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 420, menu_y),
-		SDK::FVector2D(320, 70 + pawn_list.size() * 40),
+		SDK::FVector2D(320, 70 + player_list.size() * 40),
 		back_col
 	);
 
 	text_01(L"无限耐力", SDK::FVector2D(menu_x + 100, menu_y + 22), false, false);
 	check_box_01(SDK::FVector2D(menu_x + 160, menu_y + 22), &gvalue::inf_stamina);
 
-	text_01(L"无限San值", SDK::FVector2D(menu_x + 100, menu_y + 52), false, false);
+	text_01(L"无限San值", SDK::FVector2D(menu_x + 100, menu_y + 52), false, false, true);
 	check_box_01(SDK::FVector2D(menu_x + 170, menu_y + 52), &gvalue::inf_sanity);
 
 	text_01(L"自动平衡", SDK::FVector2D(menu_x + 100, menu_y + 82), false, false);
@@ -519,7 +560,7 @@ void menu::player()
 		}
 	}
 
-	if (button_01(std::wstring(L"蹲伏速度：" + std::to_wstring(gvalue::crouch_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(150, 20)))
+	if (button_01(std::wstring(L"蹲伏速度：" + std::to_wstring(gvalue::crouch_speed)).c_str(), SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(150, 20), true))
 	{
 		const int list[10] = {
 			100,150,200,300,400,
@@ -553,13 +594,13 @@ void menu::player()
 		}
 	}
 
-	text_01(L"无限跳跃", SDK::FVector2D(menu_x + 280, menu_y + 22), false, false);
+	text_01(L"无限跳跃", SDK::FVector2D(menu_x + 280, menu_y + 22), false, false, true);
 	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 22), &gvalue::inf_jump);
 
-	text_01(L"飞行模式", SDK::FVector2D(menu_x + 280, menu_y + 52), false, false);
+	text_01(L"飞行模式", SDK::FVector2D(menu_x + 280, menu_y + 52), false, false, true);
 	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 52), &gvalue::fly_mode);
 
-	if (button_01(std::wstring(L"速度：" + f_to_ws(gvalue::fly_speed)).c_str(), SDK::FVector2D(menu_x + 280, menu_y + 80), SDK::FVector2D(100, 20)))
+	if (button_01(std::wstring(L"速度：" + f_to_ws(gvalue::fly_speed)).c_str(), SDK::FVector2D(menu_x + 280, menu_y + 80), SDK::FVector2D(100, 20), true))
 	{
 		const float list[11] = {
 			5.0f,10.0f,20.0f,30.0f,40.0f,
@@ -577,28 +618,28 @@ void menu::player()
 		}
 	}
 
-	text_01(L"X键删除", SDK::FVector2D(menu_x + 280, menu_y + 112), false, false);
+	text_01(L"X键删除", SDK::FVector2D(menu_x + 280, menu_y + 112), false, false, true);
 	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 112), &gvalue::x_delete);
 
-	text_01(L"人物无敌", SDK::FVector2D(menu_x + 280, menu_y + 142), false, false);
+	text_01(L"人物无敌", SDK::FVector2D(menu_x + 280, menu_y + 142), false, false, true);
 	check_box_01(SDK::FVector2D(menu_x + 350, menu_y + 142), &gvalue::inf_health);
 
 	if (button_01(L"刷新玩家列表", SDK::FVector2D(menu_x + 430, menu_y + 10), SDK::FVector2D(300, 20)))
 	{
-		flush_list();
+		flush_player();
 	}
 
-	if (button_01(L"将所有人传送到我", SDK::FVector2D(menu_x + 430, menu_y + 40), SDK::FVector2D(300, 20)))
+	if (button_01(L"将所有人传送到我", SDK::FVector2D(menu_x + 430, menu_y + 40), SDK::FVector2D(300, 20), true))
 	{
-		for (int i = 0; i < pawn_list.size(); i++)
+		for (int i = 0; i < player_list.size(); i++)
 		{
-			pawn_list[i]->K2_SetActorLocation(gvalue::controller->Pawn->K2_GetActorLocation(), false, nullptr, false);
+			player_list[i]->K2_SetActorLocation(gvalue::controller->Pawn->K2_GetActorLocation(), false, nullptr, false);
 		}
 	}
 
-	for (int i = 0; i < pawn_list.size(); i++)
+	for (int i = 0; i < player_list.size(); i++)
 	{
-		player_box(pawn_list[i], SDK::FVector2D(menu_x + 430, 70 + menu_y + 40 * i));
+		player_box(player_list[i], SDK::FVector2D(menu_x + 430, 70 + menu_y + 40 * i));
 	}
 }
 
@@ -651,25 +692,6 @@ if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVect
 
 void menu::entity()
 {
-	static std::vector<SDK::ACharacter*> pawn_list;
-
-	auto flush_list = []()
-		{
-			pawn_list.clear();
-			SDK::TArray<SDK::AActor*> actor_list;
-			SDK::UGameplayStatics::GetAllActorsOfClass(gvalue::world, SDK::ACharacter::StaticClass(), &actor_list);
-			for (SDK::AActor* actor : actor_list)
-			{
-				if (actor->IsA(SDK::ABP_Explorer_C::StaticClass())||
-					actor->IsA(SDK::ABPCharacter_Demo_C::StaticClass()))
-				{
-					continue;
-				}
-				SDK::ACharacter* cur_pawn = static_cast<SDK::ACharacter*>(actor);
-				pawn_list.emplace_back(cur_pawn);
-			}
-		};
-
 	auto entity_box = [&](SDK::ACharacter* pawn, SDK::FVector2D pos)
 		{
 			if (!pawn)
@@ -682,18 +704,19 @@ void menu::entity()
 				name.c_str(),
 				pos + SDK::FVector2D(10.0f, 8.0f),
 				false,
-				false
+				false,
+				true
 			);
 
-			if (button_01(L"控制", pos + SDK::FVector2D(140, 5), SDK::FVector2D(40, 20)))
+			if (button_01(L"控制", pos + SDK::FVector2D(140, 5), SDK::FVector2D(40, 20), true))
 			{
 				entity::poss(pawn);
 			}
 
-			if (button_01(L"删除", pos + SDK::FVector2D(190, 5), SDK::FVector2D(40, 20)))
+			if (button_01(L"删除", pos + SDK::FVector2D(190, 5), SDK::FVector2D(40, 20), true))
 			{
 				pawn->K2_DestroyActor();
-				flush_list();
+				flush_entity();
 			}
 		};
 
@@ -711,37 +734,37 @@ void menu::entity()
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 420 - 2, menu_y - 2),
-		SDK::FVector2D(260 + 4, 70 + pawn_list.size() * 40 + 4),
+		SDK::FVector2D(260 + 4, 70 + entity_list.size() * 40 + 4),
 		outline_col
 	);
 
 	render::fill_box(
 		SDK::FVector2D(menu_x + 420, menu_y),
-		SDK::FVector2D(260, 70 + pawn_list.size() * 40),
+		SDK::FVector2D(260, 70 + entity_list.size() * 40),
 		back_col
 	);
 
 	//left
 
-	if (button_01(L"干死所有实体", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(100, 20)))
+	if (button_01(L"干死所有实体", SDK::FVector2D(menu_x + 100, menu_y + 20), SDK::FVector2D(100, 20), true))
 	{
 		entity::kill_all();
 	}
 
-	if (button_01(L"删除细菌", SDK::FVector2D(menu_x + 100, menu_y + 50), SDK::FVector2D(100, 20)))
+	if (button_01(L"删除细菌", SDK::FVector2D(menu_x + 100, menu_y + 50), SDK::FVector2D(100, 20), true))
 	{
 		entity::kill("Bacteria_Roaming_BP_C");
 		entity::kill("Bacteria_BP_C");
 	}
 
-	if (button_01(L"删除笑魇", SDK::FVector2D(menu_x + 100, menu_y + 80), SDK::FVector2D(100, 20)))
+	if (button_01(L"删除笑魇", SDK::FVector2D(menu_x + 100, menu_y + 80), SDK::FVector2D(100, 20), true))
 	{
 		entity::kill("Smiler_BP2_C");
 		entity::kill("BP_Roaming_Smiler_C");
 		entity::kill("BP_Smiler_Dash_C");
 	}
 
-	if (button_01(L"删除派对客", SDK::FVector2D(menu_x + 100, menu_y + 110), SDK::FVector2D(100, 20)))
+	if (button_01(L"删除派对客", SDK::FVector2D(menu_x + 100, menu_y + 110), SDK::FVector2D(100, 20), true))
 	{
 		entity::kill("BP_RoamingPartygoer_Idle_C");
 		entity::kill("BP_RoamingPartygoer_C");
@@ -751,13 +774,13 @@ void menu::entity()
 		entity::kill("BP_HidingPartyGoer_C");
 	}
 
-	if (button_01(L"删除死亡飞蛾", SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(100, 20)))
+	if (button_01(L"删除死亡飞蛾", SDK::FVector2D(menu_x + 100, menu_y + 140), SDK::FVector2D(100, 20), true))
 	{
 		entity::kill("BP_Moth_C");
 		entity::kill("BP_Cave_Moth_C");
 	}
 
-	if (button_01(L"删除窃皮者", SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(100, 20)))
+	if (button_01(L"删除窃皮者", SDK::FVector2D(menu_x + 100, menu_y + 170), SDK::FVector2D(100, 20), true))
 	{
 		entity::kill("BP_SkinStealer_C");
 		entity::kill("BP_SkinStealer_Cave_C");
@@ -765,20 +788,20 @@ void menu::entity()
 		entity::kill("BP_SkinStealer_Hotel_C");
 	}
 
-	if (button_01(L"删除猎犬", SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(100, 20)))
+	if (button_01(L"删除猎犬", SDK::FVector2D(menu_x + 100, menu_y + 200), SDK::FVector2D(100, 20), true))
 	{
 		entity::kill("BP_Hound_C");
 		entity::kill("BP_Hound_Hotel_C");
 	}
 
-	if (button_01(L"删除悲尸", SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(100, 20)))
+	if (button_01(L"删除悲尸", SDK::FVector2D(menu_x + 100, menu_y + 230), SDK::FVector2D(100, 20), true))
 	{
 		entity::kill("BP_Wretch_C");
 		entity::kill("BP_Wretch_House_C");
 	}
 
 #define ENTITY_SPAWN(name,cls,x_pos,y_pos) \
-if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVector2D(70, 20))) \
+if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVector2D(70, 20), true)) \
 { \
 	entity::spawn(SDK::cls::StaticClass()); \
 } \
@@ -795,17 +818,17 @@ if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVect
 	//control
 	if (button_01(L"刷新实体列表", SDK::FVector2D(menu_x + 430, menu_y + 10), SDK::FVector2D(240, 20)))
 	{
-		flush_list();
+		flush_entity();
 	}
 
-	if (button_01(L"取消控制实体", SDK::FVector2D(menu_x + 430, menu_y + 40), SDK::FVector2D(240, 20)))
+	if (button_01(L"取消控制实体", SDK::FVector2D(menu_x + 430, menu_y + 40), SDK::FVector2D(240, 20), true))
 	{
 		entity::unposs();
 	}
 
-	for (int i = 0; i < pawn_list.size(); i++)
+	for (int i = 0; i < entity_list.size(); i++)
 	{
-		entity_box(pawn_list[i], SDK::FVector2D(menu_x + 430, 70 + menu_y + 40 * i));
+		entity_box(entity_list[i], SDK::FVector2D(menu_x + 430, 70 + menu_y + 40 * i));
 	}
 }
 
@@ -820,7 +843,7 @@ void menu::level()
 	);
 
 #define LEVEL_CHANGE(name,lv_name,x_pos,y_pos) \
-if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVector2D(80, 20))) \
+if (button_01(L#name, SDK::FVector2D(menu_x + x_pos, menu_y + y_pos), SDK::FVector2D(80, 20), true)) \
 { \
 	const std::wstring cmd = std::wstring(L"ServerTravel ") + std::wstring(L#lv_name); \
 	SDK::UKismetSystemLibrary::ExecuteConsoleCommand(gvalue::world, cmd.c_str(), gvalue::controller); \

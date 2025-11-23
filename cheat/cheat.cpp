@@ -13,6 +13,7 @@
 #include "gdefine.h"
 #include "config.h"
 #include "entity.h"
+#include "_minhook.h"
 
 #pragma warning(disable:4996)
 
@@ -76,6 +77,22 @@ void cheat::init()
         config::create("C:/LHY1339/escape_the_backrooms/key.txt"); 
     }
     config::load("C:/LHY1339/escape_the_backrooms/key.txt");
+
+    RAWINPUTDEVICE rid;
+    rid.usUsagePage = 0x01;
+    rid.usUsage = 0x02;
+    rid.dwFlags = RIDEV_INPUTSINK;
+    rid.hwndTarget = FindWindow(L"UnrealWindow", nullptr);
+    RegisterRawInputDevices(&rid, 1, sizeof(rid));
+}
+
+using fn_killserver = void(__fastcall*)(void* thisptr, bool bResetInteractable);
+fn_killserver def_killserver;
+
+void __fastcall hk_killserver(void* thisptr, bool bResetInteractable)
+{
+    printf("void __fastcall hk_killserver(void* thisptr, bool bResetInteractable) called\n");
+    def_killserver(thisptr, bResetInteractable);
 }
 
 void cheat::hook()
@@ -94,13 +111,13 @@ void cheat::hook()
 
             gvalue::def_wnd_proc = (WNDPROC)SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)hk_wnd_proc);
 
-            RAWINPUTDEVICE rid;
-            rid.usUsagePage = 0x01;
-            rid.usUsage = 0x02;       // 鼠标
-            rid.dwFlags = RIDEV_INPUTSINK;
-            rid.hwndTarget = FindWindow(L"UnrealWindow", nullptr);
-
-            RegisterRawInputDevices(&rid, 1, sizeof(rid));
+            MH_Initialize();
+            uintptr_t kill_addr = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL)) + 0x1340A10;
+            MH_CreateHook(
+                reinterpret_cast<LPVOID>(kill_addr),
+                reinterpret_cast<LPVOID>(&hk_killserver),
+                reinterpret_cast<LPVOID*>(&def_killserver)
+            );
 
             break;
         }
@@ -118,6 +135,13 @@ void cheat::exit()
 
 void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
 {
+    static SDK::UFunction* func = nullptr;
+    if (func == nullptr)
+    {
+        func = SDK::ABPCharacter_Demo_C::StaticClass()->GetFunction("BPCharacter_Demo_C", "SetWalkSpeedServer");
+        printf("base : %p\n", (uintptr_t)func->ExecFunction - (uintptr_t)GetModuleHandle(nullptr));
+    }
+        
     __try
     {
         gvalue::world = SDK::UWorld::GetWorld();
@@ -125,7 +149,6 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
         gvalue::canvas = canvas;
         gvalue::engine = SDK::UEngine::GetEngine();
 
-        gui::main();
         visual::main();
         player::main();
         entity::main();
@@ -137,6 +160,7 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
 
     __try
     {
+        gui::main();
         menu::main();
 
         gvalue::def_post_render(thisptr, canvas);
@@ -144,9 +168,7 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
         if (gvalue::is_exit)
         {
             SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)gvalue::def_wnd_proc);
-
             gvalue::vtb[gconst::post_render_index] = gvalue::def_post_render;
-
             gvalue::is_clean = true;
         }
     }

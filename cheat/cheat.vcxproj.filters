@@ -44,6 +44,9 @@
     <Filter Include="source\cheat\config">
       <UniqueIdentifier>{40161178-a117-4dbf-835c-f44c0db311d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="third_party\minhook">
+      <UniqueIdentifier>{3b14a565-05d1-40a4-8fbd-232b02e8a22e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cheat.h">
@@ -87,6 +90,33 @@
     </ClInclude>
     <ClInclude Include="config.h">
       <Filter>source\cheat\config</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\include\MinHook.h">
+      <Filter>third_party\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\src\buffer.h">
+      <Filter>third_party\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\src\hde\hde32.h">
+      <Filter>third_party\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\src\hde\hde64.h">
+      <Filter>third_party\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\src\hde\pstdint.h">
+      <Filter>third_party\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\src\hde\table32.h">
+      <Filter>third_party\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\src\hde\table64.h">
+      <Filter>third_party\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\src\trampoline.h">
+      <Filter>third_party\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="_minhook.h">
+      <Filter>third_party</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +170,21 @@
     </ClCompile>
     <ClCompile Include="sdk\SDK\AdvancedSessions_functions.cpp">
       <Filter>third_party\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\src\buffer.c">
+      <Filter>third_party\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\src\hde\hde32.c">
+      <Filter>third_party\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\src\hde\hde64.c">
+      <Filter>third_party\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\src\hook.c">
+      <Filter>third_party\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\src\trampoline.c">
+      <Filter>third_party\minhook</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

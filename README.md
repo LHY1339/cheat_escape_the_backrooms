@@ -16,20 +16,6 @@ https://afdian.com/a/lhy1339
 - 添加、修改代码
 - 切换模式为 `Release x64` 
 - 编译
-### How To Support For More Language
-##### Way 1
-- Send me an email telling me which languages you need
-- I will send back the cheat in 2 days
-##### Way2
-- Download code
-- Unzip to your folder
-- Open it with `VS2022`
-- Change `source/global/glanguage.h`
-![glanguage](glanguage.png)
-- Change `source/cheat/visual/visual.cpp` 
-![visual](visual.png)
-- Change build mode to `Release x64`
-- Build the solution
 ### 技术支持（Support）
 任何问题、BUG反馈、催更、新功能建议
 - QQ：`3201548104`
