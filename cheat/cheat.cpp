@@ -86,15 +86,6 @@ void cheat::init()
     RegisterRawInputDevices(&rid, 1, sizeof(rid));
 }
 
-using fn_killserver = void(__fastcall*)(void* thisptr, bool bResetInteractable);
-fn_killserver def_killserver;
-
-void __fastcall hk_killserver(void* thisptr, bool bResetInteractable)
-{
-    printf("void __fastcall hk_killserver(void* thisptr, bool bResetInteractable) called\n");
-    def_killserver(thisptr, bResetInteractable);
-}
-
 void cheat::hook()
 {
     while (true)
@@ -111,14 +102,6 @@ void cheat::hook()
 
             gvalue::def_wnd_proc = (WNDPROC)SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)hk_wnd_proc);
 
-            MH_Initialize();
-            uintptr_t kill_addr = reinterpret_cast<uintptr_t>(GetModuleHandle(NULL)) + 0x1340A10;
-            MH_CreateHook(
-                reinterpret_cast<LPVOID>(kill_addr),
-                reinterpret_cast<LPVOID>(&hk_killserver),
-                reinterpret_cast<LPVOID*>(&def_killserver)
-            );
-
             break;
         }
     }
@@ -134,14 +117,7 @@ void cheat::exit()
 }
 
 void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
-{
-    static SDK::UFunction* func = nullptr;
-    if (func == nullptr)
-    {
-        func = SDK::ABPCharacter_Demo_C::StaticClass()->GetFunction("BPCharacter_Demo_C", "SetWalkSpeedServer");
-        printf("base : %p\n", (uintptr_t)func->ExecFunction - (uintptr_t)GetModuleHandle(nullptr));
-    }
-        
+{        
     __try
     {
         gvalue::world = SDK::UWorld::GetWorld();

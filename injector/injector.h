@@ -13,4 +13,3 @@ private:
 	static std::wstring get_abs_path(const std::filesystem::path& rel_path);
 	static bool is_load(DWORD pid, const wchar_t* dll_name);
 };
-
