@@ -199,15 +199,15 @@ void UWB_OptionSwitcher_Theme2_C::Set_SelectedOption(const class FText& Selected
 }
 
 
-// Function WB_OptionSwitcher_Theme2.WB_OptionSwitcher_Theme2_C.Setup
+// Function WB_OptionSwitcher_Theme2.WB_OptionSwitcher_Theme2_C.SetUp
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void UWB_OptionSwitcher_Theme2_C::Setup()
+void UWB_OptionSwitcher_Theme2_C::SetUp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WB_OptionSwitcher_Theme2_C", "Setup");
+		Func = Class->GetFunction("WB_OptionSwitcher_Theme2_C", "SetUp");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

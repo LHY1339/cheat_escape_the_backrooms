@@ -13,9 +13,9 @@
 #include "CoreUObject_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "Engine_structs.hpp"
+#include "E_CameraSetting_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "MovieScene_structs.hpp"
-#include "E_CameraSetting_structs.hpp"
 
 
 namespace SDK::Params
@@ -207,28 +207,28 @@ public:
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_7;        // 0x0BB8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_8;        // 0x0BBC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_9;        // 0x0BC0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_10;       // 0x0BC4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_11;       // 0x0BC8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_MakeRotator_ReturnValue_13;               // 0x0BCC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         CallFunc_FClamp_ReturnValue_5;                     // 0x0BD8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_AddRelativeRotation_SweepHitResult_2;  // 0x0BDC(0x0088)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FRotator                               CallFunc_MakeRotator_ReturnValue_14;               // 0x0C64(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         CallFunc_Load_ControlSettings_Sensitivity;         // 0x0C70(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Load_ControlSettings_InvertMouse;         // 0x0C74(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	E_CameraSetting                               CallFunc_Load_ControlSettings_CameraSetting;       // 0x0C75(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Load_ControlSettings_ShowBody;            // 0x0C76(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Load_ControlSettings_UsingPushToTalk;     // 0x0C77(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	int32                                         CallFunc_Load_ControlSettings_FOV;                 // 0x0C78(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Load_ControlSettings_SmoothRotation;      // 0x0C7C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Load_ControlSettings_HideGore;            // 0x0C7D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C7E[0x2];                                      // 0x0C7E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Load_ControlSettings_Gamma;               // 0x0C80(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Load_ControlSettings_CameraShake;         // 0x0C84(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Load_ControlSettings_ShowEventContent;    // 0x0C85(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Load_ControlSettings_AimAssist;           // 0x0C86(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Load_ControlSettings_ControllerFeedback;  // 0x0C87(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Load_ControlSettings_ShowChat;            // 0x0C88(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C89[0x3];                                      // 0x0C89(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Load_ControlSettings_Sensitivity;         // 0x0BC4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Load_ControlSettings_InvertMouse;         // 0x0BC8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	E_CameraSetting                               CallFunc_Load_ControlSettings_CameraSetting;       // 0x0BC9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Load_ControlSettings_ShowBody;            // 0x0BCA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Load_ControlSettings_UsingPushToTalk;     // 0x0BCB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         CallFunc_Load_ControlSettings_FOV;                 // 0x0BCC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Load_ControlSettings_SmoothRotation;      // 0x0BD0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Load_ControlSettings_HideGore;            // 0x0BD1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BD2[0x2];                                      // 0x0BD2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Load_ControlSettings_Gamma;               // 0x0BD4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Load_ControlSettings_CameraShake;         // 0x0BD8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Load_ControlSettings_ShowEventContent;    // 0x0BD9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Load_ControlSettings_AimAssist;           // 0x0BDA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Load_ControlSettings_ControllerFeedback;  // 0x0BDB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Load_ControlSettings_ShowChat;            // 0x0BDC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BDD[0x3];                                      // 0x0BDD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_10;       // 0x0BE0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_11;       // 0x0BE4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_MakeRotator_ReturnValue_13;               // 0x0BE8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_FClamp_ReturnValue_5;                     // 0x0BF4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_AddRelativeRotation_SweepHitResult_2;  // 0x0BF8(0x0088)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FRotator                               CallFunc_MakeRotator_ReturnValue_14;               // 0x0C80(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FHitResult                             CallFunc_K2_AddRelativeRotation_SweepHitResult_3;  // 0x0C8C(0x0088)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_BP_RowBoat_C_ExecuteUbergraph_BP_RowBoat;
@@ -476,16 +476,20 @@ public:
 DUMPER7_ASSERTS_BP_RowBoat_C_GetWaterWorldZ_0;
 
 // Function BP_RowBoat.BP_RowBoat_C.OnRep_DidPossess
-// 0x0018 (0x0018 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct BP_RowBoat_C_OnRep_DidPossess final
 {
 public:
-	class UAC_Swimming_C*                         CallFunc_GetComponentByClass_ReturnValue;          // 0x0000(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAC_Swimming_C*                         CallFunc_GetComponentByClass_ReturnValue_1;        // 0x0008(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsLocallyControlled_ReturnValue;          // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0013(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class ABPCharacter_Demo_C*                    K2Node_DynamicCast_AsBPCharacter_Demo;             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAC_Swimming_C*                         CallFunc_GetComponentByClass_ReturnValue;          // 0x0010(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAC_Swimming_C*                         CallFunc_GetComponentByClass_ReturnValue_1;        // 0x0020(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsLocallyControlled_ReturnValue;          // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x002A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_RowBoat_C_OnRep_DidPossess;
 

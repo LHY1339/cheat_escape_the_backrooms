@@ -128,6 +128,21 @@ enum class EMagicLeapHeadTrackingError : uint8
 	EMagicLeapHeadTrackingError_MAX          = 4,
 };
 
+// ScriptStruct MagicLeap.MagicLeapGraphicsClientPerformanceInfo
+// 0x001C (0x001C - 0x0000)
+struct FMagicLeapGraphicsClientPerformanceInfo final
+{
+public:
+	float                                         FrameStartCPUCompAcquireCPUTimeMs;                 // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameStartCPUFrameEndGPUTimeMs;                    // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameStartCPUFrameStartCPUTimeMs;                  // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameDurationCPUTimeMs;                            // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameDurationGPUTimeMs;                            // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameInternalDurationCPUTimeMs;                    // 0x0014(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameInternalDurationGPUTimeMs;                    // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMagicLeapGraphicsClientPerformanceInfo;
+
 // ScriptStruct MagicLeap.MagicLeapRaycastQueryParams
 // 0x0038 (0x0038 - 0x0000)
 struct FMagicLeapRaycastQueryParams final
@@ -221,21 +236,6 @@ public:
 	TArray<struct FMagicLeapMeshBlockInfo>        BlockData;                                         // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMagicLeapTrackingMeshInfo;
-
-// ScriptStruct MagicLeap.MagicLeapGraphicsClientPerformanceInfo
-// 0x001C (0x001C - 0x0000)
-struct FMagicLeapGraphicsClientPerformanceInfo final
-{
-public:
-	float                                         FrameStartCPUCompAcquireCPUTimeMs;                 // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrameStartCPUFrameEndGPUTimeMs;                    // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrameStartCPUFrameStartCPUTimeMs;                  // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrameDurationCPUTimeMs;                            // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrameDurationGPUTimeMs;                            // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrameInternalDurationCPUTimeMs;                    // 0x0014(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrameInternalDurationGPUTimeMs;                    // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMagicLeapGraphicsClientPerformanceInfo;
 
 // ScriptStruct MagicLeap.MagicLeapHeadTrackingState
 // 0x0008 (0x0008 - 0x0000)

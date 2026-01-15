@@ -11,11 +11,11 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "E_CameraSetting_structs.hpp"
+#include "E_GameMode_structs.hpp"
 #include "Backrooms_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
-#include "E_CameraSetting_structs.hpp"
-#include "E_GameMode_structs.hpp"
 
 
 namespace SDK

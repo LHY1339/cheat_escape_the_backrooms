@@ -18,17 +18,22 @@ namespace SDK::Params
 {
 
 // Function BTTask_Teleport.BTTask_Teleport_C.ExecuteUbergraph_BTTask_Teleport
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00D8 (0x00D8 - 0x0000)
 struct BTTask_Teleport_C_ExecuteUbergraph_BTTask_Teleport final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AAIController*                          K2Node_Event_OwnerController;                      // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  K2Node_Event_ControlledPawn;                       // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetBlackboardValueAsVector_ReturnValue;   // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetActorLocation_SweepHitResult;       // 0x0024(0x0088)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	bool                                          CallFunc_K2_SetActorLocation_ReturnValue;          // 0x00AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_GetBlackboardValueAsVector_ReturnValue;   // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AAIController*                          K2Node_Event_OwnerController;                      // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  K2Node_Event_ControlledPawn;                       // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACharacter*                             K2Node_DynamicCast_AsCharacter;                    // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetScaledCapsuleHalfHeight_ReturnValue;   // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Add_VectorVector_ReturnValue;             // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetActorLocation_SweepHitResult;       // 0x0048(0x0088)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          CallFunc_K2_SetActorLocation_ReturnValue;          // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BTTask_Teleport_C_ExecuteUbergraph_BTTask_Teleport;
 

@@ -637,6 +637,20 @@ void UAdvancedExternalUILibrary::ShowWebURLUI(const class FString& URLToShow, EB
 }
 
 
+// Function AdvancedSessions.AdvancedFriendsGameInstance.OnFindInviteSessionFailure
+// (Event, Public, BlueprintEvent)
+
+void UAdvancedFriendsGameInstance::OnFindInviteSessionFailure()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdvancedFriendsGameInstance", "OnFindInviteSessionFailure");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AdvancedSessions.AdvancedFriendsGameInstance.OnPlayerLoginChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:

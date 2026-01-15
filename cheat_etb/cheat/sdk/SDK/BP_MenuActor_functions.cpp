@@ -37,6 +37,26 @@ void ABP_MenuActor_C::ExecuteUbergraph_BP_MenuActor(int32 EntryPoint)
 }
 
 
+// Function BP_MenuActor.BP_MenuActor_C.SetMainMenuShakeActive
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Active                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_MenuActor_C::SetMainMenuShakeActive(bool Active)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MenuActor_C", "SetMainMenuShakeActive");
+
+	Params::BP_MenuActor_C_SetMainMenuShakeActive Parms{};
+
+	Parms.Active = Active;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_MenuActor.BP_MenuActor_C.HeldRight
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EN_UI_StatState_structs.hpp"
 #include "Engine_structs.hpp"
+#include "EN_UI_StatState_structs.hpp"
 #include "UMG_classes.hpp"
 
 

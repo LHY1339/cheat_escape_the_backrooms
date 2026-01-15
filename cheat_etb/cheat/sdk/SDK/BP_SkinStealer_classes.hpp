@@ -18,8 +18,9 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SkinStealer.BP_SkinStealer_C
-// 0x0090 (0x0550 - 0x04C0)
-class ABP_SkinStealer_C : public ACharacter
+// 0x00A0 (0x0560 - 0x04C0)
+#pragma pack(push, 0x1)
+class alignas(0x10) ABP_SkinStealer_C : public ACharacter
 {
 public:
 	uint8                                         Pad_4B8[0x8];                                      // 0x04B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -50,6 +51,8 @@ public:
 	float                                         WalkSpeed;                                         // 0x0544(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         SprintingSpeed;                                    // 0x0548(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          SetExtraHearing;                                   // 0x054C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_54D[0x3];                                      // 0x054D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCostume*                               Player_Costume;                                    // 0x0550(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_SkinStealer(int32 EntryPoint);
@@ -75,7 +78,8 @@ public:
 	void StopMovement();
 	void OnRep_IsDisguised();
 	void CanSeePlayer(class ABPCharacter_Demo_C* Target, bool* CanSee);
-	void SetPlayerMaterials();
+	void SetPlayerMaterials(class ABPCharacter_Demo_C* Player_Character);
+	void OnRep_Player_Costume();
 
 public:
 	static class UClass* StaticClass()
@@ -91,6 +95,7 @@ public:
 		return GetDefaultObjImpl<ABP_SkinStealer_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_ABP_SkinStealer_C;
 
 }

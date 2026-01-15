@@ -167,15 +167,15 @@ void ULobby_Level_Switcher_C::Set_SelectedOption(const class FString& SelectedOp
 }
 
 
-// Function Lobby_Level_Switcher.Lobby_Level_Switcher_C.Setup
+// Function Lobby_Level_Switcher.Lobby_Level_Switcher_C.SetUp
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ULobby_Level_Switcher_C::Setup()
+void ULobby_Level_Switcher_C::SetUp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Lobby_Level_Switcher_C", "Setup");
+		Func = Class->GetFunction("Lobby_Level_Switcher_C", "SetUp");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

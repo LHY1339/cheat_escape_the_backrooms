@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "UMG_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK

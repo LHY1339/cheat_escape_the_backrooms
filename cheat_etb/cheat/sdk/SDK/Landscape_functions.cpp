@@ -17,6 +17,31 @@
 namespace SDK
 {
 
+// Function Landscape.LandscapeHeightfieldCollisionComponent.GetRenderComponent
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ULandscapeComponent*              ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULandscapeComponent* ULandscapeHeightfieldCollisionComponent::GetRenderComponent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LandscapeHeightfieldCollisionComponent", "GetRenderComponent");
+
+	Params::LandscapeHeightfieldCollisionComponent_GetRenderComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Landscape.LandscapeProxy.ChangeComponentScreenSizeToUseSubSections
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -504,31 +529,6 @@ class UMaterialInstanceDynamic* ULandscapeComponent::GetMaterialInstanceDynamic(
 	Params::LandscapeComponent_GetMaterialInstanceDynamic Parms{};
 
 	Parms.InIndex = InIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Landscape.LandscapeHeightfieldCollisionComponent.GetRenderComponent
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ULandscapeComponent*              ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULandscapeComponent* ULandscapeHeightfieldCollisionComponent::GetRenderComponent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LandscapeHeightfieldCollisionComponent", "GetRenderComponent");
-
-	Params::LandscapeHeightfieldCollisionComponent_GetRenderComponent Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

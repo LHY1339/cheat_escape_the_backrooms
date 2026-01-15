@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Backrooms_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params
@@ -101,9 +101,9 @@ public:
 };
 DUMPER7_ASSERTS_WB_Dropdown_Theme2_C_Set_SelectedOption;
 
-// Function WB_Dropdown_Theme2.WB_Dropdown_Theme2_C.Setup
+// Function WB_Dropdown_Theme2.WB_Dropdown_Theme2_C.SetUp
 // 0x0098 (0x0098 - 0x0000)
-struct WB_Dropdown_Theme2_C_Setup final
+struct WB_Dropdown_Theme2_C_SetUp final
 {
 public:
 	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -121,7 +121,7 @@ public:
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0094(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_WB_Dropdown_Theme2_C_Setup;
+DUMPER7_ASSERTS_WB_Dropdown_Theme2_C_SetUp;
 
 // Function WB_Dropdown_Theme2.WB_Dropdown_Theme2_C.FindOption
 // 0x0060 (0x0060 - 0x0000)

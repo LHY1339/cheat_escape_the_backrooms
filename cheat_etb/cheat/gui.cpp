@@ -4,8 +4,11 @@
 #include "gvalue.h"
 #include "render.h"
 
-bool left_click_down= false;
+bool left_click= false;
 bool left_was_down = false;
+
+bool right_click = false;
+bool right_was_down = false;
 
 std::string focus_name = "";
 
@@ -15,18 +18,36 @@ void gui::main()
 	{
 		if (!left_was_down)
 		{
-			left_click_down = true;
+			left_click = true;
 			left_was_down = true;
 		}
 		else
 		{
-			left_click_down = false;
+			left_click = false;
 		}
 	}
 	else
 	{
-		left_click_down = false;
+		left_click = false;
 		left_was_down = false;
+	}
+
+	if (gvalue::mouse.right)
+	{
+		if (!right_was_down)
+		{
+			right_click = true;
+			right_was_down = true;
+		}
+		else
+		{
+			right_click = false;
+		}
+	}
+	else
+	{
+		right_click = false;
+		right_was_down = false;
 	}
 
 	if (!gvalue::mouse.left)
@@ -37,7 +58,7 @@ void gui::main()
 
 bool gui::button(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size)
 {
-	if (is_hover(pos, size, name) && left_click_down && is_focus(name))
+	if (is_hover(pos, size, name) && left_click && is_focus(name))
 	{
 		return true;
 	}
@@ -53,7 +74,7 @@ bool gui::button_color(const std::string& name, const SDK::FVector2D& pos, const
 	{
 		if (is_focus(name))
 		{
-			value = left_click_down;
+			value = left_click;
 		}
 		color = gvalue::mouse.left ? press_col : hover_col;
 	}
@@ -81,7 +102,7 @@ bool gui::button_text(const std::string& name, const SDK::FVector2D& pos, const 
 	{
 		if (is_focus(name))
 		{
-			value = left_click_down;
+			value = left_click;
 		}
 		color = gvalue::mouse.left ? press_col : hover_col;
 	}
@@ -118,7 +139,7 @@ bool gui::button_color_text(const std::string& name, const SDK::FVector2D& pos, 
 	{
 		if (is_focus(name))
 		{
-			value = left_click_down;
+			value = left_click;
 		}
 		color = gvalue::mouse.left ? press_col : hover_col;
 	}
@@ -158,7 +179,7 @@ void gui::check_box(const std::string& name, const SDK::FVector2D& pos, const SD
 
 	if (is_hover(pos, size, name))
 	{
-		if (left_click_down && is_focus(name))
+		if (left_click && is_focus(name))
 		{
 			(*ptr) = !(*ptr);
 		}
@@ -231,7 +252,7 @@ void gui::drag(SDK::FVector2D& pos, SDK::FVector2D& size, SDK::FVector2D& drag_p
 		gvalue::mouse.y > pos.Y &&
 		gvalue::mouse.x < pos.X + size.X &&
 		gvalue::mouse.y < pos.Y + size.Y &&
-		left_click_down)
+		left_click)
 	{
 		is_drag = true;
 		drag_pos.X = gvalue::mouse.x - pos.X;
@@ -252,7 +273,7 @@ bool gui::is_hover(const SDK::FVector2D& pos, const SDK::FVector2D& size, const 
 		gvalue::mouse.x < pos.X + size.X &&
 		gvalue::mouse.y < pos.Y + size.Y)
 	{
-		if (left_click_down)
+		if (left_click)
 		{
 			focus_name = name;
 		}

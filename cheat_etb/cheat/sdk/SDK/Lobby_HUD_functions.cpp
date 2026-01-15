@@ -183,15 +183,15 @@ void ULobby_HUD_C::Init_LobbyStatus_Indicator()
 }
 
 
-// Function Lobby_HUD.Lobby_HUD_C.Setup
+// Function Lobby_HUD.Lobby_HUD_C.SetUp
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void ULobby_HUD_C::Setup()
+void ULobby_HUD_C::SetUp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Lobby_HUD_C", "Setup");
+		Func = Class->GetFunction("Lobby_HUD_C", "SetUp");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -12,13 +12,14 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Backrooms_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ChunkActor.BP_ChunkActor_C
-// 0x0030 (0x0250 - 0x0220)
+// 0x0040 (0x0260 - 0x0220)
 class ABP_ChunkActor_C final : public AActor
 {
 public:
@@ -28,11 +29,13 @@ public:
 	class UStaticMesh*                            ChunkMesh;                                         // 0x0238(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	class UMaterialInterface*                     ChunkMaterial;                                     // 0x0240(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	bool                                          NeverSelfDestruct;                                 // 0x0248(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
+	uint8                                         Pad_249[0x7];                                      // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCostume*                               Costume;                                           // 0x0250(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	ECostumeDismembermentPart                     DismembermentPart;                                 // 0x0258(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_ChunkActor(int32 EntryPoint);
 	void ReceiveBeginPlay();
-	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

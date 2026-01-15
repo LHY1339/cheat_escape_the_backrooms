@@ -50,19 +50,5 @@ void ABP_ChunkActor_C::ReceiveBeginPlay()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-
-// Function BP_ChunkActor.BP_ChunkActor_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_ChunkActor_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChunkActor_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
 }
 

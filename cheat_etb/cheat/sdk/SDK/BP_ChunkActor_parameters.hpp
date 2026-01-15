@@ -15,22 +15,17 @@ namespace SDK::Params
 {
 
 // Function BP_ChunkActor.BP_ChunkActor_C.ExecuteUbergraph_BP_ChunkActor
-// 0x0004 (0x0004 - 0x0000)
+// 0x0008 (0x0008 - 0x0000)
 struct BP_ChunkActor_C_ExecuteUbergraph_BP_ChunkActor final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_ChunkActor_C_ExecuteUbergraph_BP_ChunkActor;
-
-// Function BP_ChunkActor.BP_ChunkActor_C.UserConstructionScript
-// 0x0001 (0x0001 - 0x0000)
-struct BP_ChunkActor_C_UserConstructionScript final
-{
-public:
-	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_ChunkActor_C_UserConstructionScript;
 
 }
 

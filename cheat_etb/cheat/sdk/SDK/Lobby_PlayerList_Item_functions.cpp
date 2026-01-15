@@ -149,15 +149,15 @@ void ULobby_PlayerList_Item_C::Set_Avatar()
 }
 
 
-// Function Lobby_PlayerList_Item.Lobby_PlayerList_Item_C.Setup
+// Function Lobby_PlayerList_Item.Lobby_PlayerList_Item_C.SetUp
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void ULobby_PlayerList_Item_C::Setup()
+void ULobby_PlayerList_Item_C::SetUp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Lobby_PlayerList_Item_C", "Setup");
+		Func = Class->GetFunction("Lobby_PlayerList_Item_C", "SetUp");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

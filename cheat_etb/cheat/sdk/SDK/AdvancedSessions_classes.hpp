@@ -146,6 +146,7 @@ public:
 	uint8                                         Pad_1AC[0x7C];                                     // 0x01AC(0x007C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	void OnFindInviteSessionFailure();
 	void OnPlayerLoginChanged(int32 PlayerNum);
 	void OnPlayerLoginStatusChanged(int32 PlayerNum, EBPLoginStatus PreviousStatus, EBPLoginStatus NewStatus, const struct FBPUniqueNetId& NewPlayerUniqueNetID);
 	void OnPlayerTalkingStateChanged(const struct FBPUniqueNetId& PlayerId, bool bIsTalking);

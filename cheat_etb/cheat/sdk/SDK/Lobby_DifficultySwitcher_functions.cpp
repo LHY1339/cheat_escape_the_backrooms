@@ -139,15 +139,15 @@ void ULobby_DifficultySwitcher_C::Set_SelectedOption(const class FString& Select
 }
 
 
-// Function Lobby_DifficultySwitcher.Lobby_DifficultySwitcher_C.Setup
+// Function Lobby_DifficultySwitcher.Lobby_DifficultySwitcher_C.SetUp
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ULobby_DifficultySwitcher_C::Setup()
+void ULobby_DifficultySwitcher_C::SetUp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Lobby_DifficultySwitcher_C", "Setup");
+		Func = Class->GetFunction("Lobby_DifficultySwitcher_C", "SetUp");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

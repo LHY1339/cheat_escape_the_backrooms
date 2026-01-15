@@ -118,5 +118,135 @@ void UBP_DismemberComponent_C::SpawnRandomSpatter(const struct FVector& Location
 		*DecalComponent = Parms.DecalComponent;
 }
 
+
+// Function BP_DismemberComponent.BP_DismemberComponent_C.ApplyCostume
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCostume*                         Costume_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_DismemberComponent_C::ApplyCostume(class UCostume* Costume_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DismemberComponent_C", "ApplyCostume");
+
+	Params::BP_DismemberComponent_C_ApplyCostume Parms{};
+
+	Parms.Costume_0 = Costume_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_DismemberComponent.BP_DismemberComponent_C.BrokenBoneIs
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const class FString&                    Substring                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UBP_DismemberComponent_C::BrokenBoneIs(const class FString& Substring)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DismemberComponent_C", "BrokenBoneIs");
+
+	Params::BP_DismemberComponent_C_BrokenBoneIs Parms{};
+
+	Parms.Substring = std::move(Substring);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_DismemberComponent.BP_DismemberComponent_C.BoneIsNonMush
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UBP_DismemberComponent_C::BoneIsNonMush()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DismemberComponent_C", "BoneIsNonMush");
+
+	Params::BP_DismemberComponent_C_BoneIsNonMush Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_DismemberComponent.BP_DismemberComponent_C.ChooseMeatPiece
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                                    GetBoneMesh                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UStaticMesh*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class UStaticMesh* UBP_DismemberComponent_C::ChooseMeatPiece(bool GetBoneMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DismemberComponent_C", "ChooseMeatPiece");
+
+	Params::BP_DismemberComponent_C_ChooseMeatPiece Parms{};
+
+	Parms.GetBoneMesh = GetBoneMesh;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_DismemberComponent.BP_DismemberComponent_C.ChooseMeatMaterial
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                                    GetBoneMaterial                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UMaterialInterface*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class UMaterialInterface* UBP_DismemberComponent_C::ChooseMeatMaterial(bool GetBoneMaterial)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DismemberComponent_C", "ChooseMeatMaterial");
+
+	Params::BP_DismemberComponent_C_ChooseMeatMaterial Parms{};
+
+	Parms.GetBoneMaterial = GetBoneMaterial;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_DismemberComponent.BP_DismemberComponent_C.GetBoneAsDismembermentPart
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ECostumeDismembermentPart*              DismembermentPart                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_DismemberComponent_C::GetBoneAsDismembermentPart(ECostumeDismembermentPart* DismembermentPart)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DismemberComponent_C", "GetBoneAsDismembermentPart");
+
+	Params::BP_DismemberComponent_C_GetBoneAsDismembermentPart Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (DismembermentPart != nullptr)
+		*DismembermentPart = Parms.DismembermentPart;
+}
+
 }
 

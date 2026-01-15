@@ -6,6 +6,12 @@
 
 #include "gconst.h"
 
+injector* injector::get()
+{
+    static injector inst;
+    return &inst;
+}
+
 int injector::main()
 {
     SetConsoleTitle(L"[LHY1339] 修改器");
@@ -15,25 +21,9 @@ int injector::main()
     style &= ~WS_MAXIMIZEBOX;
     style &= ~WS_SIZEBOX;
     SetWindowLong(hwnd, GWL_STYLE, style);
-    SetWindowPos(hwnd, NULL, 0, 0, 700, 500, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
+    SetWindowPos(hwnd, NULL, 0, 0, 600, 400, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
 
-    printf(R"(
- /##       /##   /## /##     /##  /##    /######   /######   /###### 
-| ##      | ##  | ##|  ##   /##//####   /##__  ## /##__  ## /##__  ##
-| ##      | ##  | ## \  ## /##/|_  ##  |__/  \ ##|__/  \ ##| ##  \ ##
-| ##      | ########  \  ####/   | ##     /#####/   /#####/|  #######
-| ##      | ##__  ##   \  ##/    | ##    |___  ##  |___  ## \____  ##
-| ##      | ##  | ##    | ##     | ##   /##  \ ## /##  \ ## /##  \ ##
-| ########| ##  | ##    | ##    /######|  ######/|  ######/|  ######/
-|________/|__/  |__/    |__/   |______/ \______/  \______/  \______/ 
-
-)");
-
-    printf("--------------------------------------------------------\n\n");
-    printf("- 请在启动本程序之前关闭所有杀毒软件（包括Windows自带的Defender）\n\n");
-    printf("- 运行游戏后按下 F5 加载\n\n");
-    printf("- 任何问题加QQ群：1071845133\n\n");
-    printf("--------------------------------------------------------\n\n");
+    print_log();
 
     while (true)
     {
@@ -47,7 +37,7 @@ int injector::main()
 
             f5_down = true;
 
-            const DWORD pid = find_process(gconst::proc_name);
+            const DWORD pid = find_process(gconst::wnd_name);
             if (!pid)
             {
                 printf("[error] 找不到游戏进程\n");
@@ -74,31 +64,27 @@ int injector::main()
     return 0;
 }
 
+void injector::print_log()
+{
+    printf(R"(
+------------
+按下 F5 加载
+------------
+
+)");
+
+}
+
 DWORD injector::find_process(const wchar_t* name)
 {
-    HANDLE h_proc = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
-    if (!h_proc)
+    DWORD pid = 0;
+    HWND hwnd = FindWindowW(L"UnrealWindow", name);
+    if (!hwnd)
     {
         return FALSE;
     }
-    PROCESSENTRY32 info;
-    info.dwSize = sizeof(PROCESSENTRY32);
-    if (!Process32First(h_proc, &info))
-    {
-        return FALSE;
-    }
-    while (1)
-    {
-        if (_tcscmp(info.szExeFile, name) == 0)
-        {
-            return info.th32ProcessID;
-        }
-        if (!Process32Next(h_proc, &info))
-        {
-            return FALSE;
-        }
-    }
-    return FALSE;
+    GetWindowThreadProcessId(hwnd, &pid);
+    return pid;
 }
 
 BOOL injector::inject(const wchar_t* dll_path, DWORD proc_id)

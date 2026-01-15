@@ -29,14 +29,14 @@ public:
 public:
 	void ExecuteUbergraph_BP_FlareGun(int32 EntryPoint);
 	void ReceiveDestroyed();
+	void ReceiveBeginPlay();
 	void MC_Fire();
+	void UseItem();
 	void OnCompleted_2B9968E342C281F2784D3CA1FF59D3F5(class FName NotifyName);
 	void OnBlendOut_2B9968E342C281F2784D3CA1FF59D3F5(class FName NotifyName);
 	void OnInterrupted_2B9968E342C281F2784D3CA1FF59D3F5(class FName NotifyName);
 	void OnNotifyBegin_2B9968E342C281F2784D3CA1FF59D3F5(class FName NotifyName);
 	void OnNotifyEnd_2B9968E342C281F2784D3CA1FF59D3F5(class FName NotifyName);
-	void ReceiveBeginPlay();
-	void UseItem();
 
 public:
 	static class UClass* StaticClass()

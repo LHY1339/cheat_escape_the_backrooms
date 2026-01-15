@@ -667,6 +667,34 @@ void UW_MainMenu_C::BndEvt__W_MainMenu_Button_NewSave_K2Node_ComponentBoundEvent
 }
 
 
+// Function W_MainMenu.W_MainMenu_C.HandleCostumeSelectorClosed
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_MainMenu_C::HandleCostumeSelectorClosed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MainMenu_C", "HandleCostumeSelectorClosed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_MainMenu.W_MainMenu_C.OpenCostumes
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_MainMenu_C::OpenCostumes()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MainMenu_C", "OpenCostumes");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_MainMenu.W_MainMenu_C.OnActiveUserChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1380,6 +1408,20 @@ void UW_MainMenu_C::Construct()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("W_MainMenu_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_MainMenu.W_MainMenu_C.BndEvt__W_MainMenu_CostumesButton_K2Node_ComponentBoundEvent_0_OnClick__DelegateSignature
+// (BlueprintEvent)
+
+void UW_MainMenu_C::BndEvt__W_MainMenu_CostumesButton_K2Node_ComponentBoundEvent_0_OnClick__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MainMenu_C", "BndEvt__W_MainMenu_CostumesButton_K2Node_ComponentBoundEvent_0_OnClick__DelegateSignature");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

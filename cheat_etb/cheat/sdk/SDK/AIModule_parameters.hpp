@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "GameplayTasks_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK::Params
@@ -582,6 +582,46 @@ public:
 };
 DUMPER7_ASSERTS_AIPerceptionSystem_ReportEvent;
 
+// Function AIModule.PathFollowingComponent.OnActorBump
+// 0x00A8 (0x00A8 - 0x0000)
+struct PathFollowingComponent_OnActorBump final
+{
+public:
+	class AActor*                                 SelfActor;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                NormalImpulse;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FHitResult                             Hit;                                               // 0x001C(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PathFollowingComponent_OnActorBump;
+
+// Function AIModule.PathFollowingComponent.OnNavDataRegistered
+// 0x0008 (0x0008 - 0x0000)
+struct PathFollowingComponent_OnNavDataRegistered final
+{
+public:
+	class ANavigationData*                        NavData;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PathFollowingComponent_OnNavDataRegistered;
+
+// Function AIModule.PathFollowingComponent.GetPathActionType
+// 0x0001 (0x0001 - 0x0000)
+struct PathFollowingComponent_GetPathActionType final
+{
+public:
+	EPathFollowingAction                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PathFollowingComponent_GetPathActionType;
+
+// Function AIModule.PathFollowingComponent.GetPathDestination
+// 0x000C (0x000C - 0x0000)
+struct PathFollowingComponent_GetPathDestination final
+{
+public:
+	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PathFollowingComponent_GetPathDestination;
+
 // Function AIModule.AISense_Blueprint.K2_OnNewPawn
 // 0x0008 (0x0008 - 0x0000)
 struct AISense_Blueprint_K2_OnNewPawn final
@@ -666,35 +706,6 @@ public:
 };
 DUMPER7_ASSERTS_AISense_Damage_ReportDamageEvent;
 
-// Function AIModule.PawnAction.CreateActionInstance
-// 0x0018 (0x0018 - 0x0000)
-struct PawnAction_CreateActionInstance final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UPawnAction>                ActionClass;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPawnAction*                            ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PawnAction_CreateActionInstance;
-
-// Function AIModule.PawnAction.Finish
-// 0x0001 (0x0001 - 0x0000)
-struct PawnAction_Finish final
-{
-public:
-	EPawnActionResult                             WithResult;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PawnAction_Finish;
-
-// Function AIModule.PawnAction.GetActionPriority
-// 0x0001 (0x0001 - 0x0000)
-struct PawnAction_GetActionPriority final
-{
-public:
-	EAIRequestPriority                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PawnAction_GetActionPriority;
-
 // Function AIModule.AISense_Hearing.ReportNoiseEvent
 // 0x0030 (0x0030 - 0x0000)
 struct AISense_Hearing_ReportNoiseEvent final
@@ -734,159 +745,96 @@ public:
 };
 DUMPER7_ASSERTS_AISense_Prediction_RequestPawnPredictionEvent;
 
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForBox
-// 0x0040 (0x0040 - 0x0000)
-struct NavLocalGridManager_AddLocalNavigationGridForBox final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Extent;                                            // 0x0014(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0020(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         Radius2D;                                          // 0x002C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Height;                                            // 0x0030(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRebuildGrids;                                     // 0x0034(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ReturnValue;                                       // 0x0038(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_NavLocalGridManager_AddLocalNavigationGridForBox;
-
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForCapsule
+// Function AIModule.EnvQueryManager.RunEQSQuery
 // 0x0030 (0x0030 - 0x0000)
-struct NavLocalGridManager_AddLocalNavigationGridForCapsule final
+struct EnvQueryManager_RunEQSQuery final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CapsuleRadius;                                     // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CapsuleHalfHeight;                                 // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Radius2D;                                          // 0x001C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Height;                                            // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRebuildGrids;                                     // 0x0024(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ReturnValue;                                       // 0x0028(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UEnvQuery*                              QueryTemplate;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                Querier;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnvQueryRunMode                              RunMode;                                           // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass;                               // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEnvQueryInstanceBlueprintWrapper*      ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_NavLocalGridManager_AddLocalNavigationGridForCapsule;
+DUMPER7_ASSERTS_EnvQueryManager_RunEQSQuery;
 
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoint
-// 0x0028 (0x0028 - 0x0000)
-struct NavLocalGridManager_AddLocalNavigationGridForPoint final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Radius2D;                                          // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Height;                                            // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRebuildGrids;                                     // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_NavLocalGridManager_AddLocalNavigationGridForPoint;
-
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoints
-// 0x0028 (0x0028 - 0x0000)
-struct NavLocalGridManager_AddLocalNavigationGridForPoints final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        Locations;                                         // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         Radius2D;                                          // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Height;                                            // 0x001C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRebuildGrids;                                     // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ReturnValue;                                       // 0x0024(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavLocalGridManager_AddLocalNavigationGridForPoints;
-
-// Function AIModule.NavLocalGridManager.FindLocalNavigationGridPath
-// 0x0038 (0x0038 - 0x0000)
-struct NavLocalGridManager_FindLocalNavigationGridPath final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Start;                                             // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                End;                                               // 0x0014(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        PathPoints;                                        // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_NavLocalGridManager_FindLocalNavigationGridPath;
-
-// Function AIModule.NavLocalGridManager.RemoveLocalNavigationGrid
-// 0x0010 (0x0010 - 0x0000)
-struct NavLocalGridManager_RemoveLocalNavigationGrid final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GridId;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRebuildGrids;                                     // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_NavLocalGridManager_RemoveLocalNavigationGrid;
-
-// Function AIModule.NavLocalGridManager.SetLocalNavigationGridDensity
-// 0x0010 (0x0010 - 0x0000)
-struct NavLocalGridManager_SetLocalNavigationGridDensity final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CellSize;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_NavLocalGridManager_SetLocalNavigationGridDensity;
-
-// Function AIModule.PawnActionsComponent.K2_PerformAction
+// Function AIModule.NavLinkProxy.ReceiveSmartLinkReached
 // 0x0018 (0x0018 - 0x0000)
-struct PawnActionsComponent_K2_PerformAction final
+struct NavLinkProxy_ReceiveSmartLinkReached final
 {
 public:
-	class APawn*                                  Pawn;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPawnAction*                            Action;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAIRequestPriority                            Priority;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Agent;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Destination;                                       // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PawnActionsComponent_K2_PerformAction;
+DUMPER7_ASSERTS_NavLinkProxy_ReceiveSmartLinkReached;
 
-// Function AIModule.PawnActionsComponent.K2_AbortAction
-// 0x0010 (0x0010 - 0x0000)
-struct PawnActionsComponent_K2_AbortAction final
+// Function AIModule.NavLinkProxy.ResumePathFollowing
+// 0x0008 (0x0008 - 0x0000)
+struct NavLinkProxy_ResumePathFollowing final
 {
 public:
-	class UPawnAction*                            ActionToAbort;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPawnActionAbortState                         ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Agent;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PawnActionsComponent_K2_AbortAction;
+DUMPER7_ASSERTS_NavLinkProxy_ResumePathFollowing;
 
-// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
-// 0x0010 (0x0010 - 0x0000)
-struct PawnActionsComponent_K2_ForceAbortAction final
+// Function AIModule.NavLinkProxy.SetSmartLinkEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct NavLinkProxy_SetSmartLinkEnabled final
 {
 public:
-	class UPawnAction*                            ActionToAbort;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPawnActionAbortState                         ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PawnActionsComponent_K2_ForceAbortAction;
+DUMPER7_ASSERTS_NavLinkProxy_SetSmartLinkEnabled;
 
-// Function AIModule.PawnActionsComponent.K2_PushAction
-// 0x0020 (0x0020 - 0x0000)
-struct PawnActionsComponent_K2_PushAction final
+// Function AIModule.NavLinkProxy.HasMovingAgents
+// 0x0001 (0x0001 - 0x0000)
+struct NavLinkProxy_HasMovingAgents final
 {
 public:
-	class UPawnAction*                            NewAction;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAIRequestPriority                            Priority;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                Instigator;                                        // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PawnActionsComponent_K2_PushAction;
+DUMPER7_ASSERTS_NavLinkProxy_HasMovingAgents;
+
+// Function AIModule.NavLinkProxy.IsSmartLinkEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct NavLinkProxy_IsSmartLinkEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavLinkProxy_IsSmartLinkEnabled;
+
+// Function AIModule.PawnAction.CreateActionInstance
+// 0x0018 (0x0018 - 0x0000)
+struct PawnAction_CreateActionInstance final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UPawnAction>                ActionClass;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPawnAction*                            ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PawnAction_CreateActionInstance;
+
+// Function AIModule.PawnAction.Finish
+// 0x0001 (0x0001 - 0x0000)
+struct PawnAction_Finish final
+{
+public:
+	EPawnActionResult                             WithResult;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PawnAction_Finish;
+
+// Function AIModule.PawnAction.GetActionPriority
+// 0x0001 (0x0001 - 0x0000)
+struct PawnAction_GetActionPriority final
+{
+public:
+	EAIRequestPriority                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PawnAction_GetActionPriority;
 
 // Function AIModule.AITask_MoveTo.AIMoveTo
 // 0x0038 (0x0038 - 0x0000)
@@ -987,6 +935,55 @@ public:
 	class UBlackboardData*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BlackboardAssetProvider_GetBlackboardAsset;
+
+// Function AIModule.PawnAction_BlueprintBase.ActionFinished
+// 0x0010 (0x0010 - 0x0000)
+struct PawnAction_BlueprintBase_ActionFinished final
+{
+public:
+	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPawnActionResult                             WithResult;                                        // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionFinished;
+
+// Function AIModule.PawnAction_BlueprintBase.ActionPause
+// 0x0008 (0x0008 - 0x0000)
+struct PawnAction_BlueprintBase_ActionPause final
+{
+public:
+	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionPause;
+
+// Function AIModule.PawnAction_BlueprintBase.ActionResume
+// 0x0008 (0x0008 - 0x0000)
+struct PawnAction_BlueprintBase_ActionResume final
+{
+public:
+	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionResume;
+
+// Function AIModule.PawnAction_BlueprintBase.ActionStart
+// 0x0008 (0x0008 - 0x0000)
+struct PawnAction_BlueprintBase_ActionStart final
+{
+public:
+	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionStart;
+
+// Function AIModule.PawnAction_BlueprintBase.ActionTick
+// 0x0010 (0x0010 - 0x0000)
+struct PawnAction_BlueprintBase_ActionTick final
+{
+public:
+	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeltaSeconds;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionTick;
 
 // Function AIModule.BlackboardComponent.ClearValue
 // 0x0008 (0x0008 - 0x0000)
@@ -1878,46 +1875,6 @@ public:
 };
 DUMPER7_ASSERTS_BTTask_BlueprintBase_IsTaskExecuting;
 
-// Function AIModule.PathFollowingComponent.OnActorBump
-// 0x00A8 (0x00A8 - 0x0000)
-struct PathFollowingComponent_OnActorBump final
-{
-public:
-	class AActor*                                 SelfActor;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                NormalImpulse;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FHitResult                             Hit;                                               // 0x001C(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_PathFollowingComponent_OnActorBump;
-
-// Function AIModule.PathFollowingComponent.OnNavDataRegistered
-// 0x0008 (0x0008 - 0x0000)
-struct PathFollowingComponent_OnNavDataRegistered final
-{
-public:
-	class ANavigationData*                        NavData;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PathFollowingComponent_OnNavDataRegistered;
-
-// Function AIModule.PathFollowingComponent.GetPathActionType
-// 0x0001 (0x0001 - 0x0000)
-struct PathFollowingComponent_GetPathActionType final
-{
-public:
-	EPathFollowingAction                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PathFollowingComponent_GetPathActionType;
-
-// Function AIModule.PathFollowingComponent.GetPathDestination
-// 0x000C (0x000C - 0x0000)
-struct PathFollowingComponent_GetPathDestination final
-{
-public:
-	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PathFollowingComponent_GetPathDestination;
-
 // Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering
 // 0x0001 (0x0001 - 0x0000)
 struct CrowdFollowingComponent_SuspendCrowdSteering final
@@ -2068,116 +2025,159 @@ public:
 };
 DUMPER7_ASSERTS_EnvQueryInstanceBlueprintWrapper_GetResultsAsLocations;
 
-// Function AIModule.EnvQueryManager.RunEQSQuery
-// 0x0030 (0x0030 - 0x0000)
-struct EnvQueryManager_RunEQSQuery final
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForBox
+// 0x0040 (0x0040 - 0x0000)
+struct NavLocalGridManager_AddLocalNavigationGridForBox final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEnvQuery*                              QueryTemplate;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                Querier;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnvQueryRunMode                              RunMode;                                           // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass;                               // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEnvQueryInstanceBlueprintWrapper*      ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Extent;                                            // 0x0014(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0020(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         Radius2D;                                          // 0x002C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Height;                                            // 0x0030(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRebuildGrids;                                     // 0x0034(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0038(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_EnvQueryManager_RunEQSQuery;
+DUMPER7_ASSERTS_NavLocalGridManager_AddLocalNavigationGridForBox;
 
-// Function AIModule.NavLinkProxy.ReceiveSmartLinkReached
-// 0x0018 (0x0018 - 0x0000)
-struct NavLinkProxy_ReceiveSmartLinkReached final
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForCapsule
+// 0x0030 (0x0030 - 0x0000)
+struct NavLocalGridManager_AddLocalNavigationGridForCapsule final
 {
 public:
-	class AActor*                                 Agent;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Destination;                                       // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CapsuleRadius;                                     // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CapsuleHalfHeight;                                 // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Radius2D;                                          // 0x001C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Height;                                            // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRebuildGrids;                                     // 0x0024(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0028(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_NavLinkProxy_ReceiveSmartLinkReached;
+DUMPER7_ASSERTS_NavLocalGridManager_AddLocalNavigationGridForCapsule;
 
-// Function AIModule.NavLinkProxy.ResumePathFollowing
-// 0x0008 (0x0008 - 0x0000)
-struct NavLinkProxy_ResumePathFollowing final
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoint
+// 0x0028 (0x0028 - 0x0000)
+struct NavLocalGridManager_AddLocalNavigationGridForPoint final
 {
 public:
-	class AActor*                                 Agent;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Radius2D;                                          // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Height;                                            // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRebuildGrids;                                     // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_NavLinkProxy_ResumePathFollowing;
+DUMPER7_ASSERTS_NavLocalGridManager_AddLocalNavigationGridForPoint;
 
-// Function AIModule.NavLinkProxy.SetSmartLinkEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct NavLinkProxy_SetSmartLinkEnabled final
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoints
+// 0x0028 (0x0028 - 0x0000)
+struct NavLocalGridManager_AddLocalNavigationGridForPoints final
 {
 public:
-	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        Locations;                                         // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         Radius2D;                                          // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Height;                                            // 0x001C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRebuildGrids;                                     // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0024(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_NavLinkProxy_SetSmartLinkEnabled;
+DUMPER7_ASSERTS_NavLocalGridManager_AddLocalNavigationGridForPoints;
 
-// Function AIModule.NavLinkProxy.HasMovingAgents
-// 0x0001 (0x0001 - 0x0000)
-struct NavLinkProxy_HasMovingAgents final
+// Function AIModule.NavLocalGridManager.FindLocalNavigationGridPath
+// 0x0038 (0x0038 - 0x0000)
+struct NavLocalGridManager_FindLocalNavigationGridPath final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Start;                                             // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                End;                                               // 0x0014(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        PathPoints;                                        // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_NavLinkProxy_HasMovingAgents;
+DUMPER7_ASSERTS_NavLocalGridManager_FindLocalNavigationGridPath;
 
-// Function AIModule.NavLinkProxy.IsSmartLinkEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct NavLinkProxy_IsSmartLinkEnabled final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavLinkProxy_IsSmartLinkEnabled;
-
-// Function AIModule.PawnAction_BlueprintBase.ActionFinished
+// Function AIModule.NavLocalGridManager.RemoveLocalNavigationGrid
 // 0x0010 (0x0010 - 0x0000)
-struct PawnAction_BlueprintBase_ActionFinished final
+struct NavLocalGridManager_RemoveLocalNavigationGrid final
 {
 public:
-	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EPawnActionResult                             WithResult;                                        // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GridId;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRebuildGrids;                                     // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_NavLocalGridManager_RemoveLocalNavigationGrid;
+
+// Function AIModule.NavLocalGridManager.SetLocalNavigationGridDensity
+// 0x0010 (0x0010 - 0x0000)
+struct NavLocalGridManager_SetLocalNavigationGridDensity final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CellSize;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_NavLocalGridManager_SetLocalNavigationGridDensity;
+
+// Function AIModule.PawnActionsComponent.K2_PerformAction
+// 0x0018 (0x0018 - 0x0000)
+struct PawnActionsComponent_K2_PerformAction final
+{
+public:
+	class APawn*                                  Pawn;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPawnAction*                            Action;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAIRequestPriority                            Priority;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PawnActionsComponent_K2_PerformAction;
+
+// Function AIModule.PawnActionsComponent.K2_AbortAction
+// 0x0010 (0x0010 - 0x0000)
+struct PawnActionsComponent_K2_AbortAction final
+{
+public:
+	class UPawnAction*                            ActionToAbort;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPawnActionAbortState                         ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionFinished;
+DUMPER7_ASSERTS_PawnActionsComponent_K2_AbortAction;
 
-// Function AIModule.PawnAction_BlueprintBase.ActionPause
-// 0x0008 (0x0008 - 0x0000)
-struct PawnAction_BlueprintBase_ActionPause final
-{
-public:
-	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionPause;
-
-// Function AIModule.PawnAction_BlueprintBase.ActionResume
-// 0x0008 (0x0008 - 0x0000)
-struct PawnAction_BlueprintBase_ActionResume final
-{
-public:
-	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionResume;
-
-// Function AIModule.PawnAction_BlueprintBase.ActionStart
-// 0x0008 (0x0008 - 0x0000)
-struct PawnAction_BlueprintBase_ActionStart final
-{
-public:
-	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionStart;
-
-// Function AIModule.PawnAction_BlueprintBase.ActionTick
+// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
 // 0x0010 (0x0010 - 0x0000)
-struct PawnAction_BlueprintBase_ActionTick final
+struct PawnActionsComponent_K2_ForceAbortAction final
 {
 public:
-	class APawn*                                  ControlledPawn;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DeltaSeconds;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UPawnAction*                            ActionToAbort;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EPawnActionAbortState                         ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PawnAction_BlueprintBase_ActionTick;
+DUMPER7_ASSERTS_PawnActionsComponent_K2_ForceAbortAction;
+
+// Function AIModule.PawnActionsComponent.K2_PushAction
+// 0x0020 (0x0020 - 0x0000)
+struct PawnActionsComponent_K2_PushAction final
+{
+public:
+	class UPawnAction*                            NewAction;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAIRequestPriority                            Priority;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                Instigator;                                        // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_PawnActionsComponent_K2_PushAction;
 
 // Function AIModule.PawnSensingComponent.SetPeripheralVisionAngle
 // 0x0004 (0x0004 - 0x0000)

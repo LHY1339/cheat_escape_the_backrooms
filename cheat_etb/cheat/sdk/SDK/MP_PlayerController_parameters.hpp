@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Backrooms_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "ST_UI_Mission_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "ST_UI_Mission_structs.hpp"
+#include "Backrooms_structs.hpp"
 #include "HE_SubtitleSeq_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "HE_Subtitle_structs.hpp"
 

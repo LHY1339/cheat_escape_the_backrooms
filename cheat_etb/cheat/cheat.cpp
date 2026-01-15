@@ -7,11 +7,28 @@
 #include "gui.h"
 #include "gdefine.h"
 #include "gvalue.h"
-#include "gconst.h"
 #include "menu.h"
 #include "visual.h"
+#include "player.h"
+#include "entity.h"
+#include "command.h"
+#include "config.h"
+#include "color.h"
+#include "kismet.h"
+#include "network.h"
+#include "quick.h"
+#include "hook.h"
+#include "keybind.h"
+
+#include <filesystem>
 
 #pragma warning(disable:4996)
+
+cheat* cheat::get()
+{
+    static cheat inst;
+    return& inst;
+}
 
 void cheat::main()
 {
@@ -31,27 +48,33 @@ void cheat::console()
 
 void cheat::init()
 {
-    menu::init();
-    visual::init();
+    while (!kismet::get_window())
+    {
+        Sleep(100);
+    }
+
+    std::filesystem::path folder_path = "C:\\LHY1339\\escape_the_backrooms";
+    if (!std::filesystem::exists(folder_path))
+    {
+        std::filesystem::create_directories(folder_path);
+    }
+
+    menu::get()->init();
+    player::get()->init();
+    entity::get()->init();
+    visual::get()->init();
+    command::get()->init();
+    network::get()->init();
+    quick::get()->init();
+
+    config::get()->load("C:\\LHY1339\\escape_the_backrooms\\config.cheat");
+    config::get()->load("C:\\LHY1339\\escape_the_backrooms\\keybind.cheat");
+    color::get()->load();
 }
 
 void cheat::hook()
 {
-    SDK::UWorld* world = nullptr;
-    do
-    {
-        world = SDK::UWorld::GetWorld();
-    } 
-    while (!world);
-
-    gvalue::vtb = *(void***)world->OwningGameInstance->LocalPlayers[0]->ViewportClient;
-    DWORD protect = 0;
-    VirtualProtect(gvalue::vtb, 1, PAGE_EXECUTE_READWRITE, &protect);
-
-    gvalue::def_post_render = (fn_post_render)(gvalue::vtb[gconst::post_render_index]);
-    gvalue::vtb[gconst::post_render_index] = &hk_post_render;
-
-    gvalue::def_wnd_proc = (WNDPROC)SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)hk_wnd_proc);
+    hook::get()->hook_func(hk_post_render, hk_wnd_proc);
 }
 
 void cheat::exit()
@@ -71,25 +94,27 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
         gvalue::controller = SDK::UGameplayStatics::GetPlayerController(gvalue::world, 0);
         gvalue::canvas = canvas;
         gvalue::engine = SDK::UEngine::GetEngine();
+        gvalue::delta_time = SDK::UGameplayStatics::GetWorldDeltaSeconds(gvalue::world);
 
+        network::get()->main();
         gui::main();
-        visual::main();
-        menu::main();
+        visual::get()->main();
+        player::get()->main();
+        entity::get()->main();
+        menu::get()->main();
+        quick::get()->main();
 
         gvalue::def_post_render(thisptr, canvas);
 
         if (gvalue::is_exit)
         {
-            SetWindowLongPtrA(FindWindow(L"UnrealWindow", nullptr), GWLP_WNDPROC, (LONG_PTR)gvalue::def_wnd_proc);
-
-            gvalue::vtb[gconst::post_render_index] = gvalue::def_post_render;
-
+            hook::get()->unhook_func();
             gvalue::is_clean = true;
         }
     }
     __except (EXCEPTION_EXECUTE_HANDLER)
     {
-        printf("error code : %d", GetExceptionCode());
+        printf("error code : %d\n", GetExceptionCode());
     }
 }
 
@@ -97,15 +122,38 @@ LRESULT cheat::hk_wnd_proc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param
 {
     switch (u_msg)
     {
+    case WM_INPUT:
+    {
+        if (!gvalue::menu_open && !gvalue::quick_menu_open)
+        {
+            UINT dwSize = sizeof(RAWINPUT);
+            static BYTE lpb[sizeof(RAWINPUT)];
+
+            GetRawInputData((HRAWINPUT)l_param, RID_INPUT, lpb, &dwSize, sizeof(RAWINPUTHEADER));
+
+            RAWINPUT* raw = (RAWINPUT*)lpb;
+
+            if (raw->header.dwType == RIM_TYPEMOUSE)
+            {
+                gvalue::x_offset = raw->data.mouse.lLastX;
+                gvalue::y_offset = raw->data.mouse.lLastY;
+            }
+        }
+    }
     case WM_KEYDOWN:
-        if (w_param == VK_INSERT)
+        if (w_param == VK_F1)
         {
             gvalue::menu_open = !gvalue::menu_open;
+            break;
         }
-        else if (w_param == VK_DELETE)
+        if (w_param == VK_DELETE)
         {
             gvalue::is_exit = true;
+            break;
         }
+
+        keybind::get()->call_bind(w_param);
+
         break;
     case WM_MOUSEMOVE:
         POINT pt;
@@ -121,9 +169,16 @@ LRESULT cheat::hk_wnd_proc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param
     case WM_LBUTTONUP:
         gvalue::mouse.left = false;
         break;
+    case WM_RBUTTONDOWN:
+    case WM_RBUTTONDBLCLK:
+        gvalue::mouse.right = true;
+        break;
+    case WM_RBUTTONUP:
+        gvalue::mouse.right = false;
+        break;
     }
 
-    if (gvalue::menu_open)
+    if (gvalue::menu_open || gvalue::quick_menu_open)
     {
         switch (u_msg)
         {

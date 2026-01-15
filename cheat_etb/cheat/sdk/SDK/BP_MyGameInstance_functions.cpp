@@ -37,6 +37,20 @@ void UBP_MyGameInstance_C::ExecuteUbergraph_BP_MyGameInstance(int32 EntryPoint)
 }
 
 
+// Function BP_MyGameInstance.BP_MyGameInstance_C.OnFindInviteSessionFailure
+// (Event, Public, BlueprintEvent)
+
+void UBP_MyGameInstance_C::OnFindInviteSessionFailure()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MyGameInstance_C", "OnFindInviteSessionFailure");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_MyGameInstance.BP_MyGameInstance_C.OnUserChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -405,6 +419,30 @@ void UBP_MyGameInstance_C::OnPlayerTalkingStateChanged(const struct FBPUniqueNet
 }
 
 
+// Function BP_MyGameInstance.BP_MyGameInstance_C.OnSessionInviteAccepted
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// int32                                   LocalPlayerNum                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FBPUniqueNetId&            PersonInvited                                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FBlueprintSessionResult&   SessionToJoin                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UBP_MyGameInstance_C::OnSessionInviteAccepted(int32 LocalPlayerNum, const struct FBPUniqueNetId& PersonInvited, const struct FBlueprintSessionResult& SessionToJoin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MyGameInstance_C", "OnSessionInviteAccepted");
+
+	Params::BP_MyGameInstance_C_OnSessionInviteAccepted Parms{};
+
+	Parms.LocalPlayerNum = LocalPlayerNum;
+	Parms.PersonInvited = std::move(PersonInvited);
+	Parms.SessionToJoin = std::move(SessionToJoin);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_MyGameInstance.BP_MyGameInstance_C.CreateServer
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -430,30 +468,6 @@ void UBP_MyGameInstance_C::CreateServer(class APlayerController* PlayerControlle
 	Parms.LevelName = LevelName;
 	Parms.MaxPlayer = MaxPlayer;
 	Parms.IsPrivate = IsPrivate;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnSessionInviteAccepted
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// int32                                   LocalPlayerNum                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FBPUniqueNetId&            PersonInvited                                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// const struct FBlueprintSessionResult&   SessionToJoin                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UBP_MyGameInstance_C::OnSessionInviteAccepted(int32 LocalPlayerNum, const struct FBPUniqueNetId& PersonInvited, const struct FBlueprintSessionResult& SessionToJoin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnSessionInviteAccepted");
-
-	Params::BP_MyGameInstance_C_OnSessionInviteAccepted Parms{};
-
-	Parms.LocalPlayerNum = LocalPlayerNum;
-	Parms.PersonInvited = std::move(PersonInvited);
-	Parms.SessionToJoin = std::move(SessionToJoin);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

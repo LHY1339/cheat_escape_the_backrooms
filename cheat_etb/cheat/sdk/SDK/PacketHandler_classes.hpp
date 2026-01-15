@@ -16,26 +16,6 @@
 namespace SDK
 {
 
-// Class PacketHandler.HandlerComponentFactory
-// 0x0000 (0x0028 - 0x0028)
-class UHandlerComponentFactory : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HandlerComponentFactory")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HandlerComponentFactory")
-	}
-	static class UHandlerComponentFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHandlerComponentFactory>();
-	}
-};
-DUMPER7_ASSERTS_UHandlerComponentFactory;
-
 // Class PacketHandler.PacketHandlerProfileConfig
 // 0x0010 (0x0038 - 0x0028)
 class UPacketHandlerProfileConfig final : public UObject
@@ -58,6 +38,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPacketHandlerProfileConfig;
+
+// Class PacketHandler.HandlerComponentFactory
+// 0x0000 (0x0028 - 0x0028)
+class UHandlerComponentFactory : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HandlerComponentFactory")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HandlerComponentFactory")
+	}
+	static class UHandlerComponentFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHandlerComponentFactory>();
+	}
+};
+DUMPER7_ASSERTS_UHandlerComponentFactory;
 
 }
 

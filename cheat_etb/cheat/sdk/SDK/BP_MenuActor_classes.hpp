@@ -47,6 +47,7 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_MenuActor(int32 EntryPoint);
+	void SetMainMenuShakeActive(bool Active);
 	void HeldRight(bool Down);
 	void HeldLeft(bool Down);
 	void CloseWarning();

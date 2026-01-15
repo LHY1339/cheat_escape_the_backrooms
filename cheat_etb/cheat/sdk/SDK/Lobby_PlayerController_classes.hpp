@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "S_ConnectedPlayer_structs.hpp"
 #include "Engine_structs.hpp"
+#include "S_ConnectedPlayer_structs.hpp"
 #include "BP_BasePlayerController_classes.hpp"
 #include "UMG_structs.hpp"
 
@@ -49,7 +49,6 @@ public:
 	void StartVoice();
 	void OC_Create_MapTravel_Loadingscreen(class FName Map);
 	void OC_KickedFromLobby();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void OC_Update_ConnectedPlayersList(const TArray<struct FS_ConnectedPlayer>& ConnectedPlayers_0);
 	void OC_Update_ServerName(const class FText& ServerName_0);
 	void OC_Launchevent(bool IsLaunchingGame_0);
@@ -79,6 +78,7 @@ public:
 	void CreateLoadingScreen(const class FText& LoadingScreen_FeedbackText, class UTexture2D* LoadingScreen_Image);
 	void Update_PlayerSpeaking(bool IsSpeaking, const struct FBPUniqueNetId& UniqueId);
 	void OnRep_CanTalk();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 public:
 	static class UClass* StaticClass()

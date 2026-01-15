@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "S_LevelStats_structs.hpp"
 #include "ST_UI_Mission_structs.hpp"
+#include "S_LevelStats_structs.hpp"
 #include "Engine_classes.hpp"
 
 

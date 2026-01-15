@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "E_HeadsetType_structs.hpp"
-#include "AdvancedSessions_structs.hpp"
-#include "S_UserProfile_structs.hpp"
-#include "S_PlayerConnectionInfo_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Team_structs.hpp"
+#include "S_PlayerConnectionInfo_structs.hpp"
 #include "Backrooms_classes.hpp"
+#include "S_UserProfile_structs.hpp"
+#include "E_HeadsetType_structs.hpp"
+#include "AdvancedSessions_structs.hpp"
 
 
 namespace SDK

@@ -89,7 +89,9 @@ public:
 	void MC_StartPicture(class AFancyCharacter* Player);
 	void ReceiveTick(float DeltaSeconds);
 	void Update();
+	void ReceiveBeginPlay();
 	void SnapPicture();
+	void UseItem();
 	void OnCompleted_49041A0D437647D77BE07E918FD7721C(class FName NotifyName);
 	void OnBlendOut_49041A0D437647D77BE07E918FD7721C(class FName NotifyName);
 	void OnInterrupted_49041A0D437647D77BE07E918FD7721C(class FName NotifyName);
@@ -110,10 +112,8 @@ public:
 	void Flash__FinishedFunc();
 	void UserConstructionScript();
 	void OnRep_CurrentPicture();
-	void OnRep_IsFlashlightOn();
-	void ReceiveBeginPlay();
-	void UseItem();
 	void SetMaterial(bool EnabledFOV);
+	void OnRep_IsFlashlightOn();
 
 public:
 	static class UClass* StaticClass()

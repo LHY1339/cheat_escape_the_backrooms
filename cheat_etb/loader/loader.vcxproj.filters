@@ -5,56 +5,27 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="source\gui">
-      <UniqueIdentifier>{7421d790-fbc7-4590-90e6-591d8a116b0e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="source\loader">
-      <UniqueIdentifier>{6fcbd7d2-e445-4023-8251-8dd6411039fd}</UniqueIdentifier>
+      <UniqueIdentifier>{448549d6-dcb9-4630-9aca-972d6318eb65}</UniqueIdentifier>
     </Filter>
     <Filter Include="source\global">
-      <UniqueIdentifier>{5353fcbd-eb1d-4bbc-b3b6-9cd5ed8ee287}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="third_party">
-      <UniqueIdentifier>{98a43c54-aaea-4bdc-9771-8ffd1c317a3b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="resource">
-      <UniqueIdentifier>{cbaf409b-66ca-42fc-842b-d3b01d2741a3}</UniqueIdentifier>
+      <UniqueIdentifier>{d195e46a-66f6-45ae-9a87-0b58a0c037d1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="win_main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="loader.cpp">
       <Filter>source\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="gui.cpp">
-      <Filter>source\gui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h">
       <Filter>source\loader</Filter>
     </ClInclude>
-    <ClInclude Include="gui.h">
-      <Filter>source\gui</Filter>
-    </ClInclude>
-    <ClInclude Include="gvalue.h">
-      <Filter>source\global</Filter>
-    </ClInclude>
-    <ClInclude Include="_d2d.h">
-      <Filter>third_party</Filter>
-    </ClInclude>
     <ClInclude Include="gconst.h">
       <Filter>source\global</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>resource</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="loader.rc">
-      <Filter>resource</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>

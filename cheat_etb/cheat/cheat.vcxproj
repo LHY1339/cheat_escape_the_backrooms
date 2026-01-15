@@ -86,9 +86,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <DisableSpecificWarnings>4005;4369;4309;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,6 +104,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <DisableSpecificWarnings>4005;4369;4309;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -116,9 +117,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <DisableSpecificWarnings>4005;4369;4309;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,6 +136,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4005;4369;4309;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,11 +147,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cheat.h" />
-    <ClInclude Include="gconst.h" />
+    <ClInclude Include="color.h" />
+    <ClInclude Include="command.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="entity.h" />
     <ClInclude Include="gdefine.h" />
     <ClInclude Include="gui.h" />
     <ClInclude Include="gvalue.h" />
+    <ClInclude Include="hook.h" />
+    <ClInclude Include="item.h" />
+    <ClInclude Include="keybind.h" />
+    <ClInclude Include="kismet.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="network.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="quick.h" />
     <ClInclude Include="render.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="visual.h" />
@@ -157,17 +169,34 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cheat.cpp" />
+    <ClCompile Include="color.cpp" />
+    <ClCompile Include="command.cpp" />
+    <ClCompile Include="config.cpp" />
     <ClCompile Include="dll_main.cpp" />
+    <ClCompile Include="entity.cpp" />
     <ClCompile Include="gui.cpp" />
+    <ClCompile Include="hook.cpp" />
+    <ClCompile Include="item.cpp" />
+    <ClCompile Include="keybind.cpp" />
+    <ClCompile Include="kismet.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="network.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="quick.cpp" />
     <ClCompile Include="render.cpp" />
+    <ClCompile Include="sdk\SDK\Backrooms_functions.cpp" />
     <ClCompile Include="sdk\SDK\Basic.cpp" />
+    <ClCompile Include="sdk\SDK\BPCharacter_Demo_functions.cpp" />
+    <ClCompile Include="sdk\SDK\BP_Scanner_functions.cpp" />
     <ClCompile Include="sdk\SDK\CoreUObject_functions.cpp" />
     <ClCompile Include="sdk\SDK\Engine_functions.cpp" />
     <ClCompile Include="visual.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="cheat.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\visual.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

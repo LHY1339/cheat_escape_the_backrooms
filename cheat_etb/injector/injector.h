@@ -6,10 +6,14 @@
 class injector
 {
 public:
-	static int main();
+	static injector* get();
+	int main();
 private:
-	static DWORD find_process(const wchar_t* name);
-	static BOOL inject(const wchar_t* dll_path, DWORD proc_id);
-	static std::wstring get_abs_path(const std::filesystem::path& rel_path);
-	static bool is_load(DWORD pid, const wchar_t* dll_name);
+	injector() = default;
+
+	void print_log();
+	DWORD find_process(const wchar_t* name);
+	BOOL inject(const wchar_t* dll_path, DWORD proc_id);
+	std::wstring get_abs_path(const std::filesystem::path& rel_path);
+	bool is_load(DWORD pid, const wchar_t* dll_name);
 };

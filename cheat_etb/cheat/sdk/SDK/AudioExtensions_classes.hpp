@@ -16,6 +16,26 @@
 namespace SDK
 {
 
+// Class AudioExtensions.SoundModulatorBase
+// 0x0000 (0x0028 - 0x0028)
+class USoundModulatorBase final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SoundModulatorBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SoundModulatorBase")
+	}
+	static class USoundModulatorBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USoundModulatorBase>();
+	}
+};
+DUMPER7_ASSERTS_USoundModulatorBase;
+
 // Class AudioExtensions.SoundfieldEncodingSettingsBase
 // 0x0000 (0x0028 - 0x0028)
 class USoundfieldEncodingSettingsBase : public UObject
@@ -135,26 +155,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UReverbPluginSourceSettingsBase;
-
-// Class AudioExtensions.SoundModulatorBase
-// 0x0000 (0x0028 - 0x0028)
-class USoundModulatorBase final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SoundModulatorBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SoundModulatorBase")
-	}
-	static class USoundModulatorBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USoundModulatorBase>();
-	}
-};
-DUMPER7_ASSERTS_USoundModulatorBase;
 
 // Class AudioExtensions.SoundfieldEndpointSettingsBase
 // 0x0000 (0x0028 - 0x0028)

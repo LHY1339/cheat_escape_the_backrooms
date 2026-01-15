@@ -175,6 +175,31 @@ bool UMediaSource::Validate() const
 }
 
 
+// Function MediaAssets.FileMediaSource.SetFilePath
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UFileMediaSource::SetFilePath(const class FString& Path)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FileMediaSource", "SetFilePath");
+
+	Params::FileMediaSource_SetFilePath Parms{};
+
+	Parms.Path = std::move(Path);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateAudioCaptureDevices
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -259,31 +284,6 @@ void UMediaBlueprintFunctionLibrary::EnumerateWebcamCaptureDevices(TArray<struct
 
 	if (OutDevices != nullptr)
 		*OutDevices = std::move(Parms.OutDevices);
-}
-
-
-// Function MediaAssets.FileMediaSource.SetFilePath
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UFileMediaSource::SetFilePath(const class FString& Path)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FileMediaSource", "SetFilePath");
-
-	Params::FileMediaSource_SetFilePath Parms{};
-
-	Parms.Path = std::move(Path);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

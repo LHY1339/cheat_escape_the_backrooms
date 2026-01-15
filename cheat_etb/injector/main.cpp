@@ -2,5 +2,5 @@
 
 int main()
 {
-	return injector::main();
+	return injector::get()->main();
 }

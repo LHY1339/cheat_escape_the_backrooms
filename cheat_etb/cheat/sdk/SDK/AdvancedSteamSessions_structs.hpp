@@ -175,20 +175,14 @@ enum class ESteamAvatarSize : uint8
 	SteamAvatar_MAX                          = 4,
 };
 
-// ScriptStruct AdvancedSteamSessions.BPSteamGroupInfo
-// 0x0058 (0x0058 - 0x0000)
-struct FBPSteamGroupInfo final
+// ScriptStruct AdvancedSteamSessions.BPSteamWorkshopID
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FBPSteamWorkshopID final
 {
 public:
-	struct FBPUniqueNetId                         GroupID;                                           // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FString                                 GroupName;                                         // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 GroupTag;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         numOnline;                                         // 0x0048(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         numInGame;                                         // 0x004C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         numChatting;                                       // 0x0050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FBPSteamGroupInfo;
+DUMPER7_ASSERTS_FBPSteamWorkshopID;
 
 // ScriptStruct AdvancedSteamSessions.BPSteamGroupOfficer
 // 0x0030 (0x0030 - 0x0000)
@@ -226,14 +220,20 @@ public:
 };
 DUMPER7_ASSERTS_FBPSteamWorkshopItemDetails;
 
-// ScriptStruct AdvancedSteamSessions.BPSteamWorkshopID
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FBPSteamWorkshopID final
+// ScriptStruct AdvancedSteamSessions.BPSteamGroupInfo
+// 0x0058 (0x0058 - 0x0000)
+struct FBPSteamGroupInfo final
 {
 public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FBPUniqueNetId                         GroupID;                                           // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FString                                 GroupName;                                         // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GroupTag;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         numOnline;                                         // 0x0048(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         numInGame;                                         // 0x004C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         numChatting;                                       // 0x0050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FBPSteamWorkshopID;
+DUMPER7_ASSERTS_FBPSteamGroupInfo;
 
 }
 

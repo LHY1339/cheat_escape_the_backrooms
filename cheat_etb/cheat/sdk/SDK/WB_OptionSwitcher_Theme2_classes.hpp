@@ -44,7 +44,7 @@ public:
 	void ToggleHover(bool IsHovered_0);
 	void Switch_Option(bool Decrease_);
 	void Set_SelectedOption(const class FText& SelectedOption_0);
-	void Setup();
+	void SetUp();
 	struct FEventReply OnKeyDown(const struct FGeometry& MyGeometry, const struct FKeyEvent& InKeyEvent);
 
 public:

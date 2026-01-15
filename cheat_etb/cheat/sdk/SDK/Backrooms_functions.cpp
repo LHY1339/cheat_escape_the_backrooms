@@ -17,216 +17,21 @@
 namespace SDK
 {
 
-// Function Backrooms.InteractableActor.BlockUsage
+// Function Backrooms.MapEditorCharacterMovement.DecreaseSpeedMultiplier
 // (Final, Native, Public, BlueprintCallable)
-
-void AInteractableActor::BlockUsage()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "BlockUsage");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.InteractableActor.OnBeginHighlight
-// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
-
-void AInteractableActor::OnBeginHighlight()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "OnBeginHighlight");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Backrooms.InteractableActor.OnEndHighlight
-// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
-
-void AInteractableActor::OnEndHighlight()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "OnEndHighlight");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Backrooms.InteractableActor.OnInteractStartedLocal
-// (Event, Public, BlueprintEvent)
-
-void AInteractableActor::OnInteractStartedLocal()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "OnInteractStartedLocal");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Backrooms.InteractableActor.OnRep_IsUsable
-// (Final, Native, Protected)
-
-void AInteractableActor::OnRep_IsUsable()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "OnRep_IsUsable");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.InteractableActor.OnRep_WasUsed
-// (Final, Native, Public)
-
-void AInteractableActor::OnRep_WasUsed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "OnRep_WasUsed");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.InteractableActor.OnUsedAll
-// (Native, Event, Public, BlueprintEvent)
-
-void AInteractableActor::OnUsedAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "OnUsedAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.InteractableActor.OnUsedMulticast
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
-
-void AInteractableActor::OnUsedMulticast()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "OnUsedMulticast");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.InteractableActor.OnUsedNotify
-// (Native, Event, Public, BlueprintEvent)
-
-void AInteractableActor::OnUsedNotify()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "OnUsedNotify");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.InteractableActor.OnUsedServer
-// (Net, NetReliable, Native, Event, Public, NetServer)
-
-void AInteractableActor::OnUsedServer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "OnUsedServer");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.InteractableActor.ResetUsage
-// (Final, Native, Public, BlueprintCallable)
-
-void AInteractableActor::ResetUsage()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractableActor", "ResetUsage");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.PushableActor.GetClosesPoint
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DecreaseAmount                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector APushableActor::GetClosesPoint(class AActor* InActor)
+void UMapEditorCharacterMovement::DecreaseSpeedMultiplier(float DecreaseAmount)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PushableActor", "GetClosesPoint");
+		Func = Class->GetFunction("MapEditorCharacterMovement", "DecreaseSpeedMultiplier");
 
-	Params::PushableActor_GetClosesPoint Parms{};
+	Params::MapEditorCharacterMovement_DecreaseSpeedMultiplier Parms{};
 
-	Parms.InActor = InActor;
+	Parms.DecreaseAmount = DecreaseAmount;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -234,27 +39,24 @@ struct FVector APushableActor::GetClosesPoint(class AActor* InActor)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Backrooms.PushableActor.GetForwardBoundingPoints
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Function Backrooms.MapEditorCharacterMovement.EnterMovementMode
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    InInvert                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// bool                                    Enter                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TArray<struct FVector> APushableActor::GetForwardBoundingPoints(bool InInvert)
+void UMapEditorCharacterMovement::EnterMovementMode(bool Enter)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PushableActor", "GetForwardBoundingPoints");
+		Func = Class->GetFunction("MapEditorCharacterMovement", "EnterMovementMode");
 
-	Params::PushableActor_GetForwardBoundingPoints Parms{};
+	Params::MapEditorCharacterMovement_EnterMovementMode Parms{};
 
-	Parms.InInvert = InInvert;
+	Parms.Enter = Enter;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -262,27 +64,216 @@ TArray<struct FVector> APushableActor::GetForwardBoundingPoints(bool InInvert)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function Backrooms.PushableActor.GetRightBoundingPoints
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Function Backrooms.MapEditorCharacterMovement.IncreaseSpeedMultiplier
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    InInvert                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+// float                                   IncreaseAmount                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TArray<struct FVector> APushableActor::GetRightBoundingPoints(bool InInvert)
+void UMapEditorCharacterMovement::IncreaseSpeedMultiplier(float IncreaseAmount)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PushableActor", "GetRightBoundingPoints");
+		Func = Class->GetFunction("MapEditorCharacterMovement", "IncreaseSpeedMultiplier");
 
-	Params::PushableActor_GetRightBoundingPoints Parms{};
+	Params::MapEditorCharacterMovement_IncreaseSpeedMultiplier Parms{};
 
-	Parms.InInvert = InInvert;
+	Parms.IncreaseAmount = IncreaseAmount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MapEditorCharacterMovement.Init
+// (Final, Native, Public, BlueprintCallable)
+
+void UMapEditorCharacterMovement::Init()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapEditorCharacterMovement", "Init");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MapEditorCharacterMovement.LookUp
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMapEditorCharacterMovement::LookUp(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapEditorCharacterMovement", "LookUp");
+
+	Params::MapEditorCharacterMovement_LookUp Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MapEditorCharacterMovement.MoveForward
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMapEditorCharacterMovement::MoveForward(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapEditorCharacterMovement", "MoveForward");
+
+	Params::MapEditorCharacterMovement_MoveForward Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MapEditorCharacterMovement.MoveRight
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMapEditorCharacterMovement::MoveRight(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapEditorCharacterMovement", "MoveRight");
+
+	Params::MapEditorCharacterMovement_MoveRight Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MapEditorCharacterMovement.MoveUp
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMapEditorCharacterMovement::MoveUp(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapEditorCharacterMovement", "MoveUp");
+
+	Params::MapEditorCharacterMovement_MoveUp Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MapEditorCharacterMovement.Server_SetSpeedMultiplier
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// float                                   SpeedMultiplier                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMapEditorCharacterMovement::Server_SetSpeedMultiplier(float SpeedMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapEditorCharacterMovement", "Server_SetSpeedMultiplier");
+
+	Params::MapEditorCharacterMovement_Server_SetSpeedMultiplier Parms{};
+
+	Parms.SpeedMultiplier = SpeedMultiplier;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MapEditorCharacterMovement.Turn
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMapEditorCharacterMovement::Turn(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapEditorCharacterMovement", "Turn");
+
+	Params::MapEditorCharacterMovement_Turn Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MapEditorCharacterMovement.InMovementMode
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMapEditorCharacterMovement::InMovementMode() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapEditorCharacterMovement", "InMovementMode");
+
+	Params::MapEditorCharacterMovement_InMovementMode Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -377,15 +368,15 @@ void UAI_ObjectWC::StartExecute()
 }
 
 
-// Function Backrooms.MissionData.AddEntitySighting
-// (Final, Native, Public, BlueprintCallable)
+// Function Backrooms.ItemActor.CustomInventoryUse
+// (Native, Event, Public, BlueprintEvent)
 
-void UMissionData::AddEntitySighting()
+void AItemActor::CustomInventoryUse()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MissionData", "AddEntitySighting");
+		Func = Class->GetFunction("ItemActor", "CustomInventoryUse");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -396,64 +387,20 @@ void UMissionData::AddEntitySighting()
 }
 
 
-// Function Backrooms.MissionData.AddLowSanityAmount
+// Function Backrooms.ItemActor.Use
 // (Final, Native, Public, BlueprintCallable)
 
-void UMissionData::AddLowSanityAmount()
+void AItemActor::Use()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MissionData", "AddLowSanityAmount");
+		Func = Class->GetFunction("ItemActor", "Use");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MissionData.AddPlayerDeath
-// (Final, Native, Public, BlueprintCallable)
-
-void UMissionData::AddPlayerDeath()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MissionData", "AddPlayerDeath");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MissionData.SetTimeCompleted
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMissionData::SetTimeCompleted(float Time)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MissionData", "SetTimeCompleted");
-
-	Params::MissionData_SetTimeCompleted Parms{};
-
-	Parms.Time = Time;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -563,7 +510,7 @@ struct FAimAssistTarget UAimAssistComponent::GetCurrentTargetOrDefault() const
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.AddXP
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // float                                   xpToAdd                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -591,7 +538,7 @@ float UBackroomsBPFunctionLibrary::AddXP(float xpToAdd)
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.CanNavigationReachPoint
-// (Final, Native, Static, Private, HasDefaults, BlueprintCallable)
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class APawn*                            Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   StartLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -623,7 +570,7 @@ bool UBackroomsBPFunctionLibrary::CanNavigationReachPoint(class APawn* Pawn, con
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.ClearCharacterFloor
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class ACharacter*                       Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -648,7 +595,7 @@ void UBackroomsBPFunctionLibrary::ClearCharacterFloor(class ACharacter* Characte
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.ClearVoice
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 
 void UBackroomsBPFunctionLibrary::ClearVoice()
 {
@@ -667,7 +614,7 @@ void UBackroomsBPFunctionLibrary::ClearVoice()
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.DeleteInputSettings
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 
 void UBackroomsBPFunctionLibrary::DeleteInputSettings()
 {
@@ -686,7 +633,7 @@ void UBackroomsBPFunctionLibrary::DeleteInputSettings()
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.DetectCurrentGesture
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const TArray<float>&                    PoseFingerCurls                                        (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // class UOpenInputGestureDatabase*        GesturesDB                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -716,7 +663,7 @@ class FName UBackroomsBPFunctionLibrary::DetectCurrentGesture(const TArray<float
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.GetAllSaveGameSlotNames
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -741,7 +688,7 @@ TArray<class FString> UBackroomsBPFunctionLibrary::GetAllSaveGameSlotNames()
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.GetDateFromSeconds
-// (Final, Native, Static, Private, HasDefaults, BlueprintCallable, BlueprintPure)
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // int32                                   Seconds                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FDateTime                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -769,7 +716,7 @@ struct FDateTime UBackroomsBPFunctionLibrary::GetDateFromSeconds(int32 Seconds)
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.GetIndexOfClosestSplinePoint
-// (Final, Native, Static, Private, HasDefaults, BlueprintCallable, BlueprintPure)
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class USplineComponent*                 SplineComponent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   WorldLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -799,7 +746,7 @@ int32 UBackroomsBPFunctionLibrary::GetIndexOfClosestSplinePoint(class USplineCom
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.GetPlayerStateArray
-// (Final, Native, Static, Private, BlueprintCallable, BlueprintPure)
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class AGameStateBase*                   GameState                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class APlayerState*>             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
@@ -827,7 +774,7 @@ TArray<class APlayerState*> UBackroomsBPFunctionLibrary::GetPlayerStateArray(cla
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.GetSaveGameSlotsByType
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const class FString&                    Prefix                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
@@ -855,7 +802,7 @@ TArray<class FString> UBackroomsBPFunctionLibrary::GetSaveGameSlotsByType(const 
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.GetSplinePoints
-// (Final, Native, Static, Private, BlueprintCallable, BlueprintPure)
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class USplineComponent*                 SplineComponent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
@@ -883,7 +830,7 @@ TArray<struct FVector> UBackroomsBPFunctionLibrary::GetSplinePoints(class USplin
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.GetSystemTimeSeconds
-// (Final, Native, Static, Private, HasDefaults, BlueprintCallable, BlueprintPure)
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // const struct FDateTime&                 DateTime                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -911,7 +858,7 @@ int32 UBackroomsBPFunctionLibrary::GetSystemTimeSeconds(const struct FDateTime& 
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.GetViewDistanceScale
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -936,7 +883,7 @@ float UBackroomsBPFunctionLibrary::GetViewDistanceScale()
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.IsNoHMDMode
-// (Final, Native, Static, Private, BlueprintCallable, BlueprintPure)
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -961,7 +908,7 @@ bool UBackroomsBPFunctionLibrary::IsNoHMDMode()
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.K2_IsTearingDown
-// (Final, Native, Static, Private, HasOutParams, BlueprintCallable, BlueprintPure)
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UObject*                          caller                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool*                                   isTearingDown                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -990,7 +937,7 @@ void UBackroomsBPFunctionLibrary::K2_IsTearingDown(class UObject* caller, bool* 
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.LoadXP
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1014,8 +961,35 @@ float UBackroomsBPFunctionLibrary::LoadXP()
 }
 
 
+// Function Backrooms.BackroomsBPFunctionLibrary.LogStringWithPlayerId
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    PawnOrComponent                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBackroomsBPFunctionLibrary::LogStringWithPlayerId(const class UObject* PawnOrComponent, const class FString& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BackroomsBPFunctionLibrary", "LogStringWithPlayerId");
+
+	Params::BackroomsBPFunctionLibrary_LogStringWithPlayerId Parms{};
+
+	Parms.PawnOrComponent = PawnOrComponent;
+	Parms.Text = std::move(Text);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Backrooms.BackroomsBPFunctionLibrary.PatchMissingInputActions
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const TArray<struct FInputActionKeyMapping>&NewActions                                             (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
@@ -1040,7 +1014,7 @@ void UBackroomsBPFunctionLibrary::PatchMissingInputActions(const TArray<struct F
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.PlayRate
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UTimelineComponent*               Timeline                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Sec                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1070,7 +1044,7 @@ class UTimelineComponent* UBackroomsBPFunctionLibrary::PlayRate(class UTimelineC
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.ReloadBindings
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 
 void UBackroomsBPFunctionLibrary::ReloadBindings()
 {
@@ -1089,7 +1063,7 @@ void UBackroomsBPFunctionLibrary::ReloadBindings()
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.ResetInputSettings
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 
 void UBackroomsBPFunctionLibrary::ResetInputSettings()
 {
@@ -1108,7 +1082,7 @@ void UBackroomsBPFunctionLibrary::ResetInputSettings()
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.ResetWorldTime
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const class AGameMode*                  GameMode                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1133,7 +1107,7 @@ void UBackroomsBPFunctionLibrary::ResetWorldTime(const class AGameMode* GameMode
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.SaveToClipboard
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const class FString&                    ToClipboard                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1158,7 +1132,7 @@ void UBackroomsBPFunctionLibrary::SaveToClipboard(const class FString& ToClipboa
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.SetCurrentLevelLogs
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const class FString&                    LevelName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1183,7 +1157,7 @@ void UBackroomsBPFunctionLibrary::SetCurrentLevelLogs(const class FString& Level
 
 
 // Function Backrooms.BackroomsBPFunctionLibrary.SetLogValue
-// (Final, Native, Static, Private, BlueprintCallable)
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FString&                    Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1382,420 +1356,6 @@ void UBoatComponent::Server_PassMovementInfo(const struct FRepXShipMovement& New
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.ChangeCrosshairVisibility
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsVisible                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::ChangeCrosshairVisibility(bool IsVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "ChangeCrosshairVisibility");
-
-	Params::FancyCharacter_ChangeCrosshairVisibility Parms{};
-
-	Parms.IsVisible = IsVisible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.CheckPawn
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
-
-void AFancyCharacter::CheckPawn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "CheckPawn");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.CheckSpawnedItems
-// (Native, Event, Public, BlueprintEvent)
-
-void AFancyCharacter::CheckSpawnedItems()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "CheckSpawnedItems");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.HideItem
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsVisible                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::HideItem(bool IsVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "HideItem");
-
-	Params::FancyCharacter_HideItem Parms{};
-
-	Parms.IsVisible = IsVisible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.Interact
-// (Net, NetReliable, Native, Event, Protected, NetServer)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::Interact(class AActor* Actor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "Interact");
-
-	Params::FancyCharacter_Interact Parms{};
-
-	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.InteractCallBackVR
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::InteractCallBackVR(class AActor* Actor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "InteractCallBackVR");
-
-	Params::FancyCharacter_InteractCallBackVR Parms{};
-
-	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.KillPlayer
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
-// Parameters:
-// bool                                    bResetInteractable                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::KillPlayer(bool bResetInteractable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "KillPlayer");
-
-	Params::FancyCharacter_KillPlayer Parms{};
-
-	Parms.bResetInteractable = bResetInteractable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.OnRep_CanCollide
-// (Final, Native, Private)
-
-void AFancyCharacter::OnRep_CanCollide()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "OnRep_CanCollide");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.OnRep_IsOverlapOnly
-// (Final, Native, Private)
-
-void AFancyCharacter::OnRep_IsOverlapOnly()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "OnRep_IsOverlapOnly");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.OnSanityUpdate
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   Sanity                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::OnSanityUpdate(float Sanity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "OnSanityUpdate");
-
-	Params::FancyCharacter_OnSanityUpdate Parms{};
-
-	Parms.Sanity = Sanity;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.SetCanCollide
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
-// Parameters:
-// bool                                    ShouldCollide                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::SetCanCollide(bool ShouldCollide)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "SetCanCollide");
-
-	Params::FancyCharacter_SetCanCollide Parms{};
-
-	Parms.ShouldCollide = ShouldCollide;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.SetIsOverlapOnly
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
-// Parameters:
-// bool                                    ShouldOverlapOnly                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::SetIsOverlapOnly(bool ShouldOverlapOnly)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "SetIsOverlapOnly");
-
-	Params::FancyCharacter_SetIsOverlapOnly Parms{};
-
-	Parms.ShouldOverlapOnly = ShouldOverlapOnly;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.StopPushing
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void AFancyCharacter::StopPushing()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "StopPushing");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.ToggleBlur
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ShouldBlur                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::ToggleBlur(bool ShouldBlur)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "ToggleBlur");
-
-	Params::FancyCharacter_ToggleBlur Parms{};
-
-	Parms.ShouldBlur = ShouldBlur;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.TogglePlayerLegs
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsHidden                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::TogglePlayerLegs(bool IsHidden)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "TogglePlayerLegs");
-
-	Params::FancyCharacter_TogglePlayerLegs Parms{};
-
-	Parms.IsHidden = IsHidden;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.TogglePlayerVisibility
-// (Net, NetReliable, Native, Event, Public, NetClient, BlueprintCallable)
-// Parameters:
-// bool                                    IsHidden                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AFancyCharacter::TogglePlayerVisibility(bool IsHidden)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "TogglePlayerVisibility");
-
-	Params::FancyCharacter_TogglePlayerVisibility Parms{};
-
-	Parms.IsHidden = IsHidden;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.TryPickup
-// (Native, Event, Public, BlueprintEvent)
-
-void AFancyCharacter::TryPickup()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "TryPickup");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.FancyCharacter.GetCurrentInteractableActor
-// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* AFancyCharacter::GetCurrentInteractableActor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FancyCharacter", "GetCurrentInteractableActor");
-
-	Params::FancyCharacter_GetCurrentInteractableActor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -2325,6 +1885,256 @@ class UBoatComponent* ABoatPawn::GetXShipComponent()
 }
 
 
+// Function Backrooms.CostumeLoaderSubsystem.LoadAndApplyCostumeBP
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeLoaderSubsystem::LoadAndApplyCostumeBP(class UCostume* Costume, class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeLoaderSubsystem", "LoadAndApplyCostumeBP");
+
+	Params::CostumeLoaderSubsystem_LoadAndApplyCostumeBP Parms{};
+
+	Parms.Costume = Costume;
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeLoaderSubsystem.LoadAndApplyCostumeBPWithCallback
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(class AActor* Actor, class UCostume* Costume)>OnAppliedCostume                                       (Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
+
+void UCostumeLoaderSubsystem::LoadAndApplyCostumeBPWithCallback(class UCostume* Costume, class AActor* Actor, TDelegate<void(class AActor* Actor, class UCostume* Costume)> OnAppliedCostume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeLoaderSubsystem", "LoadAndApplyCostumeBPWithCallback");
+
+	Params::CostumeLoaderSubsystem_LoadAndApplyCostumeBPWithCallback Parms{};
+
+	Parms.Costume = Costume;
+	Parms.Actor = Actor;
+	Parms.OnAppliedCostume = OnAppliedCostume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.InteractableActor.BlockUsage
+// (Final, Native, Public, BlueprintCallable)
+
+void AInteractableActor::BlockUsage()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "BlockUsage");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.InteractableActor.OnBeginHighlight
+// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
+
+void AInteractableActor::OnBeginHighlight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "OnBeginHighlight");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Backrooms.InteractableActor.OnEndHighlight
+// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
+
+void AInteractableActor::OnEndHighlight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "OnEndHighlight");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Backrooms.InteractableActor.OnInteractStartedLocal
+// (Event, Public, BlueprintEvent)
+
+void AInteractableActor::OnInteractStartedLocal()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "OnInteractStartedLocal");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Backrooms.InteractableActor.OnRep_IsUsable
+// (Final, Native, Protected)
+
+void AInteractableActor::OnRep_IsUsable()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "OnRep_IsUsable");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.InteractableActor.OnRep_WasUsed
+// (Final, Native, Public)
+
+void AInteractableActor::OnRep_WasUsed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "OnRep_WasUsed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.InteractableActor.OnUsedAll
+// (Native, Event, Public, BlueprintEvent)
+
+void AInteractableActor::OnUsedAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "OnUsedAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.InteractableActor.OnUsedMulticast
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+
+void AInteractableActor::OnUsedMulticast()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "OnUsedMulticast");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.InteractableActor.OnUsedNotify
+// (Native, Event, Public, BlueprintEvent)
+
+void AInteractableActor::OnUsedNotify()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "OnUsedNotify");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.InteractableActor.OnUsedServer
+// (Net, NetReliable, Native, Event, Public, NetServer)
+
+void AInteractableActor::OnUsedServer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "OnUsedServer");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.InteractableActor.ResetUsage
+// (Final, Native, Public, BlueprintCallable)
+
+void AInteractableActor::ResetUsage()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractableActor", "ResetUsage");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Backrooms.ClientInteractableActor.OnUsed
 // (Native, Event, Public, BlueprintEvent)
 
@@ -2353,6 +2163,889 @@ void AClientInteractablePawn::OnUsed()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ClientInteractablePawn", "OnUsed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.LIDARBlueprintFunctionLibrary.CreateLiDarDot
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          caller                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTextureRenderTarget2D*           RenderTarget                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLIDARDotStruct                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FLIDARDotStruct ULIDARBlueprintFunctionLibrary::CreateLiDarDot(class UObject* caller, class UTextureRenderTarget2D* RenderTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LIDARBlueprintFunctionLibrary", "CreateLiDarDot");
+
+	Params::LIDARBlueprintFunctionLibrary_CreateLiDarDot Parms{};
+
+	Parms.caller = caller;
+	Parms.RenderTarget = RenderTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Backrooms.LIDARBlueprintFunctionLibrary.FindCollisionUVSkeletalMesh
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FVector2D*                       UV                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULIDARBlueprintFunctionLibrary::FindCollisionUVSkeletalMesh(const struct FHitResult& Hit, struct FVector2D* UV)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LIDARBlueprintFunctionLibrary", "FindCollisionUVSkeletalMesh");
+
+	Params::LIDARBlueprintFunctionLibrary_FindCollisionUVSkeletalMesh Parms{};
+
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (UV != nullptr)
+		*UV = std::move(Parms.UV);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Backrooms.CostumeCharacter.ApplyCostume
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ICostumeCharacter::ApplyCostume(class UCostume* Costume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CostumeCharacter", "ApplyCostume");
+
+	Params::CostumeCharacter_ApplyCostume Parms{};
+
+	Parms.Costume = Costume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeCharacterFunctionLibrary.ApplyCostumeToDismembermentMesh
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UStaticMeshComponent*             MeshComponent                                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UCostume*                   Costume                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECostumeDismembermentPart               DismembermentPart                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeCharacterFunctionLibrary::ApplyCostumeToDismembermentMesh(class UStaticMeshComponent* MeshComponent, const class UCostume* Costume, ECostumeDismembermentPart DismembermentPart)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CostumeCharacterFunctionLibrary", "ApplyCostumeToDismembermentMesh");
+
+	Params::CostumeCharacterFunctionLibrary_ApplyCostumeToDismembermentMesh Parms{};
+
+	Parms.MeshComponent = MeshComponent;
+	Parms.Costume = Costume;
+	Parms.DismembermentPart = DismembermentPart;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeCharacterFunctionLibrary.ApplyCostumeToFirstPersonArmsSkeletalMesh
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class USkeletalMeshComponent*           SkeletalMesh                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bApplyAnimBP                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeCharacterFunctionLibrary::ApplyCostumeToFirstPersonArmsSkeletalMesh(class USkeletalMeshComponent* SkeletalMesh, class UCostume* Costume, bool bApplyAnimBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CostumeCharacterFunctionLibrary", "ApplyCostumeToFirstPersonArmsSkeletalMesh");
+
+	Params::CostumeCharacterFunctionLibrary_ApplyCostumeToFirstPersonArmsSkeletalMesh Parms{};
+
+	Parms.SkeletalMesh = SkeletalMesh;
+	Parms.Costume = Costume;
+	Parms.bApplyAnimBP = bApplyAnimBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeCharacterFunctionLibrary.ApplyCostumeToFirstPersonArmsSkeletalMeshViaLevelSequenceBinding
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneSequencePlayer*        Player                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&BindingID                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeCharacterFunctionLibrary::ApplyCostumeToFirstPersonArmsSkeletalMeshViaLevelSequenceBinding(class UMovieSceneSequencePlayer* Player, const struct FMovieSceneObjectBindingID& BindingID, class UCostume* Costume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CostumeCharacterFunctionLibrary", "ApplyCostumeToFirstPersonArmsSkeletalMeshViaLevelSequenceBinding");
+
+	Params::CostumeCharacterFunctionLibrary_ApplyCostumeToFirstPersonArmsSkeletalMeshViaLevelSequenceBinding Parms{};
+
+	Parms.Player = Player;
+	Parms.BindingID = std::move(BindingID);
+	Parms.Costume = Costume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeCharacterFunctionLibrary.ApplyCostumeToFirstPersonLegsSkeletalMesh
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class USkeletalMeshComponent*           SkeletalMesh                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bApplyAnimBP                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeCharacterFunctionLibrary::ApplyCostumeToFirstPersonLegsSkeletalMesh(class USkeletalMeshComponent* SkeletalMesh, class UCostume* Costume, bool bApplyAnimBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CostumeCharacterFunctionLibrary", "ApplyCostumeToFirstPersonLegsSkeletalMesh");
+
+	Params::CostumeCharacterFunctionLibrary_ApplyCostumeToFirstPersonLegsSkeletalMesh Parms{};
+
+	Parms.SkeletalMesh = SkeletalMesh;
+	Parms.Costume = Costume;
+	Parms.bApplyAnimBP = bApplyAnimBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeCharacterFunctionLibrary.ApplyCostumeToFirstPersonLegsSkeletalMeshViaLevelSequenceBinding
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneSequencePlayer*        Player                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&BindingID                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeCharacterFunctionLibrary::ApplyCostumeToFirstPersonLegsSkeletalMeshViaLevelSequenceBinding(class UMovieSceneSequencePlayer* Player, const struct FMovieSceneObjectBindingID& BindingID, class UCostume* Costume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CostumeCharacterFunctionLibrary", "ApplyCostumeToFirstPersonLegsSkeletalMeshViaLevelSequenceBinding");
+
+	Params::CostumeCharacterFunctionLibrary_ApplyCostumeToFirstPersonLegsSkeletalMeshViaLevelSequenceBinding Parms{};
+
+	Parms.Player = Player;
+	Parms.BindingID = std::move(BindingID);
+	Parms.Costume = Costume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeCharacterFunctionLibrary.ApplyCostumeToThirdPersonSkeletalMesh
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class USkeletalMeshComponent*           SkeletalMesh                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bApplyAnimBP                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeCharacterFunctionLibrary::ApplyCostumeToThirdPersonSkeletalMesh(class USkeletalMeshComponent* SkeletalMesh, class UCostume* Costume, bool bApplyAnimBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CostumeCharacterFunctionLibrary", "ApplyCostumeToThirdPersonSkeletalMesh");
+
+	Params::CostumeCharacterFunctionLibrary_ApplyCostumeToThirdPersonSkeletalMesh Parms{};
+
+	Parms.SkeletalMesh = SkeletalMesh;
+	Parms.Costume = Costume;
+	Parms.bApplyAnimBP = bApplyAnimBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeCharacterFunctionLibrary.ApplyCostumeToThirdPersonSkeletalMeshViaLevelSequenceBinding
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneSequencePlayer*        Player                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&BindingID                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeCharacterFunctionLibrary::ApplyCostumeToThirdPersonSkeletalMeshViaLevelSequenceBinding(class UMovieSceneSequencePlayer* Player, const struct FMovieSceneObjectBindingID& BindingID, class UCostume* Costume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CostumeCharacterFunctionLibrary", "ApplyCostumeToThirdPersonSkeletalMeshViaLevelSequenceBinding");
+
+	Params::CostumeCharacterFunctionLibrary_ApplyCostumeToThirdPersonSkeletalMeshViaLevelSequenceBinding Parms{};
+
+	Parms.Player = Player;
+	Parms.BindingID = std::move(BindingID);
+	Parms.Costume = Costume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeCharacterFunctionLibrary.GetDismembermentPartMeshAndMaterialSet
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class UCostume*                   Costume                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECostumeDismembermentPart               DismembermentPart                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftObjectPtr<class UStaticMesh>*      Mesh                                                   (Parm, OutParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TMap<int32, TSoftObjectPtr<class UMaterialInterface>>*MaterialSet                                            (Parm, OutParm, UObjectWrapper, NativeAccessSpecifierPublic)
+
+void UCostumeCharacterFunctionLibrary::GetDismembermentPartMeshAndMaterialSet(const class UCostume* Costume, ECostumeDismembermentPart DismembermentPart, TSoftObjectPtr<class UStaticMesh>* Mesh, TMap<int32, TSoftObjectPtr<class UMaterialInterface>>* MaterialSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CostumeCharacterFunctionLibrary", "GetDismembermentPartMeshAndMaterialSet");
+
+	Params::CostumeCharacterFunctionLibrary_GetDismembermentPartMeshAndMaterialSet Parms{};
+
+	Parms.Costume = Costume;
+	Parms.DismembermentPart = DismembermentPart;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Mesh != nullptr)
+		*Mesh = Parms.Mesh;
+
+	if (MaterialSet != nullptr)
+		*MaterialSet = std::move(Parms.MaterialSet);
+}
+
+
+// Function Backrooms.CostumeSelector.ApplySelectedCostume
+// (Final, Native, Public, BlueprintCallable)
+
+void ACostumeSelector::ApplySelectedCostume()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "ApplySelectedCostume");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelector.EndCostumeSelect
+// (Final, Native, Public, BlueprintCallable)
+
+void ACostumeSelector::EndCostumeSelect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "EndCostumeSelect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelector.HandleFinishedLoadedFeedback
+// (Final, Native, Private)
+
+void ACostumeSelector::HandleFinishedLoadedFeedback()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "HandleFinishedLoadedFeedback");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelector.HandleFinishedLoadingFeedback
+// (Final, Native, Private)
+
+void ACostumeSelector::HandleFinishedLoadingFeedback()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "HandleFinishedLoadingFeedback");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelector.HandleTransitionFromCostumeSelectorComplete
+// (Final, Native, Private)
+
+void ACostumeSelector::HandleTransitionFromCostumeSelectorComplete()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "HandleTransitionFromCostumeSelectorComplete");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelector.OnExitCostumeSelect
+// (Event, Protected, BlueprintEvent)
+
+void ACostumeSelector::OnExitCostumeSelect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "OnExitCostumeSelect");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Backrooms.CostumeSelector.OnStartedCostumeSelect
+// (Event, Protected, BlueprintEvent)
+
+void ACostumeSelector::OnStartedCostumeSelect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "OnStartedCostumeSelect");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Backrooms.CostumeSelector.SelectCostume
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACostumeSelector::SelectCostume(class UCostume* Costume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "SelectCostume");
+
+	Params::CostumeSelector_SelectCostume Parms{};
+
+	Parms.Costume = Costume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelector.ShowLoadedFeedback
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const TDelegate<void()>&                FeedbackCompleteCallback                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACostumeSelector::ShowLoadedFeedback(const TDelegate<void()>& FeedbackCompleteCallback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "ShowLoadedFeedback");
+
+	Params::CostumeSelector_ShowLoadedFeedback Parms{};
+
+	Parms.FeedbackCompleteCallback = FeedbackCompleteCallback;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Backrooms.CostumeSelector.ShowLoadingFeedback
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const TDelegate<void()>&                FeedbackCompleteCallback                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACostumeSelector::ShowLoadingFeedback(const TDelegate<void()>& FeedbackCompleteCallback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "ShowLoadingFeedback");
+
+	Params::CostumeSelector_ShowLoadingFeedback Parms{};
+
+	Parms.FeedbackCompleteCallback = FeedbackCompleteCallback;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Backrooms.CostumeSelector.StartCostumeSelect
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UUserWidget*                      CostumeSelectorWidget                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACostumeSelector::StartCostumeSelect(class UUserWidget* CostumeSelectorWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "StartCostumeSelect");
+
+	Params::CostumeSelector_StartCostumeSelect Parms{};
+
+	Parms.CostumeSelectorWidget = CostumeSelectorWidget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelector.TransitionFromCostumeSelector
+// (Native, Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AActor*                           TransitionToViewTarget                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                FeedbackCompleteCallback                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ACostumeSelector::TransitionFromCostumeSelector(class AActor* TransitionToViewTarget, const TDelegate<void()>& FeedbackCompleteCallback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "TransitionFromCostumeSelector");
+
+	Params::CostumeSelector_TransitionFromCostumeSelector Parms{};
+
+	Parms.TransitionToViewTarget = TransitionToViewTarget;
+	Parms.FeedbackCompleteCallback = FeedbackCompleteCallback;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelector.TransitionToCostumeSelector
+// (Native, Event, Protected, BlueprintEvent)
+
+void ACostumeSelector::TransitionToCostumeSelector()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "TransitionToCostumeSelector");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelector.TryFireSafeLoadingStateCallback
+// (Final, Native, Private)
+
+void ACostumeSelector::TryFireSafeLoadingStateCallback()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSelector", "TryFireSafeLoadingStateCallback");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSelectorWidget.HideLoadingWheel
+// (Event, Public, BlueprintEvent)
+
+void ICostumeSelectorWidget::HideLoadingWheel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CostumeSelectorWidget", "HideLoadingWheel");
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+}
+
+
+// Function Backrooms.CostumeSelectorWidget.SetUp
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// class ACostumeSelector*                 CostumeSelectorActor                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FCostumeWidgetData>&CostumeList                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ICostumeSelectorWidget::SetUp(class ACostumeSelector* CostumeSelectorActor, const TArray<struct FCostumeWidgetData>& CostumeList)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CostumeSelectorWidget", "SetUp");
+
+	Params::CostumeSelectorWidget_SetUp Parms{};
+
+	Parms.CostumeSelectorActor = CostumeSelectorActor;
+	Parms.CostumeList = std::move(CostumeList);
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function Backrooms.CostumeSelectorWidget.ShowLoadingWheel
+// (Event, Public, BlueprintEvent)
+
+void ICostumeSelectorWidget::ShowLoadingWheel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("CostumeSelectorWidget", "ShowLoadingWheel");
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+}
+
+
+// Function Backrooms.CostumeSubsystem.GetLocalArmedCostume
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UCostume*                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCostume* UCostumeSubsystem::GetLocalArmedCostume()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSubsystem", "GetLocalArmedCostume");
+
+	Params::CostumeSubsystem_GetLocalArmedCostume Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Backrooms.CostumeSubsystem.SetLocalArmedCostume
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeSubsystem::SetLocalArmedCostume(class UCostume* Costume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSubsystem", "SetLocalArmedCostume");
+
+	Params::CostumeSubsystem_SetLocalArmedCostume Parms{};
+
+	Parms.Costume = Costume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CostumeSubsystem.SetLocalArmedCostumeByName
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FName&                      CostumeName                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCostumeSubsystem::SetLocalArmedCostumeByName(const class FName& CostumeName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CostumeSubsystem", "SetLocalArmedCostumeByName");
+
+	Params::CostumeSubsystem_SetLocalArmedCostumeByName Parms{};
+
+	Parms.CostumeName = CostumeName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.CustomUserWidget.RefreshInventory
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCustomUserWidget::RefreshInventory()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomUserWidget", "RefreshInventory");
+
+	Params::CustomUserWidget_RefreshInventory Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Backrooms.CustomUserWidget.SetHotbarSlot
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   ItemSlot                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCustomUserWidget::SetHotbarSlot(int32 ItemSlot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomUserWidget", "SetHotbarSlot");
+
+	Params::CustomUserWidget_SetHotbarSlot Parms{};
+
+	Parms.ItemSlot = ItemSlot;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Backrooms.CustomUserWidget.ToggleInventory
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsVisible_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCustomUserWidget::ToggleInventory(bool IsVisible_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CustomUserWidget", "ToggleInventory");
+
+	Params::CustomUserWidget_ToggleInventory Parms{};
+
+	Parms.IsVisible_0 = IsVisible_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Backrooms.DroppedItem.EvaluatePhysics
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+
+void ADroppedItem::EvaluatePhysics()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DroppedItem", "EvaluatePhysics");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.DroppedItem.OnBeginFocus
+// (Native, Event, Public, BlueprintEvent)
+
+void ADroppedItem::OnBeginFocus()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DroppedItem", "OnBeginFocus");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.DroppedItem.OnEndFocus
+// (Native, Event, Public, BlueprintEvent)
+
+void ADroppedItem::OnEndFocus()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DroppedItem", "OnEndFocus");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.DroppedItem.StopPhysics
+// (Final, Native, Private)
+
+void ADroppedItem::StopPhysics()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DroppedItem", "StopPhysics");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.DroppedItem.UpdatePhysicsLocation
+// (Final, Native, Private)
+
+void ADroppedItem::UpdatePhysicsLocation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DroppedItem", "UpdatePhysicsLocation");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2526,180 +3219,6 @@ bool UFancyCarrySystemCarrier::IsCarrying() const
 }
 
 
-// Function Backrooms.MotionScannerDirector.CheckLIDARDots
-// (Final, Native, Protected, BlueprintCallable)
-
-void AMotionScannerDirector::CheckLIDARDots()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MotionScannerDirector", "CheckLIDARDots");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.CustomUserWidget.RefreshInventory
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UCustomUserWidget::RefreshInventory()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustomUserWidget", "RefreshInventory");
-
-	Params::CustomUserWidget_RefreshInventory Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Backrooms.CustomUserWidget.SetHotbarSlot
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   ItemSlot                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCustomUserWidget::SetHotbarSlot(int32 ItemSlot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustomUserWidget", "SetHotbarSlot");
-
-	Params::CustomUserWidget_SetHotbarSlot Parms{};
-
-	Parms.ItemSlot = ItemSlot;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Backrooms.CustomUserWidget.ToggleInventory
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    IsVisible_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCustomUserWidget::ToggleInventory(bool IsVisible_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CustomUserWidget", "ToggleInventory");
-
-	Params::CustomUserWidget_ToggleInventory Parms{};
-
-	Parms.IsVisible_0 = IsVisible_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Backrooms.DroppedItem.EvaluatePhysics
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
-
-void ADroppedItem::EvaluatePhysics()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DroppedItem", "EvaluatePhysics");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.DroppedItem.OnBeginFocus
-// (Native, Event, Public, BlueprintEvent)
-
-void ADroppedItem::OnBeginFocus()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DroppedItem", "OnBeginFocus");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.DroppedItem.OnEndFocus
-// (Native, Event, Public, BlueprintEvent)
-
-void ADroppedItem::OnEndFocus()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DroppedItem", "OnEndFocus");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.DroppedItem.StopPhysics
-// (Final, Native, Private)
-
-void ADroppedItem::StopPhysics()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DroppedItem", "StopPhysics");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.DroppedItem.UpdatePhysicsLocation
-// (Final, Native, Private)
-
-void ADroppedItem::UpdatePhysicsLocation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DroppedItem", "UpdatePhysicsLocation");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Backrooms.FancyCarrySystemCarryable.OnRep_CurrentCarrier
 // (Final, Native, Protected)
 
@@ -2782,6 +3301,420 @@ bool UFancyCarrySystemCarryable::IsBeingCarried() const
 		Func = Class->GetFunction("FancyCarrySystemCarryable", "IsBeingCarried");
 
 	Params::FancyCarrySystemCarryable_IsBeingCarried Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Backrooms.FancyCharacter.ChangeCrosshairVisibility
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsVisible                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::ChangeCrosshairVisibility(bool IsVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "ChangeCrosshairVisibility");
+
+	Params::FancyCharacter_ChangeCrosshairVisibility Parms{};
+
+	Parms.IsVisible = IsVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.CheckPawn
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
+
+void AFancyCharacter::CheckPawn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "CheckPawn");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.CheckSpawnedItems
+// (Native, Event, Public, BlueprintEvent)
+
+void AFancyCharacter::CheckSpawnedItems()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "CheckSpawnedItems");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.HideItem
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsVisible                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::HideItem(bool IsVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "HideItem");
+
+	Params::FancyCharacter_HideItem Parms{};
+
+	Parms.IsVisible = IsVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.Interact
+// (Net, NetReliable, Native, Event, Protected, NetServer)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::Interact(class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "Interact");
+
+	Params::FancyCharacter_Interact Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.InteractCallBackVR
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::InteractCallBackVR(class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "InteractCallBackVR");
+
+	Params::FancyCharacter_InteractCallBackVR Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.KillPlayer
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
+// Parameters:
+// bool                                    bResetInteractable                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::KillPlayer(bool bResetInteractable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "KillPlayer");
+
+	Params::FancyCharacter_KillPlayer Parms{};
+
+	Parms.bResetInteractable = bResetInteractable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.OnRep_CanCollide
+// (Final, Native, Private)
+
+void AFancyCharacter::OnRep_CanCollide()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "OnRep_CanCollide");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.OnRep_IsOverlapOnly
+// (Final, Native, Private)
+
+void AFancyCharacter::OnRep_IsOverlapOnly()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "OnRep_IsOverlapOnly");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.OnSanityUpdate
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   Sanity                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::OnSanityUpdate(float Sanity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "OnSanityUpdate");
+
+	Params::FancyCharacter_OnSanityUpdate Parms{};
+
+	Parms.Sanity = Sanity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.SetCanCollide
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
+// Parameters:
+// bool                                    ShouldCollide                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::SetCanCollide(bool ShouldCollide)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "SetCanCollide");
+
+	Params::FancyCharacter_SetCanCollide Parms{};
+
+	Parms.ShouldCollide = ShouldCollide;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.SetIsOverlapOnly
+// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
+// Parameters:
+// bool                                    ShouldOverlapOnly                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::SetIsOverlapOnly(bool ShouldOverlapOnly)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "SetIsOverlapOnly");
+
+	Params::FancyCharacter_SetIsOverlapOnly Parms{};
+
+	Parms.ShouldOverlapOnly = ShouldOverlapOnly;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.StopPushing
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AFancyCharacter::StopPushing()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "StopPushing");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.ToggleBlur
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ShouldBlur                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::ToggleBlur(bool ShouldBlur)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "ToggleBlur");
+
+	Params::FancyCharacter_ToggleBlur Parms{};
+
+	Parms.ShouldBlur = ShouldBlur;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.TogglePlayerLegs
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsHidden                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::TogglePlayerLegs(bool IsHidden)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "TogglePlayerLegs");
+
+	Params::FancyCharacter_TogglePlayerLegs Parms{};
+
+	Parms.IsHidden = IsHidden;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.TogglePlayerVisibility
+// (Net, NetReliable, Native, Event, Public, NetClient, BlueprintCallable)
+// Parameters:
+// bool                                    IsHidden                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AFancyCharacter::TogglePlayerVisibility(bool IsHidden)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "TogglePlayerVisibility");
+
+	Params::FancyCharacter_TogglePlayerVisibility Parms{};
+
+	Parms.IsHidden = IsHidden;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.TryPickup
+// (Native, Event, Public, BlueprintEvent)
+
+void AFancyCharacter::TryPickup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "TryPickup");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyCharacter.GetCurrentInteractableActor
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* AFancyCharacter::GetCurrentInteractableActor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyCharacter", "GetCurrentInteractableActor");
+
+	Params::FancyCharacter_GetCurrentInteractableActor Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3951,6 +4884,100 @@ void AFancyPlayerController::PrintLevelTimesToLog()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("FancyPlayerController", "PrintLevelTimesToLog");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyPlayerController.GetInputMode
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EInputMode                              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EInputMode AFancyPlayerController::GetInputMode() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyPlayerController", "GetInputMode");
+
+	Params::FancyPlayerController_GetInputMode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Backrooms.FancyPlayerCostumeComponent.AssignCostumeRPC
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
+// Parameters:
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UFancyPlayerCostumeComponent::AssignCostumeRPC(class UCostume* Costume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyPlayerCostumeComponent", "AssignCostumeRPC");
+
+	Params::FancyPlayerCostumeComponent_AssignCostumeRPC Parms{};
+
+	Parms.Costume = Costume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyPlayerCostumeComponent.HandleLocalCostumeChanged
+// (Final, Native, Protected)
+// Parameters:
+// class UCostume*                         Costume                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UFancyPlayerCostumeComponent::HandleLocalCostumeChanged(class UCostume* Costume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyPlayerCostumeComponent", "HandleLocalCostumeChanged");
+
+	Params::FancyPlayerCostumeComponent_HandleLocalCostumeChanged Parms{};
+
+	Parms.Costume = Costume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.FancyPlayerCostumeComponent.OnRep_AssignedCostume
+// (Final, Native, Private)
+
+void UFancyPlayerCostumeComponent::OnRep_AssignedCostume()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FancyPlayerCostumeComponent", "OnRep_AssignedCostume");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5446,44 +6473,6 @@ void UInventoryComponent::SwapInventoryItems(int32 FirstIdx, int32 SecondIdx)
 }
 
 
-// Function Backrooms.ItemActor.CustomInventoryUse
-// (Native, Event, Public, BlueprintEvent)
-
-void AItemActor::CustomInventoryUse()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ItemActor", "CustomInventoryUse");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.ItemActor.Use
-// (Final, Native, Public, BlueprintCallable)
-
-void AItemActor::Use()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ItemActor", "Use");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Backrooms.Level0Generator.Generate
 // (Final, Native, Public, BlueprintCallable)
 
@@ -5500,68 +6489,6 @@ void ALevel0Generator::Generate()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.LIDARBlueprintFunctionLibrary.CreateLiDarDot
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          caller                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTextureRenderTarget2D*           RenderTarget                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLIDARDotStruct                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FLIDARDotStruct ULIDARBlueprintFunctionLibrary::CreateLiDarDot(class UObject* caller, class UTextureRenderTarget2D* RenderTarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LIDARBlueprintFunctionLibrary", "CreateLiDarDot");
-
-	Params::LIDARBlueprintFunctionLibrary_CreateLiDarDot Parms{};
-
-	Parms.caller = caller;
-	Parms.RenderTarget = RenderTarget;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Backrooms.LIDARBlueprintFunctionLibrary.FindCollisionUVSkeletalMesh
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FVector2D*                       UV                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ULIDARBlueprintFunctionLibrary::FindCollisionUVSkeletalMesh(const struct FHitResult& Hit, struct FVector2D* UV)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("LIDARBlueprintFunctionLibrary", "FindCollisionUVSkeletalMesh");
-
-	Params::LIDARBlueprintFunctionLibrary_FindCollisionUVSkeletalMesh Parms{};
-
-	Parms.Hit = std::move(Hit);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (UV != nullptr)
-		*UV = std::move(Parms.UV);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -5638,275 +6565,6 @@ struct FHitResult ULIDARComponent::ScannerTrace(class UStaticMeshComponent* Mesh
 	Params::LIDARComponent_ScannerTrace Parms{};
 
 	Parms.Mesh = Mesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.DecreaseSpeedMultiplier
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   DecreaseAmount                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapEditorCharacterMovement::DecreaseSpeedMultiplier(float DecreaseAmount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "DecreaseSpeedMultiplier");
-
-	Params::MapEditorCharacterMovement_DecreaseSpeedMultiplier Parms{};
-
-	Parms.DecreaseAmount = DecreaseAmount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.EnterMovementMode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    Enter                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapEditorCharacterMovement::EnterMovementMode(bool Enter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "EnterMovementMode");
-
-	Params::MapEditorCharacterMovement_EnterMovementMode Parms{};
-
-	Parms.Enter = Enter;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.IncreaseSpeedMultiplier
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   IncreaseAmount                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapEditorCharacterMovement::IncreaseSpeedMultiplier(float IncreaseAmount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "IncreaseSpeedMultiplier");
-
-	Params::MapEditorCharacterMovement_IncreaseSpeedMultiplier Parms{};
-
-	Parms.IncreaseAmount = IncreaseAmount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.Init
-// (Final, Native, Public, BlueprintCallable)
-
-void UMapEditorCharacterMovement::Init()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "Init");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.LookUp
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapEditorCharacterMovement::LookUp(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "LookUp");
-
-	Params::MapEditorCharacterMovement_LookUp Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.MoveForward
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapEditorCharacterMovement::MoveForward(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "MoveForward");
-
-	Params::MapEditorCharacterMovement_MoveForward Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.MoveRight
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapEditorCharacterMovement::MoveRight(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "MoveRight");
-
-	Params::MapEditorCharacterMovement_MoveRight Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.MoveUp
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapEditorCharacterMovement::MoveUp(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "MoveUp");
-
-	Params::MapEditorCharacterMovement_MoveUp Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.Server_SetSpeedMultiplier
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// float                                   SpeedMultiplier                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapEditorCharacterMovement::Server_SetSpeedMultiplier(float SpeedMultiplier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "Server_SetSpeedMultiplier");
-
-	Params::MapEditorCharacterMovement_Server_SetSpeedMultiplier Parms{};
-
-	Parms.SpeedMultiplier = SpeedMultiplier;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.Turn
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapEditorCharacterMovement::Turn(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "Turn");
-
-	Params::MapEditorCharacterMovement_Turn Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Backrooms.MapEditorCharacterMovement.InMovementMode
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UMapEditorCharacterMovement::InMovementMode() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapEditorCharacterMovement", "InMovementMode");
-
-	Params::MapEditorCharacterMovement_InMovementMode Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7009,6 +7667,88 @@ void UMapEditorStatics::SpawnMapItemsFromJson(class AActor* WorldActor, const cl
 }
 
 
+// Function Backrooms.MissionData.AddEntitySighting
+// (Final, Native, Public, BlueprintCallable)
+
+void UMissionData::AddEntitySighting()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MissionData", "AddEntitySighting");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MissionData.AddLowSanityAmount
+// (Final, Native, Public, BlueprintCallable)
+
+void UMissionData::AddLowSanityAmount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MissionData", "AddLowSanityAmount");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MissionData.AddPlayerDeath
+// (Final, Native, Public, BlueprintCallable)
+
+void UMissionData::AddPlayerDeath()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MissionData", "AddPlayerDeath");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.MissionData.SetTimeCompleted
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMissionData::SetTimeCompleted(float Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MissionData", "SetTimeCompleted");
+
+	Params::MissionData_SetTimeCompleted Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Backrooms.MotionScannerComponent.EndWaveEvent
 // (Event, Public, BlueprintEvent)
 
@@ -7059,6 +7799,109 @@ void UMotionScannerComponent::StartWaveEvent()
 		Func = Class->GetFunction("MotionScannerComponent", "StartWaveEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Backrooms.MotionScannerDirector.CheckLIDARDots
+// (Final, Native, Protected, BlueprintCallable)
+
+void AMotionScannerDirector::CheckLIDARDots()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MotionScannerDirector", "CheckLIDARDots");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Backrooms.PushableActor.GetClosesPoint
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector APushableActor::GetClosesPoint(class AActor* InActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PushableActor", "GetClosesPoint");
+
+	Params::PushableActor_GetClosesPoint Parms{};
+
+	Parms.InActor = InActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Backrooms.PushableActor.GetForwardBoundingPoints
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                                    InInvert                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FVector> APushableActor::GetForwardBoundingPoints(bool InInvert)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PushableActor", "GetForwardBoundingPoints");
+
+	Params::PushableActor_GetForwardBoundingPoints Parms{};
+
+	Parms.InInvert = InInvert;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Backrooms.PushableActor.GetRightBoundingPoints
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                                    InInvert                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FVector> APushableActor::GetRightBoundingPoints(bool InInvert)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PushableActor", "GetRightBoundingPoints");
+
+	Params::PushableActor_GetRightBoundingPoints Parms{};
+
+	Parms.InInvert = InInvert;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

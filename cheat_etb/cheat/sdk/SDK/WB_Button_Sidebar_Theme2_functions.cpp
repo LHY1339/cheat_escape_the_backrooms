@@ -85,15 +85,15 @@ void UWB_Button_Sidebar_Theme2_C::PreConstruct(bool IsDesignTime)
 }
 
 
-// Function WB_Button_Sidebar_Theme2.WB_Button_Sidebar_Theme2_C.Setup
+// Function WB_Button_Sidebar_Theme2.WB_Button_Sidebar_Theme2_C.SetUp
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UWB_Button_Sidebar_Theme2_C::Setup()
+void UWB_Button_Sidebar_Theme2_C::SetUp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WB_Button_Sidebar_Theme2_C", "Setup");
+		Func = Class->GetFunction("WB_Button_Sidebar_Theme2_C", "SetUp");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

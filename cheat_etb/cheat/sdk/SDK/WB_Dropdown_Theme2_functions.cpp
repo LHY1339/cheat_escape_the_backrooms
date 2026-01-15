@@ -173,15 +173,15 @@ void UWB_Dropdown_Theme2_C::Set_SelectedOption(int32 Option)
 }
 
 
-// Function WB_Dropdown_Theme2.WB_Dropdown_Theme2_C.Setup
+// Function WB_Dropdown_Theme2.WB_Dropdown_Theme2_C.SetUp
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void UWB_Dropdown_Theme2_C::Setup()
+void UWB_Dropdown_Theme2_C::SetUp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WB_Dropdown_Theme2_C", "Setup");
+		Func = Class->GetFunction("WB_Dropdown_Theme2_C", "SetUp");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

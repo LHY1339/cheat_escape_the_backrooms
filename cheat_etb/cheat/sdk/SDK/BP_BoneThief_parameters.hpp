@@ -18,13 +18,13 @@ namespace SDK::Params
 {
 
 // Function BP_BoneThief.BP_BoneThief_C.ExecuteUbergraph_BP_BoneThief
-// 0x0820 (0x0820 - 0x0000)
+// 0x0830 (0x0830 - 0x0000)
 struct BP_BoneThief_C_ExecuteUbergraph_BP_BoneThief final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class FName NotifyName)>       K2Node_CreateDelegate_OutputDelegate;              // 0x0004(0x0010)(ZeroConstructor, NoDestructor)
-	class FName                                   K2Node_CustomEvent_NotifyName_9;                   // 0x0014(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   K2Node_CustomEvent_NotifyName_9;                   // 0x0004(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class FName NotifyName)>       K2Node_CreateDelegate_OutputDelegate;              // 0x000C(0x0010)(ZeroConstructor, NoDestructor)
 	class FName                                   K2Node_CustomEvent_NotifyName_8;                   // 0x001C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void(class FName NotifyName)>       K2Node_CreateDelegate_OutputDelegate_1;            // 0x0024(0x0010)(ZeroConstructor, NoDestructor)
 	class FName                                   K2Node_CustomEvent_NotifyName_7;                   // 0x0034(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -34,10 +34,10 @@ public:
 	class FName                                   K2Node_CustomEvent_NotifyName_5;                   // 0x0064(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void(class FName NotifyName)>       K2Node_CreateDelegate_OutputDelegate_4;            // 0x006C(0x0010)(ZeroConstructor, NoDestructor)
 	class FName                                   Temp_name_Variable;                                // 0x007C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Lerp_ReturnValue;                         // 0x0084(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_FloatToVector_ReturnValue;           // 0x0088(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_94[0xC];                                       // 0x0094(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x00A0(0x0030)(IsPlainOldData, NoDestructor)
+	uint8                                         Pad_84[0xC];                                       // 0x0084(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0090(0x0030)(IsPlainOldData, NoDestructor)
+	float                                         CallFunc_Lerp_ReturnValue;                         // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_FloatToVector_ReturnValue;           // 0x00C4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   K2Node_CustomEvent_NotifyName_4;                   // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void(class FName NotifyName)>       K2Node_CreateDelegate_OutputDelegate_5;            // 0x00D8(0x0010)(ZeroConstructor, NoDestructor)
 	class FName                                   K2Node_CustomEvent_NotifyName_3;                   // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -49,8 +49,8 @@ public:
 	class FName                                   K2Node_CustomEvent_NotifyName;                     // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void(class FName NotifyName)>       K2Node_CreateDelegate_OutputDelegate_9;            // 0x0138(0x0010)(ZeroConstructor, NoDestructor)
 	class FName                                   Temp_name_Variable_1;                              // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0151(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0151(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_HasAuthority_ReturnValue_1;               // 0x0152(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_153[0x5];                                      // 0x0153(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABPCharacter_Demo_C*                    K2Node_CustomEvent_TargetPlayer;                   // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -74,10 +74,10 @@ public:
 	float                                         CallFunc_BreakRotator_Roll;                        // 0x0328(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_BreakRotator_Pitch;                       // 0x032C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_BreakRotator_Yaw;                         // 0x0330(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x0334(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_335[0x3];                                      // 0x0335(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               CallFunc_MakeRotator_ReturnValue;                  // 0x0338(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FRotator                               CallFunc_RLerp_ReturnValue;                        // 0x0344(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FRotator                               CallFunc_MakeRotator_ReturnValue;                  // 0x0334(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FRotator                               CallFunc_RLerp_ReturnValue;                        // 0x0340(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x034C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_34D[0x3];                                      // 0x034D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_GetSocketTransform_ReturnValue;           // 0x0350(0x0030)(IsPlainOldData, NoDestructor)
 	struct FTransform                             CallFunc_TLerp_ReturnValue;                        // 0x0380(0x0030)(IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_BreakTransform_Location_2;                // 0x03B0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -119,17 +119,29 @@ public:
 	class UAudioComponent*                        CallFunc_SpawnSoundAttached_ReturnValue;           // 0x07E0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x07E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsLocallyControlled_ReturnValue;          // 0x07E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAuthority_ReturnValue_2;               // 0x07EA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x07EB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7EC[0x4];                                      // 0x07EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x07EA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7EB[0x5];                                      // 0x07EB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAudioComponent*                        CallFunc_SpawnSoundAttached_ReturnValue_1;         // 0x07F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAudioComponent*                        CallFunc_SpawnSoundAttached_ReturnValue_2;         // 0x07F8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPlayMontageCallbackProxy*              CallFunc_CreateProxyObjectForPlayMontage_ReturnValue_1; // 0x0800(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0808(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_809[0x7];                                      // 0x0809(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAudioComponent*                        CallFunc_SpawnSoundAttached_ReturnValue_3;         // 0x0810(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_HasAuthority_ReturnValue_2;               // 0x0800(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_801[0x7];                                      // 0x0801(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPlayMontageCallbackProxy*              CallFunc_CreateProxyObjectForPlayMontage_ReturnValue_1; // 0x0808(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0810(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_811[0x7];                                      // 0x0811(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAudioComponent*                        CallFunc_SpawnSoundAttached_ReturnValue_3;         // 0x0818(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABPCharacter_Demo_C*                    K2Node_CustomEvent_InTargetPlayer;                 // 0x0820(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0828(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_BoneThief_C_ExecuteUbergraph_BP_BoneThief;
+
+// Function BP_BoneThief.BP_BoneThief_C.Apply Costume To Skeletal Mesh
+// 0x0008 (0x0008 - 0x0000)
+struct BP_BoneThief_C_Apply_Costume_To_Skeletal_Mesh final
+{
+public:
+	class ABPCharacter_Demo_C*                    InTargetPlayer;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BoneThief_C_Apply_Costume_To_Skeletal_Mesh;
 
 // Function BP_BoneThief.BP_BoneThief_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)

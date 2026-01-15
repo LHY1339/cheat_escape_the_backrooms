@@ -87,6 +87,20 @@ void ABP_Item_BugSpray_C::MC_Spray()
 }
 
 
+// Function BP_Item_BugSpray.BP_Item_BugSpray_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_BugSpray_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_BugSpray_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Item_BugSpray.BP_Item_BugSpray_C.OnCompleted_0696912D47A3DC8FA5836F835E2CF98A
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -184,20 +198,6 @@ void ABP_Item_BugSpray_C::OnNotifyEnd_0696912D47A3DC8FA5836F835E2CF98A(class FNa
 	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Item_BugSpray.BP_Item_BugSpray_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_BugSpray_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_BugSpray_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

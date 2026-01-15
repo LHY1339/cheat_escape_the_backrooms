@@ -146,7 +146,7 @@ public:
 
 public:
 	static bool AnimationSharingEnabled();
-	static bool CreateAnimationSharingManager(class UObject* WorldContextObject, const class UAnimationSharingSetup* Setup);
+	static bool CreateAnimationSharingManager(class UObject* WorldContextObject, const class UAnimationSharingSetup* SetUp);
 	static class UAnimationSharingManager* GetAnimationSharingManager(class UObject* WorldContextObject);
 
 	void RegisterActorWithSkeletonBP(class AActor* InActor, const class USkeleton* SharingSkeleton);

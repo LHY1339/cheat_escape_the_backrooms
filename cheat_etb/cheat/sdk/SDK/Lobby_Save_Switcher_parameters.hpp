@@ -70,9 +70,9 @@ public:
 };
 DUMPER7_ASSERTS_Lobby_Save_Switcher_C_Set_SelectedOption;
 
-// Function Lobby_Save_Switcher.Lobby_Save_Switcher_C.Setup
+// Function Lobby_Save_Switcher.Lobby_Save_Switcher_C.SetUp
 // 0x0070 (0x0070 - 0x0000)
-struct Lobby_Save_Switcher_C_Setup final
+struct Lobby_Save_Switcher_C_SetUp final
 {
 public:
 	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0000(0x0058)(HasGetValueTypeHash)
@@ -80,7 +80,7 @@ public:
 	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Array_Get_Item;                           // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_Lobby_Save_Switcher_C_Setup;
+DUMPER7_ASSERTS_Lobby_Save_Switcher_C_SetUp;
 
 // Function Lobby_Save_Switcher.Lobby_Save_Switcher_C.Set_OptionButtons_Visibility
 // 0x0001 (0x0001 - 0x0000)

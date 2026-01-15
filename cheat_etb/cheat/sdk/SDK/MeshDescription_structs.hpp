@@ -55,6 +55,13 @@ struct FPolygonGroupID final : public FElementID
 };
 DUMPER7_ASSERTS_FPolygonGroupID;
 
+// ScriptStruct MeshDescription.TriangleID
+// 0x0000 (0x0004 - 0x0004)
+struct FTriangleID final : public FElementID
+{
+};
+DUMPER7_ASSERTS_FTriangleID;
+
 // ScriptStruct MeshDescription.PolygonID
 // 0x0000 (0x0004 - 0x0004)
 struct FPolygonID final : public FElementID
@@ -68,13 +75,6 @@ struct FVertexInstanceID final : public FElementID
 {
 };
 DUMPER7_ASSERTS_FVertexInstanceID;
-
-// ScriptStruct MeshDescription.TriangleID
-// 0x0000 (0x0004 - 0x0004)
-struct FTriangleID final : public FElementID
-{
-};
-DUMPER7_ASSERTS_FTriangleID;
 
 }
 

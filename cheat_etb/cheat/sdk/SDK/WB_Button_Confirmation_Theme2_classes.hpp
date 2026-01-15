@@ -42,7 +42,7 @@ public:
 	void BndEvt__WB_Button_Confirmation_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 	void Construct();
 	void PreConstruct(bool IsDesignTime);
-	void Setup();
+	void SetUp();
 	void Set_ButtonStyle(class UTexture2D* Normal_Image_0, class UTexture2D* Hovered_Image_0, class UTexture2D* Pressed_Image_0, const struct FLinearColor& FontColor);
 	void Set_ButtonSize();
 	void Get_SlateBrush(class UTexture2D* Image, struct FSlateBrush* SlateBrush);

@@ -51,6 +51,20 @@ void ABP_FlareGun_C::ReceiveDestroyed()
 }
 
 
+// Function BP_FlareGun.BP_FlareGun_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_FlareGun_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FlareGun_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_FlareGun.BP_FlareGun_C.MC_Fire
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 
@@ -60,6 +74,20 @@ void ABP_FlareGun_C::MC_Fire()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_FlareGun_C", "MC_Fire");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FlareGun.BP_FlareGun_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_FlareGun_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FlareGun_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -162,34 +190,6 @@ void ABP_FlareGun_C::OnNotifyEnd_2B9968E342C281F2784D3CA1FF59D3F5(class FName No
 	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_FlareGun.BP_FlareGun_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_FlareGun_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FlareGun_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_FlareGun.BP_FlareGun_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_FlareGun_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FlareGun_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

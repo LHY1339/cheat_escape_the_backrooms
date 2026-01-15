@@ -37,6 +37,46 @@ void ABP_Item_AlmondWater_C::ExecuteUbergraph_BP_Item_AlmondWater(int32 EntryPoi
 }
 
 
+// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.OnEventLoaded
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEventType                              EventType                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Item_AlmondWater_C::OnEventLoaded(EEventType EventType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_AlmondWater_C", "OnEventLoaded");
+
+	Params::BP_Item_AlmondWater_C_OnEventLoaded Parms{};
+
+	Parms.EventType = EventType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.ToggleEvent
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_Item_AlmondWater_C::ToggleEvent(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_AlmondWater_C", "ToggleEvent");
+
+	Params::BP_Item_AlmondWater_C_ToggleEvent Parms{};
+
+	Parms.Enable = Enable;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.Damage_SERVER
 // (Net, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -56,6 +96,20 @@ void ABP_Item_AlmondWater_C::Damage_SERVER(class UObject* Target, class AFancyCh
 	Parms.Character = Character;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_AlmondWater_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_AlmondWater_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -196,60 +250,6 @@ void ABP_Item_AlmondWater_C::OpenCan__FinishedFunc()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Item_AlmondWater_C", "OpenCan__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.OnEventLoaded
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EEventType                              EventType                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Item_AlmondWater_C::OnEventLoaded(EEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_AlmondWater_C", "OnEventLoaded");
-
-	Params::BP_Item_AlmondWater_C_OnEventLoaded Parms{};
-
-	Parms.EventType = EventType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.ToggleEvent
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_Item_AlmondWater_C::ToggleEvent(bool Enable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_AlmondWater_C", "ToggleEvent");
-
-	Params::BP_Item_AlmondWater_C_ToggleEvent Parms{};
-
-	Parms.Enable = Enable;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_AlmondWater_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_AlmondWater_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

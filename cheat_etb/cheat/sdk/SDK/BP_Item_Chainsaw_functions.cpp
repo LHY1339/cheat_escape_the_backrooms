@@ -101,6 +101,20 @@ void ABP_Item_Chainsaw_C::Damage_SERVER(class UObject* Target, class AFancyChara
 }
 
 
+// Function BP_Item_Chainsaw.BP_Item_Chainsaw_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Item_Chainsaw_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Item_Chainsaw_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Item_Chainsaw.BP_Item_Chainsaw_C.OnCompleted_FBCA7ED7436A8ED7C154A2B37E6C3659
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -324,20 +338,6 @@ void ABP_Item_Chainsaw_C::Recoil__FinishedFunc()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Item_Chainsaw_C", "Recoil__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Item_Chainsaw.BP_Item_Chainsaw_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Item_Chainsaw_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Item_Chainsaw_C", "UseItem");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

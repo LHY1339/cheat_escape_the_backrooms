@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "ST_Item_structs.hpp"
+#include "InputCore_structs.hpp"
 #include "Backrooms_structs.hpp"
 #include "UMG_structs.hpp"
-#include "InputCore_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 
 

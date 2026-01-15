@@ -139,15 +139,15 @@ void ULobby_Save_Switcher_C::Set_SelectedOption(const class FString& SelectedOpt
 }
 
 
-// Function Lobby_Save_Switcher.Lobby_Save_Switcher_C.Setup
+// Function Lobby_Save_Switcher.Lobby_Save_Switcher_C.SetUp
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ULobby_Save_Switcher_C::Setup()
+void ULobby_Save_Switcher_C::SetUp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Lobby_Save_Switcher_C", "Setup");
+		Func = Class->GetFunction("Lobby_Save_Switcher_C", "SetUp");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

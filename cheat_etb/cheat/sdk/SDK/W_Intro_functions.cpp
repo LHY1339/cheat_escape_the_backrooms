@@ -37,6 +37,26 @@ void UW_Intro_C::ExecuteUbergraph_W_Intro(int32 EntryPoint)
 }
 
 
+// Function W_Intro.W_Intro_C.HandleOnStartCostumeSelect
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UUserWidget*                      CostumeWidget                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Intro_C::HandleOnStartCostumeSelect(class UUserWidget* CostumeWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Intro_C", "HandleOnStartCostumeSelect");
+
+	Params::W_Intro_C_HandleOnStartCostumeSelect Parms{};
+
+	Parms.CostumeWidget = CostumeWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_Intro.W_Intro_C.OnActiveUserChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:

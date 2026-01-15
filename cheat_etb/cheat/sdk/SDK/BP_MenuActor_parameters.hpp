@@ -19,43 +19,54 @@ namespace SDK::Params
 {
 
 // Function BP_MenuActor.BP_MenuActor_C.ExecuteUbergraph_BP_MenuActor
-// 0x0220 (0x0220 - 0x0000)
+// 0x0230 (0x0230 - 0x0000)
 struct BP_MenuActor_C_ExecuteUbergraph_BP_MenuActor final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   K2Node_InputActionEvent_Key_3;                     // 0x0008(0x0018)(HasGetValueTypeHash)
-	struct FKey                                   K2Node_InputActionEvent_Key;                       // 0x0020(0x0018)(HasGetValueTypeHash)
-	struct FKey                                   Temp_struct_Variable;                              // 0x0038(0x0018)(HasGetValueTypeHash)
-	bool                                          K2Node_CustomEvent_Hide;                           // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsHeadMountedDisplayEnabled_ReturnValue;  // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_52[0x6];                                       // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   K2Node_InputActionEvent_Key_1;                     // 0x0058(0x0018)(HasGetValueTypeHash)
-	class APlayerCameraManager*                   CallFunc_GetPlayerCameraManager_ReturnValue;       // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0078(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   K2Node_InputActionEvent_Key_4;                     // 0x0088(0x0018)(HasGetValueTypeHash)
-	class UWB_SettingsPanel_Theme2_C*             CallFunc_Create_ReturnValue;                       // 0x00A0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FKey                                   Temp_struct_Variable_1;                            // 0x00A8(0x0018)(HasGetValueTypeHash)
-	struct FTransform                             CallFunc_K2_GetComponentToWorld_ReturnValue;       // 0x00C0(0x0030)(IsPlainOldData, NoDestructor)
-	struct FTransform                             CallFunc_TLerp_ReturnValue;                        // 0x00F0(0x0030)(IsPlainOldData, NoDestructor)
-	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_121[0x3];                                      // 0x0121(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             CallFunc_K2_SetWorldTransform_SweepHitResult;      // 0x0124(0x0088)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsHeadMountedDisplayEnabled_ReturnValue_1; // 0x01AD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_CustomEvent_Down_1;                         // 0x01AE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_CustomEvent_Down;                           // 0x01AF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1B1[0xF];                                      // 0x01B1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x01C0(0x0030)(IsPlainOldData, NoDestructor)
-	class UWidgetComponent*                       CallFunc_AddComponent_ReturnValue;                 // 0x01F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_IsClosed_Variable;                       // 0x01F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1F9[0x7];                                      // 0x01F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   K2Node_InputActionEvent_Key_2;                     // 0x0200(0x0018)(HasGetValueTypeHash)
+	struct FKey                                   K2Node_InputActionEvent_Key;                       // 0x0008(0x0018)(HasGetValueTypeHash)
+	struct FKey                                   Temp_struct_Variable;                              // 0x0020(0x0018)(HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_Hide;                           // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsHeadMountedDisplayEnabled_ReturnValue;  // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   K2Node_InputActionEvent_Key_1;                     // 0x0040(0x0018)(HasGetValueTypeHash)
+	class APlayerCameraManager*                   CallFunc_GetPlayerCameraManager_ReturnValue;       // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0060(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   K2Node_InputActionEvent_Key_4;                     // 0x0070(0x0018)(HasGetValueTypeHash)
+	class UWB_SettingsPanel_Theme2_C*             CallFunc_Create_ReturnValue;                       // 0x0088(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FKey                                   Temp_struct_Variable_1;                            // 0x0090(0x0018)(HasGetValueTypeHash)
+	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_K2_GetComponentToWorld_ReturnValue;       // 0x00B0(0x0030)(IsPlainOldData, NoDestructor)
+	struct FTransform                             CallFunc_TLerp_ReturnValue;                        // 0x00E0(0x0030)(IsPlainOldData, NoDestructor)
+	bool                                          Temp_bool_Has_Been_Initd_Variable;                 // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_111[0x3];                                      // 0x0111(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             CallFunc_K2_SetWorldTransform_SweepHitResult;      // 0x0114(0x0088)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x019C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsHeadMountedDisplayEnabled_ReturnValue_1; // 0x019D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_CustomEvent_Down_1;                         // 0x019E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_CustomEvent_Down;                           // 0x019F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A1[0xF];                                      // 0x01A1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x01B0(0x0030)(IsPlainOldData, NoDestructor)
+	class UWidgetComponent*                       CallFunc_AddComponent_ReturnValue;                 // 0x01E0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_IsClosed_Variable;                       // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1E9[0x7];                                      // 0x01E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   K2Node_InputActionEvent_Key_2;                     // 0x01F0(0x0018)(HasGetValueTypeHash)
+	struct FKey                                   K2Node_InputActionEvent_Key_3;                     // 0x0208(0x0018)(HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_Active;                         // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_MenuActor_C_ExecuteUbergraph_BP_MenuActor;
+
+// Function BP_MenuActor.BP_MenuActor_C.SetMainMenuShakeActive
+// 0x0001 (0x0001 - 0x0000)
+struct BP_MenuActor_C_SetMainMenuShakeActive final
+{
+public:
+	bool                                          Active;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_MenuActor_C_SetMainMenuShakeActive;
 
 // Function BP_MenuActor.BP_MenuActor_C.HeldRight
 // 0x0001 (0x0001 - 0x0000)

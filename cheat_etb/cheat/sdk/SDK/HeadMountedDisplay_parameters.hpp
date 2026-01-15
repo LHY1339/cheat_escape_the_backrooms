@@ -18,17 +18,6 @@
 namespace SDK::Params
 {
 
-// Function HeadMountedDisplay.HandKeypointConversion.Conv_HandKeypointToInt32
-// 0x0008 (0x0008 - 0x0000)
-struct HandKeypointConversion_Conv_HandKeypointToInt32 final
-{
-public:
-	EHandKeypoint                                 Input;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_HandKeypointConversion_Conv_HandKeypointToInt32;
-
 // Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingForComponent
 // 0x0008 (0x0008 - 0x0000)
 struct MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent final
@@ -813,6 +802,17 @@ public:
 	struct FTransform                             ExternalTrackingTransform;                         // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_HeadMountedDisplayFunctionLibrary_UpdateExternalTrackingHMDPosition;
+
+// Function HeadMountedDisplay.HandKeypointConversion.Conv_HandKeypointToInt32
+// 0x0008 (0x0008 - 0x0000)
+struct HandKeypointConversion_Conv_HandKeypointToInt32 final
+{
+public:
+	EHandKeypoint                                 Input;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_HandKeypointConversion_Conv_HandKeypointToInt32;
 
 // Function HeadMountedDisplay.XRAssetFunctionLibrary.AddDeviceVisualizationComponentBlocking
 // 0x0060 (0x0060 - 0x0000)

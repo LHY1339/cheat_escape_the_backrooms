@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "AssetRegistry_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params

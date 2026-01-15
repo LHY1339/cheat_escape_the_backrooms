@@ -1,4 +1,5 @@
 ## Escape The Backrooms Cheat - 逃离后室外挂修改器
+# 作者准备中考一模去了，只有版本更新时会上传一下
 ### 效果图
 ![效果图](misc/img.png)
 ### 问题反馈

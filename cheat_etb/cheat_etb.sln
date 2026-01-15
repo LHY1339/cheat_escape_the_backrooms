@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36705.20 d17.14
+VisualStudioVersion = 17.14.36705.20
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cheat", "cheat\cheat.vcxproj", "{5E3654BF-0211-4D5A-AF89-508B73765CD2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "injector", "injector\injector.vcxproj", "{08A949C4-D9F4-44B6-B3A8-D847534BC917}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "loader", "loader\loader.vcxproj", "{460EF5C3-3FC6-475C-96A6-093F8BD0A29D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "loader", "loader\loader.vcxproj", "{5F893161-5012-4E8E-8EF6-57750190BE0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,14 +33,14 @@ Global
 		{08A949C4-D9F4-44B6-B3A8-D847534BC917}.Release|x64.Build.0 = Release|x64
 		{08A949C4-D9F4-44B6-B3A8-D847534BC917}.Release|x86.ActiveCfg = Release|Win32
 		{08A949C4-D9F4-44B6-B3A8-D847534BC917}.Release|x86.Build.0 = Release|Win32
-		{460EF5C3-3FC6-475C-96A6-093F8BD0A29D}.Debug|x64.ActiveCfg = Debug|x64
-		{460EF5C3-3FC6-475C-96A6-093F8BD0A29D}.Debug|x64.Build.0 = Debug|x64
-		{460EF5C3-3FC6-475C-96A6-093F8BD0A29D}.Debug|x86.ActiveCfg = Debug|Win32
-		{460EF5C3-3FC6-475C-96A6-093F8BD0A29D}.Debug|x86.Build.0 = Debug|Win32
-		{460EF5C3-3FC6-475C-96A6-093F8BD0A29D}.Release|x64.ActiveCfg = Release|x64
-		{460EF5C3-3FC6-475C-96A6-093F8BD0A29D}.Release|x64.Build.0 = Release|x64
-		{460EF5C3-3FC6-475C-96A6-093F8BD0A29D}.Release|x86.ActiveCfg = Release|Win32
-		{460EF5C3-3FC6-475C-96A6-093F8BD0A29D}.Release|x86.Build.0 = Release|Win32
+		{5F893161-5012-4E8E-8EF6-57750190BE0D}.Debug|x64.ActiveCfg = Debug|x64
+		{5F893161-5012-4E8E-8EF6-57750190BE0D}.Debug|x64.Build.0 = Debug|x64
+		{5F893161-5012-4E8E-8EF6-57750190BE0D}.Debug|x86.ActiveCfg = Debug|Win32
+		{5F893161-5012-4E8E-8EF6-57750190BE0D}.Debug|x86.Build.0 = Debug|Win32
+		{5F893161-5012-4E8E-8EF6-57750190BE0D}.Release|x64.ActiveCfg = Release|x64
+		{5F893161-5012-4E8E-8EF6-57750190BE0D}.Release|x64.Build.0 = Release|x64
+		{5F893161-5012-4E8E-8EF6-57750190BE0D}.Release|x86.ActiveCfg = Release|Win32
+		{5F893161-5012-4E8E-8EF6-57750190BE0D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

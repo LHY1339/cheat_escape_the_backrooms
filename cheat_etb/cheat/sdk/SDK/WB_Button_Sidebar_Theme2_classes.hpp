@@ -41,7 +41,7 @@ public:
 	void BndEvt__WB_Button_Sidebar_Button_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();
 	void Construct();
 	void PreConstruct(bool IsDesignTime);
-	void Setup();
+	void SetUp();
 	void Set_ButtonIconSize();
 	void Set_ButtonIcon();
 

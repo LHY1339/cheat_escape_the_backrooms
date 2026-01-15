@@ -17,7 +17,7 @@ namespace SDK::Params
 {
 
 // Function BP_SkinStealer_Level07.BP_SkinStealer_Level07_C.ExecuteUbergraph_BP_SkinStealer_Level07
-// 0x0050 (0x0050 - 0x0000)
+// 0x0078 (0x0078 - 0x0000)
 struct BP_SkinStealer_Level07_C_ExecuteUbergraph_BP_SkinStealer_Level07 final
 {
 public:
@@ -38,6 +38,14 @@ public:
 	float                                         CallFunc_Lerp_ReturnValue;                         // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_FloatFloat_ReturnValue;        // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0049(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4A[0x6];                                       // 0x004A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AGameStateBase*                         CallFunc_GetGameState_ReturnValue;                 // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AMP_GameState_C*                        K2Node_DynamicCast_AsMP_Game_State;                // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_62[0x6];                                       // 0x0062(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABPCharacter_Demo_C*                    CallFunc_Array_Random_OutItem;                     // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Random_OutIndex;                    // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_SkinStealer_Level07_C_ExecuteUbergraph_BP_SkinStealer_Level07;
 

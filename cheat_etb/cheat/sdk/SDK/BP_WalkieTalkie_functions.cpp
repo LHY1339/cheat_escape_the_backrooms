@@ -37,6 +37,20 @@ void ABP_WalkieTalkie_C::ExecuteUbergraph_BP_WalkieTalkie(int32 EntryPoint)
 }
 
 
+// Function BP_WalkieTalkie.BP_WalkieTalkie_C.UseItem
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_WalkieTalkie_C::UseItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WalkieTalkie_C", "UseItem");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_WalkieTalkie.BP_WalkieTalkie_C.PlaySubtitle
 // (BlueprintCallable, BlueprintEvent)
 
@@ -60,6 +74,20 @@ void ABP_WalkieTalkie_C::MC_Connect()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_WalkieTalkie_C", "MC_Connect");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WalkieTalkie.BP_WalkieTalkie_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_WalkieTalkie_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WalkieTalkie_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -293,6 +321,26 @@ void ABP_WalkieTalkie_C::OnNotifyEnd_0A19368B42B332B8561A4A9702E5897B(class FNam
 }
 
 
+// Function BP_WalkieTalkie.BP_WalkieTalkie_C.SetMaterial
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    EnabledFOV                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_WalkieTalkie_C::SetMaterial(bool EnabledFOV)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WalkieTalkie_C", "SetMaterial");
+
+	Params::BP_WalkieTalkie_C_SetMaterial Parms{};
+
+	Parms.EnabledFOV = EnabledFOV;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_WalkieTalkie.BP_WalkieTalkie_C.ResetAlarm
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -332,54 +380,6 @@ void ABP_WalkieTalkie_C::ActivateRadio()
 		Func = Class->GetFunction("BP_WalkieTalkie_C", "ActivateRadio");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WalkieTalkie.BP_WalkieTalkie_C.UseItem
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_WalkieTalkie_C::UseItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WalkieTalkie_C", "UseItem");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WalkieTalkie.BP_WalkieTalkie_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_WalkieTalkie_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WalkieTalkie_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WalkieTalkie.BP_WalkieTalkie_C.SetMaterial
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    EnabledFOV                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_WalkieTalkie_C::SetMaterial(bool EnabledFOV)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WalkieTalkie_C", "SetMaterial");
-
-	Params::BP_WalkieTalkie_C_SetMaterial Parms{};
-
-	Parms.EnabledFOV = EnabledFOV;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

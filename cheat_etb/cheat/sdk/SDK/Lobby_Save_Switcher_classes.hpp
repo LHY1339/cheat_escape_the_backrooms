@@ -48,7 +48,7 @@ public:
 	void CanClose();
 	void Switch_Option(bool Decrease_);
 	void Set_SelectedOption(const class FString& SelectedOption_0);
-	void Setup();
+	void SetUp();
 	void Set_OptionButtons_Visibility(bool ShowOptionButtons_);
 	void Update_Options();
 	void TitleCase(const class FString& In, class FString* Out);

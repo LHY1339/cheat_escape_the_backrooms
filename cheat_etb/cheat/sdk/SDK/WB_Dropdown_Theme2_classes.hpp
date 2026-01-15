@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "Backrooms_structs.hpp"
-#include "UMG_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK
@@ -41,7 +41,7 @@ public:
 	void ToggleEnabled(bool IsEnabled);
 	void ToggleHover(bool IsHovered_0);
 	void Set_SelectedOption(int32 Option);
-	void Setup();
+	void SetUp();
 	void FindOption(const class FString& Option, int32* Index_0);
 
 public:

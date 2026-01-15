@@ -18,29 +18,6 @@
 namespace SDK
 {
 
-// Class HeadMountedDisplay.HandKeypointConversion
-// 0x0000 (0x0028 - 0x0028)
-class UHandKeypointConversion final : public UBlueprintFunctionLibrary
-{
-public:
-	static int32 Conv_HandKeypointToInt32(EHandKeypoint Input);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HandKeypointConversion")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HandKeypointConversion")
-	}
-	static class UHandKeypointConversion* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHandKeypointConversion>();
-	}
-};
-DUMPER7_ASSERTS_UHandKeypointConversion;
-
 // Class HeadMountedDisplay.VRNotificationsComponent
 // 0x00B0 (0x0160 - 0x00B0)
 class UVRNotificationsComponent : public UActorComponent
@@ -235,6 +212,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UHeadMountedDisplayFunctionLibrary;
+
+// Class HeadMountedDisplay.HandKeypointConversion
+// 0x0000 (0x0028 - 0x0028)
+class UHandKeypointConversion final : public UBlueprintFunctionLibrary
+{
+public:
+	static int32 Conv_HandKeypointToInt32(EHandKeypoint Input);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HandKeypointConversion")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HandKeypointConversion")
+	}
+	static class UHandKeypointConversion* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHandKeypointConversion>();
+	}
+};
+DUMPER7_ASSERTS_UHandKeypointConversion;
 
 // Class HeadMountedDisplay.XRAssetFunctionLibrary
 // 0x0000 (0x0028 - 0x0028)

@@ -208,19 +208,6 @@ public:
 };
 DUMPER7_ASSERTS_FTipSettings;
 
-// ScriptStruct AsyncLoadingScreen.CircularThrobberSettings
-// 0x0098 (0x0098 - 0x0000)
-struct FCircularThrobberSettings final
-{
-public:
-	int32                                         NumberOfPieces;                                    // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Period;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Radius;                                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            Image;                                             // 0x0010(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCircularThrobberSettings;
-
 // ScriptStruct AsyncLoadingScreen.ThrobberSettings
 // 0x0090 (0x0090 - 0x0000)
 struct FThrobberSettings final
@@ -234,6 +221,19 @@ public:
 	struct FSlateBrush                            Image;                                             // 0x0008(0x0088)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FThrobberSettings;
+
+// ScriptStruct AsyncLoadingScreen.CircularThrobberSettings
+// 0x0098 (0x0098 - 0x0000)
+struct FCircularThrobberSettings final
+{
+public:
+	int32                                         NumberOfPieces;                                    // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Period;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Radius;                                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            Image;                                             // 0x0010(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCircularThrobberSettings;
 
 // ScriptStruct AsyncLoadingScreen.ImageSequenceSettings
 // 0x0020 (0x0020 - 0x0000)

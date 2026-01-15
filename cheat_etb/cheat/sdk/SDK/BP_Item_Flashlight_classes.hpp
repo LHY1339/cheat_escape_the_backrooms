@@ -58,6 +58,8 @@ public:
 	void StartFlicker();
 	void PlayAnimation();
 	void ToggleFadePower(bool FadeOut);
+	void ReceiveBeginPlay();
+	void UseItem();
 	void OnCompleted_858C6BED431A8EBEEAB2D09BA256DAA6(class FName NotifyName);
 	void OnBlendOut_858C6BED431A8EBEEAB2D09BA256DAA6(class FName NotifyName);
 	void OnInterrupted_858C6BED431A8EBEEAB2D09BA256DAA6(class FName NotifyName);
@@ -74,8 +76,6 @@ public:
 	void OnRep_IsFlashlightOn();
 	void GetAdjustedIntensity(float Intensity_0, float* Adjusted);
 	void GetAdjustedRadius(float Radius, float* Adjusted);
-	void ReceiveBeginPlay();
-	void UseItem();
 	void SetMaterial(bool EnabledFOV);
 
 public:

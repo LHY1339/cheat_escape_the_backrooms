@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Backrooms_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params

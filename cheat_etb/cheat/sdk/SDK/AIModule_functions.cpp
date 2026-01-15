@@ -1575,6 +1575,112 @@ void UAIPerceptionSystem::ReportEvent(class UAISenseEvent* PerceptionEvent)
 }
 
 
+// Function AIModule.PathFollowingComponent.OnActorBump
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// class AActor*                           SelfActor                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UPathFollowingComponent::OnActorBump(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PathFollowingComponent", "OnActorBump");
+
+	Params::PathFollowingComponent_OnActorBump Parms{};
+
+	Parms.SelfActor = SelfActor;
+	Parms.OtherActor = OtherActor;
+	Parms.NormalImpulse = std::move(NormalImpulse);
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.PathFollowingComponent.OnNavDataRegistered
+// (Final, Native, Protected)
+// Parameters:
+// class ANavigationData*                  NavData                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPathFollowingComponent::OnNavDataRegistered(class ANavigationData* NavData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PathFollowingComponent", "OnNavDataRegistered");
+
+	Params::PathFollowingComponent_OnNavDataRegistered Parms{};
+
+	Parms.NavData = NavData;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.PathFollowingComponent.GetPathActionType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EPathFollowingAction                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EPathFollowingAction UPathFollowingComponent::GetPathActionType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PathFollowingComponent", "GetPathActionType");
+
+	Params::PathFollowingComponent_GetPathActionType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PathFollowingComponent.GetPathDestination
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UPathFollowingComponent::GetPathDestination() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PathFollowingComponent", "GetPathDestination");
+
+	Params::PathFollowingComponent_GetPathDestination Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function AIModule.AISense_Blueprint.K2_OnNewPawn
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -1773,86 +1879,6 @@ void UAISense_Damage::ReportDamageEvent(class UObject* WorldContextObject, class
 }
 
 
-// Function AIModule.PawnAction.CreateActionInstance
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UPawnAction>          ActionClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPawnAction*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPawnAction* UPawnAction::CreateActionInstance(class UObject* WorldContextObject, TSubclassOf<class UPawnAction> ActionClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PawnAction", "CreateActionInstance");
-
-	Params::PawnAction_CreateActionInstance Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.ActionClass = ActionClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.PawnAction.Finish
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// EPawnActionResult                       WithResult                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPawnAction::Finish(EPawnActionResult WithResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnAction", "Finish");
-
-	Params::PawnAction_Finish Parms{};
-
-	Parms.WithResult = WithResult;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.PawnAction.GetActionPriority
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// EAIRequestPriority                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EAIRequestPriority UPawnAction::GetActionPriority()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnAction", "GetActionPriority");
-
-	Params::PawnAction_GetActionPriority Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AIModule.AISense_Hearing.ReportNoiseEvent
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -1946,241 +1972,30 @@ void UAISense_Prediction::RequestPawnPredictionEvent(class APawn* Requestor, cla
 }
 
 
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForBox
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Extent                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FRotator&                  Rotation                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// const int32                             Radius2D                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UNavLocalGridManager::AddLocalNavigationGridForBox(class UObject* WorldContextObject, const struct FVector& Location, const struct FVector& Extent, const struct FRotator& Rotation, const int32 Radius2D, const float Height, bool bRebuildGrids)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("NavLocalGridManager", "AddLocalNavigationGridForBox");
-
-	Params::NavLocalGridManager_AddLocalNavigationGridForBox Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Location = std::move(Location);
-	Parms.Extent = std::move(Extent);
-	Parms.Rotation = std::move(Rotation);
-	Parms.Radius2D = Radius2D;
-	Parms.Height = Height;
-	Parms.bRebuildGrids = bRebuildGrids;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForCapsule
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   CapsuleRadius                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   CapsuleHalfHeight                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32                             Radius2D                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UNavLocalGridManager::AddLocalNavigationGridForCapsule(class UObject* WorldContextObject, const struct FVector& Location, float CapsuleRadius, float CapsuleHalfHeight, const int32 Radius2D, const float Height, bool bRebuildGrids)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("NavLocalGridManager", "AddLocalNavigationGridForCapsule");
-
-	Params::NavLocalGridManager_AddLocalNavigationGridForCapsule Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Location = std::move(Location);
-	Parms.CapsuleRadius = CapsuleRadius;
-	Parms.CapsuleHalfHeight = CapsuleHalfHeight;
-	Parms.Radius2D = Radius2D;
-	Parms.Height = Height;
-	Parms.bRebuildGrids = bRebuildGrids;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoint
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const int32                             Radius2D                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UNavLocalGridManager::AddLocalNavigationGridForPoint(class UObject* WorldContextObject, const struct FVector& Location, const int32 Radius2D, const float Height, bool bRebuildGrids)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("NavLocalGridManager", "AddLocalNavigationGridForPoint");
-
-	Params::NavLocalGridManager_AddLocalNavigationGridForPoint Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Location = std::move(Location);
-	Parms.Radius2D = Radius2D;
-	Parms.Height = Height;
-	Parms.bRebuildGrids = bRebuildGrids;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoints
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<struct FVector>&           Locations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const int32                             Radius2D                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UNavLocalGridManager::AddLocalNavigationGridForPoints(class UObject* WorldContextObject, const TArray<struct FVector>& Locations, const int32 Radius2D, const float Height, bool bRebuildGrids)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("NavLocalGridManager", "AddLocalNavigationGridForPoints");
-
-	Params::NavLocalGridManager_AddLocalNavigationGridForPoints Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Locations = std::move(Locations);
-	Parms.Radius2D = Radius2D;
-	Parms.Height = Height;
-	Parms.bRebuildGrids = bRebuildGrids;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.NavLocalGridManager.FindLocalNavigationGridPath
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Start                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   End                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>*                 PathPoints                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UNavLocalGridManager::FindLocalNavigationGridPath(class UObject* WorldContextObject, const struct FVector& Start, const struct FVector& End, TArray<struct FVector>* PathPoints)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("NavLocalGridManager", "FindLocalNavigationGridPath");
-
-	Params::NavLocalGridManager_FindLocalNavigationGridPath Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Start = std::move(Start);
-	Parms.End = std::move(End);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (PathPoints != nullptr)
-		*PathPoints = std::move(Parms.PathPoints);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.NavLocalGridManager.RemoveLocalNavigationGrid
+// Function AIModule.EnvQueryManager.RunEQSQuery
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   GridId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UEnvQuery*                        QueryTemplate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Querier                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEnvQueryRunMode                        RunMode                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UEnvQueryInstanceBlueprintWrapper>WrapperClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UEnvQueryInstanceBlueprintWrapper*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNavLocalGridManager::RemoveLocalNavigationGrid(class UObject* WorldContextObject, int32 GridId, bool bRebuildGrids)
+class UEnvQueryInstanceBlueprintWrapper* UEnvQueryManager::RunEQSQuery(class UObject* WorldContextObject, class UEnvQuery* QueryTemplate, class UObject* Querier, EEnvQueryRunMode RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("NavLocalGridManager", "RemoveLocalNavigationGrid");
+		Func = StaticClass()->GetFunction("EnvQueryManager", "RunEQSQuery");
 
-	Params::NavLocalGridManager_RemoveLocalNavigationGrid Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.GridId = GridId;
-	Parms.bRebuildGrids = bRebuildGrids;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.NavLocalGridManager.SetLocalNavigationGridDensity
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   CellSize                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UNavLocalGridManager::SetLocalNavigationGridDensity(class UObject* WorldContextObject, float CellSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("NavLocalGridManager", "SetLocalNavigationGridDensity");
-
-	Params::NavLocalGridManager_SetLocalNavigationGridDensity Parms{};
+	Params::EnvQueryManager_RunEQSQuery Parms{};
 
 	Parms.WorldContextObject = WorldContextObject;
-	Parms.CellSize = CellSize;
+	Parms.QueryTemplate = QueryTemplate;
+	Parms.Querier = Querier;
+	Parms.RunMode = RunMode;
+	Parms.WrapperClass = WrapperClass;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2193,54 +2008,91 @@ bool UNavLocalGridManager::SetLocalNavigationGridDensity(class UObject* WorldCon
 }
 
 
-// Function AIModule.PawnActionsComponent.K2_PerformAction
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function AIModule.NavLinkProxy.ReceiveSmartLinkReached
+// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
 // Parameters:
-// class APawn*                            Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPawnAction*                      Action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAIRequestPriority                      Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Agent                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Destination                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPawnActionsComponent::K2_PerformAction(class APawn* Pawn, class UPawnAction* Action, EAIRequestPriority Priority)
+void ANavLinkProxy::ReceiveSmartLinkReached(class AActor* Agent, const struct FVector& Destination)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PawnActionsComponent", "K2_PerformAction");
+		Func = Class->GetFunction("NavLinkProxy", "ReceiveSmartLinkReached");
 
-	Params::PawnActionsComponent_K2_PerformAction Parms{};
+	Params::NavLinkProxy_ReceiveSmartLinkReached Parms{};
 
-	Parms.Pawn = Pawn;
-	Parms.Action = Action;
-	Parms.Priority = Priority;
+	Parms.Agent = Agent;
+	Parms.Destination = std::move(Destination);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function AIModule.PawnActionsComponent.K2_AbortAction
+// Function AIModule.NavLinkProxy.ResumePathFollowing
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UPawnAction*                      ActionToAbort                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPawnActionAbortState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Agent                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EPawnActionAbortState UPawnActionsComponent::K2_AbortAction(class UPawnAction* ActionToAbort)
+void ANavLinkProxy::ResumePathFollowing(class AActor* Agent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PawnActionsComponent", "K2_AbortAction");
+		Func = Class->GetFunction("NavLinkProxy", "ResumePathFollowing");
 
-	Params::PawnActionsComponent_K2_AbortAction Parms{};
+	Params::NavLinkProxy_ResumePathFollowing Parms{};
 
-	Parms.ActionToAbort = ActionToAbort;
+	Parms.Agent = Agent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.NavLinkProxy.SetSmartLinkEnabled
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ANavLinkProxy::SetSmartLinkEnabled(bool bEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavLinkProxy", "SetSmartLinkEnabled");
+
+	Params::NavLinkProxy_SetSmartLinkEnabled Parms{};
+
+	Parms.bEnabled = bEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.NavLinkProxy.HasMovingAgents
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ANavLinkProxy::HasMovingAgents() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavLinkProxy", "HasMovingAgents");
+
+	Params::NavLinkProxy_HasMovingAgents Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2253,22 +2105,19 @@ EPawnActionAbortState UPawnActionsComponent::K2_AbortAction(class UPawnAction* A
 }
 
 
-// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
-// (Final, Native, Public, BlueprintCallable)
+// Function AIModule.NavLinkProxy.IsSmartLinkEnabled
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UPawnAction*                      ActionToAbort                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPawnActionAbortState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EPawnActionAbortState UPawnActionsComponent::K2_ForceAbortAction(class UPawnAction* ActionToAbort)
+bool ANavLinkProxy::IsSmartLinkEnabled() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PawnActionsComponent", "K2_ForceAbortAction");
+		Func = Class->GetFunction("NavLinkProxy", "IsSmartLinkEnabled");
 
-	Params::PawnActionsComponent_K2_ForceAbortAction Parms{};
-
-	Parms.ActionToAbort = ActionToAbort;
+	Params::NavLinkProxy_IsSmartLinkEnabled Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2281,26 +2130,74 @@ EPawnActionAbortState UPawnActionsComponent::K2_ForceAbortAction(class UPawnActi
 }
 
 
-// Function AIModule.PawnActionsComponent.K2_PushAction
-// (Final, Native, Public, BlueprintCallable)
+// Function AIModule.PawnAction.CreateActionInstance
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UPawnAction*                      NewAction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAIRequestPriority                      Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObject*                          Instigator                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UPawnAction>          ActionClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPawnAction*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPawnActionsComponent::K2_PushAction(class UPawnAction* NewAction, EAIRequestPriority Priority, class UObject* Instigator)
+class UPawnAction* UPawnAction::CreateActionInstance(class UObject* WorldContextObject, TSubclassOf<class UPawnAction> ActionClass)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PawnActionsComponent", "K2_PushAction");
+		Func = StaticClass()->GetFunction("PawnAction", "CreateActionInstance");
 
-	Params::PawnActionsComponent_K2_PushAction Parms{};
+	Params::PawnAction_CreateActionInstance Parms{};
 
-	Parms.NewAction = NewAction;
-	Parms.Priority = Priority;
-	Parms.Instigator = Instigator;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ActionClass = ActionClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PawnAction.Finish
+// (Native, Protected, BlueprintCallable)
+// Parameters:
+// EPawnActionResult                       WithResult                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPawnAction::Finish(EPawnActionResult WithResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnAction", "Finish");
+
+	Params::PawnAction_Finish Parms{};
+
+	Parms.WithResult = WithResult;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.PawnAction.GetActionPriority
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// EAIRequestPriority                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EAIRequestPriority UPawnAction::GetActionPriority()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnAction", "GetActionPriority");
+
+	Params::PawnAction_GetActionPriority Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2646,6 +2543,110 @@ class UBlackboardData* IBlackboardAssetProvider::GetBlackboardAsset() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PawnAction_BlueprintBase.ActionFinished
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EPawnActionResult                       WithResult                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPawnAction_BlueprintBase::ActionFinished(class APawn* ControlledPawn, EPawnActionResult WithResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionFinished");
+
+	Params::PawnAction_BlueprintBase_ActionFinished Parms{};
+
+	Parms.ControlledPawn = ControlledPawn;
+	Parms.WithResult = WithResult;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIModule.PawnAction_BlueprintBase.ActionPause
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPawnAction_BlueprintBase::ActionPause(class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionPause");
+
+	Params::PawnAction_BlueprintBase_ActionPause Parms{};
+
+	Parms.ControlledPawn = ControlledPawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIModule.PawnAction_BlueprintBase.ActionResume
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPawnAction_BlueprintBase::ActionResume(class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionResume");
+
+	Params::PawnAction_BlueprintBase_ActionResume Parms{};
+
+	Parms.ControlledPawn = ControlledPawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIModule.PawnAction_BlueprintBase.ActionStart
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPawnAction_BlueprintBase::ActionStart(class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionStart");
+
+	Params::PawnAction_BlueprintBase_ActionStart Parms{};
+
+	Parms.ControlledPawn = ControlledPawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIModule.PawnAction_BlueprintBase.ActionTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPawnAction_BlueprintBase::ActionTick(class APawn* ControlledPawn, float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionTick");
+
+	Params::PawnAction_BlueprintBase_ActionTick Parms{};
+
+	Parms.ControlledPawn = ControlledPawn;
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -4887,112 +4888,6 @@ bool UBTTask_BlueprintBase::IsTaskExecuting() const
 }
 
 
-// Function AIModule.PathFollowingComponent.OnActorBump
-// (Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// class AActor*                           SelfActor                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UPathFollowingComponent::OnActorBump(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PathFollowingComponent", "OnActorBump");
-
-	Params::PathFollowingComponent_OnActorBump Parms{};
-
-	Parms.SelfActor = SelfActor;
-	Parms.OtherActor = OtherActor;
-	Parms.NormalImpulse = std::move(NormalImpulse);
-	Parms.Hit = std::move(Hit);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.PathFollowingComponent.OnNavDataRegistered
-// (Final, Native, Protected)
-// Parameters:
-// class ANavigationData*                  NavData                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPathFollowingComponent::OnNavDataRegistered(class ANavigationData* NavData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PathFollowingComponent", "OnNavDataRegistered");
-
-	Params::PathFollowingComponent_OnNavDataRegistered Parms{};
-
-	Parms.NavData = NavData;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AIModule.PathFollowingComponent.GetPathActionType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EPathFollowingAction                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EPathFollowingAction UPathFollowingComponent::GetPathActionType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PathFollowingComponent", "GetPathActionType");
-
-	Params::PathFollowingComponent_GetPathActionType Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.PathFollowingComponent.GetPathDestination
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector UPathFollowingComponent::GetPathDestination() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PathFollowingComponent", "GetPathDestination");
-
-	Params::PathFollowingComponent_GetPathDestination Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AIModule.CrowdFollowingComponent.SuspendCrowdSteering
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -5380,30 +5275,34 @@ TArray<struct FVector> UEnvQueryInstanceBlueprintWrapper::GetResultsAsLocations(
 }
 
 
-// Function AIModule.EnvQueryManager.RunEQSQuery
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForBox
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnvQuery*                        QueryTemplate                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObject*                          Querier                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEnvQueryRunMode                        RunMode                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UEnvQueryInstanceBlueprintWrapper>WrapperClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnvQueryInstanceBlueprintWrapper*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Extent                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Rotation                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const int32                             Radius2D                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UEnvQueryInstanceBlueprintWrapper* UEnvQueryManager::RunEQSQuery(class UObject* WorldContextObject, class UEnvQuery* QueryTemplate, class UObject* Querier, EEnvQueryRunMode RunMode, TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass)
+int32 UNavLocalGridManager::AddLocalNavigationGridForBox(class UObject* WorldContextObject, const struct FVector& Location, const struct FVector& Extent, const struct FRotator& Rotation, const int32 Radius2D, const float Height, bool bRebuildGrids)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EnvQueryManager", "RunEQSQuery");
+		Func = StaticClass()->GetFunction("NavLocalGridManager", "AddLocalNavigationGridForBox");
 
-	Params::EnvQueryManager_RunEQSQuery Parms{};
+	Params::NavLocalGridManager_AddLocalNavigationGridForBox Parms{};
 
 	Parms.WorldContextObject = WorldContextObject;
-	Parms.QueryTemplate = QueryTemplate;
-	Parms.Querier = Querier;
-	Parms.RunMode = RunMode;
-	Parms.WrapperClass = WrapperClass;
+	Parms.Location = std::move(Location);
+	Parms.Extent = std::move(Extent);
+	Parms.Rotation = std::move(Rotation);
+	Parms.Radius2D = Radius2D;
+	Parms.Height = Height;
+	Parms.bRebuildGrids = bRebuildGrids;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5416,91 +5315,261 @@ class UEnvQueryInstanceBlueprintWrapper* UEnvQueryManager::RunEQSQuery(class UOb
 }
 
 
-// Function AIModule.NavLinkProxy.ReceiveSmartLinkReached
-// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForCapsule
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// class AActor*                           Agent                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Destination                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   CapsuleRadius                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   CapsuleHalfHeight                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Radius2D                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ANavLinkProxy::ReceiveSmartLinkReached(class AActor* Agent, const struct FVector& Destination)
+int32 UNavLocalGridManager::AddLocalNavigationGridForCapsule(class UObject* WorldContextObject, const struct FVector& Location, float CapsuleRadius, float CapsuleHalfHeight, const int32 Radius2D, const float Height, bool bRebuildGrids)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkProxy", "ReceiveSmartLinkReached");
+		Func = StaticClass()->GetFunction("NavLocalGridManager", "AddLocalNavigationGridForCapsule");
 
-	Params::NavLinkProxy_ReceiveSmartLinkReached Parms{};
+	Params::NavLocalGridManager_AddLocalNavigationGridForCapsule Parms{};
 
-	Parms.Agent = Agent;
-	Parms.Destination = std::move(Destination);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIModule.NavLinkProxy.ResumePathFollowing
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           Agent                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ANavLinkProxy::ResumePathFollowing(class AActor* Agent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkProxy", "ResumePathFollowing");
-
-	Params::NavLinkProxy_ResumePathFollowing Parms{};
-
-	Parms.Agent = Agent;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Location = std::move(Location);
+	Parms.CapsuleRadius = CapsuleRadius;
+	Parms.CapsuleHalfHeight = CapsuleHalfHeight;
+	Parms.Radius2D = Radius2D;
+	Parms.Height = Height;
+	Parms.bRebuildGrids = bRebuildGrids;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function AIModule.NavLinkProxy.SetSmartLinkEnabled
-// (Final, Native, Public, BlueprintCallable)
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoint
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Radius2D                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ANavLinkProxy::SetSmartLinkEnabled(bool bEnabled)
+int32 UNavLocalGridManager::AddLocalNavigationGridForPoint(class UObject* WorldContextObject, const struct FVector& Location, const int32 Radius2D, const float Height, bool bRebuildGrids)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkProxy", "SetSmartLinkEnabled");
+		Func = StaticClass()->GetFunction("NavLocalGridManager", "AddLocalNavigationGridForPoint");
 
-	Params::NavLinkProxy_SetSmartLinkEnabled Parms{};
+	Params::NavLocalGridManager_AddLocalNavigationGridForPoint Parms{};
 
-	Parms.bEnabled = bEnabled;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Location = std::move(Location);
+	Parms.Radius2D = Radius2D;
+	Parms.Height = Height;
+	Parms.bRebuildGrids = bRebuildGrids;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function AIModule.NavLinkProxy.HasMovingAgents
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function AIModule.NavLocalGridManager.AddLocalNavigationGridForPoints
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Locations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Radius2D                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Height                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UNavLocalGridManager::AddLocalNavigationGridForPoints(class UObject* WorldContextObject, const TArray<struct FVector>& Locations, const int32 Radius2D, const float Height, bool bRebuildGrids)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavLocalGridManager", "AddLocalNavigationGridForPoints");
+
+	Params::NavLocalGridManager_AddLocalNavigationGridForPoints Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Locations = std::move(Locations);
+	Parms.Radius2D = Radius2D;
+	Parms.Height = Height;
+	Parms.bRebuildGrids = bRebuildGrids;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.NavLocalGridManager.FindLocalNavigationGridPath
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Start                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   End                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FVector>*                 PathPoints                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ANavLinkProxy::HasMovingAgents() const
+bool UNavLocalGridManager::FindLocalNavigationGridPath(class UObject* WorldContextObject, const struct FVector& Start, const struct FVector& End, TArray<struct FVector>* PathPoints)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkProxy", "HasMovingAgents");
+		Func = StaticClass()->GetFunction("NavLocalGridManager", "FindLocalNavigationGridPath");
 
-	Params::NavLinkProxy_HasMovingAgents Parms{};
+	Params::NavLocalGridManager_FindLocalNavigationGridPath Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Start = std::move(Start);
+	Parms.End = std::move(End);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (PathPoints != nullptr)
+		*PathPoints = std::move(Parms.PathPoints);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.NavLocalGridManager.RemoveLocalNavigationGrid
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   GridId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRebuildGrids                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UNavLocalGridManager::RemoveLocalNavigationGrid(class UObject* WorldContextObject, int32 GridId, bool bRebuildGrids)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavLocalGridManager", "RemoveLocalNavigationGrid");
+
+	Params::NavLocalGridManager_RemoveLocalNavigationGrid Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.GridId = GridId;
+	Parms.bRebuildGrids = bRebuildGrids;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AIModule.NavLocalGridManager.SetLocalNavigationGridDensity
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   CellSize                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavLocalGridManager::SetLocalNavigationGridDensity(class UObject* WorldContextObject, float CellSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavLocalGridManager", "SetLocalNavigationGridDensity");
+
+	Params::NavLocalGridManager_SetLocalNavigationGridDensity Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.CellSize = CellSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PawnActionsComponent.K2_PerformAction
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APawn*                            Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPawnAction*                      Action                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAIRequestPriority                      Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPawnActionsComponent::K2_PerformAction(class APawn* Pawn, class UPawnAction* Action, EAIRequestPriority Priority)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PawnActionsComponent", "K2_PerformAction");
+
+	Params::PawnActionsComponent_K2_PerformAction Parms{};
+
+	Parms.Pawn = Pawn;
+	Parms.Action = Action;
+	Parms.Priority = Priority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.PawnActionsComponent.K2_AbortAction
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UPawnAction*                      ActionToAbort                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EPawnActionAbortState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EPawnActionAbortState UPawnActionsComponent::K2_AbortAction(class UPawnAction* ActionToAbort)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PawnActionsComponent", "K2_AbortAction");
+
+	Params::PawnActionsComponent_K2_AbortAction Parms{};
+
+	Parms.ActionToAbort = ActionToAbort;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5513,19 +5582,22 @@ bool ANavLinkProxy::HasMovingAgents() const
 }
 
 
-// Function AIModule.NavLinkProxy.IsSmartLinkEnabled
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function AIModule.PawnActionsComponent.K2_ForceAbortAction
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPawnAction*                      ActionToAbort                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EPawnActionAbortState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ANavLinkProxy::IsSmartLinkEnabled() const
+EPawnActionAbortState UPawnActionsComponent::K2_ForceAbortAction(class UPawnAction* ActionToAbort)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkProxy", "IsSmartLinkEnabled");
+		Func = Class->GetFunction("PawnActionsComponent", "K2_ForceAbortAction");
 
-	Params::NavLinkProxy_IsSmartLinkEnabled Parms{};
+	Params::PawnActionsComponent_K2_ForceAbortAction Parms{};
+
+	Parms.ActionToAbort = ActionToAbort;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5538,107 +5610,35 @@ bool ANavLinkProxy::IsSmartLinkEnabled() const
 }
 
 
-// Function AIModule.PawnAction_BlueprintBase.ActionFinished
-// (Event, Public, BlueprintEvent)
+// Function AIModule.PawnActionsComponent.K2_PushAction
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPawnActionResult                       WithResult                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPawnAction*                      NewAction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAIRequestPriority                      Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Instigator                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPawnAction_BlueprintBase::ActionFinished(class APawn* ControlledPawn, EPawnActionResult WithResult)
+bool UPawnActionsComponent::K2_PushAction(class UPawnAction* NewAction, EAIRequestPriority Priority, class UObject* Instigator)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionFinished");
+		Func = Class->GetFunction("PawnActionsComponent", "K2_PushAction");
 
-	Params::PawnAction_BlueprintBase_ActionFinished Parms{};
+	Params::PawnActionsComponent_K2_PushAction Parms{};
 
-	Parms.ControlledPawn = ControlledPawn;
-	Parms.WithResult = WithResult;
+	Parms.NewAction = NewAction;
+	Parms.Priority = Priority;
+	Parms.Instigator = Instigator;
 
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIModule.PawnAction_BlueprintBase.ActionPause
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPawnAction_BlueprintBase::ActionPause(class APawn* ControlledPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionPause");
-
-	Params::PawnAction_BlueprintBase_ActionPause Parms{};
-
-	Parms.ControlledPawn = ControlledPawn;
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
 
+	Func->FunctionFlags = Flgs;
 
-// Function AIModule.PawnAction_BlueprintBase.ActionResume
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPawnAction_BlueprintBase::ActionResume(class APawn* ControlledPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionResume");
-
-	Params::PawnAction_BlueprintBase_ActionResume Parms{};
-
-	Parms.ControlledPawn = ControlledPawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIModule.PawnAction_BlueprintBase.ActionStart
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPawnAction_BlueprintBase::ActionStart(class APawn* ControlledPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionStart");
-
-	Params::PawnAction_BlueprintBase_ActionStart Parms{};
-
-	Parms.ControlledPawn = ControlledPawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIModule.PawnAction_BlueprintBase.ActionTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class APawn*                            ControlledPawn                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPawnAction_BlueprintBase::ActionTick(class APawn* ControlledPawn, float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PawnAction_BlueprintBase", "ActionTick");
-
-	Params::PawnAction_BlueprintBase_ActionTick Parms{};
-
-	Parms.ControlledPawn = ControlledPawn;
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
+	return Parms.ReturnValue;
 }
 
 

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "PhysicsCore_structs.hpp"
-#include "Engine_structs.hpp"
 #include "FootstepActionsEnum_structs.hpp"
+#include "Engine_structs.hpp"
+#include "PhysicsCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 

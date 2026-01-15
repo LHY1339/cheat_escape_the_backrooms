@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
-#include "AdvancedSessions_structs.hpp"
-#include "SlateCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "S_ChatMessage_structs.hpp"
+#include "SlateCore_structs.hpp"
+#include "UMG_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "AdvancedSessions_structs.hpp"
 
 
 namespace SDK::Params

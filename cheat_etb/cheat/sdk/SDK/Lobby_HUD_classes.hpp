@@ -53,7 +53,7 @@ public:
 	void Update_LobbyStatus_Indicator(ESlateVisibility CircularThrobber_Visibility, const class FText& LobbyStatus_Text_0);
 	void SetServerName(const class FString& ServerName);
 	void Init_LobbyStatus_Indicator();
-	void Setup();
+	void SetUp();
 	void Init_Casts();
 	void SetServerCode(const class FString& ServerCode_0);
 	void ShowMicIcon(const struct FBPUniqueNetId& UniqueId);

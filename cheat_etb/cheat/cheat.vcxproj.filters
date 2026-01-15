@@ -38,15 +38,45 @@
     <Filter Include="resource">
       <UniqueIdentifier>{6ca407eb-b3f4-430c-813f-58adc6a4cb70}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\cheat\entity">
+      <UniqueIdentifier>{26158106-8417-4267-9e18-33000e5dfd13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\player">
+      <UniqueIdentifier>{fdacdf32-b091-40e3-9d3c-81caa7bdfcd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\item">
+      <UniqueIdentifier>{6564012a-358e-4e9b-a9a8-5386ef0e8927}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\library\kismet">
+      <UniqueIdentifier>{cd9fa0da-dd92-4934-90de-55f63736e8a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\command">
+      <UniqueIdentifier>{da50dcd4-405b-4cf4-8b4f-e7b59757c171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\config">
+      <UniqueIdentifier>{f4c2b928-9255-42f1-b365-7c5a443d6287}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\color">
+      <UniqueIdentifier>{55da6473-5fa0-4db7-a52b-2bb4bc5867e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\network">
+      <UniqueIdentifier>{181e1868-b594-4438-a5f8-1caa889dff88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\quick">
+      <UniqueIdentifier>{3be0211b-73b1-4bf7-847a-761be2846692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\hook">
+      <UniqueIdentifier>{8b1862d5-d2f8-4e86-90f6-993f5303d858}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\cheat\keybind">
+      <UniqueIdentifier>{fcdec558-20a0-435f-8b19-3a99b30fa860}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_sdk.h">
       <Filter>third_party</Filter>
     </ClInclude>
     <ClInclude Include="gvalue.h">
-      <Filter>source\global</Filter>
-    </ClInclude>
-    <ClInclude Include="gconst.h">
       <Filter>source\global</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
@@ -69,6 +99,39 @@
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>source\cheat\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>source\cheat\player</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>source\cheat\item</Filter>
+    </ClInclude>
+    <ClInclude Include="kismet.h">
+      <Filter>source\library\kismet</Filter>
+    </ClInclude>
+    <ClInclude Include="command.h">
+      <Filter>source\cheat\command</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>source\cheat\config</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>source\cheat\color</Filter>
+    </ClInclude>
+    <ClInclude Include="network.h">
+      <Filter>source\cheat\network</Filter>
+    </ClInclude>
+    <ClInclude Include="quick.h">
+      <Filter>source\cheat\quick</Filter>
+    </ClInclude>
+    <ClInclude Include="hook.h">
+      <Filter>source\cheat\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="keybind.h">
+      <Filter>source\cheat\keybind</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -99,10 +162,57 @@
     <ClCompile Include="cheat.cpp">
       <Filter>source\cheat\cheat</Filter>
     </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>source\cheat\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>source\cheat\player</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\SDK\BPCharacter_Demo_functions.cpp">
+      <Filter>third_party\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>source\cheat\item</Filter>
+    </ClCompile>
+    <ClCompile Include="kismet.cpp">
+      <Filter>source\library\kismet</Filter>
+    </ClCompile>
+    <ClCompile Include="command.cpp">
+      <Filter>source\cheat\command</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>source\cheat\config</Filter>
+    </ClCompile>
+    <ClCompile Include="color.cpp">
+      <Filter>source\cheat\color</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\SDK\Backrooms_functions.cpp">
+      <Filter>third_party\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="network.cpp">
+      <Filter>source\cheat\network</Filter>
+    </ClCompile>
+    <ClCompile Include="quick.cpp">
+      <Filter>source\cheat\quick</Filter>
+    </ClCompile>
+    <ClCompile Include="hook.cpp">
+      <Filter>source\cheat\hook</Filter>
+    </ClCompile>
+    <ClCompile Include="keybind.cpp">
+      <Filter>source\cheat\keybind</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\SDK\BP_Scanner_functions.cpp">
+      <Filter>third_party\sdk</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="cheat.rc">
       <Filter>resource</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\visual.png">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
 </Project>

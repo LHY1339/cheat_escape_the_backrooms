@@ -10,19 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "Backrooms_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
+#include "SlateCore_structs.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_Intro.W_Intro_C
-// 0x0200 (0x0460 - 0x0260)
+// 0x0210 (0x0470 - 0x0260)
 class UW_Intro_C final : public UUserWidget
 {
 public:
@@ -59,9 +59,11 @@ public:
 	bool                                          CanClose_;                                         // 0x0454(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_455[0x3];                                      // 0x0455(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UW_MainMenu_C*                          MainMenuRef;                                       // 0x0458(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void(class UUserWidget* CostumeWidget)> OnStartCostumeSelect;           // 0x0460(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void ExecuteUbergraph_W_Intro(int32 EntryPoint);
+	void HandleOnStartCostumeSelect(class UUserWidget* CostumeWidget);
 	void OnActiveUserChanged(bool bIsSameUser);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
 	void ShowMainMenu(class UW_MainMenu_C* MainMenuRef_0);

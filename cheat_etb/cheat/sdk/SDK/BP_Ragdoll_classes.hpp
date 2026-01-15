@@ -18,13 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Ragdoll.BP_Ragdoll_C
-// 0x0018 (0x0238 - 0x0220)
+// 0x0020 (0x0240 - 0x0220)
 class ABP_Ragdoll_C final : public AActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0220(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USkeletalMeshComponent*                 Mesh;                                              // 0x0228(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0230(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCostume*                               Costume;                                           // 0x0238(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Ragdoll(int32 EntryPoint);

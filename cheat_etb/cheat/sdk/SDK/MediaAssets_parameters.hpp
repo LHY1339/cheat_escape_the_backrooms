@@ -78,6 +78,15 @@ public:
 };
 DUMPER7_ASSERTS_MediaSource_Validate;
 
+// Function MediaAssets.FileMediaSource.SetFilePath
+// 0x0010 (0x0010 - 0x0000)
+struct FileMediaSource_SetFilePath final
+{
+public:
+	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FileMediaSource_SetFilePath;
+
 // Function MediaAssets.MediaBlueprintFunctionLibrary.EnumerateAudioCaptureDevices
 // 0x0018 (0x0018 - 0x0000)
 struct MediaBlueprintFunctionLibrary_EnumerateAudioCaptureDevices final
@@ -110,15 +119,6 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_MediaBlueprintFunctionLibrary_EnumerateWebcamCaptureDevices;
-
-// Function MediaAssets.FileMediaSource.SetFilePath
-// 0x0010 (0x0010 - 0x0000)
-struct FileMediaSource_SetFilePath final
-{
-public:
-	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FileMediaSource_SetFilePath;
 
 // Function MediaAssets.MediaComponent.GetMediaPlayer
 // 0x0008 (0x0008 - 0x0000)

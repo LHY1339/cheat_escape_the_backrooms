@@ -53,31 +53,6 @@ public:
 };
 DUMPER7_ASSERTS_UMediaSource;
 
-// Class MediaAssets.MediaBlueprintFunctionLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UMediaBlueprintFunctionLibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static void EnumerateAudioCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
-	static void EnumerateVideoCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
-	static void EnumerateWebcamCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MediaBlueprintFunctionLibrary")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MediaBlueprintFunctionLibrary")
-	}
-	static class UMediaBlueprintFunctionLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMediaBlueprintFunctionLibrary>();
-	}
-};
-DUMPER7_ASSERTS_UMediaBlueprintFunctionLibrary;
-
 // Class MediaAssets.BaseMediaSource
 // 0x0008 (0x0088 - 0x0080)
 class UBaseMediaSource : public UMediaSource
@@ -128,6 +103,31 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UFileMediaSource;
+
+// Class MediaAssets.MediaBlueprintFunctionLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UMediaBlueprintFunctionLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static void EnumerateAudioCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
+	static void EnumerateVideoCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
+	static void EnumerateWebcamCaptureDevices(TArray<struct FMediaCaptureDevice>* OutDevices, int32 Filter);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MediaBlueprintFunctionLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MediaBlueprintFunctionLibrary")
+	}
+	static class UMediaBlueprintFunctionLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMediaBlueprintFunctionLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UMediaBlueprintFunctionLibrary;
 
 // Class MediaAssets.MediaComponent
 // 0x0010 (0x00C0 - 0x00B0)

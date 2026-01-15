@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
+#include "E_GameMode_structs.hpp"
 #include "Backrooms_structs.hpp"
-#include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "UMG_structs.hpp"
+#include "ST_UI_Mission_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "S_ConnectedPlayer_structs.hpp"
-#include "ST_UI_Mission_structs.hpp"
-#include "S_Difficulty_structs.hpp"
-#include "E_Difficulty_structs.hpp"
-#include "E_GameMode_structs.hpp"
 #include "AdvancedSessions_structs.hpp"
+#include "E_Difficulty_structs.hpp"
 #include "Engine_structs.hpp"
+#include "S_Difficulty_structs.hpp"
 
 
 namespace SDK::Params
@@ -309,15 +309,19 @@ public:
 	uint8                                         Pad_7E1[0x7];                                      // 0x07E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   CallFunc_Conv_StringToText_ReturnValue_2;          // 0x07E8(0x0018)()
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0800(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_7;               // 0x0804(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x0808(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_5;                // 0x0810(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_811[0x7];                                      // 0x0811(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDestroySessionCallbackProxy*           CallFunc_DestroySession_ReturnValue;               // 0x0818(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0820(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_821[0x7];                                      // 0x0821(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue_1;            // 0x0828(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UUI_Menu_Programm_C*                    CallFunc_Create_ReturnValue;                       // 0x0830(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Contains_ReturnValue_5;                   // 0x0804(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_805[0x3];                                      // 0x0805(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_7;               // 0x0808(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue_1;                // 0x080C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_5;                // 0x080D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x080E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_80F[0x1];                                      // 0x080F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x0810(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue_1;            // 0x0818(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UDestroySessionCallbackProxy*           CallFunc_DestroySession_ReturnValue;               // 0x0820(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UUI_Menu_Programm_C*                    CallFunc_Create_ReturnValue;                       // 0x0828(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0830(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_831[0x7];                                      // 0x0831(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue_2;            // 0x0838(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EBlueprintResultSwitch                        CallFunc_ShowInviteUI_Result;                      // 0x0840(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_841[0x7];                                      // 0x0841(0x0007)(Fixing Size After Last Property [ Dumper-7 ])

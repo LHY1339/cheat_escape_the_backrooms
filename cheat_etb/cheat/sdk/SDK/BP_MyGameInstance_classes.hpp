@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "E_GameMode_structs.hpp"
+#include "Engine_structs.hpp"
+#include "AdvancedSessions_structs.hpp"
 #include "E_HeadsetType_structs.hpp"
 #include "E_Difficulty_structs.hpp"
-#include "Engine_structs.hpp"
+#include "E_GameMode_structs.hpp"
 #include "Backrooms_structs.hpp"
 #include "Backrooms_classes.hpp"
-#include "AdvancedSessions_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MyGameInstance.BP_MyGameInstance_C
-// 0x0198 (0x0408 - 0x0270)
+// 0x01A0 (0x0410 - 0x0270)
 class UBP_MyGameInstance_C final : public UFancyGameInstance
 {
 public:
@@ -70,9 +70,12 @@ public:
 	uint8                                         Pad_3EB[0x5];                                      // 0x03EB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void(int32 PlayerNum, EBPLoginStatus PreviousStatus, EBPLoginStatus NewStatus, const struct FBPUniqueNetId& NewPlayerUniqueNetID)> OnPlayerLoginStatusChange; // 0x03F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	bool                                          InitialPremiumCheckDone;                           // 0x0400(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_401[0x7];                                      // 0x0401(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_ErrorModal_C*                        ErrorModal;                                        // 0x0408(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_MyGameInstance(int32 EntryPoint);
+	void OnFindInviteSessionFailure();
 	void OnUserChanged(bool bIsSameUser);
 	void OnPlayerLoginStatusChanged(int32 PlayerNum, EBPLoginStatus PreviousStatus, EBPLoginStatus NewStatus, const struct FBPUniqueNetId& NewPlayerUniqueNetID);
 	void ReturnToMainMenu();
@@ -94,8 +97,8 @@ public:
 	void ResetAfterErrorFocus(class APlayerController* PlayerController, class UWidget* Widget);
 	void UnlockAchievement(class FName AchievementName, class APlayerController* PlayerController);
 	void OnPlayerTalkingStateChanged(const struct FBPUniqueNetId& PlayerId, bool bIsTalking);
-	void CreateServer(class APlayerController* PlayerController, class UWidget* WidgetRef, class UWidget* ParentRef, class FName LevelName, int32 MaxPlayer, bool IsPrivate);
 	void OnSessionInviteAccepted(int32 LocalPlayerNum, const struct FBPUniqueNetId& PersonInvited, const struct FBlueprintSessionResult& SessionToJoin);
+	void CreateServer(class APlayerController* PlayerController, class UWidget* WidgetRef, class UWidget* ParentRef, class FName LevelName, int32 MaxPlayer, bool IsPrivate);
 	void ReceiveInit();
 	void Initialize_AudioSettings();
 	void JoinServerSession(const struct FBlueprintSessionResult& Session, class APlayerController* PlayerController, class UWidget* ParentRef, bool ShowLoadingScreen_0);

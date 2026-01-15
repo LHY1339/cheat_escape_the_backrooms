@@ -37,6 +37,26 @@ void ABPCharacter_Demo_C::ExecuteUbergraph_BPCharacter_Demo(int32 EntryPoint)
 }
 
 
+// Function BPCharacter_Demo.BPCharacter_Demo_C.ApplyCostume
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UCostume*                         Costume_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABPCharacter_Demo_C::ApplyCostume(class UCostume* Costume_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPCharacter_Demo_C", "ApplyCostume");
+
+	Params::BPCharacter_Demo_C_ApplyCostume Parms{};
+
+	Parms.Costume_0 = Costume_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BPCharacter_Demo.BPCharacter_Demo_C.Restore PP Barrel Distortion
 // (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
 

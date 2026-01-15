@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_DroppedItem_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -33,9 +33,9 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_DroppedItem_LiquidPain(int32 EntryPoint);
-	void ReceiveBeginPlay();
 	void Flicker__UpdateFunc();
 	void Flicker__FinishedFunc();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

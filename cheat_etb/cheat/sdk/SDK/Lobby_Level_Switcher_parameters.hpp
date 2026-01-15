@@ -70,15 +70,15 @@ public:
 };
 DUMPER7_ASSERTS_Lobby_Level_Switcher_C_Set_SelectedOption;
 
-// Function Lobby_Level_Switcher.Lobby_Level_Switcher_C.Setup
+// Function Lobby_Level_Switcher.Lobby_Level_Switcher_C.SetUp
 // 0x0068 (0x0068 - 0x0000)
-struct Lobby_Level_Switcher_C_Setup final
+struct Lobby_Level_Switcher_C_SetUp final
 {
 public:
 	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0000(0x0058)(HasGetValueTypeHash)
 	class FString                                 CallFunc_Array_Get_Item;                           // 0x0058(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_Lobby_Level_Switcher_C_Setup;
+DUMPER7_ASSERTS_Lobby_Level_Switcher_C_SetUp;
 
 // Function Lobby_Level_Switcher.Lobby_Level_Switcher_C.Set_OptionButtons_Visibility
 // 0x0001 (0x0001 - 0x0000)

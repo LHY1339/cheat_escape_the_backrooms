@@ -18,17 +18,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SkinStealer_Level07.BP_SkinStealer_Level07_C
-// 0x0020 (0x0570 - 0x0550)
+// 0x0020 (0x0580 - 0x0560)
 class ABP_SkinStealer_Level07_C final : public ABP_SkinStealer_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_SkinStealer_Level07_C;           // 0x0550(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	float                                         Timeline_0_Speed_D7C79FA14894E597DC9F8A98D999EEAE; // 0x0558(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Timeline_0__Direction_D7C79FA14894E597DC9F8A98D999EEAE; // 0x055C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_55D[0x3];                                      // 0x055D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Timeline_0;                                        // 0x0560(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          LessSight;                                         // 0x0568(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          LessSpeed;                                         // 0x0569(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_SkinStealer_Level07_C;           // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	float                                         Timeline_0_Speed_D7C79FA14894E597DC9F8A98D999EEAE; // 0x0560(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline_0__Direction_D7C79FA14894E597DC9F8A98D999EEAE; // 0x0564(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_565[0x3];                                      // 0x0565(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline_0;                                        // 0x0568(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          LessSight;                                         // 0x0570(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          LessSpeed;                                         // 0x0571(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_SkinStealer_Level07(int32 EntryPoint);

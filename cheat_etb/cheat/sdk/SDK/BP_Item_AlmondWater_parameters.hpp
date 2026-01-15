@@ -71,6 +71,24 @@ public:
 };
 DUMPER7_ASSERTS_BP_Item_AlmondWater_C_ExecuteUbergraph_BP_Item_AlmondWater;
 
+// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.OnEventLoaded
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Item_AlmondWater_C_OnEventLoaded final
+{
+public:
+	EEventType                                    EventType;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Item_AlmondWater_C_OnEventLoaded;
+
+// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.ToggleEvent
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Item_AlmondWater_C_ToggleEvent final
+{
+public:
+	bool                                          Enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_Item_AlmondWater_C_ToggleEvent;
+
 // Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.Damage_SERVER
 // 0x0010 (0x0010 - 0x0000)
 struct BP_Item_AlmondWater_C_Damage_SERVER final
@@ -125,24 +143,6 @@ public:
 	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Item_AlmondWater_C_OnNotifyEnd_3881A8424F905F4C29433AB5756CB3DA;
-
-// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.OnEventLoaded
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Item_AlmondWater_C_OnEventLoaded final
-{
-public:
-	EEventType                                    EventType;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Item_AlmondWater_C_OnEventLoaded;
-
-// Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.ToggleEvent
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Item_AlmondWater_C_ToggleEvent final
-{
-public:
-	bool                                          Enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_Item_AlmondWater_C_ToggleEvent;
 
 // Function BP_Item_AlmondWater.BP_Item_AlmondWater_C.SetMaterial
 // 0x0002 (0x0002 - 0x0000)

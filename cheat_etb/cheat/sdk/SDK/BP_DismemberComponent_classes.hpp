@@ -12,13 +12,14 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Backrooms_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_DismemberComponent.BP_DismemberComponent_C
-// 0x0060 (0x0110 - 0x00B0)
+// 0x0068 (0x0118 - 0x00B0)
 class UBP_DismemberComponent_C final : public UActorComponent
 {
 public:
@@ -34,6 +35,8 @@ public:
 	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UParticleSystemComponent*>       BloodSpurtEmitterReference;                        // 0x00F8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	bool                                          OnlySpawnMush;                                     // 0x0108(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCostume*                               Costume;                                           // 0x0110(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_DismemberComponent(int32 EntryPoint);
@@ -41,6 +44,12 @@ public:
 	void Dismember(class FName Bone, const struct FVector& ImpactNormal);
 	struct FRotator CalculateBloodEffectRotation();
 	void SpawnRandomSpatter(const struct FVector& Location, const struct FRotator& Rotation, class UDecalComponent** DecalComponent);
+	void ApplyCostume(class UCostume* Costume_0);
+	bool BrokenBoneIs(const class FString& Substring);
+	bool BoneIsNonMush();
+	class UStaticMesh* ChooseMeatPiece(bool GetBoneMesh);
+	class UMaterialInterface* ChooseMeatMaterial(bool GetBoneMaterial);
+	void GetBoneAsDismembermentPart(ECostumeDismembermentPart* DismembermentPart);
 
 public:
 	static class UClass* StaticClass()

@@ -65,6 +65,7 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_BoneThief(int32 EntryPoint);
+	void Apply_Costume_To_Skeletal_Mesh(class ABPCharacter_Demo_C* InTargetPlayer);
 	void MC_SlowBreathe();
 	void MC_Montage();
 	void MC_Breathe();
@@ -98,6 +99,7 @@ public:
 	void FindClosestPlayer();
 	void OnRep_ShouldTick();
 	void OnRep_IsHidden();
+	void OnRep_TargetPlayer();
 
 public:
 	static class UClass* StaticClass()

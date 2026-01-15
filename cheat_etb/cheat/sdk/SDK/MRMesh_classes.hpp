@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "MRMesh_structs.hpp"
 #include "Engine_classes.hpp"
+#include "MRMesh_structs.hpp"
 
 
 namespace SDK

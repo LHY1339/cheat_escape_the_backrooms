@@ -433,17 +433,44 @@ enum class EConsumeMouseWheel : uint8
 	EConsumeMouseWheel_MAX                   = 3,
 };
 
-// ScriptStruct SlateCore.Margin
-// 0x0010 (0x0010 - 0x0000)
-struct FMargin final
+// ScriptStruct SlateCore.FontOutlineSettings
+// 0x0020 (0x0020 - 0x0000)
+struct FFontOutlineSettings final
 {
 public:
-	float                                         Left;                                              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Top;                                               // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Right;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Bottom;                                            // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OutlineSize;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSeparateFillAlpha;                                // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bApplyOutlineToDropShadows;                        // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                OutlineMaterial;                                   // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           OutlineColor;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMargin;
+DUMPER7_ASSERTS_FFontOutlineSettings;
+
+// ScriptStruct SlateCore.SlateFontInfo
+// 0x0058 (0x0058 - 0x0000)
+struct FSlateFontInfo final
+{
+public:
+	class UObject*                                FontObject;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                FontMaterial;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFontOutlineSettings                   OutlineSettings;                                   // 0x0010(0x0020)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   TypefaceFontName;                                  // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Size;                                              // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LetterSpacing;                                     // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSlateFontInfo;
+
+// ScriptStruct SlateCore.SlateWidgetStyle
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FSlateWidgetStyle
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSlateWidgetStyle;
 
 // ScriptStruct SlateCore.SlateColor
 // 0x0028 (0x0028 - 0x0000)
@@ -455,6 +482,18 @@ public:
 	uint8                                         Pad_11[0x17];                                      // 0x0011(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSlateColor;
+
+// ScriptStruct SlateCore.Margin
+// 0x0010 (0x0010 - 0x0000)
+struct FMargin final
+{
+public:
+	float                                         Left;                                              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Top;                                               // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Right;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Bottom;                                            // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMargin;
 
 // ScriptStruct SlateCore.SlateBrush
 // 0x0088 (0x0088 - 0x0000)
@@ -479,94 +518,22 @@ public:
 };
 DUMPER7_ASSERTS_FSlateBrush;
 
-// ScriptStruct SlateCore.SlateWidgetStyle
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FSlateWidgetStyle
+// ScriptStruct SlateCore.TextBlockStyle
+// 0x0268 (0x0270 - 0x0008)
+struct FTextBlockStyle final : public FSlateWidgetStyle
 {
 public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FSlateFontInfo                         Font;                                              // 0x0008(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateColor                            ColorAndOpacity;                                   // 0x0060(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FVector2D                              ShadowOffset;                                      // 0x0088(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ShadowColorAndOpacity;                             // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateColor                            SelectedBackgroundColor;                           // 0x00A0(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FLinearColor                           HighlightColor;                                    // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            HighlightShape;                                    // 0x00D8(0x0088)(Edit, BlueprintVisible, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            StrikeBrush;                                       // 0x0160(0x0088)(Edit, BlueprintVisible, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            UnderlineBrush;                                    // 0x01E8(0x0088)(Edit, BlueprintVisible, AdvancedDisplay, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FSlateWidgetStyle;
-
-// ScriptStruct SlateCore.SliderStyle
-// 0x0338 (0x0340 - 0x0008)
-struct FSliderStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FSlateBrush                            NormalBarImage;                                    // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            HoveredBarImage;                                   // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            DisabledBarImage;                                  // 0x0118(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            NormalThumbImage;                                  // 0x01A0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            HoveredThumbImage;                                 // 0x0228(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            DisabledThumbImage;                                // 0x02B0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         BarThickness;                                      // 0x0338(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_33C[0x4];                                      // 0x033C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSliderStyle;
-
-// ScriptStruct SlateCore.SlateSound
-// 0x0018 (0x0018 - 0x0000)
-struct FSlateSound final
-{
-public:
-	class UObject*                                ResourceObject;                                    // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8[0x10];                                       // 0x0008(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSlateSound;
-
-// ScriptStruct SlateCore.Geometry
-// 0x0038 (0x0038 - 0x0000)
-struct alignas(0x04) FGeometry final
-{
-public:
-	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGeometry;
-
-// ScriptStruct SlateCore.ExpandableAreaStyle
-// 0x0118 (0x0120 - 0x0008)
-struct FExpandableAreaStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FSlateBrush                            CollapsedImage;                                    // 0x0008(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            ExpandedImage;                                     // 0x0090(0x0088)(Edit, NativeAccessSpecifierPublic)
-	float                                         RolloutAnimationSeconds;                           // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FExpandableAreaStyle;
-
-// ScriptStruct SlateCore.TableRowStyle
-// 0x07C0 (0x07C8 - 0x0008)
-struct FTableRowStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FSlateBrush                            SelectorFocusedBrush;                              // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            ActiveHoveredBrush;                                // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            ActiveBrush;                                       // 0x0118(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            InactiveHoveredBrush;                              // 0x01A0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            InactiveBrush;                                     // 0x0228(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            EvenRowBackgroundHoveredBrush;                     // 0x02B0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            EvenRowBackgroundBrush;                            // 0x0338(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            OddRowBackgroundHoveredBrush;                      // 0x03C0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            OddRowBackgroundBrush;                             // 0x0448(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateColor                            TextColor;                                         // 0x04D0(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateColor                            SelectedTextColor;                                 // 0x04F8(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            DropIndicator_Above;                               // 0x0520(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            DropIndicator_Onto;                                // 0x05A8(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            DropIndicator_Below;                               // 0x0630(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            ActiveHighlightedBrush;                            // 0x06B8(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            InactiveHighlightedBrush;                          // 0x0740(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTableRowStyle;
-
-// ScriptStruct SlateCore.FocusEvent
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x04) FFocusEvent final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FFocusEvent;
+DUMPER7_ASSERTS_FTextBlockStyle;
 
 // ScriptStruct SlateCore.InputEvent
 // 0x0018 (0x0018 - 0x0000)
@@ -595,26 +562,33 @@ public:
 };
 DUMPER7_ASSERTS_FPointerEvent;
 
-// ScriptStruct SlateCore.ScrollBoxStyle
-// 0x0220 (0x0228 - 0x0008)
-struct FScrollBoxStyle final : public FSlateWidgetStyle
+// ScriptStruct SlateCore.KeyEvent
+// 0x0020 (0x0038 - 0x0018)
+struct FKeyEvent : public FInputEvent
 {
 public:
-	struct FSlateBrush                            TopShadowBrush;                                    // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            BottomShadowBrush;                                 // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            LeftShadowBrush;                                   // 0x0118(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            RightShadowBrush;                                  // 0x01A0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x20];                                      // 0x0018(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FScrollBoxStyle;
+DUMPER7_ASSERTS_FKeyEvent;
 
-// ScriptStruct SlateCore.CharacterEvent
-// 0x0008 (0x0020 - 0x0018)
-struct FCharacterEvent final : public FInputEvent
+// ScriptStruct SlateCore.SplitterStyle
+// 0x0110 (0x0118 - 0x0008)
+struct FSplitterStyle final : public FSlateWidgetStyle
 {
 public:
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            HandleNormalBrush;                                 // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            HandleHighlightBrush;                              // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCharacterEvent;
+DUMPER7_ASSERTS_FSplitterStyle;
+
+// ScriptStruct SlateCore.Geometry
+// 0x0038 (0x0038 - 0x0000)
+struct alignas(0x04) FGeometry final
+{
+public:
+	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGeometry;
 
 // ScriptStruct SlateCore.FontData
 // 0x0020 (0x0020 - 0x0000)
@@ -660,44 +634,33 @@ public:
 };
 DUMPER7_ASSERTS_FCompositeFallbackFont;
 
-// ScriptStruct SlateCore.FontOutlineSettings
-// 0x0020 (0x0020 - 0x0000)
-struct FFontOutlineSettings final
-{
-public:
-	int32                                         OutlineSize;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSeparateFillAlpha;                                // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bApplyOutlineToDropShadows;                        // 0x0005(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                OutlineMaterial;                                   // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           OutlineColor;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FFontOutlineSettings;
-
-// ScriptStruct SlateCore.SlateFontInfo
-// 0x0058 (0x0058 - 0x0000)
-struct FSlateFontInfo final
-{
-public:
-	class UObject*                                FontObject;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                FontMaterial;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FFontOutlineSettings                   OutlineSettings;                                   // 0x0010(0x0020)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   TypefaceFontName;                                  // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Size;                                              // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LetterSpacing;                                     // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSlateFontInfo;
-
-// ScriptStruct SlateCore.KeyEvent
+// ScriptStruct SlateCore.CompositeSubFont
 // 0x0020 (0x0038 - 0x0018)
-struct FKeyEvent : public FInputEvent
+struct FCompositeSubFont final : public FCompositeFallbackFont
 {
 public:
-	uint8                                         Pad_18[0x20];                                      // 0x0018(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FInt32Range>                    CharacterRanges;                                   // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 Cultures;                                          // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FKeyEvent;
+DUMPER7_ASSERTS_FCompositeSubFont;
+
+// ScriptStruct SlateCore.FocusEvent
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x04) FFocusEvent final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FFocusEvent;
+
+// ScriptStruct SlateCore.CharacterEvent
+// 0x0008 (0x0020 - 0x0018)
+struct FCharacterEvent final : public FInputEvent
+{
+public:
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCharacterEvent;
 
 // ScriptStruct SlateCore.EditableTextStyle
 // 0x0218 (0x0220 - 0x0008)
@@ -721,45 +684,79 @@ public:
 };
 DUMPER7_ASSERTS_FAnalogInputEvent;
 
-// ScriptStruct SlateCore.TableColumnHeaderStyle
-// 0x04C8 (0x04D0 - 0x0008)
-struct FTableColumnHeaderStyle final : public FSlateWidgetStyle
+// ScriptStruct SlateCore.SliderStyle
+// 0x0338 (0x0340 - 0x0008)
+struct FSliderStyle final : public FSlateWidgetStyle
 {
 public:
-	struct FSlateBrush                            SortPrimaryAscendingImage;                         // 0x0008(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            SortPrimaryDescendingImage;                        // 0x0090(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            SortSecondaryAscendingImage;                       // 0x0118(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            SortSecondaryDescendingImage;                      // 0x01A0(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            NormalBrush;                                       // 0x0228(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            HoveredBrush;                                      // 0x02B0(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            MenuDropdownImage;                                 // 0x0338(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            MenuDropdownNormalBorderBrush;                     // 0x03C0(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            MenuDropdownHoveredBorderBrush;                    // 0x0448(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            NormalBarImage;                                    // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            HoveredBarImage;                                   // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            DisabledBarImage;                                  // 0x0118(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            NormalThumbImage;                                  // 0x01A0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            HoveredThumbImage;                                 // 0x0228(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            DisabledThumbImage;                                // 0x02B0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         BarThickness;                                      // 0x0338(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_33C[0x4];                                      // 0x033C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FTableColumnHeaderStyle;
+DUMPER7_ASSERTS_FSliderStyle;
 
-// ScriptStruct SlateCore.SplitterStyle
+// ScriptStruct SlateCore.VolumeControlStyle
+// 0x05E8 (0x05F0 - 0x0008)
+struct FVolumeControlStyle final : public FSlateWidgetStyle
+{
+public:
+	struct FSliderStyle                           SliderStyle;                                       // 0x0008(0x0340)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            HighVolumeImage;                                   // 0x0348(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            MidVolumeImage;                                    // 0x03D0(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            LowVolumeImage;                                    // 0x0458(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            NoVolumeImage;                                     // 0x04E0(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            MutedImage;                                        // 0x0568(0x0088)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVolumeControlStyle;
+
+// ScriptStruct SlateCore.TableRowStyle
+// 0x07C0 (0x07C8 - 0x0008)
+struct FTableRowStyle final : public FSlateWidgetStyle
+{
+public:
+	struct FSlateBrush                            SelectorFocusedBrush;                              // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            ActiveHoveredBrush;                                // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            ActiveBrush;                                       // 0x0118(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            InactiveHoveredBrush;                              // 0x01A0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            InactiveBrush;                                     // 0x0228(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            EvenRowBackgroundHoveredBrush;                     // 0x02B0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            EvenRowBackgroundBrush;                            // 0x0338(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            OddRowBackgroundHoveredBrush;                      // 0x03C0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            OddRowBackgroundBrush;                             // 0x0448(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateColor                            TextColor;                                         // 0x04D0(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateColor                            SelectedTextColor;                                 // 0x04F8(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            DropIndicator_Above;                               // 0x0520(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            DropIndicator_Onto;                                // 0x05A8(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            DropIndicator_Below;                               // 0x0630(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            ActiveHighlightedBrush;                            // 0x06B8(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            InactiveHighlightedBrush;                          // 0x0740(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FTableRowStyle;
+
+// ScriptStruct SlateCore.ScrollBorderStyle
 // 0x0110 (0x0118 - 0x0008)
-struct FSplitterStyle final : public FSlateWidgetStyle
+struct FScrollBorderStyle final : public FSlateWidgetStyle
 {
 public:
-	struct FSlateBrush                            HandleNormalBrush;                                 // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            HandleHighlightBrush;                              // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            TopShadowBrush;                                    // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            BottomShadowBrush;                                 // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FSplitterStyle;
+DUMPER7_ASSERTS_FScrollBorderStyle;
 
-// ScriptStruct SlateCore.HeaderRowStyle
-// 0x0B68 (0x0B70 - 0x0008)
-struct FHeaderRowStyle final : public FSlateWidgetStyle
+// ScriptStruct SlateCore.SlateSound
+// 0x0018 (0x0018 - 0x0000)
+struct FSlateSound final
 {
 public:
-	struct FTableColumnHeaderStyle                ColumnStyle;                                       // 0x0008(0x04D0)(Edit, NativeAccessSpecifierPublic)
-	struct FTableColumnHeaderStyle                LastColumnStyle;                                   // 0x04D8(0x04D0)(Edit, NativeAccessSpecifierPublic)
-	struct FSplitterStyle                         ColumnSplitterStyle;                               // 0x09A8(0x0118)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            BackgroundBrush;                                   // 0x0AC0(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateColor                            ForegroundColor;                                   // 0x0B48(0x0028)(Edit, NativeAccessSpecifierPublic)
+	class UObject*                                ResourceObject;                                    // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_8[0x10];                                       // 0x0008(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FHeaderRowStyle;
+DUMPER7_ASSERTS_FSlateSound;
 
 // ScriptStruct SlateCore.ButtonStyle
 // 0x0270 (0x0278 - 0x0008)
@@ -802,26 +799,22 @@ public:
 };
 DUMPER7_ASSERTS_FComboBoxStyle;
 
-// ScriptStruct SlateCore.CompositeSubFont
-// 0x0020 (0x0038 - 0x0018)
-struct FCompositeSubFont final : public FCompositeFallbackFont
+// ScriptStruct SlateCore.TableColumnHeaderStyle
+// 0x04C8 (0x04D0 - 0x0008)
+struct FTableColumnHeaderStyle final : public FSlateWidgetStyle
 {
 public:
-	TArray<struct FInt32Range>                    CharacterRanges;                                   // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 Cultures;                                          // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            SortPrimaryAscendingImage;                         // 0x0008(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            SortPrimaryDescendingImage;                        // 0x0090(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            SortSecondaryAscendingImage;                       // 0x0118(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            SortSecondaryDescendingImage;                      // 0x01A0(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            NormalBrush;                                       // 0x0228(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            HoveredBrush;                                      // 0x02B0(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            MenuDropdownImage;                                 // 0x0338(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            MenuDropdownNormalBorderBrush;                     // 0x03C0(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            MenuDropdownHoveredBorderBrush;                    // 0x0448(0x0088)(Edit, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCompositeSubFont;
-
-// ScriptStruct SlateCore.CompositeFont
-// 0x0038 (0x0038 - 0x0000)
-struct FCompositeFont final
-{
-public:
-	struct FTypeface                              DefaultTypeface;                                   // 0x0000(0x0010)(NativeAccessSpecifierPublic)
-	struct FCompositeFallbackFont                 FallbackTypeface;                                  // 0x0010(0x0018)(NativeAccessSpecifierPublic)
-	TArray<struct FCompositeSubFont>              SubTypefaces;                                      // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCompositeFont;
+DUMPER7_ASSERTS_FTableColumnHeaderStyle;
 
 // ScriptStruct SlateCore.CheckBoxStyle
 // 0x0578 (0x0580 - 0x0008)
@@ -847,6 +840,17 @@ public:
 	struct FSlateSound                            HoveredSlateSound;                                 // 0x0568(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCheckBoxStyle;
+
+// ScriptStruct SlateCore.ProgressBarStyle
+// 0x0198 (0x01A0 - 0x0008)
+struct FProgressBarStyle final : public FSlateWidgetStyle
+{
+public:
+	struct FSlateBrush                            BackgroundImage;                                   // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            FillImage;                                         // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            MarqueeImage;                                      // 0x0118(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FProgressBarStyle;
 
 // ScriptStruct SlateCore.ScrollBarStyle
 // 0x04C8 (0x04D0 - 0x0008)
@@ -885,23 +889,6 @@ public:
 };
 DUMPER7_ASSERTS_FEditableTextBoxStyle;
 
-// ScriptStruct SlateCore.TextBlockStyle
-// 0x0268 (0x0270 - 0x0008)
-struct FTextBlockStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FSlateFontInfo                         Font;                                              // 0x0008(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateColor                            ColorAndOpacity;                                   // 0x0060(0x0028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FVector2D                              ShadowOffset;                                      // 0x0088(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ShadowColorAndOpacity;                             // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateColor                            SelectedBackgroundColor;                           // 0x00A0(0x0028)(Edit, NativeAccessSpecifierPublic)
-	struct FLinearColor                           HighlightColor;                                    // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            HighlightShape;                                    // 0x00D8(0x0088)(Edit, BlueprintVisible, AdvancedDisplay, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            StrikeBrush;                                       // 0x0160(0x0088)(Edit, BlueprintVisible, AdvancedDisplay, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            UnderlineBrush;                                    // 0x01E8(0x0088)(Edit, BlueprintVisible, AdvancedDisplay, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FTextBlockStyle;
-
 // ScriptStruct SlateCore.SpinBoxStyle
 // 0x02E0 (0x02E8 - 0x0008)
 struct FSpinBoxStyle final : public FSlateWidgetStyle
@@ -916,6 +903,17 @@ public:
 	struct FMargin                                TextPadding;                                       // 0x02D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSpinBoxStyle;
+
+// ScriptStruct SlateCore.CompositeFont
+// 0x0038 (0x0038 - 0x0000)
+struct FCompositeFont final
+{
+public:
+	struct FTypeface                              DefaultTypeface;                                   // 0x0000(0x0010)(NativeAccessSpecifierPublic)
+	struct FCompositeFallbackFont                 FallbackTypeface;                                  // 0x0010(0x0018)(NativeAccessSpecifierPublic)
+	TArray<struct FCompositeSubFont>              SubTypefaces;                                      // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCompositeFont;
 
 // ScriptStruct SlateCore.MotionEvent
 // 0x0030 (0x0048 - 0x0018)
@@ -957,15 +955,17 @@ public:
 };
 DUMPER7_ASSERTS_FWindowStyle;
 
-// ScriptStruct SlateCore.ScrollBorderStyle
-// 0x0110 (0x0118 - 0x0008)
-struct FScrollBorderStyle final : public FSlateWidgetStyle
+// ScriptStruct SlateCore.ScrollBoxStyle
+// 0x0220 (0x0228 - 0x0008)
+struct FScrollBoxStyle final : public FSlateWidgetStyle
 {
 public:
 	struct FSlateBrush                            TopShadowBrush;                                    // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                            BottomShadowBrush;                                 // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            LeftShadowBrush;                                   // 0x0118(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            RightShadowBrush;                                  // 0x01A0(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FScrollBorderStyle;
+DUMPER7_ASSERTS_FScrollBoxStyle;
 
 // ScriptStruct SlateCore.DockTabStyle
 // 0x06F8 (0x0700 - 0x0008)
@@ -988,6 +988,19 @@ public:
 };
 DUMPER7_ASSERTS_FDockTabStyle;
 
+// ScriptStruct SlateCore.HeaderRowStyle
+// 0x0B68 (0x0B70 - 0x0008)
+struct FHeaderRowStyle final : public FSlateWidgetStyle
+{
+public:
+	struct FTableColumnHeaderStyle                ColumnStyle;                                       // 0x0008(0x04D0)(Edit, NativeAccessSpecifierPublic)
+	struct FTableColumnHeaderStyle                LastColumnStyle;                                   // 0x04D8(0x04D0)(Edit, NativeAccessSpecifierPublic)
+	struct FSplitterStyle                         ColumnSplitterStyle;                               // 0x09A8(0x0118)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            BackgroundBrush;                                   // 0x0AC0(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateColor                            ForegroundColor;                                   // 0x0B48(0x0028)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHeaderRowStyle;
+
 // ScriptStruct SlateCore.InlineTextImageStyle
 // 0x0090 (0x0098 - 0x0008)
 struct FInlineTextImageStyle final : public FSlateWidgetStyle
@@ -998,20 +1011,6 @@ public:
 	uint8                                         Pad_92[0x6];                                       // 0x0092(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FInlineTextImageStyle;
-
-// ScriptStruct SlateCore.VolumeControlStyle
-// 0x05E8 (0x05F0 - 0x0008)
-struct FVolumeControlStyle final : public FSlateWidgetStyle
-{
-public:
-	struct FSliderStyle                           SliderStyle;                                       // 0x0008(0x0340)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            HighVolumeImage;                                   // 0x0348(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            MidVolumeImage;                                    // 0x03D0(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            LowVolumeImage;                                    // 0x0458(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            NoVolumeImage;                                     // 0x04E0(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            MutedImage;                                        // 0x0568(0x0088)(Edit, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FVolumeControlStyle;
 
 // ScriptStruct SlateCore.SearchBoxStyle
 // 0x0A88 (0x0A90 - 0x0008)
@@ -1030,16 +1029,17 @@ public:
 };
 DUMPER7_ASSERTS_FSearchBoxStyle;
 
-// ScriptStruct SlateCore.ProgressBarStyle
-// 0x0198 (0x01A0 - 0x0008)
-struct FProgressBarStyle final : public FSlateWidgetStyle
+// ScriptStruct SlateCore.ExpandableAreaStyle
+// 0x0118 (0x0120 - 0x0008)
+struct FExpandableAreaStyle final : public FSlateWidgetStyle
 {
 public:
-	struct FSlateBrush                            BackgroundImage;                                   // 0x0008(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            FillImage;                                         // 0x0090(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            MarqueeImage;                                      // 0x0118(0x0088)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            CollapsedImage;                                    // 0x0008(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            ExpandedImage;                                     // 0x0090(0x0088)(Edit, NativeAccessSpecifierPublic)
+	float                                         RolloutAnimationSeconds;                           // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FProgressBarStyle;
+DUMPER7_ASSERTS_FExpandableAreaStyle;
 
 // ScriptStruct SlateCore.InlineEditableTextBlockStyle
 // 0x0A68 (0x0A70 - 0x0008)

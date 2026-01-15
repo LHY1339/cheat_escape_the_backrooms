@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "S_ConnectedPlayer_structs.hpp"
-#include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "UMG_classes.hpp"
+#include "SlateCore_structs.hpp"
+#include "Engine_structs.hpp"
+#include "S_ConnectedPlayer_structs.hpp"
 
 
 namespace SDK
@@ -46,7 +46,7 @@ public:
 	void Set_KickButton();
 	void Set_Username();
 	void Set_Avatar();
-	void Setup();
+	void SetUp();
 	void KickPlayer();
 	void Set_Speaking(bool IsSpeaking);
 
