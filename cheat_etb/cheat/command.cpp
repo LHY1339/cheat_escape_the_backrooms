@@ -54,6 +54,9 @@ void command::init()
 
 	VALUE_INIT(color_index, int);
 	VALUE_INIT(draw_lable, bool);
+	VALUE_INIT(new_year_color, bool);
+	VALUE_INIT(menu_scale, float);
+	VALUE_INIT(menu_scale_buffer, float);
 
 	VALUE_INIT(esp_player.enable, bool);
 	VALUE_INIT(esp_player.box, bool);
@@ -112,6 +115,8 @@ void command::init()
 	VALUE_INIT(rb_move, bool);
 
 	VALUE_INIT(entity_speed, float);
+
+#undef VALUE_INIT
 }
 
 void command::run(const std::string& cmd)

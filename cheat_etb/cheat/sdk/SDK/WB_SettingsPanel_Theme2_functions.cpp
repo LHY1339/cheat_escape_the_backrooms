@@ -37,12 +37,195 @@ void UWB_SettingsPanel_Theme2_C::ExecuteUbergraph_WB_SettingsPanel_Theme2(int32 
 }
 
 
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_VisualEffects_Quality_K2Node_ComponentBoundEvent_77_OnOptionSetup__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_VisualEffects_Quality_K2Node_ComponentBoundEvent_77_OnOptionSetup__DelegateSignature(class UWB_OptionSwitcher_Theme2_C* OptionSwitcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_VisualEffects_Quality_K2Node_ComponentBoundEvent_77_OnOptionSetup__DelegateSignature");
+
+	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_VisualEffects_Quality_K2Node_ComponentBoundEvent_77_OnOptionSetup__DelegateSignature Parms{};
+
+	Parms.OptionSwitcher = OptionSwitcher;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Texture_Quality_K2Node_ComponentBoundEvent_76_OnOptionSetup__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Texture_Quality_K2Node_ComponentBoundEvent_76_OnOptionSetup__DelegateSignature(class UWB_OptionSwitcher_Theme2_C* OptionSwitcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Texture_Quality_K2Node_ComponentBoundEvent_76_OnOptionSetup__DelegateSignature");
+
+	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Texture_Quality_K2Node_ComponentBoundEvent_76_OnOptionSetup__DelegateSignature Parms{};
+
+	Parms.OptionSwitcher = OptionSwitcher;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Shadow_Quality_K2Node_ComponentBoundEvent_75_OnOptionSetup__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Shadow_Quality_K2Node_ComponentBoundEvent_75_OnOptionSetup__DelegateSignature(class UWB_OptionSwitcher_Theme2_C* OptionSwitcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Shadow_Quality_K2Node_ComponentBoundEvent_75_OnOptionSetup__DelegateSignature");
+
+	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Shadow_Quality_K2Node_ComponentBoundEvent_75_OnOptionSetup__DelegateSignature Parms{};
+
+	Parms.OptionSwitcher = OptionSwitcher;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Shading_Quality_K2Node_ComponentBoundEvent_74_OnOptionSetup__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Shading_Quality_K2Node_ComponentBoundEvent_74_OnOptionSetup__DelegateSignature(class UWB_OptionSwitcher_Theme2_C* OptionSwitcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Shading_Quality_K2Node_ComponentBoundEvent_74_OnOptionSetup__DelegateSignature");
+
+	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Shading_Quality_K2Node_ComponentBoundEvent_74_OnOptionSetup__DelegateSignature Parms{};
+
+	Parms.OptionSwitcher = OptionSwitcher;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_PostProcessing_Quality_K2Node_ComponentBoundEvent_73_OnOptionSetup__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_PostProcessing_Quality_K2Node_ComponentBoundEvent_73_OnOptionSetup__DelegateSignature(class UWB_OptionSwitcher_Theme2_C* OptionSwitcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_PostProcessing_Quality_K2Node_ComponentBoundEvent_73_OnOptionSetup__DelegateSignature");
+
+	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_PostProcessing_Quality_K2Node_ComponentBoundEvent_73_OnOptionSetup__DelegateSignature Parms{};
+
+	Parms.OptionSwitcher = OptionSwitcher;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_OverallQuality_K2Node_ComponentBoundEvent_72_OnOptionSetup__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_OverallQuality_K2Node_ComponentBoundEvent_72_OnOptionSetup__DelegateSignature(class UWB_OptionSwitcher_Theme2_C* OptionSwitcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_OverallQuality_K2Node_ComponentBoundEvent_72_OnOptionSetup__DelegateSignature");
+
+	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_OverallQuality_K2Node_ComponentBoundEvent_72_OnOptionSetup__DelegateSignature Parms{};
+
+	Parms.OptionSwitcher = OptionSwitcher;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Foliage_Quality_K2Node_ComponentBoundEvent_70_OnOptionSetup__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Foliage_Quality_K2Node_ComponentBoundEvent_70_OnOptionSetup__DelegateSignature(class UWB_OptionSwitcher_Theme2_C* OptionSwitcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Foliage_Quality_K2Node_ComponentBoundEvent_70_OnOptionSetup__DelegateSignature");
+
+	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Foliage_Quality_K2Node_ComponentBoundEvent_70_OnOptionSetup__DelegateSignature Parms{};
+
+	Parms.OptionSwitcher = OptionSwitcher;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Anti-Aliasing_Quality_K2Node_ComponentBoundEvent_69_OnOptionSetup__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Anti_Aliasing_Quality_K2Node_ComponentBoundEvent_69_OnOptionSetup__DelegateSignature(class UWB_OptionSwitcher_Theme2_C* OptionSwitcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Anti-Aliasing_Quality_K2Node_ComponentBoundEvent_69_OnOptionSetup__DelegateSignature");
+
+	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Anti_Aliasing_Quality_K2Node_ComponentBoundEvent_69_OnOptionSetup__DelegateSignature Parms{};
+
+	Parms.OptionSwitcher = OptionSwitcher;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ViewDistance_Quality_K2Node_ComponentBoundEvent_68_OnOptionSetup__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ViewDistance_Quality_K2Node_ComponentBoundEvent_68_OnOptionSetup__DelegateSignature(class UWB_OptionSwitcher_Theme2_C* OptionSwitcher)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_SettingsPanel_Theme2_C", "BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ViewDistance_Quality_K2Node_ComponentBoundEvent_68_OnOptionSetup__DelegateSignature");
+
+	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ViewDistance_Quality_K2Node_ComponentBoundEvent_68_OnOptionSetup__DelegateSignature Parms{};
+
+	Parms.OptionSwitcher = OptionSwitcher;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_EventContent_1_K2Node_ComponentBoundEvent_66_OnOptionSwitched__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_EventContent_1_K2Node_ComponentBoundEvent_66_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_EventContent_1_K2Node_ComponentBoundEvent_66_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -52,6 +235,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_EventContent_1_K2Node_ComponentBoundEvent_66_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -61,8 +247,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ControllerFeedback_K2Node_ComponentBoundEvent_65_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ControllerFeedback_K2Node_ComponentBoundEvent_65_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -72,6 +261,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ControllerFeedback_K2Node_ComponentBoundEvent_65_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -81,8 +273,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_AimAssist_K2Node_ComponentBoundEvent_64_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_AimAssist_K2Node_ComponentBoundEvent_64_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -92,6 +287,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_AimAssist_K2Node_ComponentBoundEvent_64_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -183,8 +381,11 @@ void UWB_SettingsPanel_Theme2_C::ManualLeaveGame()
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_EventContent_K2Node_ComponentBoundEvent_63_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_EventContent_K2Node_ComponentBoundEvent_63_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -194,6 +395,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_EventContent_K2Node_ComponentBoundEvent_63_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -203,8 +407,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ShowGore_1_K2Node_ComponentBoundEvent_48_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ShowGore_1_K2Node_ComponentBoundEvent_48_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -214,6 +421,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ShowGore_1_K2Node_ComponentBoundEvent_48_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -223,8 +433,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ShowGore_K2Node_ComponentBoundEvent_61_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ShowGore_K2Node_ComponentBoundEvent_61_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -234,6 +447,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_ShowGore_K2Node_ComponentBoundEvent_61_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -277,8 +493,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_Gamma_Theme2
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_SmoothRotation_K2Node_ComponentBoundEvent_38_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_SmoothRotation_K2Node_ComponentBoundEvent_38_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -288,6 +507,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_SmoothRotation_K2Node_ComponentBoundEvent_38_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -407,8 +629,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_Slider_UIVol
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_PushToTalk_K2Node_ComponentBoundEvent_51_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_PushToTalk_K2Node_ComponentBoundEvent_51_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -418,6 +643,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_PushToTalk_K2Node_ComponentBoundEvent_51_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -469,8 +697,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_Button_Resta
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Theme2_2_K2Node_ComponentBoundEvent_49_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Theme2_2_K2Node_ComponentBoundEvent_49_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -480,6 +711,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Theme2_2_K2Node_ComponentBoundEvent_49_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -489,8 +723,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Theme2_1_K2Node_ComponentBoundEvent_48_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Theme2_1_K2Node_ComponentBoundEvent_48_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -500,6 +737,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Theme2_1_K2Node_ComponentBoundEvent_48_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -523,8 +763,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_Button_Sideb
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Theme2_K2Node_ComponentBoundEvent_43_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Theme2_K2Node_ComponentBoundEvent_43_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -534,6 +777,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitch
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_Theme2_WB_OptionSwitcher_Theme2_K2Node_ComponentBoundEvent_43_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -929,8 +1175,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_Slider_MasterVolume
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Audio_Quality_K2Node_ComponentBoundEvent_32_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Audio_Quality_K2Node_ComponentBoundEvent_32_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -940,6 +1189,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Audi
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Audio_Quality_K2Node_ComponentBoundEvent_32_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1083,8 +1335,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_Dropdown_DynamicRes
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Shading_Quality_K2Node_ComponentBoundEvent_25_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Shading_Quality_K2Node_ComponentBoundEvent_25_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1094,6 +1349,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Shad
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Shading_Quality_K2Node_ComponentBoundEvent_25_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1103,8 +1361,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Shad
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Foliage_Quality_K2Node_ComponentBoundEvent_24_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Foliage_Quality_K2Node_ComponentBoundEvent_24_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1114,6 +1375,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Foli
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Foliage_Quality_K2Node_ComponentBoundEvent_24_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1123,8 +1387,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Foli
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_PostProcessing_Quality_K2Node_ComponentBoundEvent_23_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_PostProcessing_Quality_K2Node_ComponentBoundEvent_23_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1134,6 +1401,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Post
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_PostProcessing_Quality_K2Node_ComponentBoundEvent_23_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1143,8 +1413,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Post
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_VisualEffects_Quality_K2Node_ComponentBoundEvent_22_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_VisualEffects_Quality_K2Node_ComponentBoundEvent_22_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1154,6 +1427,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Visu
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_VisualEffects_Quality_K2Node_ComponentBoundEvent_22_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1163,8 +1439,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Visu
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Texture_Quality_1_K2Node_ComponentBoundEvent_21_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Texture_Quality_1_K2Node_ComponentBoundEvent_21_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1174,6 +1453,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Text
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Texture_Quality_1_K2Node_ComponentBoundEvent_21_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1183,8 +1465,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Text
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Anti_Aliasing_Quality_K2Node_ComponentBoundEvent_20_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Anti_Aliasing_Quality_K2Node_ComponentBoundEvent_20_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1194,6 +1479,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Anti
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Anti_Aliasing_Quality_K2Node_ComponentBoundEvent_20_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1203,8 +1491,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Anti
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_ShadowQuality_K2Node_ComponentBoundEvent_19_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_ShadowQuality_K2Node_ComponentBoundEvent_19_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1214,6 +1505,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Shad
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_ShadowQuality_K2Node_ComponentBoundEvent_19_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1223,8 +1517,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Shad
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_ViewDistance_K2Node_ComponentBoundEvent_18_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_ViewDistance_K2Node_ComponentBoundEvent_18_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1234,6 +1531,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_View
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_ViewDistance_K2Node_ComponentBoundEvent_18_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1243,8 +1543,11 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_View
 // (BlueprintEvent)
 // Parameters:
 // int32                                   SelectedOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousOption                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionSwitcher                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_OverallQuality_K2Node_ComponentBoundEvent_17_OnOptionSwitched__DelegateSignature(int32 SelectedOption)
+void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_OverallQuality_K2Node_ComponentBoundEvent_17_OnOptionSwitched__DelegateSignature(int32 SelectedOption, int32 PreviousOption, class UWB_OptionSwitcher_Theme2_C* OptionSwitcher, bool IsInitialSetup)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1254,6 +1557,9 @@ void UWB_SettingsPanel_Theme2_C::BndEvt__WB_SettingsPanel_WB_OptionSwitcher_Over
 	Params::WB_SettingsPanel_Theme2_C_BndEvt__WB_SettingsPanel_WB_OptionSwitcher_OverallQuality_K2Node_ComponentBoundEvent_17_OnOptionSwitched__DelegateSignature Parms{};
 
 	Parms.SelectedOption = SelectedOption;
+	Parms.PreviousOption = PreviousOption;
+	Parms.OptionSwitcher = OptionSwitcher;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1522,13 +1828,16 @@ void UWB_SettingsPanel_Theme2_C::Interpret_QualityINT(int32 Selection, class FTe
 
 
 // Function WB_SettingsPanel_Theme2.WB_SettingsPanel_Theme2_C.interpret_GraphicQuality
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Option                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   OptionNumber                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PreviousNumber                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWB_OptionSwitcher_Theme2_C*      OptionObject                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UGameUserSettings**               GameUserSettings                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32*                                  Quality                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWB_SettingsPanel_Theme2_C::interpret_GraphicQuality(int32 Option, class UGameUserSettings** GameUserSettings, int32* Quality)
+void UWB_SettingsPanel_Theme2_C::interpret_GraphicQuality(int32 OptionNumber, int32 PreviousNumber, class UWB_OptionSwitcher_Theme2_C* OptionObject, bool IsInitialSetup, class UGameUserSettings** GameUserSettings, int32* Quality)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1537,7 +1846,10 @@ void UWB_SettingsPanel_Theme2_C::interpret_GraphicQuality(int32 Option, class UG
 
 	Params::WB_SettingsPanel_Theme2_C_interpret_GraphicQuality Parms{};
 
-	Parms.Option = Option;
+	Parms.OptionNumber = OptionNumber;
+	Parms.PreviousNumber = PreviousNumber;
+	Parms.OptionObject = OptionObject;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -2041,10 +2353,11 @@ void UWB_SettingsPanel_Theme2_C::Get_HDR(class UGameUserSettings* GameUserSettin
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   Option                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInitialSetup                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UGameUserSettings**               GameUserSettings                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32*                                  Quality                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWB_SettingsPanel_Theme2_C::interpret_AudioQuality(int32 Option, class UGameUserSettings** GameUserSettings, int32* Quality)
+void UWB_SettingsPanel_Theme2_C::interpret_AudioQuality(int32 Option, bool IsInitialSetup, class UGameUserSettings** GameUserSettings, int32* Quality)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2054,6 +2367,7 @@ void UWB_SettingsPanel_Theme2_C::interpret_AudioQuality(int32 Option, class UGam
 	Params::WB_SettingsPanel_Theme2_C_interpret_AudioQuality Parms{};
 
 	Parms.Option = Option;
+	Parms.IsInitialSetup = IsInitialSetup;
 
 	UObject::ProcessEvent(Func, &Parms);
 

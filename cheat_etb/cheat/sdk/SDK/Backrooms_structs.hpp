@@ -28,6 +28,19 @@ enum class EFancyInputDevice : uint8
 	EFancyInputDevice_MAX                    = 4,
 };
 
+// Enum Backrooms.EOnJoinSessionCompleteFancyResult
+// NumValues: 0x0007
+enum class EOnJoinSessionCompleteFancyResult : uint8
+{
+	Success                                  = 0,
+	SessionIsFull                            = 1,
+	SessionDoesNotExist                      = 2,
+	CouldNotRetrieveAddress                  = 3,
+	AlreadyInSession                         = 4,
+	UnknownError                             = 5,
+	EOnJoinSessionCompleteFancyResult_MAX    = 6,
+};
+
 // Enum Backrooms.EOnlineStatus
 // NumValues: 0x0003
 enum class EOnlineStatus : uint8
@@ -58,6 +71,15 @@ enum class EMotionComponentType : uint8
 	TEAMMATE                                 = 1,
 	SCANNER                                  = 2,
 	EMotionComponentType_MAX                 = 3,
+};
+
+// Enum Backrooms.EFancyModalButton
+// NumValues: 0x0003
+enum class EFancyModalButton : uint8
+{
+	Button1                                  = 0,
+	Button2                                  = 1,
+	EFancyModalButton_MAX                    = 2,
 };
 
 // Enum Backrooms.EAimAssistCastType
@@ -247,43 +269,6 @@ enum class EMoveAxis : uint8
 	EMoveAxis_MAX                            = 4,
 };
 
-// ScriptStruct Backrooms.TargetStruct
-// 0x0018 (0x0018 - 0x0000)
-struct FTargetStruct final
-{
-public:
-	class UStaticMesh*                            TargetStaticMesh;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     TargetMaterial;                                    // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SizeScale;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FTargetStruct;
-
-// ScriptStruct Backrooms.LIDARDotStruct
-// 0x0010 (0x0010 - 0x0000)
-struct FLIDARDotStruct final
-{
-public:
-	class UTextureRenderTarget2D*                 RenderTarget;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         timestamp;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLIDARDotStruct;
-
-// ScriptStruct Backrooms.AimAssistTarget
-// 0x0038 (0x0038 - 0x0000)
-struct FAimAssistTarget final
-{
-public:
-	class AActor*                                 HitActor;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ComponentExtent;                                   // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x000C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ActorLocation;                                     // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Velocity;                                          // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Tag;                                               // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAimAssistTarget;
-
 // ScriptStruct Backrooms.AimAssistSettings
 // 0x0014 (0x0014 - 0x0000)
 struct FAimAssistSettings final
@@ -298,43 +283,19 @@ public:
 };
 DUMPER7_ASSERTS_FAimAssistSettings;
 
-// ScriptStruct Backrooms.RadarTargetStruct
-// 0x0018 (0x0018 - 0x0000)
-struct FRadarTargetStruct final
+// ScriptStruct Backrooms.AimAssistTarget
+// 0x0038 (0x0038 - 0x0000)
+struct FAimAssistTarget final
 {
 public:
-	class URadarPlayerComponent*                  Target;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Distance;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Velocity;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsTeammate;                                        // 0x0010(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class AActor*                                 HitActor;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ComponentExtent;                                   // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x000C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ActorLocation;                                     // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Velocity;                                          // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Tag;                                               // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FRadarTargetStruct;
-
-// ScriptStruct Backrooms.TargetsStruct
-// 0x0018 (0x0018 - 0x0000)
-struct FTargetsStruct final
-{
-public:
-	class UMotionScannerComponent*                Target;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Distance;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Velocity;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsTeammate;                                        // 0x0010(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FTargetsStruct;
-
-// ScriptStruct Backrooms.BPLowPassPeakFilter
-// 0x0020 (0x0020 - 0x0000)
-struct FBPLowPassPeakFilter final
-{
-public:
-	int32                                         VelocitySamples;                                   // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        VelocitySampleLog;                                 // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBPLowPassPeakFilter;
+DUMPER7_ASSERTS_FAimAssistTarget;
 
 // ScriptStruct Backrooms.VoteData
 // 0x0068 (0x0068 - 0x0000)
@@ -362,6 +323,32 @@ public:
 };
 DUMPER7_ASSERTS_FTelemetryStruct;
 
+// ScriptStruct Backrooms.RadarTargetStruct
+// 0x0018 (0x0018 - 0x0000)
+struct FRadarTargetStruct final
+{
+public:
+	class URadarPlayerComponent*                  Target;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Distance;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Velocity;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsTeammate;                                        // 0x0010(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRadarTargetStruct;
+
+// ScriptStruct Backrooms.TargetsStruct
+// 0x0018 (0x0018 - 0x0000)
+struct FTargetsStruct final
+{
+public:
+	class UMotionScannerComponent*                Target;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Distance;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Velocity;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsTeammate;                                        // 0x0010(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTargetsStruct;
+
 // ScriptStruct Backrooms.ScannerStruct
 // 0x0020 (0x0020 - 0x0000)
 struct FScannerStruct final
@@ -377,6 +364,18 @@ public:
 	float                                         WaveDistance;                                      // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FScannerStruct;
+
+// ScriptStruct Backrooms.TargetStruct
+// 0x0018 (0x0018 - 0x0000)
+struct FTargetStruct final
+{
+public:
+	class UStaticMesh*                            TargetStaticMesh;                                  // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     TargetMaterial;                                    // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SizeScale;                                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTargetStruct;
 
 // ScriptStruct Backrooms.Collectible
 // 0x0038 (0x0040 - 0x0008)
@@ -472,6 +471,18 @@ public:
 };
 DUMPER7_ASSERTS_FBPVRComponentPosRep;
 
+// ScriptStruct Backrooms.BPLowPassPeakFilter
+// 0x0020 (0x0020 - 0x0000)
+struct FBPLowPassPeakFilter final
+{
+public:
+	int32                                         VelocitySamples;                                   // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        VelocitySampleLog;                                 // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBPLowPassPeakFilter;
+
 // ScriptStruct Backrooms.BPEuroLowPassFilterTrans
 // 0x0150 (0x0150 - 0x0000)
 struct alignas(0x10) FBPEuroLowPassFilterTrans final
@@ -516,6 +527,17 @@ public:
 	class UStaticMesh*                            DroppedMesh;                                       // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FItemStructure;
+
+// ScriptStruct Backrooms.LIDARDotStruct
+// 0x0010 (0x0010 - 0x0000)
+struct FLIDARDotStruct final
+{
+public:
+	class UTextureRenderTarget2D*                 RenderTarget;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         timestamp;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLIDARDotStruct;
 
 // ScriptStruct Backrooms.MapEditorItem
 // 0x0050 (0x0050 - 0x0000)

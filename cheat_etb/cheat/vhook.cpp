@@ -1,15 +1,15 @@
-#include "hook.h"
+#include "vhook.h"
 #include "_sdk.h"
 #include "gvalue.h"
 #include "kismet.h"
 
-hook* hook::get()
+vhook* vhook::get()
 {
-	static hook inst;
+	static vhook inst;
 	return &inst;
 }
 
-void hook::hook_func(void* post_render, void* wnd_proc)
+void vhook::hook_func(void* post_render, void* wnd_proc)
 {
     do
     {
@@ -26,7 +26,7 @@ void hook::hook_func(void* post_render, void* wnd_proc)
     gvalue::def_wnd_proc = (WNDPROC)SetWindowLongPtrA(kismet::get_window(), GWLP_WNDPROC, (LONG_PTR)wnd_proc);
 }
 
-void hook::unhook_func()
+void vhook::unhook_func()
 {
     SetWindowLongPtrA(kismet::get_window(), GWLP_WNDPROC, (LONG_PTR)gvalue::def_wnd_proc);
     gvalue::vtb[0x63] = gvalue::def_post_render;

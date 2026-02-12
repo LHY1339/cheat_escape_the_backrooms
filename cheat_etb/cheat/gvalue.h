@@ -56,6 +56,9 @@ namespace gvalue
 	inline std::string max_version = "";
 	inline std::string log = "";
 	inline bool draw_lable = true;
+	inline bool new_year_color = true;
+	inline float menu_scale = 1.0f;
+	inline float menu_scale_buffer = 0.25f;
 
 	inline s_esp esp_player;
 	inline s_esp esp_entity;
@@ -91,6 +94,4 @@ namespace gvalue
 	inline bool rb_move = false;
 
 	inline float entity_speed = 0.1f;
-
-	inline bool no_use_distance = true;
 }

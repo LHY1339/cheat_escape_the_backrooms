@@ -71,17 +71,23 @@ void UW_ServerButton_C::BndEvt__W_ServerButton_Button_164_K2Node_ComponentBoundE
 }
 
 
-// Function W_ServerButton.W_ServerButton_C.CustomEvent
-// (BlueprintCallable, BlueprintEvent)
+// Function W_ServerButton.W_ServerButton_C.ToggleHover
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsHovered_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UW_ServerButton_C::CustomEvent()
+void UW_ServerButton_C::ToggleHover(bool IsHovered_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_ServerButton_C", "CustomEvent");
+		Func = Class->GetFunction("W_ServerButton_C", "ToggleHover");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::W_ServerButton_C_ToggleHover Parms{};
+
+	Parms.IsHovered_0 = IsHovered_0;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -124,6 +130,46 @@ void UW_ServerButton_C::Construct()
 		Func = Class->GetFunction("W_ServerButton_C", "Construct");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_ServerButton.W_ServerButton_C.ToggleEnabled
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsEnabled                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UW_ServerButton_C::ToggleEnabled(bool IsEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ServerButton_C", "ToggleEnabled");
+
+	Params::W_ServerButton_C_ToggleEnabled Parms{};
+
+	Parms.IsEnabled = IsEnabled;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_ServerButton.W_ServerButton_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UW_ServerButton_C::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ServerButton_C", "PreConstruct");
+
+	Params::W_ServerButton_C_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -211,26 +257,6 @@ void UW_ServerButton_C::OnMouseEnter(const struct FGeometry& MyGeometry, const s
 }
 
 
-// Function W_ServerButton.W_ServerButton_C.ToggleHover
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    IsHovered_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UW_ServerButton_C::ToggleHover(bool IsHovered_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ServerButton_C", "ToggleHover");
-
-	Params::W_ServerButton_C_ToggleHover Parms{};
-
-	Parms.IsHovered_0 = IsHovered_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function W_ServerButton.W_ServerButton_C.MakeAnim
 // (BlueprintCallable, BlueprintEvent)
 
@@ -242,46 +268,6 @@ void UW_ServerButton_C::MakeAnim()
 		Func = Class->GetFunction("W_ServerButton_C", "MakeAnim");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_ServerButton.W_ServerButton_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UW_ServerButton_C::PreConstruct(bool IsDesignTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ServerButton_C", "PreConstruct");
-
-	Params::W_ServerButton_C_PreConstruct Parms{};
-
-	Parms.IsDesignTime = IsDesignTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_ServerButton.W_ServerButton_C.ToggleEnabled
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    IsEnabled                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UW_ServerButton_C::ToggleEnabled(bool IsEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ServerButton_C", "ToggleEnabled");
-
-	Params::W_ServerButton_C_ToggleEnabled Parms{};
-
-	Parms.IsEnabled = IsEnabled;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

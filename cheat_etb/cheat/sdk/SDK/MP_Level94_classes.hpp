@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "AIModule_structs.hpp"
-#include "MP_GameMode_classes.hpp"
 #include "Engine_structs.hpp"
+#include "MP_GameMode_classes.hpp"
 #include "CoreUObject_structs.hpp"
 
 

@@ -8,8 +8,8 @@
     <Filter Include="source\loader">
       <UniqueIdentifier>{448549d6-dcb9-4630-9aca-972d6318eb65}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\global">
-      <UniqueIdentifier>{d195e46a-66f6-45ae-9a87-0b58a0c037d1}</UniqueIdentifier>
+    <Filter Include="resource">
+      <UniqueIdentifier>{51dd5f29-0a3f-4fbc-90de-df7a20b70945}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,8 +24,23 @@
     <ClInclude Include="loader.h">
       <Filter>source\loader</Filter>
     </ClInclude>
-    <ClInclude Include="gconst.h">
-      <Filter>source\global</Filter>
+    <ClInclude Include="resource.h">
+      <Filter>resource</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="loader.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\x64\Release\cheat.dll">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
 </Project>

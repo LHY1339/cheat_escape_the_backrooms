@@ -23,7 +23,7 @@ class UBFL_PlatformUIData_C final : public UBlueprintFunctionLibrary
 {
 public:
 	static void GetRichImageText(class FName InputName, class UObject* __WorldContext, class FText* RichText);
-	static void GetInputActionKeyName(const class FName ActionName, class UObject* __WorldContext, class FText* Name_0);
+	static void GetInputActionKeyName_DEPRECATED(const class FName ActionName, class UObject* __WorldContext, class FText* Name_0);
 	static void GetKeybindByInputName(class FName InputName, class UObject* __WorldContext, class FText* Name_0);
 
 public:

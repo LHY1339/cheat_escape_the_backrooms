@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "S_LevelStats_structs.hpp"
 #include "S_HubLevels_structs.hpp"
+#include "S_LevelStats_structs.hpp"
 
 
 namespace SDK::Params

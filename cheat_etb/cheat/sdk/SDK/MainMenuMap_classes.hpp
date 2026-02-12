@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "E_TemplateGraphic_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "E_TemplateGraphic_structs.hpp"
 
 
 namespace SDK

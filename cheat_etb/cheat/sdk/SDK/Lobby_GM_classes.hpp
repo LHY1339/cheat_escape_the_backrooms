@@ -27,6 +27,8 @@ public:
 
 public:
 	void ExecuteUbergraph_Lobby_GM(int32 EntryPoint);
+	void ResetInputModeToDefault(class UWidget* PreviousFocusedWidget);
+	void ShowNonModalMessage(const class FText& Message);
 	void ReceiveBeginPlay();
 	void ServerTravel();
 	void K2_OnLogout(class AController* ExitingController);

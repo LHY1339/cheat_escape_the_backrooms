@@ -10,13 +10,36 @@ color* color::get()
 
 void color::load()
 {
-	gvalue::color_index -= 1;
-	change();
+	printf("color index : %d\n", gvalue::color_index);
+	flush_color();
 }
 
 void color::change()
 {
+	if (gvalue::new_year_color)
+	{
+		return;
+	}
 	gvalue::color_index = (gvalue::color_index + 1) > 8 ? 0 : (gvalue::color_index + 1);
+	flush_color();
+}
+
+void color::flush_color()
+{
+	if (gvalue::new_year_color)
+	{
+		normal_col = SDK::FLinearColor(0.6f, 0.02f, 0.02f, 1.0f);
+		hover_col = SDK::FLinearColor(0.65f, 0.02f, 0.02f, 1.0f);
+		press_col = SDK::FLinearColor(0.70f, 0.02f, 0.02f, 1.0f);
+		check_col = SDK::FLinearColor(1.0f, 0.85f, 0.0f, 1.0f);
+		bar_col = SDK::FLinearColor(1.0f, 0.85f, 0.00f, 1.0f);
+		text_col = SDK::FLinearColor(1.0f, 0.95f, 0.4f, 1.0f);
+
+		back_col = SDK::FLinearColor(0.05f, 0.00f, 0.00f, 1.0f);
+		outline_col = SDK::FLinearColor(1.0f, 1.0f, 0.1f, 1.0f);
+		pice_col = SDK::FLinearColor(0.2f, 0.01f, 0.01f, 1.0f);
+		return;
+	}
 	switch (gvalue::color_index)
 	{
 	case 0:
@@ -132,7 +155,11 @@ void color::change()
 
 std::wstring color::get_name()
 {
-	std::wstring name = L"";
+	if (gvalue::new_year_color)
+	{
+		return L"新年特别主题";
+	}
+	std::wstring name = L"错误";
 	switch (gvalue::color_index)
 	{
 	case 0:

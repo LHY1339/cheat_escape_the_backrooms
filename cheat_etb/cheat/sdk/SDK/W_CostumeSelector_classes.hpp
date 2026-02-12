@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_CostumeSelector.W_CostumeSelector_C
-// 0x0058 (0x02B8 - 0x0260)
+// 0x0060 (0x02C0 - 0x0260)
 class UW_CostumeSelector_C final : public UUserWidget
 {
 public:
@@ -31,12 +31,13 @@ public:
 	class UW_CostumeSelector_InterfaceButton_C*   W_CostumeSelector_InterfaceButton_C_0;             // 0x0288(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class ACostumeSelector*                       Costume_Selector_Actor;                            // 0x0290(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMulticastInlineDelegate<void()>              OnCostumeSelectorClosed;                           // 0x0298(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	bool                                          NewVar_0;                                          // 0x02A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCostume*                               HoveredCostume;                                    // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCostume*                               HoveredCostume;                                    // 0x02A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class FName>                           Costume_Category;                                  // 0x02B0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_W_CostumeSelector(int32 EntryPoint);
+	void BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_3_OnListEntryReleasedDynamic__DelegateSignature(class UUserWidget* Widget);
+	void BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_1_OnListEntryGeneratedDynamic__DelegateSignature(class UUserWidget* Widget);
 	void ExitCostumeSelector();
 	void RefreshPreviewCostume();
 	void BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_2_OnItemIsHoveredChangedDynamic__DelegateSignature(class UObject* Item, bool bIsHovered);

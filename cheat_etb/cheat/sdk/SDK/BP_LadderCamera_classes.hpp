@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_LadderCamera.BP_LadderCamera_C
-// 0x0008 (0x0308 - 0x0300)
+// 0x0008 (0x0310 - 0x0308)
 class ABP_LadderCamera_C final : public AInteractablePawn
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0300(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0308(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_LadderCamera(int32 EntryPoint);

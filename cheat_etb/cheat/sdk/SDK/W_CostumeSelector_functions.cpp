@@ -37,6 +37,46 @@ void UW_CostumeSelector_C::ExecuteUbergraph_W_CostumeSelector(int32 EntryPoint)
 }
 
 
+// Function W_CostumeSelector.W_CostumeSelector_C.BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_3_OnListEntryReleasedDynamic__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UUserWidget*                      Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CostumeSelector_C::BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_3_OnListEntryReleasedDynamic__DelegateSignature(class UUserWidget* Widget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CostumeSelector_C", "BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_3_OnListEntryReleasedDynamic__DelegateSignature");
+
+	Params::W_CostumeSelector_C_BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_3_OnListEntryReleasedDynamic__DelegateSignature Parms{};
+
+	Parms.Widget = Widget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_CostumeSelector.W_CostumeSelector_C.BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_1_OnListEntryGeneratedDynamic__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UUserWidget*                      Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_CostumeSelector_C::BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_1_OnListEntryGeneratedDynamic__DelegateSignature(class UUserWidget* Widget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CostumeSelector_C", "BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_1_OnListEntryGeneratedDynamic__DelegateSignature");
+
+	Params::W_CostumeSelector_C_BndEvt__W_CostumeSelector_CostumeList_K2Node_ComponentBoundEvent_1_OnListEntryGeneratedDynamic__DelegateSignature Parms{};
+
+	Parms.Widget = Widget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_CostumeSelector.W_CostumeSelector_C.ExitCostumeSelector
 // (BlueprintCallable, BlueprintEvent)
 

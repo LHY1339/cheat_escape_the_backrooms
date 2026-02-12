@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "BP_BasePlayerController_classes.hpp"
 #include "Backrooms_structs.hpp"
+#include "BP_BasePlayerController_classes.hpp"
 
 
 namespace SDK
@@ -55,6 +55,7 @@ public:
 	void OC_RemoveKillScreen();
 	void OC_SetSpectating(const class FString& Spectating);
 	void StartSpectating();
+	void Client_ReceiveVoiceDataViaInteractable(class AInteractablePawn* InteractablePawn, const TArray<uint8>& Voice, bool bUseRadio);
 	void Unlock_HUB();
 	void PlayNoiseAtLocation();
 	void OC_SetupVoice();
@@ -62,7 +63,7 @@ public:
 	void SRV_SendVoiceData(const TArray<uint8>& CompressedVoiceData, bool bUseRadio, bool IsUnderwater);
 	void BndEvt__MP_PlayerController_VoipManager_K2Node_ComponentBoundEvent_2_PlayerStartTalking__DelegateSignature();
 	void BndEvt__MP_PlayerController_VoipManager_K2Node_ComponentBoundEvent_0_PlayerStopTalking__DelegateSignature();
-	void Client_RecieveVoiceData(class ABPCharacter_Demo_C* Player_0, const TArray<uint8>& Voice, bool bUseRadio, bool IsUnderwater);
+	void Client_RecieveVoiceData(class ABPCharacter_Demo_C* Player_0, const TArray<uint8>& Voice, bool bUseRadio);
 	void UpdatePushToTalk();
 	void DeleteVoice();
 	void InpActEvt_PlayerList_K2Node_InputActionEvent_0(const struct FKey& Key);

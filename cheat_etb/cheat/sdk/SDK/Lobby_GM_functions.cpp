@@ -37,6 +37,46 @@ void ALobby_GM_C::ExecuteUbergraph_Lobby_GM(int32 EntryPoint)
 }
 
 
+// Function Lobby_GM.Lobby_GM_C.ResetInputModeToDefault
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UWidget*                          PreviousFocusedWidget                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ALobby_GM_C::ResetInputModeToDefault(class UWidget* PreviousFocusedWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Lobby_GM_C", "ResetInputModeToDefault");
+
+	Params::Lobby_GM_C_ResetInputModeToDefault Parms{};
+
+	Parms.PreviousFocusedWidget = PreviousFocusedWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Lobby_GM.Lobby_GM_C.ShowNonModalMessage
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Message                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void ALobby_GM_C::ShowNonModalMessage(const class FText& Message)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Lobby_GM_C", "ShowNonModalMessage");
+
+	Params::Lobby_GM_C_ShowNonModalMessage Parms{};
+
+	Parms.Message = std::move(Message);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Lobby_GM.Lobby_GM_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 

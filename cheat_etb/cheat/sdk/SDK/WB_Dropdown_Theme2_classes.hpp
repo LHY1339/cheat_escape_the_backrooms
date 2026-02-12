@@ -43,6 +43,7 @@ public:
 	void Set_SelectedOption(int32 Option);
 	void SetUp();
 	void FindOption(const class FString& Option, int32* Index_0);
+	void Set_Combo_Box_Selection(bool bSelected);
 
 public:
 	static class UClass* StaticClass()

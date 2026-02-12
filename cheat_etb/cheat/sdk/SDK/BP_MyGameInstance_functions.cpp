@@ -37,6 +37,86 @@ void UBP_MyGameInstance_C::ExecuteUbergraph_BP_MyGameInstance(int32 EntryPoint)
 }
 
 
+// Function BP_MyGameInstance.BP_MyGameInstance_C.HandleConnectionStatusChanged
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EOnlineStatus                           OldConnectionStatus                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EOnlineStatus                           NewConnectionStatus                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_MyGameInstance_C::HandleConnectionStatusChanged(EOnlineStatus OldConnectionStatus, EOnlineStatus NewConnectionStatus)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MyGameInstance_C", "HandleConnectionStatusChanged");
+
+	Params::BP_MyGameInstance_C_HandleConnectionStatusChanged Parms{};
+
+	Parms.OldConnectionStatus = OldConnectionStatus;
+	Parms.NewConnectionStatus = NewConnectionStatus;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MyGameInstance.BP_MyGameInstance_C.HandleNetworkError
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ENetworkFailure                         FailureType                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsServer                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UBP_MyGameInstance_C::HandleNetworkError(ENetworkFailure FailureType, bool bIsServer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MyGameInstance_C", "HandleNetworkError");
+
+	Params::BP_MyGameInstance_C_HandleNetworkError Parms{};
+
+	Parms.FailureType = FailureType;
+	Parms.bIsServer = bIsServer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MyGameInstance.BP_MyGameInstance_C.HideLoadingScreen
+// (BlueprintCallable, BlueprintEvent)
+
+void UBP_MyGameInstance_C::HideLoadingScreen()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MyGameInstance_C", "HideLoadingScreen");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MyGameInstance.BP_MyGameInstance_C.ShowLoadingScreen
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class APlayerController*                PlayerController                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FText&                      Message                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UBP_MyGameInstance_C::ShowLoadingScreen(class APlayerController* PlayerController, const class FText& Message)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MyGameInstance_C", "ShowLoadingScreen");
+
+	Params::BP_MyGameInstance_C_ShowLoadingScreen Parms{};
+
+	Parms.PlayerController = PlayerController;
+	Parms.Message = std::move(Message);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_MyGameInstance.BP_MyGameInstance_C.OnFindInviteSessionFailure
 // (Event, Public, BlueprintEvent)
 
@@ -181,20 +261,6 @@ void UBP_MyGameInstance_C::ShowPremiumAccountUpgradeDialog()
 }
 
 
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnNetworkDisconnected
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_MyGameInstance_C::OnNetworkDisconnected()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnNetworkDisconnected");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_MyGameInstance.BP_MyGameInstance_C.StartAchievementCheckTimer
 // (BlueprintCallable, BlueprintEvent)
 
@@ -297,23 +363,31 @@ void UBP_MyGameInstance_C::OnInputDeviceChangedEvent(const EFancyInputDevice New
 }
 
 
-// Function BP_MyGameInstance.BP_MyGameInstance_C.HandleNetworkError
-// (Event, Public, BlueprintEvent)
+// Function BP_MyGameInstance.BP_MyGameInstance_C.CreateServer
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ENetworkFailure                         FailureType                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bIsServer                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class APlayerController*                PlayerController                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWidget*                          WidgetRef                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWidget*                          ParentRef                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             LevelName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   MaxPlayer                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsPrivate                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UBP_MyGameInstance_C::HandleNetworkError(ENetworkFailure FailureType, bool bIsServer)
+void UBP_MyGameInstance_C::CreateServer(class APlayerController* PlayerController, class UWidget* WidgetRef, class UWidget* ParentRef, class FName LevelName, int32 MaxPlayer, bool IsPrivate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "HandleNetworkError");
+		Func = Class->GetFunction("BP_MyGameInstance_C", "CreateServer");
 
-	Params::BP_MyGameInstance_C_HandleNetworkError Parms{};
+	Params::BP_MyGameInstance_C_CreateServer Parms{};
 
-	Parms.FailureType = FailureType;
-	Parms.bIsServer = bIsServer;
+	Parms.PlayerController = PlayerController;
+	Parms.WidgetRef = WidgetRef;
+	Parms.ParentRef = ParentRef;
+	Parms.LevelName = LevelName;
+	Parms.MaxPlayer = MaxPlayer;
+	Parms.IsPrivate = IsPrivate;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -348,6 +422,32 @@ void UBP_MyGameInstance_C::OnSteamOverlayIsActive(bool isOverlayActive)
 	Params::BP_MyGameInstance_C_OnSteamOverlayIsActive Parms{};
 
 	Parms.isOverlayActive = isOverlayActive;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MyGameInstance.BP_MyGameInstance_C.JoinServerSession
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FBlueprintSessionResult&   Session                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// class APlayerController*                PlayerController                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWidget*                          ParentRef                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ShowLoadingScreen                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UBP_MyGameInstance_C::JoinServerSession(const struct FBlueprintSessionResult& Session, class APlayerController* PlayerController, class UWidget* ParentRef, bool ShowLoadingScreen)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MyGameInstance_C", "JoinServerSession");
+
+	Params::BP_MyGameInstance_C_JoinServerSession Parms{};
+
+	Parms.Session = std::move(Session);
+	Parms.PlayerController = PlayerController;
+	Parms.ParentRef = ParentRef;
+	Parms.ShowLoadingScreen = ShowLoadingScreen;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -443,36 +543,6 @@ void UBP_MyGameInstance_C::OnSessionInviteAccepted(int32 LocalPlayerNum, const s
 }
 
 
-// Function BP_MyGameInstance.BP_MyGameInstance_C.CreateServer
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class APlayerController*                PlayerController                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UWidget*                          WidgetRef                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UWidget*                          ParentRef                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FName                             LevelName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   MaxPlayer                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    IsPrivate                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UBP_MyGameInstance_C::CreateServer(class APlayerController* PlayerController, class UWidget* WidgetRef, class UWidget* ParentRef, class FName LevelName, int32 MaxPlayer, bool IsPrivate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "CreateServer");
-
-	Params::BP_MyGameInstance_C_CreateServer Parms{};
-
-	Parms.PlayerController = PlayerController;
-	Parms.WidgetRef = WidgetRef;
-	Parms.ParentRef = ParentRef;
-	Parms.LevelName = LevelName;
-	Parms.MaxPlayer = MaxPlayer;
-	Parms.IsPrivate = IsPrivate;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_MyGameInstance.BP_MyGameInstance_C.ReceiveInit
 // (Event, Public, BlueprintEvent)
 
@@ -498,134 +568,6 @@ void UBP_MyGameInstance_C::Initialize_AudioSettings()
 		Func = Class->GetFunction("BP_MyGameInstance_C", "Initialize_AudioSettings");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.JoinServerSession
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FBlueprintSessionResult&   Session                                                (BlueprintVisible, BlueprintReadOnly, Parm)
-// class APlayerController*                PlayerController                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UWidget*                          ParentRef                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ShowLoadingScreen_0                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UBP_MyGameInstance_C::JoinServerSession(const struct FBlueprintSessionResult& Session, class APlayerController* PlayerController, class UWidget* ParentRef, bool ShowLoadingScreen_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "JoinServerSession");
-
-	Params::BP_MyGameInstance_C_JoinServerSession Parms{};
-
-	Parms.Session = std::move(Session);
-	Parms.PlayerController = PlayerController;
-	Parms.ParentRef = ParentRef;
-	Parms.ShowLoadingScreen_0 = ShowLoadingScreen_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.ShowLoadingScreen
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class APlayerController*                PlayerController                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FText&                      Message                                                (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UBP_MyGameInstance_C::ShowLoadingScreen(class APlayerController* PlayerController, const class FText& Message)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "ShowLoadingScreen");
-
-	Params::BP_MyGameInstance_C_ShowLoadingScreen Parms{};
-
-	Parms.PlayerController = PlayerController;
-	Parms.Message = std::move(Message);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnSuccess_AADBDE694FB46A8B7863DFACCEB2F563
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const bool                              SessionInfo                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UBP_MyGameInstance_C::OnSuccess_AADBDE694FB46A8B7863DFACCEB2F563(const bool SessionInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnSuccess_AADBDE694FB46A8B7863DFACCEB2F563");
-
-	Params::BP_MyGameInstance_C_OnSuccess_AADBDE694FB46A8B7863DFACCEB2F563 Parms{};
-
-	Parms.SessionInfo = SessionInfo;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnFailure_AADBDE694FB46A8B7863DFACCEB2F563
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const bool                              SessionInfo                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UBP_MyGameInstance_C::OnFailure_AADBDE694FB46A8B7863DFACCEB2F563(const bool SessionInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnFailure_AADBDE694FB46A8B7863DFACCEB2F563");
-
-	Params::BP_MyGameInstance_C_OnFailure_AADBDE694FB46A8B7863DFACCEB2F563 Parms{};
-
-	Parms.SessionInfo = SessionInfo;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnSuccess_1CBC76464599B713AC90FD9A36DAD11C
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const bool                              SessionInfo                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UBP_MyGameInstance_C::OnSuccess_1CBC76464599B713AC90FD9A36DAD11C(const bool SessionInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnSuccess_1CBC76464599B713AC90FD9A36DAD11C");
-
-	Params::BP_MyGameInstance_C_OnSuccess_1CBC76464599B713AC90FD9A36DAD11C Parms{};
-
-	Parms.SessionInfo = SessionInfo;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnFailure_1CBC76464599B713AC90FD9A36DAD11C
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const bool                              SessionInfo                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UBP_MyGameInstance_C::OnFailure_1CBC76464599B713AC90FD9A36DAD11C(const bool SessionInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnFailure_1CBC76464599B713AC90FD9A36DAD11C");
-
-	Params::BP_MyGameInstance_C_OnFailure_1CBC76464599B713AC90FD9A36DAD11C Parms{};
-
-	Parms.SessionInfo = SessionInfo;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -737,34 +679,6 @@ void UBP_MyGameInstance_C::OnFailure_C5B79B204D20B91A7829848F8D941EA8(const bool
 }
 
 
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnSuccess_CE0E125D465CF87986EDACB437749973
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_MyGameInstance_C::OnSuccess_CE0E125D465CF87986EDACB437749973()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnSuccess_CE0E125D465CF87986EDACB437749973");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnFailure_CE0E125D465CF87986EDACB437749973
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_MyGameInstance_C::OnFailure_CE0E125D465CF87986EDACB437749973()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnFailure_CE0E125D465CF87986EDACB437749973");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_MyGameInstance.BP_MyGameInstance_C.OnSuccess_4A8E1BF4489B644EBB46CCB5CE87A8FB
 // (BlueprintCallable, BlueprintEvent)
 
@@ -841,62 +755,6 @@ void UBP_MyGameInstance_C::OnFailure_F6A1C64C4BF407E4C67D4F8266759C0F(class FNam
 }
 
 
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnSuccess_CAE6F30D4DC345FC9711EAB8167D6CDE
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_MyGameInstance_C::OnSuccess_CAE6F30D4DC345FC9711EAB8167D6CDE()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnSuccess_CAE6F30D4DC345FC9711EAB8167D6CDE");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnFailure_CAE6F30D4DC345FC9711EAB8167D6CDE
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_MyGameInstance_C::OnFailure_CAE6F30D4DC345FC9711EAB8167D6CDE()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnFailure_CAE6F30D4DC345FC9711EAB8167D6CDE");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnSuccess_3A8DCEEA406564302B3F52A5D035B982
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_MyGameInstance_C::OnSuccess_3A8DCEEA406564302B3F52A5D035B982()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnSuccess_3A8DCEEA406564302B3F52A5D035B982");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnFailure_3A8DCEEA406564302B3F52A5D035B982
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_MyGameInstance_C::OnFailure_3A8DCEEA406564302B3F52A5D035B982()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnFailure_3A8DCEEA406564302B3F52A5D035B982");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_MyGameInstance.BP_MyGameInstance_C.OnSuccess_D7E8A28A46B4BD5B7318A6A66AFD14E2
 // (BlueprintCallable, BlueprintEvent)
 
@@ -920,34 +778,6 @@ void UBP_MyGameInstance_C::OnFailure_D7E8A28A46B4BD5B7318A6A66AFD14E2()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_MyGameInstance_C", "OnFailure_D7E8A28A46B4BD5B7318A6A66AFD14E2");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnSuccess_B065C47F48B157C121B06CAFCED8C6AC
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_MyGameInstance_C::OnSuccess_B065C47F48B157C121B06CAFCED8C6AC()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnSuccess_B065C47F48B157C121B06CAFCED8C6AC");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MyGameInstance.BP_MyGameInstance_C.OnFailure_B065C47F48B157C121B06CAFCED8C6AC
-// (BlueprintCallable, BlueprintEvent)
-
-void UBP_MyGameInstance_C::OnFailure_B065C47F48B157C121B06CAFCED8C6AC()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MyGameInstance_C", "OnFailure_B065C47F48B157C121B06CAFCED8C6AC");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1088,6 +918,20 @@ bool UBP_MyGameInstance_C::IsOnline()
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_MyGameInstance.BP_MyGameInstance_C.Fix Resolution On Steam Deck
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UBP_MyGameInstance_C::Fix_Resolution_On_Steam_Deck()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MyGameInstance_C", "Fix Resolution On Steam Deck");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

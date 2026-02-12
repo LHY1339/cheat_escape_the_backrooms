@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "S_HubLevels_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "S_HubLevels_structs.hpp"
 
 
 namespace SDK

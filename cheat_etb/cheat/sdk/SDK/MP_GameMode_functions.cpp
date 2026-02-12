@@ -37,6 +37,46 @@ void AMP_GameMode_C::ExecuteUbergraph_MP_GameMode(int32 EntryPoint)
 }
 
 
+// Function MP_GameMode.MP_GameMode_C.ShowNonModalMessage
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Message                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void AMP_GameMode_C::ShowNonModalMessage(const class FText& Message)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MP_GameMode_C", "ShowNonModalMessage");
+
+	Params::MP_GameMode_C_ShowNonModalMessage Parms{};
+
+	Parms.Message = std::move(Message);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function MP_GameMode.MP_GameMode_C.ResetInputModeToDefault
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UWidget*                          PreviousFocusedWidget                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AMP_GameMode_C::ResetInputModeToDefault(class UWidget* PreviousFocusedWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MP_GameMode_C", "ResetInputModeToDefault");
+
+	Params::MP_GameMode_C_ResetInputModeToDefault Parms{};
+
+	Parms.PreviousFocusedWidget = PreviousFocusedWidget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function MP_GameMode.MP_GameMode_C.UnlockHUBForAllPlayers
 // (BlueprintCallable, BlueprintEvent)
 

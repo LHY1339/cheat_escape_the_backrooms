@@ -34,13 +34,6 @@ public:
 };
 DUMPER7_ASSERTS_FElementID;
 
-// ScriptStruct MeshDescription.EdgeID
-// 0x0000 (0x0004 - 0x0004)
-struct FEdgeID final : public FElementID
-{
-};
-DUMPER7_ASSERTS_FEdgeID;
-
 // ScriptStruct MeshDescription.VertexID
 // 0x0000 (0x0004 - 0x0004)
 struct FVertexID final : public FElementID
@@ -75,6 +68,13 @@ struct FVertexInstanceID final : public FElementID
 {
 };
 DUMPER7_ASSERTS_FVertexInstanceID;
+
+// ScriptStruct MeshDescription.EdgeID
+// 0x0000 (0x0004 - 0x0004)
+struct FEdgeID final : public FElementID
+{
+};
+DUMPER7_ASSERTS_FEdgeID;
 
 }
 

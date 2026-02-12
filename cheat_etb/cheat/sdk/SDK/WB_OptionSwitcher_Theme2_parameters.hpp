@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "InputCore_structs.hpp"
 #include "Backrooms_structs.hpp"
 #include "UMG_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "InputCore_structs.hpp"
 
 
 namespace SDK::Params
@@ -96,22 +96,14 @@ public:
 DUMPER7_ASSERTS_WB_OptionSwitcher_Theme2_C_Switch_Option;
 
 // Function WB_OptionSwitcher_Theme2.WB_OptionSwitcher_Theme2_C.Set_SelectedOption
-// 0x0018 (0x0018 - 0x0000)
+// 0x0020 (0x0020 - 0x0000)
 struct WB_OptionSwitcher_Theme2_C_Set_SelectedOption final
 {
 public:
 	class FText                                   SelectedOption_0;                                  // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+	int32                                         OptionIndex;                                       // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WB_OptionSwitcher_Theme2_C_Set_SelectedOption;
-
-// Function WB_OptionSwitcher_Theme2.WB_OptionSwitcher_Theme2_C.SetUp
-// 0x0018 (0x0018 - 0x0000)
-struct WB_OptionSwitcher_Theme2_C_SetUp final
-{
-public:
-	class FText                                   CallFunc_Array_Get_Item;                           // 0x0000(0x0018)()
-};
-DUMPER7_ASSERTS_WB_OptionSwitcher_Theme2_C_SetUp;
 
 // Function WB_OptionSwitcher_Theme2.WB_OptionSwitcher_Theme2_C.OnKeyDown
 // 0x02B8 (0x02B8 - 0x0000)

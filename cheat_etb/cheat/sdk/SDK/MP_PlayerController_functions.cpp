@@ -361,6 +361,30 @@ void AMP_PlayerController_C::StartSpectating()
 }
 
 
+// Function MP_PlayerController.MP_PlayerController_C.Client_ReceiveVoiceDataViaInteractable
+// (Net, NetReliable, HasOutParams, NetClient, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AInteractablePawn*                InteractablePawn                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const TArray<uint8>&                    Voice                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool                                    bUseRadio                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void AMP_PlayerController_C::Client_ReceiveVoiceDataViaInteractable(class AInteractablePawn* InteractablePawn, const TArray<uint8>& Voice, bool bUseRadio)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MP_PlayerController_C", "Client_ReceiveVoiceDataViaInteractable");
+
+	Params::MP_PlayerController_C_Client_ReceiveVoiceDataViaInteractable Parms{};
+
+	Parms.InteractablePawn = InteractablePawn;
+	Parms.Voice = std::move(Voice);
+	Parms.bUseRadio = bUseRadio;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function MP_PlayerController.MP_PlayerController_C.Unlock HUB
 // (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
 
@@ -483,9 +507,8 @@ void AMP_PlayerController_C::BndEvt__MP_PlayerController_VoipManager_K2Node_Comp
 // class ABPCharacter_Demo_C*              Player_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const TArray<uint8>&                    Voice                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    bUseRadio                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// bool                                    IsUnderwater                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void AMP_PlayerController_C::Client_RecieveVoiceData(class ABPCharacter_Demo_C* Player_0, const TArray<uint8>& Voice, bool bUseRadio, bool IsUnderwater)
+void AMP_PlayerController_C::Client_RecieveVoiceData(class ABPCharacter_Demo_C* Player_0, const TArray<uint8>& Voice, bool bUseRadio)
 {
 	static class UFunction* Func = nullptr;
 
@@ -497,7 +520,6 @@ void AMP_PlayerController_C::Client_RecieveVoiceData(class ABPCharacter_Demo_C* 
 	Parms.Player_0 = Player_0;
 	Parms.Voice = std::move(Voice);
 	Parms.bUseRadio = bUseRadio;
-	Parms.IsUnderwater = IsUnderwater;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
 #include "SlateCore_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_CostumeSelector_CostumeListItem.W_CostumeSelector_CostumeListItem_C
-// 0x0120 (0x0380 - 0x0260)
+// 0x0128 (0x0388 - 0x0260)
 class UW_CostumeSelector_CostumeListItem_C final : public UUserWidget
 {
 public:
@@ -40,9 +40,11 @@ public:
 	struct FSlateColor                            HoveredTextColor;                                  // 0x0320(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FSlateColor                            DefaultTextColor;                                  // 0x0348(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMulticastInlineDelegate<void()>              OnAcceptOrBackPressed;                             // 0x0370(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	class UW_CostumeSelector_C*                   OwnerCostumeSelector;                              // 0x0380(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_W_CostumeSelector_CostumeListItem(int32 EntryPoint);
+	void OnInitialized();
 	void OnMouseLeave(const struct FPointerEvent& MouseEvent);
 	void OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
 	void BP_OnItemSelectionChanged(bool bIsSelected);

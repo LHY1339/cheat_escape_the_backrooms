@@ -175,15 +175,6 @@ enum class ESteamAvatarSize : uint8
 	SteamAvatar_MAX                          = 4,
 };
 
-// ScriptStruct AdvancedSteamSessions.BPSteamWorkshopID
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FBPSteamWorkshopID final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBPSteamWorkshopID;
-
 // ScriptStruct AdvancedSteamSessions.BPSteamGroupOfficer
 // 0x0030 (0x0030 - 0x0000)
 struct FBPSteamGroupOfficer final
@@ -234,6 +225,15 @@ public:
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FBPSteamGroupInfo;
+
+// ScriptStruct AdvancedSteamSessions.BPSteamWorkshopID
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FBPSteamWorkshopID final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBPSteamWorkshopID;
 
 }
 

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "BP_DroppedItem_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "BP_DroppedItem_classes.hpp"
 
 
 namespace SDK
@@ -35,8 +35,8 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_DroppedItem_Glowstick(int32 EntryPoint);
-	void ReceiveDestroyed();
 	void ReceiveBeginPlay();
+	void ReceiveDestroyed();
 
 public:
 	static class UClass* StaticClass()

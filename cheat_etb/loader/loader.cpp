@@ -1,10 +1,13 @@
-#include "loader.h"
+ï»¿#include "loader.h"
 
 #include <TlHelp32.h>
-#include <atlstr.h>
+#include <ShlObj.h>
+#include <tchar.h>
 #include <iostream>
+#include <fstream>
+#include <filesystem>
 
-#include "gconst.h"
+#include "resource.h"
 
 loader* loader::get()
 {
@@ -12,39 +15,81 @@ loader* loader::get()
     return &inst;
 }
 
+void error(const wchar_t* message)
+{
+    MessageBox(nullptr, message, L"é”™è¯¯", MB_OK);
+}
+
+void init_file(const char* file_path)
+{
+    std::filesystem::path out_path(file_path);
+    std::filesystem::path dir = out_path.parent_path();
+
+    if (!dir.empty() && !std::filesystem::exists(dir))
+    {
+        if (!std::filesystem::create_directories(dir))
+        {
+            return;
+        }
+    }
+}
+
+void unzip_dll(const LPCWSTR& name, const char* file_path)
+{
+    HMODULE handle = GetModuleHandle(nullptr);
+    HRSRC h_res = FindResource(handle, name, L"DLL");
+    HGLOBAL h_data = LoadResource(handle, h_res);
+    void* p_data = LockResource(h_data);
+    DWORD size = SizeofResource(handle, h_res);
+    std::ofstream out(file_path, std::ios::binary);
+    out.write(reinterpret_cast<char*>(p_data), size);
+    out.close();
+}
+void set_console_color(WORD color)
+{
+    HANDLE h_console = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(h_console, color);
+}
+
 int loader::main()
 {
-    SetConsoleTitle(L"[LHY1339] ĞŞ¸ÄÆ÷");
+    init_file("C:\\LHY1339\\escape_the_backrooms\\");
+    unzip_dll(MAKEINTRESOURCE(IDR_DLL1), "C:\\LHY1339\\escape_the_backrooms\\cheat.dll");
+
+    SetConsoleTitle(L"[LHY1339] ä¿®æ”¹å™¨");
 
     HWND hwnd = GetConsoleWindow();
     LONG style = GetWindowLong(hwnd, GWL_STYLE);
     style &= ~WS_MAXIMIZEBOX;
     style &= ~WS_SIZEBOX;
     SetWindowLong(hwnd, GWL_STYLE, style);
-    SetWindowPos(hwnd, NULL, 0, 0, 700, 500, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
+    SetWindowPos(hwnd, NULL, 0, 0, 800, 600, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
 
     print_log();
 
     while (true)
     {
         Sleep(1000);
-        const DWORD pid = find_process(gconst::wnd_name);
+        const DWORD pid = find_process(L"EscapeTheBackrooms  ");
         if (!pid)
         {
             continue;
         }
-        std::wstring dll_path = get_abs_path(gconst::dll_name);
-        if (is_load(pid, gconst::dll_name))
+        std::wstring dll_path = get_abs_path(L"C:\\LHY1339\\escape_the_backrooms\\cheat.dll");
+        if (is_load(pid, L"cheat.dll"))
         {
-            printf("[pid : %d] ÇëÎğÖØ¸´¼ÓÔØ\n", static_cast<int>(pid));
+            set_console_color(FOREGROUND_RED | FOREGROUND_GREEN);
+            printf("[pid : %d] è¯·å‹¿é‡å¤åŠ è½½\n", static_cast<int>(pid));
             break;
         }
         if (inject(dll_path.c_str(), pid))
         {
-            printf("[pid : %d] ¼ÓÔØ³É¹¦\n", static_cast<int>(pid));
+            set_console_color(FOREGROUND_GREEN);
+            printf("[pid : %d] åŠ è½½æˆåŠŸ\n", static_cast<int>(pid));
             break;
         }
     }
+    Sleep(1000);
     return 0;
 }
 
@@ -61,13 +106,20 @@ void loader::print_log()
 |________/|__/  |__/    |__/   |______/ \______/  \______/  \______/ 
 
 )");
-
     printf("--------------------------------------------------------\n\n");
-    printf("- ÇëÔÚÆô¶¯±¾³ÌĞòÖ®Ç°¹Ø±ÕËùÓĞÉ±¶¾Èí¼ş£¨°üÀ¨Windows×Ô´øµÄDefender£©\n\n");
-    printf("- Çë²»ÒªÔËĞĞÈÎºÎ·´×÷±×³ÌĞò£¨ACEµÈ£©£¬²»È»¿ÉÄÜ»á±»Îó·â\n\n");
-    printf("- ÇëÔËĞĞÓÎÏ·£¬ÔËĞĞºó×Ô¶¯¼ÓÔØĞŞ¸ÄÆ÷\n\n");
-    printf("- ÈÎºÎÎÊÌâ¼ÓQQÈº£º1071845133\n\n");
+    set_console_color(FOREGROUND_RED | FOREGROUND_GREEN);
+    printf("- å…è´£å£°æ˜ï¼šæœ¬ä¿®æ”¹å™¨ä»…ä¾›å­¦ä¹ ä¸å¨±ä¹ä½¿ç”¨ï¼Œåˆ‡å‹¿ç ´åæ¸¸æˆç¯å¢ƒï¼Œä½¿ç”¨äº§ç”Ÿçš„ä»»ä½•åæœä½œè€…æ¦‚ä¸è´Ÿè´£\n\n");
+    set_console_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     printf("--------------------------------------------------------\n\n");
+    set_console_color(FOREGROUND_RED | FOREGROUND_GREEN);
+    printf("- è¯·ä»¥ç®¡ç†å‘˜èº«ä»½è¿è¡Œæ­¤ç¨‹åºï¼ï¼ï¼\n\n");
+    printf("- è¯·å…³é—­æˆ–å¸è½½æ‰€æœ‰æ€æ¯’è½¯ä»¶ï¼ˆåŒ…æ‹¬Windowsè‡ªå¸¦çš„Defenderï¼‰\n\n");
+    printf("- è¯·å…³é—­æˆ–å¸è½½ä»»ä½•åä½œå¼Šè½¯ä»¶ï¼ˆEACã€ACEã€BEã€å®Œç¾ã€5Eç­‰ï¼‰ï¼Œä¸ç„¶å¯èƒ½å¯¼è‡´åŠ è½½å¤±è´¥æˆ–è¯¯å°\n\n");
+    set_console_color(FOREGROUND_GREEN);
+    printf("- ä»»ä½•é—®é¢˜åŠ QQç¾¤ï¼š1071845133\n\n");
+    set_console_color(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+    printf("--------------------------------------------------------\n\n");
+    printf("- è¯·è¿è¡Œæ¸¸æˆï¼Œä¿®æ”¹å™¨ä¼šè‡ªåŠ¨åŠ è½½\n\n");
 }
 
 DWORD loader::find_process(const wchar_t* name)

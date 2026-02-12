@@ -37,20 +37,6 @@ void ABP_DroppedItem_Glowstick_C::ExecuteUbergraph_BP_DroppedItem_Glowstick(int3
 }
 
 
-// Function BP_DroppedItem_Glowstick.BP_DroppedItem_Glowstick_C.ReceiveDestroyed
-// (Event, Public, BlueprintEvent)
-
-void ABP_DroppedItem_Glowstick_C::ReceiveDestroyed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroppedItem_Glowstick_C", "ReceiveDestroyed");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_DroppedItem_Glowstick.BP_DroppedItem_Glowstick_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -60,6 +46,20 @@ void ABP_DroppedItem_Glowstick_C::ReceiveBeginPlay()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_DroppedItem_Glowstick_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_DroppedItem_Glowstick.BP_DroppedItem_Glowstick_C.ReceiveDestroyed
+// (Event, Public, BlueprintEvent)
+
+void ABP_DroppedItem_Glowstick_C::ReceiveDestroyed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DroppedItem_Glowstick_C", "ReceiveDestroyed");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

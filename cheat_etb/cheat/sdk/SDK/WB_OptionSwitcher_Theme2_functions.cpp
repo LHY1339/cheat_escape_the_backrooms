@@ -183,8 +183,9 @@ void UWB_OptionSwitcher_Theme2_C::Switch_Option(bool Decrease_)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const class FText&                      SelectedOption_0                                       (BlueprintVisible, BlueprintReadOnly, Parm)
+// int32                                   OptionIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWB_OptionSwitcher_Theme2_C::Set_SelectedOption(const class FText& SelectedOption_0)
+void UWB_OptionSwitcher_Theme2_C::Set_SelectedOption(const class FText& SelectedOption_0, int32 OptionIndex)
 {
 	static class UFunction* Func = nullptr;
 
@@ -194,13 +195,14 @@ void UWB_OptionSwitcher_Theme2_C::Set_SelectedOption(const class FText& Selected
 	Params::WB_OptionSwitcher_Theme2_C_Set_SelectedOption Parms{};
 
 	Parms.SelectedOption_0 = std::move(SelectedOption_0);
+	Parms.OptionIndex = OptionIndex;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
 // Function WB_OptionSwitcher_Theme2.WB_OptionSwitcher_Theme2_C.SetUp
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void UWB_OptionSwitcher_Theme2_C::SetUp()
 {

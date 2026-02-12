@@ -127,6 +127,29 @@ public:
 };
 DUMPER7_ASSERTS_USynthComponent;
 
+// Class AudioMixer.AudioGenerator
+// 0x0080 (0x00A8 - 0x0028)
+class UAudioGenerator : public UObject
+{
+public:
+	uint8                                         Pad_28[0x80];                                      // 0x0028(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AudioGenerator")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AudioGenerator")
+	}
+	static class UAudioGenerator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAudioGenerator>();
+	}
+};
+DUMPER7_ASSERTS_UAudioGenerator;
+
 // Class AudioMixer.AudioMixerBlueprintLibrary
 // 0x0000 (0x0028 - 0x0028)
 class UAudioMixerBlueprintLibrary final : public UBlueprintFunctionLibrary
@@ -182,29 +205,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAudioMixerBlueprintLibrary;
-
-// Class AudioMixer.AudioGenerator
-// 0x0080 (0x00A8 - 0x0028)
-class UAudioGenerator : public UObject
-{
-public:
-	uint8                                         Pad_28[0x80];                                      // 0x0028(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AudioGenerator")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AudioGenerator")
-	}
-	static class UAudioGenerator* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAudioGenerator>();
-	}
-};
-DUMPER7_ASSERTS_UAudioGenerator;
 
 // Class AudioMixer.QuartzClockHandle
 // 0x0168 (0x0190 - 0x0028)

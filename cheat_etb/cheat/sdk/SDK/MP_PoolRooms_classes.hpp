@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "MP_GameMode_classes.hpp"
 #include "Engine_structs.hpp"
+#include "MP_GameMode_classes.hpp"
 
 
 namespace SDK
@@ -30,11 +30,11 @@ public:
 	void ExecuteUbergraph_MP_PoolRooms(int32 EntryPoint);
 	void CheckPlayer();
 	void CheckWater();
-	void OnPlayerSpawn(class ABPCharacter_Demo_C* Player);
 	void DarkRoomsSubtitle();
+	void LoadCheckpoints();
+	void OnPlayerSpawn(class ABPCharacter_Demo_C* Player);
 	void ReceiveBeginPlay();
 	class AActor* ChoosePlayerStart(class AController* Player);
-	void LoadCheckpoints();
 
 public:
 	static class UClass* StaticClass()

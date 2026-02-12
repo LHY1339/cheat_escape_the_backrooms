@@ -37,6 +37,20 @@ void UUI_Menu_Lobby_C::ExecuteUbergraph_UI_Menu_Lobby(int32 EntryPoint)
 }
 
 
+// Function UI_Menu_Lobby.UI_Menu_Lobby_C.OnInitialized
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UUI_Menu_Lobby_C::OnInitialized()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UI_Menu_Lobby_C", "OnInitialized");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function UI_Menu_Lobby.UI_Menu_Lobby_C.ManualSwitchDifficulty
 // (BlueprintCallable, BlueprintEvent)
 

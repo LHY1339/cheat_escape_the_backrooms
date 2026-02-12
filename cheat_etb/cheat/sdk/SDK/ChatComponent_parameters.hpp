@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
 #include "S_ChatMessage_structs.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK::Params

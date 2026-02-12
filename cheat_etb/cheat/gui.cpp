@@ -93,7 +93,7 @@ bool gui::button_color(const std::string& name, const SDK::FVector2D& pos, const
 	return value;
 }
 
-bool gui::button_text(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size, const UC::FString& text, SDK::UFont* font, const SDK::FLinearColor& normal_col, const SDK::FLinearColor& hover_col, const SDK::FLinearColor& press_col)
+bool gui::button_text(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size, const UC::FString& text, SDK::UFont* font, const SDK::FLinearColor& normal_col, const SDK::FLinearColor& hover_col, const SDK::FLinearColor& press_col, const SDK::FVector2D& text_size)
 {
 	bool value = false;
 	SDK::FLinearColor color;
@@ -116,7 +116,7 @@ bool gui::button_text(const std::string& name, const SDK::FVector2D& pos, const 
 		font,
 		text,
 		SDK::FVector2D(pos.X + size.X / 2, pos.Y + size.Y / 2),
-		SDK::FVector2D(1.0f, 1.0f),
+		text_size,
 		color,
 		1.0f,
 		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
@@ -130,7 +130,7 @@ bool gui::button_text(const std::string& name, const SDK::FVector2D& pos, const 
 	return value;
 }
 
-bool gui::button_color_text(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size, const UC::FString& text, SDK::UFont* font, const SDK::FLinearColor& text_col, const SDK::FLinearColor& normal_col, const SDK::FLinearColor& hover_col, const SDK::FLinearColor& press_col)
+bool gui::button_color_text(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size, const UC::FString& text, SDK::UFont* font, const SDK::FLinearColor& text_col, const SDK::FLinearColor& normal_col, const SDK::FLinearColor& hover_col, const SDK::FLinearColor& press_col, const SDK::FVector2D& text_size)
 {
 	bool value = false;
 	SDK::FLinearColor color;
@@ -159,7 +159,7 @@ bool gui::button_color_text(const std::string& name, const SDK::FVector2D& pos, 
 		font,
 		text,
 		SDK::FVector2D(pos.X + size.X / 2, pos.Y + size.Y / 2),
-		SDK::FVector2D(1.0f, 1.0f),
+		text_size,
 		text_col,
 		1.0f,
 		SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
@@ -240,7 +240,7 @@ void gui::drag_bar(const std::string& name, const SDK::FVector2D& pos, const SDK
 	);
 }
 
-void gui::drag(SDK::FVector2D& pos, SDK::FVector2D& size, SDK::FVector2D& drag_pos, bool& is_drag)
+void gui::drag(SDK::FVector2D& pos, const SDK::FVector2D& size, SDK::FVector2D& drag_pos, bool& is_drag)
 {
 	if (!gvalue::mouse.left || focus_name != "")
 	{

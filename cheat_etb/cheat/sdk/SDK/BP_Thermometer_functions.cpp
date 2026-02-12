@@ -51,20 +51,6 @@ void ABP_Thermometer_C::ReceiveDestroyed()
 }
 
 
-// Function BP_Thermometer.BP_Thermometer_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Thermometer_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Thermometer_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Thermometer.BP_Thermometer_C.OnRep_Temperature
 // (BlueprintCallable, BlueprintEvent)
 
@@ -74,6 +60,41 @@ void ABP_Thermometer_C::OnRep_Temperature()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Thermometer_C", "OnRep_Temperature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Thermometer.BP_Thermometer_C.Has Spawned Display
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool*                                   HasSpawned                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_Thermometer_C::Has_Spawned_Display(bool* HasSpawned)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Thermometer_C", "Has Spawned Display");
+
+	Params::BP_Thermometer_C_Has_Spawned_Display Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (HasSpawned != nullptr)
+		*HasSpawned = Parms.HasSpawned;
+}
+
+
+// Function BP_Thermometer.BP_Thermometer_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Thermometer_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Thermometer_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -96,27 +117,6 @@ void ABP_Thermometer_C::SetMaterial(bool EnabledFOV)
 	Parms.EnabledFOV = EnabledFOV;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Thermometer.BP_Thermometer_C.Has Spawned Display
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool*                                   HasSpawned                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_Thermometer_C::Has_Spawned_Display(bool* HasSpawned)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Thermometer_C", "Has Spawned Display");
-
-	Params::BP_Thermometer_C_Has_Spawned_Display Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (HasSpawned != nullptr)
-		*HasSpawned = Parms.HasSpawned;
 }
 
 }

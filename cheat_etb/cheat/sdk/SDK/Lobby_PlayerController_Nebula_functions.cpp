@@ -341,34 +341,6 @@ void ALobby_PlayerController_Nebula_C::InpActEvt_Talk_K2Node_InputActionEvent_2(
 }
 
 
-// Function Lobby_PlayerController_Nebula.Lobby_PlayerController_Nebula_C.OnSuccess_42489E9B45F87297AAF674BCE53BFF40
-// (BlueprintCallable, BlueprintEvent)
-
-void ALobby_PlayerController_Nebula_C::OnSuccess_42489E9B45F87297AAF674BCE53BFF40()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Lobby_PlayerController_Nebula_C", "OnSuccess_42489E9B45F87297AAF674BCE53BFF40");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Lobby_PlayerController_Nebula.Lobby_PlayerController_Nebula_C.OnFailure_42489E9B45F87297AAF674BCE53BFF40
-// (BlueprintCallable, BlueprintEvent)
-
-void ALobby_PlayerController_Nebula_C::OnFailure_42489E9B45F87297AAF674BCE53BFF40()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Lobby_PlayerController_Nebula_C", "OnFailure_42489E9B45F87297AAF674BCE53BFF40");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function Lobby_PlayerController_Nebula.Lobby_PlayerController_Nebula_C.OnSuccess_5E765EE548557C3B653D32A12A136B0D
 // (BlueprintCallable, BlueprintEvent)
 

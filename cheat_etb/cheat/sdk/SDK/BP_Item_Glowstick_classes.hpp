@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "E_GlowstickColor_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "BP_Item_classes.hpp"
 
 
@@ -38,9 +38,7 @@ public:
 	void ReceiveDestroyed();
 	void ReceiveTick(float DeltaSeconds);
 	void PlaySubtitle();
-	void ReceiveBeginPlay();
 	void MC_Fire();
-	void UseItem();
 	void OnCompleted_AE195271461F08CE34117A8A70C47D64(class FName NotifyName);
 	void OnBlendOut_AE195271461F08CE34117A8A70C47D64(class FName NotifyName);
 	void OnInterrupted_AE195271461F08CE34117A8A70C47D64(class FName NotifyName);
@@ -48,6 +46,8 @@ public:
 	void OnNotifyEnd_AE195271461F08CE34117A8A70C47D64(class FName NotifyName);
 	void GetAdjustedIntensity(float Intensity, float* Adjusted);
 	void GetAdjustedRadius(float Radius, float* Adjusted);
+	void ReceiveBeginPlay();
+	void UseItem();
 
 public:
 	static class UClass* StaticClass()

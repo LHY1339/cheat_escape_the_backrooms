@@ -210,5 +210,25 @@ void UWB_Dropdown_Theme2_C::FindOption(const class FString& Option, int32* Index
 		*Index_0 = Parms.Index_0;
 }
 
+
+// Function WB_Dropdown_Theme2.WB_Dropdown_Theme2_C.Set Combo Box Selection
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bSelected                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UWB_Dropdown_Theme2_C::Set_Combo_Box_Selection(bool bSelected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WB_Dropdown_Theme2_C", "Set Combo Box Selection");
+
+	Params::WB_Dropdown_Theme2_C_Set_Combo_Box_Selection Parms{};
+
+	Parms.bSelected = bSelected;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
 }
 

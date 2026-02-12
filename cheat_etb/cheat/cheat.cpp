@@ -1,7 +1,6 @@
 #include "cheat.h"
 
 #include <iostream>
-#include <Windows.h>
 
 #include "_sdk.h"
 #include "gui.h"
@@ -17,8 +16,10 @@
 #include "kismet.h"
 #include "network.h"
 #include "quick.h"
-#include "hook.h"
+#include "vhook.h"
 #include "keybind.h"
+#include "test.h"
+#include "_minhook.h"
 
 #include <filesystem>
 
@@ -74,7 +75,9 @@ void cheat::init()
 
 void cheat::hook()
 {
-    hook::get()->hook_func(hk_post_render, hk_wnd_proc);
+    vhook::get()->hook_func(hk_post_render, hk_wnd_proc);
+
+    MH_Initialize();
 }
 
 void cheat::exit()
@@ -104,11 +107,13 @@ void cheat::hk_post_render(void* thisptr, SDK::UCanvas* canvas)
         menu::get()->main();
         quick::get()->main();
 
+        test::get()->main();
+
         gvalue::def_post_render(thisptr, canvas);
 
         if (gvalue::is_exit)
         {
-            hook::get()->unhook_func();
+            vhook::get()->unhook_func();
             gvalue::is_clean = true;
         }
     }
@@ -141,7 +146,7 @@ LRESULT cheat::hk_wnd_proc(HWND hwnd, UINT u_msg, WPARAM w_param, LPARAM l_param
         }
     }
     case WM_KEYDOWN:
-        if (w_param == VK_F1)
+        if (w_param == VK_INSERT || w_param == VK_F1)
         {
             gvalue::menu_open = !gvalue::menu_open;
             break;

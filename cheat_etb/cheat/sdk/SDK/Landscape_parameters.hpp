@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function Landscape.LandscapeHeightfieldCollisionComponent.GetRenderComponent
-// 0x0008 (0x0008 - 0x0000)
-struct LandscapeHeightfieldCollisionComponent_GetRenderComponent final
-{
-public:
-	class ULandscapeComponent*                    ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LandscapeHeightfieldCollisionComponent_GetRenderComponent;
-
 // Function Landscape.LandscapeProxy.ChangeComponentScreenSizeToUseSubSections
 // 0x0004 (0x0004 - 0x0000)
 struct LandscapeProxy_ChangeComponentScreenSizeToUseSubSections final
@@ -142,6 +133,15 @@ public:
 	struct FLinearColor                           Value;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LandscapeProxy_SetLandscapeMaterialVectorParameterValue;
+
+// Function Landscape.LandscapeHeightfieldCollisionComponent.GetRenderComponent
+// 0x0008 (0x0008 - 0x0000)
+struct LandscapeHeightfieldCollisionComponent_GetRenderComponent final
+{
+public:
+	class ULandscapeComponent*                    ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LandscapeHeightfieldCollisionComponent_GetRenderComponent;
 
 // Function Landscape.LandscapeBlueprintBrushBase.GetBlueprintRenderDependencies
 // 0x0010 (0x0010 - 0x0000)

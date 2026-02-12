@@ -36,7 +36,8 @@ public:
 			SDK::FLinearColor(1, 1, 1, 1), 
 			col,
 			color_add(col, SDK::FLinearColor(0.02f, 0.02f, 0.02f)) ,
-			color_add(col, SDK::FLinearColor(0.05f, 0.05f, 0.05f))
+			color_add(col, SDK::FLinearColor(0.05f, 0.05f, 0.05f)),
+			SDK::FVector2D(1,1)
 		);
 
 		if (value)
@@ -58,7 +59,8 @@ public:
 			color::get()->text_col,
 			color::get()->normal_col,
 			color::get()->hover_col,
-			color::get()->press_col
+			color::get()->press_col,
+			SDK::FVector2D(1, 1)
 		);
 	}
 };

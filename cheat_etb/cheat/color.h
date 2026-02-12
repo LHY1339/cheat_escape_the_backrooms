@@ -8,6 +8,7 @@ public:
 
 	void load();
 	void change();
+	void flush_color();
 	std::wstring get_name();
 
 private:

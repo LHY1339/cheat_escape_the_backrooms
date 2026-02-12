@@ -11,6 +11,8 @@
 #include "color.h"
 #include "resource.h"
 #include "gdefine.h"
+#include "kismet.h"
+#include "session.h"
 
 #include <format>
 #include <fstream>
@@ -39,12 +41,18 @@ public:
 	inline static std::vector<SDK::ABPCharacter_Demo_C*> player_list;
 	inline static std::vector<SDK::ACharacter*> entity_list;
 
-	inline static SDK::UTexture2D* visual_texture = nullptr;
+	inline static SDK::UTexture2D* t_visual = nullptr;
+	inline static SDK::UTexture2D* t_visual_newyear = nullptr;
 };
 
 class function
 {
 public:
+	static SDK::FVector2D scale()
+	{
+		return SDK::FVector2D(gvalue::menu_scale, gvalue::menu_scale);
+	}
+
 	static void set_font(const int& size)
 	{
 		gvalue::engine->TinyFont->LegacyFontSize = size;
@@ -55,8 +63,10 @@ public:
 		return SDK::FVector2D(param::pos.X + ref_x, param::pos.Y + ref_y);
 	}
 
-	static bool button_color(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size, bool is_attach = true)
+	static bool button_color(const std::string& name, SDK::FVector2D pos, SDK::FVector2D size, bool is_attach = true)
 	{
+		pos *= scale();
+		size *= scale();
 		return gui::button_color(
 			name,
 			is_attach ? attach(pos.X, pos.Y) : pos, 
@@ -67,8 +77,10 @@ public:
 		);
 	}
 
-	static bool button_text(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size, const SDK::FString& str, bool is_attach = true)
+	static bool button_text(const std::string& name, SDK::FVector2D pos, SDK::FVector2D size, const SDK::FString& str, bool is_attach = true)
 	{
+		pos *= scale();
+		size *= scale();
 		return gui::button_text(
 			name,
 			is_attach ? attach(pos.X, pos.Y) : pos,
@@ -77,12 +89,15 @@ public:
 			gvalue::engine->TinyFont,
 			color::get()->text_col,
 			color::get()->text_col,
-			color::get()->text_col
+			color::get()->text_col,
+			SDK::FVector2D(1.0f, 1.0f)
 		);
 	}
 
-	static bool button_color_text(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size, const SDK::FString& str, bool is_attach = true)
+	static bool button_color_text(const std::string& name, SDK::FVector2D pos, SDK::FVector2D size, const SDK::FString& str, bool is_attach = true)
 	{
+		pos *= scale();
+		size *= scale();
 		return gui::button_color_text(
 			name,
 			is_attach ? attach(pos.X, pos.Y) : pos,
@@ -92,12 +107,16 @@ public:
 			color::get()->text_col,
 			color::get()->normal_col,
 			color::get()->hover_col,
-			color::get()->press_col
+			color::get()->press_col,
+			SDK::FVector2D(1.0f, 1.0f)
 		);
 	}
 
-	static void check_box(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size, const SDK::FVector2D& check_size, bool* ptr, bool is_attach = true)
+	static void check_box(const std::string& name, SDK::FVector2D pos, SDK::FVector2D size, SDK::FVector2D check_size, bool* ptr, bool is_attach = true)
 	{
+		pos *= scale();
+		size *= scale();
+		check_size *= scale();
 		gui::check_box(
 			name,
 			is_attach ? attach(pos.X, pos.Y) : pos,
@@ -111,8 +130,11 @@ public:
 		);
 	}
 
-	static void drag_bar(const std::string& name, const SDK::FVector2D& pos, const SDK::FVector2D& size, const SDK::FVector2D& bar_size, float* ptr, bool is_attach = true)
+	static void drag_bar(const std::string& name, SDK::FVector2D pos, SDK::FVector2D size, SDK::FVector2D bar_size, float* ptr, bool is_attach = true)
 	{
+		pos *= scale();
+		size *= scale();
+		bar_size *= scale();
 		gui::drag_bar(
 			name,
 			is_attach ? attach(pos.X, pos.Y) : pos,
@@ -126,13 +148,14 @@ public:
 		);
 	}
 
-	static void text(const SDK::FVector2D& pos, const SDK::FString& str, const bool& mid_x = false, const bool& mid_y = false, bool is_attach = true)
+	static void text(SDK::FVector2D pos, const SDK::FString& str, const bool& mid_x = false, const bool& mid_y = false, bool is_attach = true)
 	{
+		pos *= scale();
 		render::draw_text(
 			gvalue::engine->TinyFont,
 			str,
 			is_attach ? attach(pos.X, pos.Y) : pos,
-			SDK::FVector2D(1.0f, 1.0f),
+			SDK::FVector2D(1.0f, 1.0f), 
 			color::get()->text_col,
 			1.0f,
 			SDK::FLinearColor(0.0f, 0.0f, 0.0f, 0.0f),
@@ -144,8 +167,10 @@ public:
 		);
 	}
 
-	static void pice(const SDK::FVector2D& pos, const SDK::FVector2D& size)
+	static void pice(SDK::FVector2D pos, SDK::FVector2D size)
 	{
+		pos *= scale();
+		size *= scale();
 		render::fill_box(
 			attach(pos.X, pos.Y),
 			size,
@@ -160,23 +185,31 @@ menu* menu::get()
 	return &inst;
 }
 
-void menu::init()
+void unzip_png(const LPCWSTR& name, const char* file_path)
 {
-	HRSRC h_res = FindResource(gvalue::dll_inst, MAKEINTRESOURCE(IDB_PNG1), L"PNG");
+	HRSRC h_res = FindResource(gvalue::dll_inst, name, L"PNG");
 	HGLOBAL h_data = LoadResource(gvalue::dll_inst, h_res);
 	void* p_data = LockResource(h_data);
 	DWORD size = SizeofResource(gvalue::dll_inst, h_res);
-	std::ofstream out("C:\\LHY1339\\escape_the_backrooms\\visual.png", std::ios::binary);
+	std::ofstream out(file_path, std::ios::binary);
 	out.write(reinterpret_cast<char*>(p_data), size);
 	out.close();
+}
 
-	param::visual_texture = SDK::UKismetRenderingLibrary::ImportFileAsTexture2D(gvalue::world, L"C:/LHY1339/escape_the_backrooms/visual.png");
+void menu::init()
+{
+	unzip_png(MAKEINTRESOURCE(IDB_PNG1), "C:\\LHY1339\\escape_the_backrooms\\visual.png");
+	unzip_png(MAKEINTRESOURCE(IDB_PNG2), "C:\\LHY1339\\escape_the_backrooms\\visual_newyear.png");
+
+	param::t_visual = SDK::UKismetRenderingLibrary::ImportFileAsTexture2D(gvalue::world, L"C:/LHY1339/escape_the_backrooms/visual.png");
+	param::t_visual_newyear = SDK::UKismetRenderingLibrary::ImportFileAsTexture2D(gvalue::world, L"C:/LHY1339/escape_the_backrooms/visual_newyear.png");
 }
 
 void menu::main()
 {
 	if (gvalue::menu_open)
 	{
+		color::get()->flush_color();
 		pre_base();
 		base();
 		cursor();
@@ -194,8 +227,8 @@ void menu::lable()
 	function::set_font(12);
 
 	const std::wstring lab_text =
-		std::wstring(L"按下 F1 显示/隐藏菜单\n按下 Del（Delete）退出\n\n") +
-		std::wstring(L"按下 [Tab] 打开快捷菜单");
+		std::wstring(L"按下 Ins（Insert）或 F1 显示/隐藏菜单\n按下 Del（Delete）关闭修改器\n") +
+		std::wstring(L"按下 Tab 打开快捷菜单\n\n可在 [杂项] 菜单中关闭此提示");
 
 	render::draw_text(
 		gvalue::engine->TinyFont,
@@ -215,38 +248,39 @@ void menu::lable()
 
 void menu::pre_base()
 {
+	SDK::FVector2D size = param::size * function::scale();
 	gui::drag(
 		param::pos,
-		param::size,
-		param::drag_pos,
+		size,
+		param::drag_pos, 
 		param::is_drag
 	);
 }
 
 void menu::base()
 {
-	function::set_font(12);
+	function::set_font((int)12 * gvalue::menu_scale);
 
 	render::fill_box(
-		SDK::FVector2D(param::pos.X - 2, param::pos.Y - 2),
-		SDK::FVector2D(param::size.X + 4, param::size.Y + 4),
+		SDK::FVector2D(param::pos.X - 2 * gvalue::menu_scale, param::pos.Y - 2 * gvalue::menu_scale),
+		SDK::FVector2D(param::size.X + 4, param::size.Y + 4) * function::scale(),
 		color::get()->outline_col
 	);
 	render::fill_box(
 		SDK::FVector2D(param::pos.X, param::pos.Y),
-		SDK::FVector2D(param::size.X, param::size.Y),
+		SDK::FVector2D(param::size.X, param::size.Y) * function::scale(),
 		color::get()->back_col
 	);
 
 	{
 		render::fill_box(
-			SDK::FVector2D(param::pos.X - 2, param::pos.Y + param::size.Y + 8),
-			SDK::FVector2D(param::size.X + 4, 39),
+			SDK::FVector2D(param::pos.X - 2 * gvalue::menu_scale, param::pos.Y + (param::size.Y + 8) * gvalue::menu_scale),
+			SDK::FVector2D((param::size.X + 4) * gvalue::menu_scale, 39 * gvalue::menu_scale), 
 			SDK::FLinearColor(0.3f, 0.1f, 0.0f, 1.0f)
 		);
 		render::fill_box(
-			SDK::FVector2D(param::pos.X, param::pos.Y + param::size.Y + 10),
-			SDK::FVector2D(param::size.X, 35),
+			SDK::FVector2D(param::pos.X, param::pos.Y + (param::size.Y + 10) * gvalue::menu_scale),
+			SDK::FVector2D(param::size.X * gvalue::menu_scale, 35 * gvalue::menu_scale), 
 			SDK::FLinearColor(0.1f, 0.06f, 0.0f, 1.0f)
 		);
 		function::text(SDK::FVector2D(10, param::size.Y + 18), L"本修改器永久免费开源，问题反馈QQ群：1071845133");
@@ -255,20 +289,19 @@ void menu::base()
 	if (gvalue::max_version != VERSION && gvalue::max_version != "")
 	{
 		render::fill_box(
-			SDK::FVector2D(param::pos.X - 2, param::pos.Y + param::size.Y + 58),
-			SDK::FVector2D(170 + 4, 39),
+			SDK::FVector2D(param::pos.X - 2 * gvalue::menu_scale, param::pos.Y + (param::size.Y + 58) * gvalue::menu_scale),
+			SDK::FVector2D((170 + 4) * gvalue::menu_scale, 39 * gvalue::menu_scale), 
 			SDK::FLinearColor(0.3f, 0.1f, 0.0f, 1.0f)
 		);
 		render::fill_box(
-			SDK::FVector2D(param::pos.X, param::pos.Y + param::size.Y + 60),
-			SDK::FVector2D(170, 35),
+			SDK::FVector2D(param::pos.X, param::pos.Y + (param::size.Y + 60) * gvalue::menu_scale),
+			SDK::FVector2D(170 * gvalue::menu_scale, 35 * gvalue::menu_scale),
 			SDK::FLinearColor(0.1f, 0.06f, 0.0f, 1.0f)
 		);
 		function::text(SDK::FVector2D(10, param::size.Y + 68), L"有新版本可以下载！");
 	}
 
 	param::size = SDK::FVector2D(600, 400);
-	left();
 
 #define ETB_SWITCH(_name_) \
 case e_page::_name_: \
@@ -305,6 +338,8 @@ case e_page::_name_: \
 		ETB_SWITCH(misc);
 	}
 
+	left();
+
 #undef ETB_SWITCH
 }
 
@@ -329,7 +364,7 @@ void menu::left()
 	static float current_y = 10.0f;
 	const float target_y = 10 + (int)param::page * 40;
 	current_y = current_y + (target_y - current_y) * 15 * gvalue::delta_time;
-	render::fill_box(function::attach(10, current_y), SDK::FVector2D(80, 30), color::get()->normal_col);
+	render::fill_box(function::attach(10 * gvalue::menu_scale, current_y * gvalue::menu_scale), SDK::FVector2D(80, 30) * gvalue::menu_scale, color::get()->normal_col);
 
 #define ETB_BUTTON(_page_,_name_,_ypos_) \
 if (function::button_text(#_page_, SDK::FVector2D(10, _ypos_), SDK::FVector2D(80, 30), L#_name_)) \
@@ -452,23 +487,23 @@ function::text(SDK::FVector2D(120, _y_), L#_text_);
 	}
 
 	render::fill_box(
-		function::attach(param::size.X + 18, -2), 
-		SDK::FVector2D(404, 404),
+		function::attach((param::size.X + 18) * gvalue::menu_scale, -2 * gvalue::menu_scale), 
+		SDK::FVector2D(404, 404)* function::scale(), 
 		color::get()->outline_col
 	);
 
 	render::fill_box(
-		function::attach(param::size.X + 20, 0),
-		SDK::FVector2D(400, 400),
+		function::attach((param::size.X + 20)* gvalue::menu_scale, 0), 
+		SDK::FVector2D(400, 400)* function::scale(),
 		color::get()->back_col
 	);
 
 	function::pice(SDK::FVector2D(param::size.X + 30, 10), SDK::FVector2D(380, 380));
 
 	gvalue::canvas->K2_DrawTexture(
-		param::visual_texture,
-		function::attach(640, 20),
-		SDK::FVector2D(360, 360),
+		gvalue::new_year_color ? param::t_visual_newyear : param::t_visual,
+		function::attach(640 * gvalue::menu_scale, 20 * gvalue::menu_scale),
+		SDK::FVector2D(360, 360)* function::scale(),
 		SDK::FVector2D(0, 0),
 		SDK::FVector2D(1, 1),
 		SDK::FLinearColor(1.0f, 1.0f, 1.0f, 1.0f),
@@ -478,14 +513,17 @@ function::text(SDK::FVector2D(120, _y_), L#_text_);
 	);
 
 	{
-		auto show_esp = [&](const s_esp& esp, const SDK::FVector2D& pos, const SDK::FVector2D& size, const SDK::FLinearColor& color,const std::wstring& name)
+		auto show_esp = [&](const s_esp& esp, SDK::FVector2D pos, SDK::FVector2D size, const SDK::FLinearColor& color,const std::wstring& name)
 			{
+				pos *= function::scale();
+				size *= function::scale();
+
 				if (!esp.enable)
 				{
 					return;
 				}
 
-				const SDK::FVector2D real_pos = function::attach(param::size.X + 20, 0) + pos;
+				const SDK::FVector2D real_pos = function::attach((param::size.X + 20) * gvalue::menu_scale, 0) + pos;
 
 				if (esp.box||esp.extent)
 				{
@@ -525,11 +563,26 @@ function::text(SDK::FVector2D(120, _y_), L#_text_);
 				);
 			};
 
-
-		show_esp(gvalue::esp_entity, SDK::FVector2D(220, 80), SDK::FVector2D(100, 140), SDK::FLinearColor(1.0f, 0.0f, 0.0f, 1.0f), L"棍母");
-		show_esp(gvalue::esp_item, SDK::FVector2D(235, 270), SDK::FVector2D(80, 80), SDK::FLinearColor(0.0f, 1.0f, 1.0f, 1.0f), L"咕咕嘎嘎");
-		show_esp(gvalue::esp_interact, SDK::FVector2D(35, 120), SDK::FVector2D(100, 250), SDK::FLinearColor(1.0f, 1.0f, 0.0f, 1.0f), L"吉他");
-		show_esp(gvalue::esp_player, SDK::FVector2D(110, 40), SDK::FVector2D(130, 320), SDK::FLinearColor(0.0f, 1.0f, 0.0f, 1.0f), L"玩家：千早爱音");
+		if (gvalue::new_year_color)
+		{
+			show_esp(
+				gvalue::esp_entity,
+				SDK::FVector2D(250, 70),
+				SDK::FVector2D(100, 210),
+				SDK::FLinearColor(1.0f, 0.0f, 0.0f, 1.0f),
+				L"年兽夕"
+			);
+			show_esp(gvalue::esp_item, SDK::FVector2D(275, 290), SDK::FVector2D(70, 60), SDK::FLinearColor(0.0f, 1.0f, 1.0f, 1.0f), L"红包");
+			show_esp(gvalue::esp_interact, SDK::FVector2D(40, 20), SDK::FVector2D(60, 180), SDK::FLinearColor(1.0f, 1.0f, 0.0f, 1.0f), L"鞭炮");
+			show_esp(gvalue::esp_player, SDK::FVector2D(110, 40), SDK::FVector2D(130, 320), SDK::FLinearColor(0.0f, 1.0f, 0.0f, 1.0f), L"门神：神荼");
+		}
+		else
+		{
+			show_esp(gvalue::esp_entity, SDK::FVector2D(220, 80), SDK::FVector2D(100, 140), SDK::FLinearColor(1.0f, 0.0f, 0.0f, 1.0f), L"棍母");
+			show_esp(gvalue::esp_item, SDK::FVector2D(235, 270), SDK::FVector2D(80, 80), SDK::FLinearColor(0.0f, 1.0f, 1.0f, 1.0f), L"咕咕嘎嘎");
+			show_esp(gvalue::esp_interact, SDK::FVector2D(35, 120), SDK::FVector2D(100, 250), SDK::FLinearColor(1.0f, 1.0f, 0.0f, 1.0f), L"吉他");
+			show_esp(gvalue::esp_player, SDK::FVector2D(110, 40), SDK::FVector2D(130, 320), SDK::FLinearColor(0.0f, 1.0f, 0.0f, 1.0f), L"玩家：千早爱音");
+		}
 	}
 }
 
@@ -653,14 +706,14 @@ void menu::player()
 		};
 
 	render::fill_box(
-		SDK::FVector2D(param::pos.X + param::size.X + 18, param::pos.Y - 2), 
-		SDK::FVector2D(420 + 4, 90 + param::player_list.size() * 50 + 4),
+		SDK::FVector2D(param::pos.X + (param::size.X + 18) * gvalue::menu_scale, param::pos.Y - 2 * gvalue::menu_scale),
+		SDK::FVector2D((420 + 4)* gvalue::menu_scale, (90 + param::player_list.size() * 50 + 4)* gvalue::menu_scale), 
 		color::get()->outline_col
 	);
 
 	render::fill_box(
-		SDK::FVector2D(param::pos.X + param::size.X + 20, param::pos.Y),
-		SDK::FVector2D(420, 90 + param::player_list.size() * 50),
+		SDK::FVector2D(param::pos.X + (param::size.X + 20) * gvalue::menu_scale, param::pos.Y),
+		SDK::FVector2D(420 * gvalue::menu_scale, (90 + param::player_list.size() * 50)* gvalue::menu_scale), 
 		color::get()->back_col
 	);
 
@@ -876,14 +929,14 @@ if (function::button_color_text(" ", SDK::FVector2D(_x_, _y_), SDK::FVector2D(12
 		};
 
 	render::fill_box(
-		SDK::FVector2D(param::pos.X + param::size.X + 18, param::pos.Y - 2),
-		SDK::FVector2D(260 + 4, 150 + param::entity_list.size() * 50 + 4),
+		SDK::FVector2D(param::pos.X + (param::size.X + 18) * gvalue::menu_scale, param::pos.Y - 2 * gvalue::menu_scale),
+		SDK::FVector2D((260 + 4) * gvalue::menu_scale, (150 + param::entity_list.size() * 50 + 4) * gvalue::menu_scale), 
 		color::get()->outline_col
 	);
 
 	render::fill_box(
-		SDK::FVector2D(param::pos.X + param::size.X + 20, param::pos.Y),
-		SDK::FVector2D(260, 150 + param::entity_list.size() * 50),
+		SDK::FVector2D(param::pos.X + (param::size.X + 20) * gvalue::menu_scale, param::pos.Y),
+		SDK::FVector2D(260 * gvalue::menu_scale, (150 + param::entity_list.size() * 50) * gvalue::menu_scale), 
 		color::get()->back_col
 	);
 
@@ -965,45 +1018,70 @@ if (function::button_color_text("", SDK::FVector2D(_x_, _y_), SDK::FVector2D(120
 }
 
 void menu::misc()
-{
+{	
 	param::size.X = 650;
+	param::size.Y = 550;
 
-	function::pice(SDK::FVector2D(110, 10), SDK::FVector2D(160, 50));
+	function::pice(SDK::FVector2D(110, 10), SDK::FVector2D(160, 140));
 	if (function::button_color_text(" ", SDK::FVector2D(120, 20), SDK::FVector2D(140, 30), color::get()->get_name().c_str()))
 	{
 		color::get()->change();
 	}
+	function::check_box(" ", SDK::FVector2D(120, 60), SDK::FVector2D(20, 20), SDK::FVector2D(10, 10), &gvalue::new_year_color);
+	function::text(SDK::FVector2D(150, 61), L"使用新年主题");
 
-	function::pice(SDK::FVector2D(110, 70), SDK::FVector2D(160, 130));
-	if (function::button_color_text(" ", SDK::FVector2D(120, 80), SDK::FVector2D(140, 30), L"保存参数"))
+	{
+		const float calc_buffer = SDK::UKismetMathLibrary::Lerp(0.0f, 4.0f, gvalue::menu_scale_buffer);
+		const float truncated = floor(calc_buffer * 10) / 10.0f;
+		const std::wstring show_name = L"界面尺寸：" + std::format(L"{:.1f}", truncated) + L"X";
+		function::text(SDK::FVector2D(120, 91), show_name.c_str());
+		function::drag_bar("menu_scale_buffer", SDK::FVector2D(120, 120), SDK::FVector2D(140, 20), SDK::FVector2D(10, 20), &gvalue::menu_scale_buffer);
+		if (!kismet::is_key_down(VK_LBUTTON))
+		{
+			gvalue::menu_scale = truncated;
+		}
+	}
+
+
+	function::pice(SDK::FVector2D(110, 160), SDK::FVector2D(160, 130));
+	if (function::button_color_text(" ", SDK::FVector2D(120, 170), SDK::FVector2D(140, 30), L"保存参数"))
 	{
 		config::get()->save();
 	}
-	if (function::button_color_text(" ", SDK::FVector2D(120, 120), SDK::FVector2D(140, 30), L"加载参数"))
+	if (function::button_color_text(" ", SDK::FVector2D(120, 210), SDK::FVector2D(140, 30), L"加载参数"))
 	{
 		config::get()->load("C:\\LHY1339\\escape_the_backrooms\\config.cheat");
 	}
-	if (function::button_color_text(" ", SDK::FVector2D(120, 160), SDK::FVector2D(140, 30), L"打开参数配置"))
+	if (function::button_color_text(" ", SDK::FVector2D(120, 250), SDK::FVector2D(140, 30), L"打开参数配置"))
 	{
 		system("start C:/LHY1339/escape_the_backrooms/config.cheat");
 	}
 
-	function::pice(SDK::FVector2D(110, 210), SDK::FVector2D(160, 90));
-	if (function::button_color_text(" ", SDK::FVector2D(120, 220), SDK::FVector2D(140, 30), L"加载按键"))
+	function::pice(SDK::FVector2D(110, 300), SDK::FVector2D(160, 90));
+	if (function::button_color_text(" ", SDK::FVector2D(120, 310), SDK::FVector2D(140, 30), L"加载按键"))
 	{
 		config::get()->load("C:\\LHY1339\\escape_the_backrooms\\keybind.cheat");
 	}
-	if (function::button_color_text(" ", SDK::FVector2D(120, 260), SDK::FVector2D(140, 30), L"打开按键配置"))
+	if (function::button_color_text(" ", SDK::FVector2D(120, 350), SDK::FVector2D(140, 30), L"打开按键配置"))
 	{
 		system("start C:/LHY1339/escape_the_backrooms/keybind.cheat");
 	}
 
-	function::pice(SDK::FVector2D(110, 310), SDK::FVector2D(160, 40));
-	function::check_box(" ", SDK::FVector2D(120, 320), SDK::FVector2D(20, 20), SDK::FVector2D(10, 10), &gvalue::draw_lable);
-	function::text(SDK::FVector2D(159, 320), L"显示按键提示");
+	function::pice(SDK::FVector2D(110, 400), SDK::FVector2D(160, 40));
+	function::check_box(" ", SDK::FVector2D(120, 410), SDK::FVector2D(20, 20), SDK::FVector2D(10, 10), &gvalue::draw_lable);
+	function::text(SDK::FVector2D(150, 411), L"显示按键提示");
+
+	function::pice(SDK::FVector2D(110, 450), SDK::FVector2D(160, 90));
+	if (function::button_color_text(" ", SDK::FVector2D(120, 460), SDK::FVector2D(140, 30), L"源码下载"))
+	{
+		system("start https://github.com/LHY1339/cheat_escape_the_backrooms");
+	}
+	if (function::button_color_text(" ", SDK::FVector2D(120, 500), SDK::FVector2D(140, 30), L"新版本下载"))
+	{
+		system("start https://github.com/LHY1339/cheat_escape_the_backrooms/releases/");
+	}
 
 	function::pice(SDK::FVector2D(280, 10), SDK::FVector2D(param::size.X - 290, param::size.Y - 20));
-
 	{
 		const wchar_t* log = L"逃离后室修改器\n"
 			VERSION_W
@@ -1011,11 +1089,14 @@ void menu::misc()
 			L"作者：LHY1339\n"
 			L"源代码：cheat_escape_the_backrooms\n"
 			L"爱发电：LHY1339\n"
-			L"交流群：1071845133\n\n"
-			L"--------特别感谢--------\n"
-			THANKS;
+			L"交流群：1071845133\n"
+			L"\n--------特别感谢--------\n"
+			THANKS
+			"\n--------其他--------\n"
+			"祝各位在新的一年里\n"
+			"多喜乐、长安宁，所愿皆所成\n"
+			"心有所悦、业有所成，万事皆可期";
 
 		function::text(SDK::FVector2D(290, 20), log);
 	}
-
 }

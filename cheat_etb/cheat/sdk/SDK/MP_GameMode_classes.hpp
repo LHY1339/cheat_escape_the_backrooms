@@ -11,11 +11,11 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "E_HeadsetType_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Backrooms_structs.hpp"
 #include "Backrooms_classes.hpp"
 #include "AdvancedSessions_structs.hpp"
-#include "E_HeadsetType_structs.hpp"
 
 
 namespace SDK
@@ -47,6 +47,8 @@ public:
 
 public:
 	void ExecuteUbergraph_MP_GameMode(int32 EntryPoint);
+	void ShowNonModalMessage(const class FText& Message);
+	void ResetInputModeToDefault(class UWidget* PreviousFocusedWidget);
 	void UnlockHUBForAllPlayers();
 	void CheckNetworkDisconnect();
 	void ReceiveTick(float DeltaSeconds);

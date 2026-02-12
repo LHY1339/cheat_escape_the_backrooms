@@ -215,11 +215,13 @@ void player::domain()
 	//无敌模式
 	if (gvalue::inf_health)
 	{
-		my_player->CapsuleComponent->SetCollisionResponseToChannel(SDK::ECollisionChannel::ECC_WorldDynamic, SDK::ECollisionResponse::ECR_Ignore);
+		my_player->CanKill = false;
+		//my_player->CapsuleComponent->SetCollisionResponseToChannel(SDK::ECollisionChannel::ECC_WorldDynamic, SDK::ECollisionResponse::ECR_Ignore);
 	}
 	else
 	{
-		my_player->CapsuleComponent->SetCollisionResponseToChannel(SDK::ECollisionChannel::ECC_WorldDynamic, SDK::ECollisionResponse::ECR_Block);
+		my_player->CanKill = false;
+		//my_player->CapsuleComponent->SetCollisionResponseToChannel(SDK::ECollisionChannel::ECC_WorldDynamic, SDK::ECollisionResponse::ECR_Block);
 	}
 	
 	//旋转

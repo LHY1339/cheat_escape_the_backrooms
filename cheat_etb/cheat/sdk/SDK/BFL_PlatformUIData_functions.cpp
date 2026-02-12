@@ -43,21 +43,21 @@ void UBFL_PlatformUIData_C::GetRichImageText(class FName InputName, class UObjec
 }
 
 
-// Function BFL_PlatformUIData.BFL_PlatformUIData_C.GetInputActionKeyName
+// Function BFL_PlatformUIData.BFL_PlatformUIData_C.GetInputActionKeyName_DEPRECATED
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // const class FName                       ActionName                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FText*                            Name_0                                                 (Parm, OutParm)
 
-void UBFL_PlatformUIData_C::GetInputActionKeyName(const class FName ActionName, class UObject* __WorldContext, class FText* Name_0)
+void UBFL_PlatformUIData_C::GetInputActionKeyName_DEPRECATED(const class FName ActionName, class UObject* __WorldContext, class FText* Name_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BFL_PlatformUIData_C", "GetInputActionKeyName");
+		Func = StaticClass()->GetFunction("BFL_PlatformUIData_C", "GetInputActionKeyName_DEPRECATED");
 
-	Params::BFL_PlatformUIData_C_GetInputActionKeyName Parms{};
+	Params::BFL_PlatformUIData_C_GetInputActionKeyName_DEPRECATED Parms{};
 
 	Parms.ActionName = ActionName;
 	Parms.__WorldContext = __WorldContext;

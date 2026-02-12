@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "S_ConnectedPlayer_structs.hpp"
-#include "BP_BasePlayerController_classes.hpp"
 #include "UMG_structs.hpp"
+#include "BP_BasePlayerController_classes.hpp"
 
 
 namespace SDK
@@ -49,6 +49,7 @@ public:
 	void StartVoice();
 	void OC_Create_MapTravel_Loadingscreen(class FName Map);
 	void OC_KickedFromLobby();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void OC_Update_ConnectedPlayersList(const TArray<struct FS_ConnectedPlayer>& ConnectedPlayers_0);
 	void OC_Update_ServerName(const class FText& ServerName_0);
 	void OC_Launchevent(bool IsLaunchingGame_0);
@@ -59,8 +60,6 @@ public:
 	void InpActEvt_Talk_K2Node_InputActionEvent_0(const struct FKey& Key);
 	void InpActEvt_Talk_K2Node_InputActionEvent_1(const struct FKey& Key);
 	void InpActEvt_Chat_K2Node_InputActionEvent_2(const struct FKey& Key);
-	void OnSuccess_6E7D169843C1BE4CDA92E896C8C1B365();
-	void OnFailure_6E7D169843C1BE4CDA92E896C8C1B365();
 	void OnSuccess_866615BE41AC454694EE4F9532779BF7();
 	void OnFailure_866615BE41AC454694EE4F9532779BF7();
 	void InpActEvt_Settings_K2Node_InputActionEvent_3(const struct FKey& Key);
@@ -78,7 +77,6 @@ public:
 	void CreateLoadingScreen(const class FText& LoadingScreen_FeedbackText, class UTexture2D* LoadingScreen_Image);
 	void Update_PlayerSpeaking(bool IsSpeaking, const struct FBPUniqueNetId& UniqueId);
 	void OnRep_CanTalk();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 public:
 	static class UClass* StaticClass()

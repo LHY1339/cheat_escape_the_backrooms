@@ -12,9 +12,9 @@
 
 #include "Engine_structs.hpp"
 #include "S_ConnectedPlayer_structs.hpp"
+#include "UMG_structs.hpp"
 #include "BP_BasePlayerController_classes.hpp"
 #include "E_CameraSetting_structs.hpp"
-#include "UMG_structs.hpp"
 
 
 namespace SDK
@@ -67,8 +67,6 @@ public:
 	void InpActEvt_Chat_K2Node_InputActionEvent_0(const struct FKey& Key);
 	void InpActEvt_Talk_K2Node_InputActionEvent_1(const struct FKey& Key);
 	void InpActEvt_Talk_K2Node_InputActionEvent_2(const struct FKey& Key);
-	void OnSuccess_42489E9B45F87297AAF674BCE53BFF40();
-	void OnFailure_42489E9B45F87297AAF674BCE53BFF40();
 	void OnSuccess_5E765EE548557C3B653D32A12A136B0D();
 	void OnFailure_5E765EE548557C3B653D32A12A136B0D();
 	void InpActEvt_Settings_K2Node_InputActionEvent_3(const struct FKey& Key);

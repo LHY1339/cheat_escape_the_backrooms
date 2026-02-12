@@ -40,7 +40,6 @@ public:
 public:
 	void ExecuteUbergraph_BP_Rope(int32 EntryPoint);
 	void AnimateRopeThrow();
-	void UseItem();
 	void RemoveRope();
 	void ReceiveDestroyed();
 	void SRV_TossRope(const struct FVector& Location);
@@ -55,6 +54,7 @@ public:
 	void RopeTimeline__UpdateFunc();
 	void RopeTimeline__FinishedFunc();
 	void OnRep_RopeZone();
+	void UseItem();
 
 public:
 	static class UClass* StaticClass()

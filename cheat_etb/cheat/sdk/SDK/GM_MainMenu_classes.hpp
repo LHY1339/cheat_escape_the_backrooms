@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -17,11 +18,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_MainMenu.GM_MainMenu_C
-// 0x0008 (0x02C8 - 0x02C0)
+// 0x0010 (0x02D0 - 0x02C0)
 class AGM_MainMenu_C final : public AGameModeBase
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+
+public:
+	void ExecuteUbergraph_GM_MainMenu(int32 EntryPoint);
+	void ResetInputModeToDefault(class UWidget* PreviousFocusedWidget);
+	void ShowNonModalMessage(const class FText& Message);
 
 public:
 	static class UClass* StaticClass()

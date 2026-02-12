@@ -42,7 +42,8 @@ public:
 		SDK::UFont* font,
 		const SDK::FLinearColor& normal_col,
 		const SDK::FLinearColor& hover_col,
-		const SDK::FLinearColor& press_col
+		const SDK::FLinearColor& press_col,
+		const SDK::FVector2D& text_size
 	);
 
 	static bool button_color_text(
@@ -54,7 +55,8 @@ public:
 		const SDK::FLinearColor& text_col,
 		const SDK::FLinearColor& normal_col,
 		const SDK::FLinearColor& hover_col,
-		const SDK::FLinearColor& press_col
+		const SDK::FLinearColor& press_col,
+		const SDK::FVector2D& text_size
 	);
 
 	static void check_box(
@@ -83,7 +85,7 @@ public:
 
 	static void drag(
 		SDK::FVector2D& pos,
-		SDK::FVector2D& size,
+		const SDK::FVector2D& size,
 		SDK::FVector2D& drag_pos,
 		bool& is_drag
 	);

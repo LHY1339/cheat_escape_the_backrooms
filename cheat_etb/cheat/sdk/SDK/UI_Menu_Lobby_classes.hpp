@@ -12,11 +12,11 @@
 
 #include "Engine_structs.hpp"
 #include "E_Difficulty_structs.hpp"
-#include "E_GameMode_structs.hpp"
 #include "Backrooms_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
+#include "E_GameMode_structs.hpp"
 #include "AdvancedSessions_structs.hpp"
 
 
@@ -92,6 +92,7 @@ public:
 
 public:
 	void ExecuteUbergraph_UI_Menu_Lobby(int32 EntryPoint);
+	void OnInitialized();
 	void ManualSwitchDifficulty();
 	void Refocus();
 	void StartActivityForAll();

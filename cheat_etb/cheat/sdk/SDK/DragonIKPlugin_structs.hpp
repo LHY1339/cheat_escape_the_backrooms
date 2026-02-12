@@ -397,15 +397,6 @@ public:
 };
 DUMPER7_ASSERTS_FDragonData_FeetAlpha_Struct;
 
-// ScriptStruct DragonIKPlugin.DragonData_StickyFeetStruct
-// 0x0010 (0x0010 - 0x0000)
-struct FDragonData_StickyFeetStruct final
-{
-public:
-	TArray<bool>                                  sticky_feet_array;                                 // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDragonData_StickyFeetStruct;
-
 // ScriptStruct DragonIKPlugin.DragonData_StickySocketStruct
 // 0x0010 (0x0010 - 0x0000)
 struct FDragonData_StickySocketStruct final
@@ -414,6 +405,15 @@ public:
 	TArray<struct FBoneSocketTarget>              sticky_socket_array;                               // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FDragonData_StickySocketStruct;
+
+// ScriptStruct DragonIKPlugin.DragonData_StickyFeetStruct
+// 0x0010 (0x0010 - 0x0000)
+struct FDragonData_StickyFeetStruct final
+{
+public:
+	TArray<bool>                                  sticky_feet_array;                                 // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDragonData_StickyFeetStruct;
 
 // ScriptStruct DragonIKPlugin.AnimNode_DragonFeetSolver
 // 0x06F8 (0x07C0 - 0x00C8)

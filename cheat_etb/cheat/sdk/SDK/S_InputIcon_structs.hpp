@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedStruct S_InputIcon.S_InputIcon
-// 0x00D0 (0x00D0 - 0x0000)
+// 0x00F8 (0x00F8 - 0x0000)
 struct FS_InputIcon final
 {
 public:
@@ -23,8 +23,9 @@ public:
 	TSoftObjectPtr<class UTexture2D>              KeyboardMouseIcon_20_DA2D317547306031A7F810BA9D00ADB7; // 0x0008(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TSoftObjectPtr<class UTexture2D>              XBoxIcon_6_730227C842AB6382986A27938D8F212C;       // 0x0030(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TSoftObjectPtr<class UTexture2D>              PlaystationIcon_8_682FF30E4E18B2A3581CB5B7D66CED8E; // 0x0058(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	TSoftObjectPtr<class UTexture2D>              OcculusIcon_17_BAF2090B4AE7C611F9AD918A4B72005A;   // 0x0080(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	TSoftObjectPtr<class UTexture2D>              HTCViveIcon_18_93B20A1643874CB513C55FA16C3E337C;   // 0x00A8(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class UTexture2D>              SageIcon_23_7B5543CE4774E67147547A975F692BAD;      // 0x0080(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class UTexture2D>              OcculusIcon_17_BAF2090B4AE7C611F9AD918A4B72005A;   // 0x00A8(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class UTexture2D>              HTCViveIcon_18_93B20A1643874CB513C55FA16C3E337C;   // 0x00D0(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FS_InputIcon;
 

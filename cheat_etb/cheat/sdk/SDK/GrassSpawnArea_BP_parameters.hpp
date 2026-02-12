@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ProceduralMeshComponent_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ProceduralMeshComponent_structs.hpp"
 
 
 namespace SDK::Params

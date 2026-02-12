@@ -37,6 +37,20 @@ void UW_CostumeSelector_CostumeListItem_C::ExecuteUbergraph_W_CostumeSelector_Co
 }
 
 
+// Function W_CostumeSelector_CostumeListItem.W_CostumeSelector_CostumeListItem_C.OnInitialized
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UW_CostumeSelector_CostumeListItem_C::OnInitialized()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_CostumeSelector_CostumeListItem_C", "OnInitialized");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_CostumeSelector_CostumeListItem.W_CostumeSelector_CostumeListItem_C.OnMouseLeave
 // (BlueprintCosmetic, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:

@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "MagicLeapAR_structs.hpp"
 #include "MagicLeapImageTracker_structs.hpp"
 #include "AugmentedReality_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "MagicLeapAR_structs.hpp"
 
 
 namespace SDK::Params
