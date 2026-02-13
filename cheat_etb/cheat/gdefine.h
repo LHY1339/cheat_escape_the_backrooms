@@ -2,8 +2,8 @@
 
 //#define CHEAT_DEBUG
 
-#define VERSION "26.2.12"
-#define VERSION_W L"版本：26.2.12\n"
+#define VERSION "26.2.13"
+#define VERSION_W L"版本：26.2.13\n"
 #define GAME_VERSION L"支持游戏版本：1.20(2841)\n"
 #define THANKS \
 L"感谢 雾染 的爱发电喵~\n" \

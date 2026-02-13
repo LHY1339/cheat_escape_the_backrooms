@@ -220,7 +220,7 @@ void player::domain()
 	}
 	else
 	{
-		my_player->CanKill = false;
+		my_player->CanKill = true;
 		//my_player->CapsuleComponent->SetCollisionResponseToChannel(SDK::ECollisionChannel::ECC_WorldDynamic, SDK::ECollisionResponse::ECR_Block);
 	}
 	

@@ -80,6 +80,9 @@
     <Filter Include="source\cheat\vhook">
       <UniqueIdentifier>{8b1862d5-d2f8-4e86-90f6-993f5303d858}</UniqueIdentifier>
     </Filter>
+    <Filter Include="third_party\detours">
+      <UniqueIdentifier>{1e65f5c1-b18c-499b-aa28-be2a425af048}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_sdk.h">

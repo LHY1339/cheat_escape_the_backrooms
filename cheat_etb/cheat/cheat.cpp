@@ -72,12 +72,95 @@ void cheat::init()
     config::get()->load("C:\\LHY1339\\escape_the_backrooms\\keybind.cheat");
     color::get()->load();
 }
+//
+//typedef SDK::UCreateSessionCallbackProxyAdvanced* (__fastcall* fn_create_session)(
+//    SDK::UObject* WorldContextObject,
+//    const SDK::TArray<SDK::FSessionPropertyKeyPair>& ExtraSettings,
+//    SDK::APlayerController* PlayerController, 
+//    int PublicConnections, 
+//    int PrivateConnections,
+//    bool bUseLAN, 
+//    bool bAllowInvites, 
+//    bool bIsDedicatedServer, 
+//    bool bUsePresence, 
+//    bool bUseLobbiesIfAvailable, 
+//    bool bAllowJoinViaPresence, 
+//    bool bAllowJoinViaPresenceFriendsOnly, 
+//    bool bAntiCheatProtected, 
+//    bool bUsesStats, 
+//    bool bShouldAdvertise, 
+//    bool bUseLobbiesVoiceChatIfAvailable, 
+//    bool bStartAfterCreate, 
+//    bool bGameSession
+//    );
+//
+//fn_create_session def_create_session = nullptr;
+//
+//SDK::UCreateSessionCallbackProxyAdvanced* __fastcall hk_create_session(
+//    SDK::UObject* WorldContextObject,
+//    const SDK::TArray<SDK::FSessionPropertyKeyPair>& ExtraSettings,
+//    SDK::APlayerController* PlayerController,
+//    int PublicConnections,
+//    int PrivateConnections,
+//    bool bUseLAN,
+//    bool bAllowInvites,
+//    bool bIsDedicatedServer,
+//    bool bUsePresence,
+//    bool bUseLobbiesIfAvailable,
+//    bool bAllowJoinViaPresence,
+//    bool bAllowJoinViaPresenceFriendsOnly,
+//    bool bAntiCheatProtected,
+//    bool bUsesStats,
+//    bool bShouldAdvertise,
+//    bool bUseLobbiesVoiceChatIfAvailable,
+//    bool bStartAfterCreate,
+//    bool bGameSession
+//)
+//{
+//    printf("hook called create session\n");
+//    return def_create_session(
+//        WorldContextObject,
+//        ExtraSettings,
+//        PlayerController,
+//        10,
+//        10,
+//        bUseLAN,
+//        bAllowInvites,
+//        bIsDedicatedServer,
+//        bUsePresence,
+//        bUseLobbiesIfAvailable,
+//        bAllowJoinViaPresence,
+//        bAllowJoinViaPresenceFriendsOnly,
+//        bAntiCheatProtected,
+//        bUsesStats,
+//        bShouldAdvertise,
+//        bUseLobbiesVoiceChatIfAvailable,
+//        bStartAfterCreate,
+//        bGameSession
+//    );
+//}
+
+//LONG hk_create_session(_EXCEPTION_POINTERS* Info)
+//{
+//    printf("hook called create session\n");
+//    return EXCEPTION_CONTINUE_EXECUTION;
+//}
 
 void cheat::hook()
 {
     vhook::get()->hook_func(hk_post_render, hk_wnd_proc);
 
-    MH_Initialize();
+    //MH_Initialize();
+
+    //SDK::UFunction* func = SDK::UCreateSessionCallbackProxyAdvanced::StaticClass()->GetFunction(
+    //    "CreateSessionCallbackProxyAdvanced", 
+    //    "CreateAdvancedSession"
+    //);
+    //std::cout << "addr : 0x" << std::hex << (uintptr_t)func->ExecFunction - (uintptr_t)GetModuleHandle(nullptr) << std::endl;
+    //uintptr_t targetAddr = (uintptr_t)func->ExecFunction;
+
+    //MH_CreateHook((LPVOID)targetAddr, &hk_create_session, reinterpret_cast<LPVOID*>(&def_create_session));
+    //MH_EnableHook((LPVOID)targetAddr);
 }
 
 void cheat::exit()
